@@ -31,6 +31,26 @@ export class PdfService {
   }
 
   /**
+   * Fetches a regular bitstream (image, video, audio, etc.) from the server API
+   * @param bitstreamUuid The UUID of the bitstream to fetch
+   * @returns An Observable of the file blob
+   */
+  fetchBitstream(bitstreamUuid: string): Observable<Blob> {
+    const url = `${CURRENT_API_URL}/server/api/core/bitstreams/${bitstreamUuid}/content`;
+    
+    return this.http.get(url, { 
+      responseType: 'blob', 
+      withCredentials: true 
+    }).pipe(
+      retry(2), // Retry failed requests up to 2 times
+      catchError(error => {
+        console.error('Error fetching bitstream:', error);
+        return throwError(() => new Error('Failed to fetch file. Please try again later.'));
+      })
+    );
+  }
+
+  /**
    * Creates a blob URL from a blob object
    * @param blob The blob to create a URL for
    * @returns The created blob URL
