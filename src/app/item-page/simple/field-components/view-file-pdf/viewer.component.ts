@@ -394,12 +394,11 @@ export class ViewerComponent implements OnInit, AfterViewInit, OnDestroy {
           this.isVideoFile = this.fileType.startsWith("video/") || [".mp4", ".webm", ".ogg", ".mov", ".avi", ".mkv"].some(ext => lowerUrl.endsWith(ext))
           this.isAudioFile = this.fileType.startsWith("audio/") || [".mp3", ".wav", ".m4a", ".ogg", ".aac", ".flac"].some(ext => lowerUrl.endsWith(ext))
 
-          // ✅ Load PDF via secure filtered-content endpoint
+          // ✅ Load all file types via secure filtered-content endpoint
           if (this.isPdfFile) {
-            this.fetchRestrictedPdf(bitstreamUuid) // Replaces direct fileUrl usage
+            this.fetchRestrictedPdf(bitstreamUuid)
           } else {
-            this.fileUrl = fileItem.href
-            this.cdr.detectChanges() // Moved here so it doesn't run before PDF blob is set
+            this.fetchRestrictedFile(bitstreamUuid)
           }
         } else {
           console.error("❌ File with given bitstream UUID not found in signposting links")
@@ -423,6 +422,24 @@ export class ViewerComponent implements OnInit, AfterViewInit, OnDestroy {
       },
       error: (err) => {
         console.error("❌ Error fetching restricted PDF:", err)
+        this.isLoading = false
+        this.cdr.detectChanges()
+      },
+    })
+  }
+
+  private fetchRestrictedFile(bitstreamUuid: string): void {
+    this.isLoading = true
+
+    this.pdfService.fetchBitstream(bitstreamUuid).subscribe({
+      next: (blob) => {
+        const blobUrl = this.pdfService.createBlobUrl(blob)
+        this.fileUrl = blobUrl
+        this.isLoading = false
+        this.cdr.detectChanges()
+      },
+      error: (err) => {
+        console.error("❌ Error fetching restricted file:", err)
         this.isLoading = false
         this.cdr.detectChanges()
       },
