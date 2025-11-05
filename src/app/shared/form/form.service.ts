@@ -163,9 +163,10 @@ export class FormService {
   }
 
   public addErrorToField(field: AbstractControl, model: DynamicFormControlModel, message: string) {
-    const error = {}; // create the error object
     const errorKey = this.getValidatorNameFromMap(message);
     let errorMsg = message;
+
+    console.log('🔥 addErrorToField - field:', field, 'errorKey:', errorKey, 'message:', message);
 
     // if form control model has no errorMessages object, create it
     if (!model.errorMessages) {
@@ -181,22 +182,33 @@ export class FormService {
       errorMsg = model.errorMessages[errorKey];
     }
 
-    if (!field.hasError(errorKey)) {
-      error[errorKey] = true;
-      // add the error in the form control
-      field.setErrors(error);
+    // Add a custom validator that always returns this error
+    const existingValidators = field.validator;
+    const customValidator = () => {
+      return { [errorKey]: true };
+    };
+    
+    // Combine existing validators with our custom one
+    if (existingValidators) {
+      field.setValidators([existingValidators, customValidator]);
+    } else {
+      field.setValidators(customValidator);
     }
+    
+    // Update validity to run the new validator
+    field.updateValueAndValidity({ emitEvent: false });
+    field.markAsTouched();
+    field.markAsDirty();
+    
+    console.log('🔥 After setting validator - field.errors:', field.errors, 'field.touched:', field.touched, 'field.invalid:', field.invalid);
 
     // if the field in question is a concat group, pass down the error to its fields
     if (field instanceof UntypedFormGroup && model instanceof DynamicFormGroupModel && this.formBuilderService.isConcatGroup(model)) {
       model.group.forEach((subModel) => {
         const subField = field.controls[subModel.id];
-
         this.addErrorToField(subField, subModel, message);
       });
     }
-
-    field.markAsTouched();
   }
 
   public removeErrorFromField(field: AbstractControl, model: DynamicFormControlModel, messageKey: string) {

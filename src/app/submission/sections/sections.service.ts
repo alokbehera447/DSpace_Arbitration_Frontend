@@ -115,10 +115,14 @@ export class SectionsService {
       // Iterate over the current error list
       currentErrors.forEach((error: SubmissionSectionError) => {
         const errorPaths: SectionErrorPath[] = parseSectionErrorPaths(error.path);
+        
+        console.log('🔍 Processing error:', error.message, 'for path:', error.path);
 
         errorPaths.forEach((path: SectionErrorPath) => {
+          console.log('🔍 Parsed path:', path);
           if (path.fieldId) {
             // Dispatch action to add form error to the state;
+            console.log('🔍 Adding error to field:', path.fieldId, 'message:', error.message);
             this.formService.addError(formId, path.fieldId, path.fieldIndex, error.message);
             dispatchedErrors.push(path.fieldId);
           }
