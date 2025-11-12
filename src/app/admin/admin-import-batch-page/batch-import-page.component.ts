@@ -124,7 +124,19 @@ export class BatchImportPageComponent {
 
         },
         error: (error) => {
-          this.notificationsService.error('Upload Failed', 'Could not upload bulk file.');
+          console.error('Bulk upload error:', error);
+          let errorMessage = 'Could not upload bulk file.';
+          
+          // Extract detailed error message if available
+          if (error.error && error.error.message) {
+            errorMessage = error.error.message;
+          } else if (error.message) {
+            errorMessage = error.message;
+          } else if (error.statusText) {
+            errorMessage = `Server error: ${error.statusText}`;
+          }
+          
+          this.notificationsService.error('Upload Failed', errorMessage);
         }
       });
 

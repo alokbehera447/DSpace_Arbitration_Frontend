@@ -5,7 +5,7 @@ export const API_URLS = {
   } as const;
   
   // Current environment URL (you can change this based on your needs)
-  export const CURRENT_API_URL = API_URLS.DEVELOPMENT; // Change to PRODUCTION when needed
+  export const CURRENT_API_URL = API_URLS.PRODUCTION; // Change to PRODUCTION when needed
   
   // Or you can use environment detection
   // export const CURRENT_API_URL = window.location.hostname === 'localhost' 

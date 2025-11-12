@@ -228,6 +228,7 @@ export class FormComponent implements OnDestroy, OnInit {
             .forEach((error: FormError) => {
               const { fieldId } = error;
               const { fieldIndex } = error;
+              console.log('💥 Form.component - Trying to add error to field:', fieldId, 'index:', fieldIndex, 'message:', error.message);
               let field: AbstractControl;
               if (this.parentFormModel) {
                 field = this.formBuilderService.getFormControlById(fieldId, formGroup.parent as UntypedFormGroup, formModel, fieldIndex);
@@ -235,11 +236,21 @@ export class FormComponent implements OnDestroy, OnInit {
                 field = this.formBuilderService.getFormControlById(fieldId, formGroup, formModel, fieldIndex);
               }
 
+              console.log('💥 Form control found:', !!field, 'formId:', this.formId);
               if (field) {
                 const model: DynamicFormControlModel = this.formBuilderService.findById(fieldId, formModel);
+                console.log('💥 Model found:', !!model, 'model.id:', model?.id);
                 this.formService.addErrorToField(field, model, error.message);
+                
+                // DON'T call updateValueAndValidity as it re-runs validators and clears our custom error
+                // Just mark for check and detect changes
+                this.changeDetectorRef.markForCheck();
                 this.changeDetectorRef.detectChanges();
-
+                
+                console.log('💥 Error added to field successfully');
+                console.log('💥 Final field state - invalid:', field.invalid, 'touched:', field.touched, 'errors:', field.errors);
+              } else {
+                console.log('💥 ERROR: Field not found! fieldId:', fieldId, 'Available models:', formModel.map(m => m.id || m['name']));
               }
             });
 

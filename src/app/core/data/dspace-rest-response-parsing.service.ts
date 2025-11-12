@@ -97,16 +97,27 @@ export class DspaceRestResponseParsingService implements ResponseParsingService 
     }
   }
 
-  public process<ObjectDomain>(data: any, request: RestRequest, alternativeURL?: string): any {
+  public process<ObjectDomain>(data: any, request: RestRequest, alternativeURL?: string, visited: Set<any> = new Set()): any {
     const embedSizeParams = getEmbedSizeParams(request.href);
 
     if (isNotEmpty(data)) {
       if (hasNoValue(data) || (typeof data !== 'object')) {
         return data;
-      } else if (isRestPaginatedList(data)) {
-        return this.processPaginatedList(data, request, alternativeURL);
+      }
+      
+      // CIRCULAR REFERENCE PROTECTION: Check if we've already visited this object
+      if (visited.has(data)) {
+        console.warn('Circular reference detected in REST response, skipping to prevent infinite recursion');
+        return undefined;
+      }
+      
+      // Add this object to the visited set
+      visited.add(data);
+      
+      if (isRestPaginatedList(data)) {
+        return this.processPaginatedList(data, request, alternativeURL, visited);
       } else if (Array.isArray(data)) {
-        return this.processArray(data, request);
+        return this.processArray(data, request, visited);
       } else if (isCacheableObject(data)) {
         const object = this.deserialize(data);
         if (isNotEmpty(data._embedded)) {
@@ -127,7 +138,7 @@ export class DspaceRestResponseParsingService implements ResponseParsingService 
                 // Embedded object exists, but doesn't contain a self link -> cache it using the alternative link instead
                 this.objectCache.add(data._embedded[property], hasValue(request.responseMsToLive) ? request.responseMsToLive : environment.cache.msToLive.default, request.uuid, embedAltUrl);
               }
-              this.process<ObjectDomain>(data._embedded[property], request, embedAltUrl);
+              this.process<ObjectDomain>(data._embedded[property], request, embedAltUrl, visited);
             });
         }
 
@@ -139,7 +150,7 @@ export class DspaceRestResponseParsingService implements ResponseParsingService 
         .filter((property) => data.hasOwnProperty(property))
         .filter((property) => hasValue(data[property]))
         .forEach((property) => {
-          result[property] = this.process(data[property], request);
+          result[property] = this.process(data[property], request, undefined, visited);
         });
       return result;
 
@@ -182,7 +193,7 @@ export class DspaceRestResponseParsingService implements ResponseParsingService 
     return response;
   }
 
-  protected processPaginatedList<ObjectDomain>(data: any, request: RestRequest, alternativeURL?: string): PaginatedList<ObjectDomain> {
+  protected processPaginatedList<ObjectDomain>(data: any, request: RestRequest, alternativeURL?: string, visited: Set<any> = new Set()): PaginatedList<ObjectDomain> {
     const pageInfo: PageInfo = this.processPageInfo(data);
     let list = data._embedded;
 
@@ -193,16 +204,16 @@ export class DspaceRestResponseParsingService implements ResponseParsingService 
       list = this.flattenSingleKeyObject(list);
     }
 
-    const page: ObjectDomain[] = this.processArray(list, request);
+    const page: ObjectDomain[] = this.processArray(list, request, visited);
     const paginatedList = buildPaginatedList<ObjectDomain>(pageInfo, page, true, data._links);
     this.addToObjectCache(paginatedList, request, data, alternativeURL);
     return paginatedList;
   }
 
-  protected processArray<ObjectDomain>(data: any, request: RestRequest): ObjectDomain[] {
+  protected processArray<ObjectDomain>(data: any, request: RestRequest, visited: Set<any> = new Set()): ObjectDomain[] {
     let array: ObjectDomain[] = [];
     data.forEach((datum) => {
-      array = [...array, this.process(datum, request)];
+      array = [...array, this.process(datum, request, undefined, visited)];
     },
     );
     return array;

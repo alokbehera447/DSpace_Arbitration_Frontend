@@ -1976,6 +1976,12 @@
 
   "error.validation.required": "This field is required",
 
+  "error.validation.cino.notunique": "This CINO number is already used. Please enter a unique CINO number.",
+
+  "error.validation.cnr.notunique": "This CNR number is already used. Please enter a unique CNR number.",
+
+  "error.validation.casenumber.notunique": "This Case Number is already used. Please enter a unique Case Number.",
+
   "error.validation.NotValidEmail": "This is not a valid email",
 
   "error.validation.emailTaken": "This email is already taken",
