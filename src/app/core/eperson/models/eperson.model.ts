@@ -72,6 +72,12 @@ export class EPerson extends DSpaceObject {
   public password: string;
 
   /**
+   * Derived functional role of the EPerson (ADMIN, UPLOADER, REVIEWER)
+   */
+  @autoserialize
+  public role: string;
+
+  /**
    * Getter to retrieve the EPerson's full name as a string
    */
   get name(): string {

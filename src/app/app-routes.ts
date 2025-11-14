@@ -23,6 +23,7 @@ import { authBlockingGuard } from "./core/auth/auth-blocking.guard"
 import { authenticatedGuard } from "./core/auth/authenticated.guard"
 import { groupAdministratorGuard } from "./core/data/feature-authorization/feature-authorization-guard/group-administrator.guard"
 import { siteAdministratorGuard } from "./core/data/feature-authorization/feature-authorization-guard/site-administrator.guard"
+import { adminModuleAccessGuard } from "./core/auth/admin-module-access.guard";
 import { siteRegisterGuard } from "./core/data/feature-authorization/feature-authorization-guard/site-register.guard"
 import { endUserAgreementCurrentUserGuard } from "./core/end-user-agreement/end-user-agreement-current-user.guard"
 import { reloadGuard } from "./core/reload/reload.guard"
@@ -279,7 +280,7 @@ export const APP_ROUTES: Route[] = [
         path: ADMIN_MODULE_PATH,
         loadChildren: () => import("./admin/admin-routes").then((m) => m.ROUTES),
         data: { enableRSS: true },
-        canActivate: [siteAdministratorGuard, endUserAgreementCurrentUserGuard],
+        canActivate: [adminModuleAccessGuard, endUserAgreementCurrentUserGuard],
       },
       {
         path: NOTIFICATIONS_MODULE_PATH,

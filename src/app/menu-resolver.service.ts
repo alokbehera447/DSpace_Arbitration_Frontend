@@ -58,6 +58,10 @@ import { MenuState } from './shared/menu/menu-state.model';
   providedIn: 'root',
 })
 export class MenuResolverService  {
+  private userRole$ = this.authService.getAuthenticatedUserFromStore().pipe(
+    map((user) => user?.role),
+  );
+
   constructor(
     protected menuService: MenuService,
     protected browseService: BrowseService,
@@ -186,7 +190,13 @@ export class MenuResolverService  {
       this.authorizationService.isAuthorized(FeatureID.CanEditItem),
       this.authorizationService.isAuthorized(FeatureID.CanSeeQA),
       this.authorizationService.isAuthorized(FeatureID.CoarNotifyEnabled),
-    ]).subscribe(([isCollectionAdmin, isCommunityAdmin, isSiteAdmin, canSubmit, canEditItem, canSeeQa, isCoarNotifyEnabled]) => {
+      this.userRole$,
+    ]).subscribe(([isCollectionAdmin, isCommunityAdmin, isSiteAdmin, canSubmit, canEditItem, canSeeQa, isCoarNotifyEnabled, role]) => {
+      const normalizedRole = role?.toUpperCase?.();
+      const isUploaderRole = normalizedRole === 'UPLOADER';
+      const isReviewerRole = normalizedRole === 'REVIEWER';
+      const isRoleAdmin = normalizedRole === 'ADMIN';
+      const canSeeProcesses = isSiteAdmin || isRoleAdmin || isUploaderRole || isReviewerRole;
       const newSubMenuList = [
         {
           id: 'new_community',
@@ -368,7 +378,7 @@ export class MenuResolverService  {
         {
           id: 'processes',
           active: false,
-          visible: isSiteAdmin,
+          visible: canSeeProcesses,
           model: {
             type: MenuItemType.LINK,
             text: 'menu.section.processes',
@@ -578,17 +588,27 @@ export class MenuResolverService  {
     observableCombineLatest([
       this.authorizationService.isAuthorized(FeatureID.AdministratorOf),
       this.scriptDataService.scriptWithNameExistsAndCanExecute(METADATA_IMPORT_SCRIPT_NAME),
+      this.userRole$,
+      this.userRole$,
     ]).pipe(
-      filter(([authorized, metadataImportScriptExists]: boolean[]) => authorized && metadataImportScriptExists),
+      map(([authorized, metadataImportScriptExists, role]) => {
+        const normalizedRole = role?.toUpperCase?.();
+        const isUploaderRole = normalizedRole === 'UPLOADER';
+        const isRoleAdmin = normalizedRole === 'ADMIN';
+        const hasScriptAccess = metadataImportScriptExists || isUploaderRole;
+        const canSeeImport = authorized || isRoleAdmin || isUploaderRole;
+        return { authorized, hasScriptAccess, canSeeImport };
+      }),
+      filter(({ hasScriptAccess, canSeeImport }) => hasScriptAccess && canSeeImport),
       take(1),
-    ).subscribe(() => {
+    ).subscribe(({ authorized, canSeeImport }) => {
       // Hides the import menu for unauthorised people
       // If in the future more sub-menus are added,
       // it should be reviewed if they need to be in this subscribe
       this.menuService.addSection(MenuID.ADMIN, {
         id: 'import',
         active: false,
-        visible: true,
+        visible: canSeeImport,
         model: {
           type: MenuItemType.TEXT,
           text: 'menu.section.import',
@@ -601,7 +621,7 @@ export class MenuResolverService  {
         id: 'import_metadata',
         parentID: 'import',
         active: true,
-        visible: true,
+        visible: canSeeImport,
         model: {
           type: MenuItemType.LINK,
           text: 'menu.section.import_metadata',
@@ -613,7 +633,7 @@ export class MenuResolverService  {
         id: 'import_batch',
         parentID: 'import',
         active: false,
-        visible: true,
+        visible: canSeeImport,
         model: {
           type: MenuItemType.LINK,
           text: 'menu.section.import_batch',
@@ -628,13 +648,21 @@ export class MenuResolverService  {
    * Create menu sections dependent on whether or not the current user is a site administrator
    */
   createSiteAdministratorMenuSections() {
-    this.authorizationService.isAuthorized(FeatureID.AdministratorOf)
-      .subscribe((authorized) => {
+    combineLatest([
+      this.authorizationService.isAuthorized(FeatureID.AdministratorOf),
+      this.userRole$,
+    ])
+      .subscribe(([authorized, role]) => {
+        const normalizedRole = role?.toUpperCase?.();
+        const isUploaderRole = normalizedRole === 'UPLOADER';
+        const isReviewerRole = normalizedRole === 'REVIEWER';
+        const isRoleAdmin = normalizedRole === 'ADMIN';
+        const canSeeAdminSearch = authorized || isRoleAdmin || isUploaderRole || isReviewerRole;
         const menuList = [
           {
             id: 'admin_search',
             active: false,
-            visible: authorized,
+            visible: canSeeAdminSearch,
             model: {
               type: MenuItemType.LINK,
               text: 'menu.section.admin_search',
