@@ -6,7 +6,7 @@ debug: false
 # "ui" settings usually specify a localhost port/URL which is later proxied to a public URL (using Apache or similar)
 ui:
   ssl: false
-  host: 10.184.240.87
+  host: localhost
   # host: localhost
   port: 4000
   # NOTE: Space is capitalized because 'namespace' is a reserved string in TypeScript
@@ -55,12 +55,8 @@ ssr:
 # 'synced' with the 'dspace.server.url' setting in your backend's local.cfg.
 rest:
   ssl: false
-<<<<<<< HEAD
   host: localhost
-=======
-  host: 10.184.240.87
   # host : localhost
->>>>>>> a0d248b78eb908aabb49e3bbaed9b310c7cc6172
   port: 8080
   # NOTE: Space is capitalized because 'namespace' is a reserved string in TypeScript
   nameSpace: /server
