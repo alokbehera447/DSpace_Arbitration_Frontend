@@ -1,3 +1,93 @@
+// import { Injectable } from '@angular/core';
+// import { HttpClient } from '@angular/common/http';
+// import { Observable, throwError } from 'rxjs';
+// import { catchError, retry } from 'rxjs/operators';
+// import { CURRENT_API_URL } from './api-urls';
+
+// @Injectable({
+//   providedIn: 'root'
+// })
+// export class PdfService {
+//   constructor(private http: HttpClient) {}
+
+//   /**
+//    * Fetches a restricted PDF from the server API
+//    * @param bitstreamUuid The UUID of the bitstream to fetch
+//    * @returns An Observable of the PDF blob
+//    */
+//   fetchRestrictedPdf(bitstreamUuid: string): Observable<Blob> {
+//     const url = `${CURRENT_API_URL}/server/api/custom/bitstreams/${bitstreamUuid}/filtered-content`;
+    
+//     return this.http.get(url, { 
+//       responseType: 'blob', 
+//       withCredentials: true 
+//     }).pipe(
+//       retry(2), // Retry failed requests up to 2 times
+//       catchError(error => {
+//         console.error('Error fetching PDF:', error);
+//         return throwError(() => new Error('Failed to fetch PDF. Please try again later.'));
+//       })
+//     );
+//   }
+
+//   /**
+//    * Fetches a regular bitstream (image, video, audio, etc.) from the server API
+//    * @param bitstreamUuid The UUID of the bitstream to fetch
+//    * @returns An Observable of the file blob
+//    */
+//   fetchBitstream(bitstreamUuid: string): Observable<Blob> {
+//     const url = `${CURRENT_API_URL}/server/api/core/bitstreams/${bitstreamUuid}/content`;
+    
+//     return this.http.get(url, { 
+//       responseType: 'blob', 
+//       withCredentials: true 
+//     }).pipe(
+//       retry(2), // Retry failed requests up to 2 times
+//       catchError(error => {
+//         console.error('Error fetching bitstream:', error);
+//         return throwError(() => new Error('Failed to fetch file. Please try again later.'));
+//       })
+//     );
+//   }
+
+//   /**
+//    * Creates a blob URL from a blob object
+//    * @param blob The blob to create a URL for
+//    * @returns The created blob URL
+//    */
+//   createBlobUrl(blob: Blob): string {
+//     return URL.createObjectURL(blob);
+//   }
+
+
+//     encryptBitstream(bitstreamId: string): Observable<Blob> {
+//     const url = `${CURRENT_API_URL}/server/api/diracai/encrypt-bitstream`;
+//     return this.http.post(url, { bitstreamId }, {
+//       responseType: 'blob',
+//       withCredentials: true
+//     }).pipe(
+//       catchError(error => {
+//         console.error('Encryption API error:', error);
+//         return throwError(() => new Error('Failed to encrypt file.'));
+//       })
+//     );
+//   }
+//   /**
+//    * Revokes a blob URL to free up memory
+//    * @param url The blob URL to revoke
+//    */
+//   revokeBlobUrl(url: string): void {
+//     if (url && url.startsWith('blob:')) {
+//       URL.revokeObjectURL(url);
+//     }
+//   }
+// }
+
+
+
+
+
+
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
@@ -17,7 +107,7 @@ export class PdfService {
    */
   fetchRestrictedPdf(bitstreamUuid: string): Observable<Blob> {
     const url = `${CURRENT_API_URL}/server/api/custom/bitstreams/${bitstreamUuid}/filtered-content`;
-    
+
     return this.http.get(url, { 
       responseType: 'blob', 
       withCredentials: true 
@@ -37,7 +127,7 @@ export class PdfService {
    */
   fetchBitstream(bitstreamUuid: string): Observable<Blob> {
     const url = `${CURRENT_API_URL}/server/api/core/bitstreams/${bitstreamUuid}/content`;
-    
+
     return this.http.get(url, { 
       responseType: 'blob', 
       withCredentials: true 
@@ -59,9 +149,15 @@ export class PdfService {
     return URL.createObjectURL(blob);
   }
 
+  /**
+   * Fetches an encrypted PDF bitstream from the server with mode to distinguish viewing or downloading
+   * @param bitstreamId The UUID of the bitstream
+   * @param mode 'view' for inline viewing (no password), 'download' for download (password protected)
+   * @returns An Observable of the PDF blob
+   */
+  encryptBitstream(bitstreamId: string, mode: 'view' | 'download' = 'view'): Observable<Blob> {
+    const url = `${CURRENT_API_URL}/server/api/diracai/encrypt-bitstream?mode=${mode}`;
 
-    encryptBitstream(bitstreamId: string): Observable<Blob> {
-    const url = `${CURRENT_API_URL}/server/api/diracai/encrypt-bitstream`;
     return this.http.post(url, { bitstreamId }, {
       responseType: 'blob',
       withCredentials: true
@@ -72,6 +168,7 @@ export class PdfService {
       })
     );
   }
+
   /**
    * Revokes a blob URL to free up memory
    * @param url The blob URL to revoke
