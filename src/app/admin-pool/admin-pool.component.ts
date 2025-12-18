@@ -1,7 +1,7 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { OnInit } from '@angular/core';
-import { CURRENT_API_URL } from '../core/serachpage/api-urls'; 
+import { CURRENT_API_URL } from '../core/serachpage/api-urls';
 import { AdminPoolService } from './admin-service';
 
 @Component({
@@ -15,6 +15,9 @@ export class AdminPoolComponent implements OnInit {
     claimedTasks = [];
     pooledTasks = [];
     rejectedTasks = [];
+
+    dummyFiles: any[] = [];              // add this
+    currentPdfUrl: string | null = null; // add this
 
     ngOnInit() {
         this.fetchClaimedTasks();
@@ -78,11 +81,11 @@ export class AdminPoolComponent implements OnInit {
 
     selectedBatch: any = null;
 
-    dummyFiles: any[] = [];  
-    acceptedSubmissions: any[] = []; 
+    // dummyFiles: any[] = [];
+    acceptedSubmissions: any[] = [];
 
-    actionUUID :any = null;
-    collectionUuid :any = null; 
+    actionUUID: any = null;
+    collectionUuid: any = null;
     reviewLoading: boolean = false;
 
     openReviewDialog(batch: any) {
@@ -95,20 +98,39 @@ export class AdminPoolComponent implements OnInit {
             (res) => {
 
                 this.actionUUID = res.requestId;
-                this.dummyFiles = res.items.map(item => {
+
+                this.dummyFiles = res.items.map((item: any) => {
                     if (typeof item.metadata === 'string') {
                         try {
                             item.metadata = JSON.parse(item.metadata);
                         } catch (e) {
-                            console.error("Failed to parse metadata for item:", item, e);
-                            item.metadata = {}; // Fallback to empty object
+                            console.error('Failed to parse metadata for item:', item, e);
+                            item.metadata = {};
                         }
                     }
+
+                    // pdfFiles from backend = list of relative URLs like /api/bulk-upload/...
+                    const BULK_BASE = `${CURRENT_API_URL}/server`;
+
+                    item.pdfFiles = (item.pdfFiles || []).map((rel: string) =>
+                        rel.startsWith('http')
+                            ? rel
+                            : `${BULK_BASE}${rel.startsWith('/') ? '' : '/'}${rel}`
+                    );
+
+
                     return item;
                 });
+
+                this.currentPdfUrl = null;
+
+
+
+
+
                 this.reviewLoading = false;
                 this.cdr.markForCheck();
-                console.log("testing in the dialogue box",this.collectionUuid);
+                console.log("testing in the dialogue box", this.collectionUuid);
 
             },
             (err) => {
@@ -119,22 +141,38 @@ export class AdminPoolComponent implements OnInit {
             }
         );
     }
-    
-    
-    
+    // ADD THIS METHOD HERE
+    onSelectPdf(pdfUrl: string) {
+        this.currentPdfUrl = pdfUrl;
+        console.log('Selected PDF:', pdfUrl);
+    }
+
+    openPdf(url: string | null | undefined) {
+        if (!url) {
+            console.warn('No pdfPreviewUrl on selectedBatch', this.selectedBatch);
+            return;
+        }
+
+        const fullUrl = url.startsWith('http')
+            ? url
+            : `${CURRENT_API_URL}${url.startsWith('/') ? '' : '/'}${url}`;
+
+        window.open(fullUrl, '_blank');
+    }
+
     approve(uuid: string) {
-      
+
         this.adminPoolService.approve(this.actionUUID, this.collectionUuid).subscribe(() => {
             console.log(this.collectionUuid);
 
-          alert('✅ Approved successfully.');
-          this.fetchClaimedTasks();
-          this.fetchPooledTasks();
-          this.fetchRejectedTasks();
-          this.fetchAcceptedSubmissions();
-          this.cancelReview();
+            alert('✅ Approved successfully.');
+            this.fetchClaimedTasks();
+            this.fetchPooledTasks();
+            this.fetchRejectedTasks();
+            this.fetchAcceptedSubmissions();
+            this.cancelReview();
         });
-      }
+    }
 
     reject(uuid: string) {
         this.adminPoolService.reject(this.actionUUID).subscribe(() => {
@@ -144,7 +182,7 @@ export class AdminPoolComponent implements OnInit {
             this.fetchRejectedTasks();
             this.fetchAcceptedSubmissions();
             this.cancelReview();
-            
+
         });
     }
 

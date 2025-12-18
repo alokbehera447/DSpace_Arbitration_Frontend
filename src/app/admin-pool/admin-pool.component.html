@@ -109,7 +109,7 @@
                     <th>Item Folder</th>
                 </tr>
             </thead>
-            <tbody>
+            <!-- <tbody>
                 <tr *ngFor="let file of dummyFiles">
                     <td>{{ file.metadata?.['dc.casetype'] || '-' }}</td>
                     <td>{{ file.metadata?.['dc.title'] || '-' }}</td>
@@ -119,8 +119,61 @@
                     <td>{{ file.metadata?.['dc.rname'] || '-' }}</td>
                     <td>{{ file.itemFolder }}</td>
                 </tr>
+            </tbody> -->
+
+            <!-- <tbody>
+                <tr *ngFor="let file of dummyFiles" (click)="openPdf(selectedBatch.pdfPreviewUrl)"
+                    style="cursor:pointer;">
+                    <td>{{ file.metadata?.['dc.casetype'] || '-' }}</td>
+                    <td>{{ file.metadata?.['dc.title'] || '-' }}</td>
+                    <td>{{ file.metadata?.['dc.caseyear'] || '-' }}</td>
+                    <td>{{ file.metadata?.['dc.date.disposal'] || '-' }}</td>
+                    <td>{{ file.metadata?.['dc.pname'] || '-' }}</td>
+                    <td>{{ file.metadata?.['dc.rname'] || '-' }}</td>
+                    <td>{{ file.itemFolder }}</td>
+                </tr>
+            </tbody> -->
+
+            <tbody>
+                <tr *ngFor="let file of dummyFiles">
+                    <td>{{ file.metadata?.['dc.casetype'] || '-' }}</td>
+                    <td>{{ file.metadata?.['dc.title'] || '-' }}</td>
+                    <td>{{ file.metadata?.['dc.caseyear'] || '-' }}</td>
+                    <td>{{ file.metadata?.['dc.date.disposal'] || '-' }}</td>
+                    <td>{{ file.metadata?.['dc.pname'] || '-' }}</td>
+                    <td>{{ file.metadata?.['dc.rname'] || '-' }}</td>
+                    <td>
+                        <div *ngIf="file.pdfFiles?.length > 0; else noPdf">
+                            <button *ngFor="let pdf of file.pdfFiles; let i = index" (click)="openPdf(pdf)"
+                                style="margin:2px;">
+                                View PDF {{ i + 1 }}
+                            </button>
+
+                        </div>
+                        <ng-template #noPdf>
+                            <span>No PDFs</span>
+                        </ng-template>
+                    </td>
+                </tr>
             </tbody>
+
+
+
+
+
         </table>
+        <div *ngIf="currentPdfUrl" style="margin-top:10px;">
+            <h4>PDF Preview</h4>
+            <object [data]="currentPdfUrl | safeUrl" type="application/pdf" width="100%" height="600"
+                style="border:1px solid #ccc;">
+                <p>
+                    PDF preview is not available here.
+                    <a [href]="currentPdfUrl | safeUrl" target="_blank">Open PDF in new tab</a>.
+                </p>
+            </object>
+        </div>
+
+
         <div class="actions" *ngIf="!reviewLoading">
             <button (click)="approve(selectedBatch.requestId)">Approve</button>
             <button (click)="reject(selectedBatch.requestId)">Reject</button>
@@ -128,43 +181,43 @@
         </div>
     </div>
 
-   <!-- Accepted Submissions Section -->
-   <div *ngIf="showAccepted" class="accepted-submissions">
-    <h2>Accepted Submissions</h2>
-    <table *ngIf="!viewingAcceptedBatch">
-        <thead>
-            <tr>
-                <th>Filename</th>
-                <th>Uploader</th>
-                <th>Collection</th>
-                <th>Reviewer</th>
-                <th>Status</th>
-                <th>Uploaded Date</th>
-                <th>Reviewed Date</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let accepted of acceptedSubmissions">
-                <td>{{ accepted.fileName }}</td>
-                <td>{{ accepted.uploader.userName }}</td>
-                <td>{{ accepted.collection.collectionName }}</td>
-                <td>{{ accepted.reviewer.userName }}</td>
-                <td>{{ accepted.status }}</td>
-                <td>{{ accepted.uploader.date | date:'short' }}</td>
-                <td>{{ accepted.reviewer.date | date:'short' }}</td>
-                <td><button (click)="viewFiles(accepted)">View Files</button></td>
-            </tr>
-        </tbody>
-    </table>
-    <div *ngIf="viewingAcceptedBatch">
-        <h3>Files in Batch: {{ viewingAcceptedBatch.batch }}</h3>
-        <ul>
-            <li *ngFor="let file of viewingAcceptedBatch.files">{{ file }}</li>
-        </ul>
-        <button (click)="viewingAcceptedBatch = null">Back</button>
+    <!-- Accepted Submissions Section -->
+    <div *ngIf="showAccepted" class="accepted-submissions">
+        <h2>Accepted Submissions</h2>
+        <table *ngIf="!viewingAcceptedBatch">
+            <thead>
+                <tr>
+                    <th>Filename</th>
+                    <th>Uploader</th>
+                    <th>Collection</th>
+                    <th>Reviewer</th>
+                    <th>Status</th>
+                    <th>Uploaded Date</th>
+                    <th>Reviewed Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let accepted of acceptedSubmissions">
+                    <td>{{ accepted.fileName }}</td>
+                    <td>{{ accepted.uploader.userName }}</td>
+                    <td>{{ accepted.collection.collectionName }}</td>
+                    <td>{{ accepted.reviewer.userName }}</td>
+                    <td>{{ accepted.status }}</td>
+                    <td>{{ accepted.uploader.date | date:'short' }}</td>
+                    <td>{{ accepted.reviewer.date | date:'short' }}</td>
+                    <td><button (click)="viewFiles(accepted)">View Files</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <div *ngIf="viewingAcceptedBatch">
+            <h3>Files in Batch: {{ viewingAcceptedBatch.batch }}</h3>
+            <ul>
+                <li *ngFor="let file of viewingAcceptedBatch.files">{{ file }}</li>
+            </ul>
+            <button (click)="viewingAcceptedBatch = null">Back</button>
+        </div>
+        <button (click)="closeAcceptedView()" style="margin-top: 15px;">Close Accepted Submissions</button>
     </div>
-    <button (click)="closeAcceptedView()" style="margin-top: 15px;">Close Accepted Submissions</button>
-</div>
 
 </div>
