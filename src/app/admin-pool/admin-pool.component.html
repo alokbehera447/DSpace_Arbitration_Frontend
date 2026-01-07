@@ -13,8 +13,9 @@
                 <th>Filename</th>
                 <th>Uploader</th>
                 <th>Collection</th>
-                <th>reviewer</th>
-                <th>reviewed Date</th>
+                <th>Reviewer</th>
+                <th>Reviewed Date</th>
+                <th>Rejection Reason</th>
             </tr>
         </thead>
         <tbody>
@@ -24,6 +25,7 @@
                 <td>{{ task.collection.collectionName }}</td>
                 <td>{{ task.reviewer.userName }}</td>
                 <td>{{ task.reviewer.date | date:'short' }}</td>
+                <td>{{ task.rejectionReason || 'No reason provided' }}</td>
             </tr>
         </tbody>
     </table>
@@ -61,7 +63,6 @@
         <p>No claimed tasks available.</p>
     </ng-template>
 
-
     <!-- Pooled Tasks -->
     <h2>Pooled Tasks</h2>
     <table>
@@ -71,9 +72,9 @@
                 <th>Uploader</th>
                 <th>Collection</th>
                 <th>Status</th>
-                <th>reviewer</th>
+                <th>Reviewer</th>
                 <th>Uploaded Date</th>
-                <th>reviewed Date</th>
+                <th>Reviewed Date</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -176,9 +177,72 @@
 
         <div class="actions" *ngIf="!reviewLoading">
             <button (click)="approve(selectedBatch.requestId)">Approve</button>
-            <button (click)="reject(selectedBatch.requestId)">Reject</button>
+            <button (click)="openRejectDialog()">Reject</button>
             <button (click)="cancelReview()">Cancel</button>
         </div>
+    </div>
+
+<<<<<<< HEAD
+    <!-- Rejection Dialog -->
+    <div *ngIf="showRejectDialog" class="reject-dialog-overlay">
+        <div class="reject-dialog">
+            <h3>Reject Batch</h3>
+            <p>Are you sure you want to reject this batch?</p>
+            <div class="form-group">
+                <label for="rejectionReason">Reason for Rejection (Optional):</label>
+                <textarea 
+                    id="rejectionReason" 
+                    [(ngModel)]="rejectionReason" 
+                    placeholder="Enter the reason for rejection (optional)..."
+                    rows="4"
+                    maxlength="1000"
+                ></textarea>
+                <small class="character-count">{{ rejectionReason.length }}/1000 characters</small>
+            </div>
+            <div class="dialog-actions">
+                <button class="btn-reject" (click)="confirmReject()">Confirm Reject</button>
+                <button class="btn-cancel" (click)="closeRejectDialog()">Cancel</button>
+            </div>
+        </div>
+=======
+    <!-- Accepted Submissions Section -->
+    <div *ngIf="showAccepted" class="accepted-submissions">
+        <h2>Accepted Submissions</h2>
+        <table *ngIf="!viewingAcceptedBatch">
+            <thead>
+                <tr>
+                    <th>Filename</th>
+                    <th>Uploader</th>
+                    <th>Collection</th>
+                    <th>Reviewer</th>
+                    <th>Status</th>
+                    <th>Uploaded Date</th>
+                    <th>Reviewed Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let accepted of acceptedSubmissions">
+                    <td>{{ accepted.fileName }}</td>
+                    <td>{{ accepted.uploader.userName }}</td>
+                    <td>{{ accepted.collection.collectionName }}</td>
+                    <td>{{ accepted.reviewer.userName }}</td>
+                    <td>{{ accepted.status }}</td>
+                    <td>{{ accepted.uploader.date | date:'short' }}</td>
+                    <td>{{ accepted.reviewer.date | date:'short' }}</td>
+                    <td><button (click)="viewFiles(accepted)">View Files</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <div *ngIf="viewingAcceptedBatch">
+            <h3>Files in Batch: {{ viewingAcceptedBatch.batch }}</h3>
+            <ul>
+                <li *ngFor="let file of viewingAcceptedBatch.files">{{ file }}</li>
+            </ul>
+            <button (click)="viewingAcceptedBatch = null">Back</button>
+        </div>
+        <button (click)="closeAcceptedView()" style="margin-top: 15px;">Close Accepted Submissions</button>
+>>>>>>> 045297f869f91abd1ed777590f5086c59ca5659b
     </div>
 
     <!-- Accepted Submissions Section -->
@@ -219,5 +283,4 @@
         </div>
         <button (click)="closeAcceptedView()" style="margin-top: 15px;">Close Accepted Submissions</button>
     </div>
-
 </div>

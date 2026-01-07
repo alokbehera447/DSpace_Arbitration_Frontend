@@ -1,0 +1,26 @@
+.video-search-container {
+  padding: 20px;
+}
+
+.search-input {
+  width: 400px;
+  padding: 8px;
+  margin-right: 10px;
+}
+
+.search-button {
+  padding: 8px 15px;
+}
+
+.video-card {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.transcript-preview {
+  max-height: 100px;
+  overflow: hidden;
+  color: #555;
+}

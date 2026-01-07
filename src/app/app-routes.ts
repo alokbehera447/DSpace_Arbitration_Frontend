@@ -53,6 +53,7 @@ import { ProximitySearchComponent } from "./proximity-search/proximity-search.co
 import { CnrManagerComponent } from "./cnr-manager/cnr-manager.component"
 import { AdminPannelComponent } from "./admin-pannel/admin-pannel.component"
 // import { SearchByCaseComponent } from './searchN/search-by-case.component';
+import { VideoSearchComponent } from "./video-search/video-search.component";
 
 export const APP_ROUTES: Route[] = [
   { path: INTERNAL_SERVER_ERROR, component: ThemedPageInternalServerErrorComponent },
@@ -266,6 +267,12 @@ export const APP_ROUTES: Route[] = [
           {
             path: "dc_case_disposaldate",
             component: FuzzySearchComponent,
+            data: { enableRSS: true },
+            canActivate: [authenticatedGuard, endUserAgreementCurrentUserGuard],
+          },
+          {
+            path: "dc_video_search",
+            component: VideoSearchComponent,
             data: { enableRSS: true },
             canActivate: [authenticatedGuard, endUserAgreementCurrentUserGuard],
           },

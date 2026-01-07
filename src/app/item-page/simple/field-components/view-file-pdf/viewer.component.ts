@@ -409,66 +409,24 @@ export class ViewerComponent implements OnInit, AfterViewInit, OnDestroy {
     })
   }
 
-  // private fetchRestrictedPdf(bitstreamUuid: string): void {
-  //   this.isLoading = true
+  private fetchRestrictedPdf(bitstreamUuid: string): void {
+    this.isLoading = true
 
-  //   this.pdfService.fetchRestrictedPdf(bitstreamUuid).subscribe({
-  //     next: (blob) => {
-  //       const blobUrl = this.pdfService.createBlobUrl(blob)
-  //       this.fileUrl = blobUrl
-  //       this.loadPdf() // this uses fileUrl internally
-  //       this.isLoading = false
-  //       this.cdr.detectChanges()
-  //     },
-  //     error: (err) => {
-  //       console.error("❌ Error fetching restricted PDF:", err)
-  //       this.isLoading = false
-  //       this.cdr.detectChanges()
-  //     },
-  //   })
-  // }
-
-
-//   private fetchRestrictedPdf(bitstreamUuid: string): void {
-//   this.isLoading = true;
-
-//   this.pdfService.encryptBitstream(bitstreamUuid).subscribe({
-//     next: (blob) => {
-//       const blobUrl = this.pdfService.createBlobUrl(blob);
-//       this.fileUrl = blobUrl;
-//       this.loadPdf(); // Render PDF from blob URL
-//       this.isLoading = false;
-//       this.cdr.detectChanges();
-//     },
-//     error: (err) => {
-//       console.error("❌ Error fetching encrypted PDF:", err);
-//       this.isLoading = false;
-//       this.cdr.detectChanges();
-//     },
-//   });
-// }
-
-
-private fetchRestrictedPdf(bitstreamUuid: string): void {
-  this.isLoading = true;
-
-  this.pdfService.encryptBitstream(bitstreamUuid, 'view').subscribe({
-    next: (blob) => {
-      const blobUrl = this.pdfService.createBlobUrl(blob);
-      this.fileUrl = blobUrl;
-      this.loadPdf(); // Render PDF inline
-      this.isLoading = false;
-      this.cdr.detectChanges();
-    },
-    error: (err) => {
-      console.error("❌ Error fetching PDF for view:", err);
-      this.isLoading = false;
-      this.cdr.detectChanges();
-    },
-  });
-}
-
-
+    this.pdfService.fetchRestrictedPdf(bitstreamUuid).subscribe({
+      next: (blob) => {
+        const blobUrl = this.pdfService.createBlobUrl(blob)
+        this.fileUrl = blobUrl
+        this.loadPdf() // this uses fileUrl internally
+        this.isLoading = false
+        this.cdr.detectChanges()
+      },
+      error: (err) => {
+        console.error("❌ Error fetching restricted PDF:", err)
+        this.isLoading = false
+        this.cdr.detectChanges()
+      },
+    })
+  }
 
   private fetchRestrictedFile(bitstreamUuid: string): void {
     this.isLoading = true
@@ -708,61 +666,32 @@ private fetchRestrictedPdf(bitstreamUuid: string): void {
     }
   }
 
-  // downloadFile(): void {
-  //   if (!this.canDownloadFile) {
-  //     console.warn("Download permission denied");
-  //     return;
-  //   }
-
-  //   const filename = this.generateCustomFilename() || "encrypted.pdf";
-
-  //   this.pdfService.encryptBitstream(this.currentBitstreamId).subscribe({
-  //     next: (blob) => {
-  //       const blobUrl = this.pdfService.createBlobUrl(blob);
-  //       const a = document.createElement('a');
-  //       a.href = blobUrl;
-  //       a.download = filename;
-  //       document.body.appendChild(a);
-  //       a.click();
-  //       document.body.removeChild(a);
-  //       this.pdfService.revokeBlobUrl(blobUrl);
-
-  //       console.log("🔐 Encrypted file downloaded:", filename);
-  //     },
-  //     error: (err) => {
-  //       console.error("❌ Error downloading encrypted file:", err);
-  //     }
-  //   });
-  // }
-
-
   downloadFile(): void {
-  if (!this.canDownloadFile) {
-    console.warn("Download permission denied");
-    return;
-  }
-
-  const filename = this.generateCustomFilename() || "encrypted.pdf";
-
-  this.pdfService.encryptBitstream(this.currentBitstreamId, 'download').subscribe({
-    next: (blob) => {
-      const blobUrl = this.pdfService.createBlobUrl(blob);
-      const a = document.createElement('a');
-      a.href = blobUrl;
-      a.download = filename;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      this.pdfService.revokeBlobUrl(blobUrl);
-
-      console.log("🔐 Encrypted file downloaded:", filename);
-    },
-    error: (err) => {
-      console.error("❌ Error downloading encrypted file:", err);
+    if (!this.canDownloadFile) {
+      console.warn("Download permission denied");
+      return;
     }
-  });
-}
 
+    const filename = this.generateCustomFilename() || "encrypted.pdf";
+
+    this.pdfService.encryptBitstream(this.currentBitstreamId).subscribe({
+      next: (blob) => {
+        const blobUrl = this.pdfService.createBlobUrl(blob);
+        const a = document.createElement('a');
+        a.href = blobUrl;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        this.pdfService.revokeBlobUrl(blobUrl);
+
+        console.log("🔐 Encrypted file downloaded:", filename);
+      },
+      error: (err) => {
+        console.error("❌ Error downloading encrypted file:", err);
+      }
+    });
+  }
 
   private generateCustomFilename(): string {
     const caseType = this.findMetadataByPartialName("type")

@@ -1,0 +1,123 @@
+// audit-log.component.html
+<div class="audit-log-container">
+  <div class="card">
+    <div class="card-header">
+      <h2>My Signature Audit Log</h2>
+      <p class="subtitle">Complete history of your digitally signed documents</p>
+    </div>
+
+    <div class="card-body">
+      <!-- Loading State -->
+      <div *ngIf="isLoading" class="loading-state">
+        <div class="spinner"></div>
+        <p>Loading audit logs...</p>
+      </div>
+
+      <!-- Error State -->
+      <div *ngIf="errorMessage && !isLoading" class="alert alert-danger">
+        {{ errorMessage }}
+      </div>
+
+      <!-- Empty State -->
+      <div *ngIf="!isLoading && !errorMessage && auditLogs.length === 0" class="empty-state">
+        <span class="icon">📋</span>
+        <h3>No Audit Logs Yet</h3>
+        <p>Your signature activity will appear here once you start signing documents.</p>
+      </div>
+
+      <!-- Audit Logs Table -->
+      <div *ngIf="!isLoading && auditLogs.length > 0" class="audit-table-container">
+        <div class="results-info">
+          Showing {{ (currentPage * pageSize) + 1 }} - {{ Math.min((currentPage + 1) * pageSize, totalElements) }} 
+          of {{ totalElements }} records
+        </div>
+
+        <div class="table-responsive">
+          <table class="audit-table">
+            <thead>
+              <tr>
+                <th>Timestamp</th>
+                <th>Action</th>
+                <th>Document</th>
+                <th>Certificate</th>
+                <th>IP Address</th>
+                <th>Processing Time</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let log of auditLogs">
+                <td class="timestamp-col">
+                  {{ formatTimestamp(log.signatureTimestamp) }}
+                </td>
+                <td>
+                  <span class="badge" [ngClass]="getActionBadgeClass(log.actionType)">
+                    {{ log.actionType }}
+                  </span>
+                </td>
+                <td class="document-col">
+                  <div class="document-info">
+                    <div class="document-id" title="Document ID">
+                      📄 {{ log.documentId.substring(0, 8) }}...
+                    </div>
+                    <div class="bitstream-id" title="Bitstream ID">
+                      {{ log.bitstreamId.substring(0, 8) }}...
+                    </div>
+                  </div>
+                </td>
+                <td class="certificate-col">
+                  <div class="certificate-info" [title]="'Serial: ' + log.certificateSerial">
+                    🔐 {{ log.certificateSerial.substring(0, 12) }}...
+                  </div>
+                  <div class="algorithm">{{ log.signatureAlgorithm }}</div>
+                </td>
+                <td>{{ log.ipAddress }}</td>
+                <td class="processing-col">
+                  {{ formatProcessingTime(log.processingTimeMs) }}
+                </td>
+                <td>
+                  <span class="badge" [ngClass]="getStatusBadgeClass(log.success)">
+                    {{ log.success ? '✓ Success' : '✗ Failed' }}
+                  </span>
+                  <div *ngIf="!log.success && log.errorMessage" class="error-detail">
+                    {{ log.errorMessage }}
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination" *ngIf="totalPages > 1">
+          <button 
+            class="btn-page" 
+            (click)="previousPage()"
+            [disabled]="currentPage === 0"
+          >
+            ‹ Previous
+          </button>
+
+          <div class="page-numbers">
+            <button
+              *ngFor="let page of getPageNumbers()"
+              class="btn-page-number"
+              [class.active]="page === currentPage"
+              (click)="goToPage(page)"
+            >
+              {{ page + 1 }}
+            </button>
+          </div>
+
+          <button 
+            class="btn-page" 
+            (click)="nextPage()"
+            [disabled]="currentPage >= totalPages - 1"
+          >
+            Next ›
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
