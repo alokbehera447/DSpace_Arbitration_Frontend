@@ -140,12 +140,12 @@ export const APP_ROUTES: Route[] = [
       {
         path: LEGACY_BITSTREAM_MODULE_PATH,
         loadChildren: () => import("./bitstream-page/bitstream-page-routes").then((m) => m.ROUTES),
-        canActivate: [ endUserAgreementCurrentUserGuard],
+        canActivate: [endUserAgreementCurrentUserGuard],
       },
       {
         path: BITSTREAM_MODULE_PATH,
         loadChildren: () => import("./bitstream-page/bitstream-page-routes").then((m) => m.ROUTES),
-        canActivate: [ endUserAgreementCurrentUserGuard],
+        canActivate: [endUserAgreementCurrentUserGuard],
       },
       {
         path: "mydspace",
@@ -162,7 +162,7 @@ export const APP_ROUTES: Route[] = [
         canActivate: [authenticatedGuard, endUserAgreementCurrentUserGuard],
       },
 
-        {
+      {
         path: 'user-audit',
         loadChildren: () => import("./admin-audit/admin-audit.module").then((m) => m.AdminAuditModule),
         data: { enableRSS: true },
@@ -252,7 +252,7 @@ export const APP_ROUTES: Route[] = [
             data: { enableRSS: true },
             canActivate: [authenticatedGuard, endUserAgreementCurrentUserGuard],
           },
-           {
+          {
             path: "dc_advocate_firstpetitioner",
             component: BooleanSearchComponent,
             data: { enableRSS: true },
@@ -377,6 +377,15 @@ export const APP_ROUTES: Route[] = [
         loadChildren: () => import("./subscriptions-page/subscriptions-page-routes").then((m) => m.ROUTES),
         canActivate: [authenticatedGuard],
       },
+      {
+        path: "user-pdf-passwords",
+        loadChildren: () =>
+          import("./user-pdf-passwords/user-pdf-password-report.module")
+            .then((m) => m.UserPdfPasswordReportModule),
+        canActivate: [authenticatedGuard, endUserAgreementCurrentUserGuard],
+      },
+
+     
 
       // {
       //   path: "jtdr",

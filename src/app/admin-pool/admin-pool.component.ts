@@ -1,7 +1,7 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { OnInit } from '@angular/core';
-import { CURRENT_API_URL } from '../core/serachpage/api-urls'; 
+import { CURRENT_API_URL } from '../core/serachpage/api-urls';
 import { AdminPoolService } from './admin-service';
 
 @Component({
@@ -28,6 +28,9 @@ export class AdminPoolComponent implements OnInit {
     // Rejection dialog properties
     showRejectDialog: boolean = false;
     rejectionReason: string = '';
+
+    dummyFiles: any[] = [];              // add this
+    currentPdfUrl: string | null = null; // add this
 
     ngOnInit() {
         this.fetchClaimedTasks();
@@ -90,6 +93,18 @@ export class AdminPoolComponent implements OnInit {
         );
     }
 
+<<<<<<< HEAD
+=======
+    selectedBatch: any = null;
+
+    // dummyFiles: any[] = [];
+    acceptedSubmissions: any[] = [];
+
+    actionUUID: any = null;
+    collectionUuid: any = null;
+    reviewLoading: boolean = false;
+
+>>>>>>> 045297f869f91abd1ed777590f5086c59ca5659b
     openReviewDialog(batch: any) {
         this.selectedBatch = batch;
         this.reviewLoading = true;
@@ -99,20 +114,47 @@ export class AdminPoolComponent implements OnInit {
         this.adminPoolService.getBatchFiles(batchId).subscribe(
             (res) => {
                 this.actionUUID = res.requestId;
-                this.dummyFiles = res.items.map(item => {
+
+                this.dummyFiles = res.items.map((item: any) => {
                     if (typeof item.metadata === 'string') {
                         try {
                             item.metadata = JSON.parse(item.metadata);
                         } catch (e) {
+<<<<<<< HEAD
                             console.error("Failed to parse metadata for item:", item, e);
+=======
+                            console.error('Failed to parse metadata for item:', item, e);
+>>>>>>> 045297f869f91abd1ed777590f5086c59ca5659b
                             item.metadata = {};
                         }
                     }
+
+                    // pdfFiles from backend = list of relative URLs like /api/bulk-upload/...
+                    const BULK_BASE = `${CURRENT_API_URL}/server`;
+
+                    item.pdfFiles = (item.pdfFiles || []).map((rel: string) =>
+                        rel.startsWith('http')
+                            ? rel
+                            : `${BULK_BASE}${rel.startsWith('/') ? '' : '/'}${rel}`
+                    );
+
+
                     return item;
                 });
+
+                this.currentPdfUrl = null;
+
+
+
+
+
                 this.reviewLoading = false;
                 this.cdr.markForCheck();
                 console.log("testing in the dialogue box", this.collectionUuid);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 045297f869f91abd1ed777590f5086c59ca5659b
             },
             (err) => {
                 console.error(`Failed to fetch files for batch ${batchId}`, err);
@@ -122,6 +164,7 @@ export class AdminPoolComponent implements OnInit {
             }
         );
     }
+<<<<<<< HEAD
 
     approve(uuid: string) {
         this.adminPoolService.approve(this.actionUUID, this.collectionUuid).subscribe(
@@ -139,6 +182,51 @@ export class AdminPoolComponent implements OnInit {
                 alert('❌ Failed to approve the batch.');
             }
         );
+=======
+    // ADD THIS METHOD HERE
+    onSelectPdf(pdfUrl: string) {
+        this.currentPdfUrl = pdfUrl;
+        console.log('Selected PDF:', pdfUrl);
+    }
+
+    openPdf(url: string | null | undefined) {
+        if (!url) {
+            console.warn('No pdfPreviewUrl on selectedBatch', this.selectedBatch);
+            return;
+        }
+
+        const fullUrl = url.startsWith('http')
+            ? url
+            : `${CURRENT_API_URL}${url.startsWith('/') ? '' : '/'}${url}`;
+
+        window.open(fullUrl, '_blank');
+    }
+
+    approve(uuid: string) {
+
+        this.adminPoolService.approve(this.actionUUID, this.collectionUuid).subscribe(() => {
+            console.log(this.collectionUuid);
+
+            alert('✅ Approved successfully.');
+            this.fetchClaimedTasks();
+            this.fetchPooledTasks();
+            this.fetchRejectedTasks();
+            this.fetchAcceptedSubmissions();
+            this.cancelReview();
+        });
+    }
+
+    reject(uuid: string) {
+        this.adminPoolService.reject(this.actionUUID).subscribe(() => {
+            alert('Rejected successfully.');
+            this.fetchClaimedTasks();
+            this.fetchPooledTasks();
+            this.fetchRejectedTasks();
+            this.fetchAcceptedSubmissions();
+            this.cancelReview();
+
+        });
+>>>>>>> 045297f869f91abd1ed777590f5086c59ca5659b
     }
 
     // Open the reject dialog

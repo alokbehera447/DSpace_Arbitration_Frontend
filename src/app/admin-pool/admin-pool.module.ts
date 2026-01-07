@@ -3,13 +3,17 @@ import { CommonModule } from '@angular/common';
 import { AdminPoolComponent } from './admin-pool.component';
 import { AdminPoolRoutingModule } from './admin-pool-routing.module';
 import { FormsModule } from '@angular/forms';
+import { SafeUrlPipe } from '../shared/safe-url.pipe'; // adjust path if needed
 
 @NgModule({
-  declarations: [AdminPoolComponent],
+  declarations: [
+    AdminPoolComponent,
+    SafeUrlPipe
+  ],
   imports: [
     CommonModule,
     FormsModule,
-    AdminPoolRoutingModule,
-  ],
+    AdminPoolRoutingModule
+  ]
 })
 export class AdminPoolModule {}
