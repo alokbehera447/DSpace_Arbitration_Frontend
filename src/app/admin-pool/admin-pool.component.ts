@@ -29,7 +29,6 @@ export class AdminPoolComponent implements OnInit {
     showRejectDialog: boolean = false;
     rejectionReason: string = '';
 
-    dummyFiles: any[] = [];              // add this
     currentPdfUrl: string | null = null; // add this
 
     ngOnInit() {
@@ -93,18 +92,7 @@ export class AdminPoolComponent implements OnInit {
         );
     }
 
-<<<<<<< HEAD
-=======
-    selectedBatch: any = null;
 
-    // dummyFiles: any[] = [];
-    acceptedSubmissions: any[] = [];
-
-    actionUUID: any = null;
-    collectionUuid: any = null;
-    reviewLoading: boolean = false;
-
->>>>>>> 045297f869f91abd1ed777590f5086c59ca5659b
     openReviewDialog(batch: any) {
         this.selectedBatch = batch;
         this.reviewLoading = true;
@@ -120,11 +108,7 @@ export class AdminPoolComponent implements OnInit {
                         try {
                             item.metadata = JSON.parse(item.metadata);
                         } catch (e) {
-<<<<<<< HEAD
-                            console.error("Failed to parse metadata for item:", item, e);
-=======
-                            console.error('Failed to parse metadata for item:', item, e);
->>>>>>> 045297f869f91abd1ed777590f5086c59ca5659b
+
                             item.metadata = {};
                         }
                     }
@@ -151,10 +135,7 @@ export class AdminPoolComponent implements OnInit {
                 this.reviewLoading = false;
                 this.cdr.markForCheck();
                 console.log("testing in the dialogue box", this.collectionUuid);
-<<<<<<< HEAD
-=======
 
->>>>>>> 045297f869f91abd1ed777590f5086c59ca5659b
             },
             (err) => {
                 console.error(`Failed to fetch files for batch ${batchId}`, err);
@@ -164,26 +145,8 @@ export class AdminPoolComponent implements OnInit {
             }
         );
     }
-<<<<<<< HEAD
 
-    approve(uuid: string) {
-        this.adminPoolService.approve(this.actionUUID, this.collectionUuid).subscribe(
-            () => {
-                console.log(this.collectionUuid);
-                alert('✅ Approved successfully.');
-                this.fetchClaimedTasks();
-                this.fetchPooledTasks();
-                this.fetchRejectedTasks();
-                this.fetchAcceptedSubmissions();
-                this.cancelReview();
-            },
-            (err) => {
-                console.error('Failed to approve', err);
-                alert('❌ Failed to approve the batch.');
-            }
-        );
-=======
-    // ADD THIS METHOD HERE
+    
     onSelectPdf(pdfUrl: string) {
         this.currentPdfUrl = pdfUrl;
         console.log('Selected PDF:', pdfUrl);
@@ -226,7 +189,6 @@ export class AdminPoolComponent implements OnInit {
             this.cancelReview();
 
         });
->>>>>>> 045297f869f91abd1ed777590f5086c59ca5659b
     }
 
     // Open the reject dialog
