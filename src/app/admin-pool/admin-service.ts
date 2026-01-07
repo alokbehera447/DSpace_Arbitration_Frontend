@@ -7,7 +7,7 @@ import { CURRENT_API_URL } from '../core/serachpage/api-urls';
   providedIn: 'root',
 })
 export class AdminPoolService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   fetchBatches(status: string): Observable<any[]> {
     return this.http.get<any[]>(`${CURRENT_API_URL}/server/api/bulk-upload/status/${status}`);
@@ -25,7 +25,7 @@ export class AdminPoolService {
       { name: '--zip', value: zipFilename },
       { name: '--collection', value: collectionUuid }
     ];
-  
+
     const body = new URLSearchParams();
 
     body.set('properties', JSON.stringify(properties));
@@ -35,16 +35,33 @@ export class AdminPoolService {
     const headers = new HttpHeaders({
       'Content-Type': 'application/x-www-form-urlencoded'
     });
-  
+
     return this.http.post(
       `${CURRENT_API_URL}/server/api/bulk-upload/approve/${uuid}`,
       body.toString(),
       { headers }
     );
   }
-  
-  reject(uuid: string): Observable<any> {
-    return this.http.post(`${CURRENT_API_URL}/server/api/bulk-upload/reject/${uuid}`, {});
+
+  private getHeaders(): HttpHeaders {
+    // Add your authentication headers here if needed
+    return new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+  }
+
+  reject(uuid: string, rejectionReason?: string): Observable<any> {
+    const body = {
+      requestId: uuid,
+      rejectionReason: rejectionReason || ''
+    };
+
+    return this.http.post(
+      `${CURRENT_API_URL}/server/api/bulk-upload/reject/${uuid}`,
+      body,
+      { headers: this.getHeaders() }
+    );
+
   }
 
   getPooledTasks(): Observable<any[]> {
@@ -58,6 +75,6 @@ export class AdminPoolService {
   getRejectedSubmissions(): Observable<any[]> {
     return this.http.get<any[]>(`${CURRENT_API_URL}/server/api/bulk-upload/status/REJECTED`);
   }
-  
-  
+
+
 } 

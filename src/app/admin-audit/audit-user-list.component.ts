@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AdminAuditService } from './admin-audit.service'; // import the service
+import { AdminAuditService } from './admin-audit.service';
 
 @Component({
   selector: 'app-audit-user-list',
@@ -12,7 +12,7 @@ export class AuditUserListComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private auditService: AdminAuditService // inject the service
+    private auditService: AdminAuditService
   ) {}
 
   ngOnInit(): void {

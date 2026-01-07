@@ -1,0 +1,33 @@
+<div class="video-search-container">
+  <h2>Search Video Transcripts</h2>
+
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Search video transcript..."
+    [formControl]="transcriptControl"
+  />
+
+  <button class="btn btn-secondary mt-2" (click)="onSearchClick()">
+    Search
+  </button>
+
+  <div *ngFor="let video of videoList$ | async" class="video-card mt-4">
+
+    <h4>{{ video.title }}</h4>
+    <p><strong>Transcript:</strong> {{ video.transcript }}</p>
+
+    <div *ngIf="video.videoUrl; else noVideo">
+      <video width="400" controls>
+        <source [src]="video.videoUrl" type="video/mp4">
+      </video>
+
+      <p><a [href]="video.videoUrl" target="_blank">Open Video</a></p>
+    </div>
+
+    <ng-template #noVideo>
+      <p>No video file found.</p>
+    </ng-template>
+
+  </div>
+</div>

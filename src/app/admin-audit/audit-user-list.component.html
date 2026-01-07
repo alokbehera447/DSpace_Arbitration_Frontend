@@ -1,22 +1,21 @@
 <div class="user-list-container">
-    <h2>User Audit Log Summary</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Email</th>
-          <th>Last Login</th>
-          <th>Last Logout</th>
-          <th>Duration</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let user of users" (click)="goToDetails(user.userId)">
-          <td><a>{{ user.email }}</a></td>
-          <td>{{ user.loginTime | date:'short' }}</td>
-          <td>{{ user.logoutTime | date:'short' }}</td>
-          <td>{{ user.duration }}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  
+  <h2>User Audit Log Summary</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Email</th>
+        <th>Last Login</th>
+        <th>Last Logout</th>
+        <th>Duration</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users" (click)="goToDetails(user.userId)">
+        <td><a>{{ user.email }}</a></td>
+        <td>{{ user.loginTime | date:'short' }}</td>
+        <td>{{ user.logoutTime | date:'short' }}</td>
+        <td>{{ user.duration | duration }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

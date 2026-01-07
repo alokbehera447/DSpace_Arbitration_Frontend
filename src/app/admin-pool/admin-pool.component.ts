@@ -12,9 +12,22 @@ import { AdminPoolService } from './admin-service';
 export class AdminPoolComponent implements OnInit {
 
     constructor(private adminPoolService: AdminPoolService, private cdr: ChangeDetectorRef) { }
+    
     claimedTasks = [];
     pooledTasks = [];
     rejectedTasks = [];
+    acceptedSubmissions: any[] = [];
+    selectedBatch: any = null;
+    dummyFiles: any[] = [];
+    actionUUID: any = null;
+    collectionUuid: any = null;
+    reviewLoading: boolean = false;
+    showAccepted = false;
+    viewingAcceptedBatch: any = null;
+    
+    // Rejection dialog properties
+    showRejectDialog: boolean = false;
+    rejectionReason: string = '';
 
     ngOnInit() {
         this.fetchClaimedTasks();
@@ -53,6 +66,7 @@ export class AdminPoolComponent implements OnInit {
         this.adminPoolService.getRejectedSubmissions().subscribe(
             (res) => {
                 this.rejectedTasks = res;
+                console.log("Rejected Tasks:", this.rejectedTasks);
                 this.cdr.markForCheck();
             },
             (err) => {
@@ -76,15 +90,6 @@ export class AdminPoolComponent implements OnInit {
         );
     }
 
-    selectedBatch: any = null;
-
-    dummyFiles: any[] = [];  
-    acceptedSubmissions: any[] = []; 
-
-    actionUUID :any = null;
-    collectionUuid :any = null; 
-    reviewLoading: boolean = false;
-
     openReviewDialog(batch: any) {
         this.selectedBatch = batch;
         this.reviewLoading = true;
@@ -93,7 +98,6 @@ export class AdminPoolComponent implements OnInit {
 
         this.adminPoolService.getBatchFiles(batchId).subscribe(
             (res) => {
-
                 this.actionUUID = res.requestId;
                 this.dummyFiles = res.items.map(item => {
                     if (typeof item.metadata === 'string') {
@@ -101,15 +105,14 @@ export class AdminPoolComponent implements OnInit {
                             item.metadata = JSON.parse(item.metadata);
                         } catch (e) {
                             console.error("Failed to parse metadata for item:", item, e);
-                            item.metadata = {}; // Fallback to empty object
+                            item.metadata = {};
                         }
                     }
                     return item;
                 });
                 this.reviewLoading = false;
                 this.cdr.markForCheck();
-                console.log("testing in the dialogue box",this.collectionUuid);
-
+                console.log("testing in the dialogue box", this.collectionUuid);
             },
             (err) => {
                 console.error(`Failed to fetch files for batch ${batchId}`, err);
@@ -119,35 +122,59 @@ export class AdminPoolComponent implements OnInit {
             }
         );
     }
-    
-    
-    
+
     approve(uuid: string) {
-      
-        this.adminPoolService.approve(this.actionUUID, this.collectionUuid).subscribe(() => {
-            console.log(this.collectionUuid);
-
-          alert('✅ Approved successfully.');
-          this.fetchClaimedTasks();
-          this.fetchPooledTasks();
-          this.fetchRejectedTasks();
-          this.fetchAcceptedSubmissions();
-          this.cancelReview();
-        });
-      }
-
-    reject(uuid: string) {
-        this.adminPoolService.reject(this.actionUUID).subscribe(() => {
-            alert('Rejected successfully.');
-            this.fetchClaimedTasks();
-            this.fetchPooledTasks();
-            this.fetchRejectedTasks();
-            this.fetchAcceptedSubmissions();
-            this.cancelReview();
-            
-        });
+        this.adminPoolService.approve(this.actionUUID, this.collectionUuid).subscribe(
+            () => {
+                console.log(this.collectionUuid);
+                alert('✅ Approved successfully.');
+                this.fetchClaimedTasks();
+                this.fetchPooledTasks();
+                this.fetchRejectedTasks();
+                this.fetchAcceptedSubmissions();
+                this.cancelReview();
+            },
+            (err) => {
+                console.error('Failed to approve', err);
+                alert('❌ Failed to approve the batch.');
+            }
+        );
     }
 
+    // Open the reject dialog
+    openRejectDialog() {
+        this.rejectionReason = ''; // Reset the reason
+        this.showRejectDialog = true;
+        console.log("Rejecting UUID:", this.rejectedTasks);
+    }
+
+    // Close the reject dialog
+    closeRejectDialog() {
+        this.showRejectDialog = false;
+        this.rejectionReason = '';
+    }
+
+    // Confirm rejection with optional reason
+    confirmReject() {
+        const reason = this.rejectionReason.trim();
+        
+        this.adminPoolService.reject(this.actionUUID, reason).subscribe(
+            () => {
+                alert('✅ Rejected successfully.');
+                this.fetchClaimedTasks();
+                this.fetchPooledTasks();
+                this.fetchRejectedTasks();
+                this.fetchAcceptedSubmissions();
+                this.closeRejectDialog();
+                this.cancelReview();
+            },
+            (err) => {
+                console.error('Failed to reject', err);
+                alert('❌ Failed to reject the batch: ' + (err.error?.error || 'Unknown error'));
+                this.closeRejectDialog();
+            }
+        );
+    }
 
     cancelReview() {
         this.selectedBatch = null;
@@ -158,9 +185,6 @@ export class AdminPoolComponent implements OnInit {
         alert("Fetching batch info...");
         // Placeholder for API integration
     }
-
-    showAccepted = false;
-    viewingAcceptedBatch: any = null;
 
     viewAcceptedSubmissions() {
         this.adminPoolService.getAcceptedSubmissions().subscribe(

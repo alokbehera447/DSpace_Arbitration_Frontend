@@ -309,6 +309,8 @@ export class SubmissionFormComponent implements OnChanges, OnDestroy {
     return this.loading;
   }
 
+  
+
   /**
    * Check if submission form is loading
    */

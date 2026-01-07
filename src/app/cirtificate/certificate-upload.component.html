@@ -1,0 +1,136 @@
+
+// certificate-upload.component.html
+<div class="certificate-upload-container">
+  <div class="card">
+    <div class="card-header">
+      <h2>Digital Signature Certificate Management</h2>
+    </div>
+
+    <div class="card-body">
+      <!-- Current Certificate Information -->
+      <div *ngIf="hasCertificate && currentCertificate" class="current-certificate-section">
+        <h3>Current Certificate</h3>
+        
+        <div class="certificate-info">
+          <div class="info-row">
+            <span class="label">Subject:</span>
+            <span class="value">{{ currentCertificate.subjectDn }}</span>
+          </div>
+          <div class="info-row">
+            <span class="label">Issuer:</span>
+            <span class="value">{{ currentCertificate.issuerDn }}</span>
+          </div>
+          <div class="info-row">
+            <span class="label">Serial Number:</span>
+            <span class="value">{{ currentCertificate.serialNumber }}</span>
+          </div>
+          <div class="info-row">
+            <span class="label">Valid From:</span>
+            <span class="value">{{ formatDate(currentCertificate.validFrom) }}</span>
+          </div>
+          <div class="info-row">
+            <span class="label">Valid To:</span>
+            <span class="value" [class.warning]="isExpiringSoon()">
+              {{ formatDate(currentCertificate.validTo) }}
+              <span *ngIf="isExpiringSoon()" class="expiry-warning">⚠️ Expiring Soon</span>
+            </span>
+          </div>
+          <div class="info-row">
+            <span class="label">Status:</span>
+            <span class="value" [class.active]="currentCertificate.isActive">
+              {{ currentCertificate.isActive ? 'Active' : 'Inactive' }}
+            </span>
+          </div>
+        </div>
+
+        <div class="certificate-actions">
+          <button class="btn btn-danger" (click)="revokeCertificate()">
+            Revoke Certificate
+          </button>
+          <p class="help-text">Upload a new certificate to replace the current one</p>
+        </div>
+      </div>
+
+      <!-- Upload Form -->
+      <div class="upload-section">
+        <h3>{{ hasCertificate ? 'Replace Certificate' : 'Upload Certificate' }}</h3>
+        
+        <form [formGroup]="uploadForm" (ngSubmit)="onSubmit()">
+          <!-- File Input -->
+          <div class="form-group">
+            <label for="certificateFile">Certificate File (.pfx or .p12)</label>
+            <input
+              type="file"
+              id="certificateFile"
+              accept=".pfx,.p12"
+              (change)="onFileSelected($event)"
+              class="form-control"
+            />
+            <small class="form-text">Select your digital signature certificate file</small>
+            <div *ngIf="selectedFile" class="file-selected">
+              ✓ Selected: {{ selectedFile.name }}
+            </div>
+          </div>
+
+          <!-- Password Input -->
+          <div class="form-group">
+            <label for="password">Certificate Password</label>
+            <div class="password-input-group">
+              <input
+                [type]="showPassword ? 'text' : 'password'"
+                id="password"
+                formControlName="password"
+                class="form-control"
+                placeholder="Enter certificate password"
+              />
+              <button
+                type="button"
+                class="btn-toggle-password"
+                (click)="togglePasswordVisibility()"
+              >
+                {{ showPassword ? '👁️' : '👁️‍🗨️' }}
+              </button>
+            </div>
+            <small class="form-text">Enter the password that protects your certificate</small>
+          </div>
+
+          <!-- Error Message -->
+          <div *ngIf="uploadError" class="alert alert-danger">
+            {{ uploadError }}
+          </div>
+
+          <!-- Success Message -->
+          <div *ngIf="uploadSuccess" class="alert alert-success">
+            ✓ Certificate uploaded successfully!
+          </div>
+
+          <!-- Submit Button -->
+          <button
+            type="submit"
+            class="btn btn-primary"
+            [disabled]="uploadForm.invalid || isUploading || !selectedFile"
+          >
+            <span *ngIf="!isUploading">{{ hasCertificate ? 'Replace Certificate' : 'Upload Certificate' }}</span>
+            <span *ngIf="isUploading">
+              <span class="spinner"></span> Uploading...
+            </span>
+          </button>
+        </form>
+
+        <!-- Instructions -->
+        <div class="instructions">
+          <h4>Instructions:</h4>
+          <ol>
+            <li>Obtain your Digital Signature Certificate from a licensed Certifying Authority</li>
+            <li>Select your certificate file (.pfx or .p12 format)</li>
+            <li>Enter the password that was set when the certificate was created</li>
+            <li>Click "Upload Certificate" to securely store your certificate</li>
+          </ol>
+          <p class="security-note">
+            🔒 Your certificate is encrypted and stored securely. The password is never stored and is only used to validate the certificate.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
