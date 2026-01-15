@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+// 1. IMPORT ChangeDetectorRef
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdminAuditService } from './admin-audit.service';
 
@@ -12,13 +13,15 @@ export class AuditUserListComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private auditService: AdminAuditService
+    private auditService: AdminAuditService,
+    private cdr: ChangeDetectorRef // 2. ADD THIS
   ) {}
 
   ngOnInit(): void {
     this.auditService.getAllUsers().subscribe({
       next: (response) => {
         this.users = response || [];
+        this.cdr.detectChanges(); // 3. ADD THIS LINE - MOST IMPORTANT!
       },
       error: (err) => {
         console.error('Error fetching users:', err);

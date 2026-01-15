@@ -22,4 +22,16 @@
       }
     }
   }
-  
+  .loading-message {
+  padding: 20px;
+  text-align: center;
+  color: #007bff;
+  font-size: 16px;
+}
+
+.no-data-message {
+  padding: 20px;
+  text-align: center;
+  color: #666;
+  font-size: 16px;
+}

@@ -1,112 +1,124 @@
 <div class="admin-pool">
-
     <!-- Top Buttons -->
     <div class="top-actions">
         <button (click)="viewAcceptedSubmissions()">View Accepted Submissions</button>
         <button (click)="getBatchInfo()">Get Batch Info</button>
     </div>
 
-    <!-- ================= Rejected Batches ================= -->
-    <h2>Rejected Batches</h2>
+    <!-- Rejected Batches -->
+    <div class="section">
+        <div class="section-header" (click)="toggleSection('rejected')">
+            <h2>Rejected Batches</h2>
+            <i class="section-toggle" [class.rotated]="showRejected">▼</i>
+        </div>
+        <div class="section-content" [class.show]="showRejected">
+            <table *ngIf="rejectedTasks.length > 0; else noRejected">
+                <thead>
+                    <tr>
+                        <th>Filename</th>
+                        <th>Uploader</th>
+                        <th>Collection</th>
+                        <th>Reviewer</th>
+                        <th>Reviewed Date</th>
+                        <th>Rejection Reason</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let task of rejectedTasks">
+                        <td>{{ task.fileName }}</td>
+                        <td>{{ task.uploader.userName }}</td>
+                        <td>{{ task.collection.collectionName }}</td>
+                        <td>{{ task.reviewer.userName }}</td>
+                        <td>{{ task.reviewer.date | date:'short' }}</td>
+                        <td>{{ task.rejectionReason || 'No reason provided' }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <ng-template #noRejected>
+                <p>No rejected batches available.</p>
+            </ng-template>
+        </div>
+    </div>
 
-    <table *ngIf="rejectedTasks.length > 0; else noRejected">
-        <thead>
-            <tr>
-                <th>Filename</th>
-                <th>Uploader</th>
-                <th>Collection</th>
-                <th>Reviewer</th>
-                <th>Reviewed Date</th>
-                <th>Rejection Reason</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let task of rejectedTasks">
-                <td>{{ task.fileName }}</td>
-                <td>{{ task.uploader.userName }}</td>
-                <td>{{ task.collection.collectionName }}</td>
-                <td>{{ task.reviewer.userName }}</td>
-                <td>{{ task.reviewer.date | date:'short' }}</td>
-                <td>{{ task.rejectionReason || 'No reason provided' }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <!-- Claimed Tasks -->
+    <div class="section">
+        <div class="section-header" (click)="toggleSection('claimed')">
+            <h2>Claimed Tasks</h2>
+            <i class="section-toggle" [class.rotated]="showClaimed">▼</i>
+        </div>
+        <div class="section-content" [class.show]="showClaimed">
+            <table *ngIf="claimedTasks.length > 0; else noClaimed">
+                <thead>
+                    <tr>
+                        <th>Filename</th>
+                        <th>Uploader</th>
+                        <th>Collection</th>
+                        <th>Status</th>
+                        <th>Uploaded Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let task of claimedTasks">
+                        <td>{{ task.fileName }}</td>
+                        <td>{{ task.uploader.userName }}</td>
+                        <td>{{ task.collection.collectionName }}</td>
+                        <td>{{ task.status }}</td>
+                        <td>{{ task.uploader.date | date:'short' }}</td>
+                        <td>
+                            <button (click)="openReviewDialog(task); scrollToReview()">Perform Task</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <ng-template #noClaimed>
+                <p>No claimed tasks available.</p>
+            </ng-template>
+        </div>
+    </div>
 
-    <ng-template #noRejected>
-        <p>No rejected batches available.</p>
-    </ng-template>
+    <!-- Pooled Tasks -->
+    <div class="section">
+        <div class="section-header" (click)="toggleSection('pooled')">
+            <h2>Pooled Tasks</h2>
+            <i class="section-toggle" [class.rotated]="showPooled">▼</i>
+        </div>
+        <div class="section-content" [class.show]="showPooled">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Filename</th>
+                        <th>Uploader</th>
+                        <th>Collection</th>
+                        <th>Status</th>
+                        <th>Reviewer</th>
+                        <th>Uploaded Date</th>
+                        <th>Reviewed Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let task of pooledTasks">
+                        <td>{{ task.fileName }}</td>
+                        <td>{{ task.uploader.userName }}</td>
+                        <td>{{ task.collection.collectionName }}</td>
+                        <td>{{ task.status }}</td>
+                        <td>{{ task.reviewer.userName }}</td>
+                        <td>{{ task.uploader.date | date:'short' }}</td>
+                        <td>{{ task.reviewer.date | date:'short' }}</td>
+                        <td><button (click)="openReviewDialog(task); scrollToReview()">Show Task</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 
-    <!-- ================= Claimed Tasks ================= -->
-    <h2>Claimed Tasks</h2>
-
-    <table *ngIf="claimedTasks.length > 0; else noClaimed">
-        <thead>
-            <tr>
-                <th>Filename</th>
-                <th>Uploader</th>
-                <th>Collection</th>
-                <th>Status</th>
-                <th>Uploaded Date</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let task of claimedTasks">
-                <td>{{ task.fileName }}</td>
-                <td>{{ task.uploader.userName }}</td>
-                <td>{{ task.collection.collectionName }}</td>
-                <td>{{ task.status }}</td>
-                <td>{{ task.uploader.date | date:'short' }}</td>
-                <td>
-                    <button (click)="openReviewDialog(task)">Perform Task</button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
-    <ng-template #noClaimed>
-        <p>No claimed tasks available.</p>
-    </ng-template>
-
-    <!-- ================= Pooled Tasks ================= -->
-    <h2>Pooled Tasks</h2>
-
-    <table *ngIf="pooledTasks.length > 0">
-        <thead>
-            <tr>
-                <th>Filename</th>
-                <th>Uploader</th>
-                <th>Collection</th>
-                <th>Status</th>
-                <th>Reviewer</th>
-                <th>Uploaded Date</th>
-                <th>Reviewed Date</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let task of pooledTasks">
-                <td>{{ task.fileName }}</td>
-                <td>{{ task.uploader.userName }}</td>
-                <td>{{ task.collection.collectionName }}</td>
-                <td>{{ task.status }}</td>
-                <td>{{ task.reviewer?.userName || '-' }}</td>
-                <td>{{ task.uploader.date | date:'short' }}</td>
-                <td>{{ task.reviewer?.date | date:'short' }}</td>
-                <td>
-                    <button (click)="openReviewDialog(task)">Show Task</button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
-    <!-- ================= Review Section ================= -->
-    <div *ngIf="selectedBatch" class="review-box">
-
+    <!-- Review Batch Section -->
+    <div #reviewSection id="reviewSection" *ngIf="selectedBatch" class="review-box">
         <h3>Reviewing Batch: {{ selectedBatch.batch }}</h3>
-
-        <div *ngIf="reviewLoading">Loading files, please wait...</div>
-
+        <div *ngIf="reviewLoading" class="loading-spinner">
+            Loading files, please wait...
+        </div>
         <table *ngIf="!reviewLoading">
             <thead>
                 <tr>
@@ -116,7 +128,7 @@
                     <th>Disposal Date</th>
                     <th>Petitioner</th>
                     <th>Respondent</th>
-                    <th>PDFs</th>
+                    <th>Item Folder</th>
                 </tr>
             </thead>
             <tbody>
@@ -128,47 +140,60 @@
                     <td>{{ file.metadata?.['dc.pname'] || '-' }}</td>
                     <td>{{ file.metadata?.['dc.rname'] || '-' }}</td>
                     <td>
-                        <button *ngFor="let pdf of file.pdfFiles; let i = index" (click)="openPdf(pdf)">
-                            View PDF {{ i + 1 }}
-                        </button>
+                        <div *ngIf="file.pdfFiles?.length > 0; else noPdf">
+                            <button *ngFor="let pdf of file.pdfFiles; let i = index" (click)="openPdf(pdf)"
+                                style="margin:2px;">
+                                View PDF {{ i + 1 }}
+                            </button>
+                        </div>
+                        <ng-template #noPdf>
+                            <span>No PDFs</span>
+                        </ng-template>
                     </td>
                 </tr>
             </tbody>
         </table>
-
-        <div *ngIf="currentPdfUrl">
+        <div *ngIf="currentPdfUrl" style="margin-top:10px;">
             <h4>PDF Preview</h4>
-            <object [data]="currentPdfUrl | safeUrl" type="application/pdf" width="100%" height="500">
+            <object [data]="currentPdfUrl | safeUrl" type="application/pdf" width="100%" height="600"
+                style="border:1px solid #ccc;">
+                <p>
+                    PDF preview is not available here.
+                    <a [href]="currentPdfUrl | safeUrl" target="_blank">Open PDF in new tab</a>.
+                </p>
             </object>
         </div>
-
-        <div class="actions">
+        <div class="actions" *ngIf="!reviewLoading">
             <button (click)="approve(selectedBatch.requestId)">Approve</button>
             <button (click)="openRejectDialog()">Reject</button>
             <button (click)="cancelReview()">Cancel</button>
         </div>
-
     </div>
 
-    <!-- ================= Reject Dialog ================= -->
+    <!-- Rejection Dialog -->
     <div *ngIf="showRejectDialog" class="reject-dialog-overlay">
         <div class="reject-dialog">
             <h3>Reject Batch</h3>
-
-            <textarea [(ngModel)]="rejectionReason" rows="4" maxlength="1000"
-                placeholder="Reason for rejection (optional)">
-      </textarea>
-
-            <small>{{ rejectionReason.length }}/1000</small>
-
+            <p>Are you sure you want to reject this batch?</p>
+            <div class="form-group">
+                <label for="rejectionReason">Reason for Rejection (Optional):</label>
+                <textarea 
+                    id="rejectionReason" 
+                    [(ngModel)]="rejectionReason" 
+                    placeholder="Enter the reason for rejection (optional)..."
+                    rows="4"
+                    maxlength="1000"
+                ></textarea>
+                <small class="character-count">{{ rejectionReason.length }}/1000 characters</small>
+            </div>
             <div class="dialog-actions">
-                <button (click)="confirmReject()">Confirm Reject</button>
-                <button (click)="closeRejectDialog()">Cancel</button>
+                <button class="btn-reject" (click)="confirmReject()">Confirm Reject</button>
+                <button class="btn-cancel" (click)="closeRejectDialog()">Cancel</button>
             </div>
         </div>
     </div>
 
-    <!-- ================= Accepted Submissions ================= -->
+    <!-- Accepted Submissions Section -->
     <div *ngIf="showAccepted" class="accepted-submissions">
         <h2>Accepted Submissions</h2>
         <table *ngIf="!viewingAcceptedBatch">
@@ -201,8 +226,9 @@
             <h3>Files in Batch: {{ viewingAcceptedBatch.batch }}</h3>
             <ul>
                 <li *ngFor="let file of viewingAcceptedBatch.files">{{ file }}</li>
-            </ul> <button (click)="viewingAcceptedBatch = null">Back</button>
-        </div> <button (click)="closeAcceptedView()" style="margin-top: 15px;">Close Accepted Submissions</button>
+            </ul>
+            <button (click)="viewingAcceptedBatch = null">Back</button>
+        </div>
+        <button (click)="closeAcceptedView()" style="margin-top: 15px;">Close Accepted Submissions</button>
     </div>
-
 </div>
