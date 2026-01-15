@@ -1,6 +1,15 @@
 <div class="user-list-container">
   <h2>User Audit Log Summary</h2>
-  <table>
+  
+  <!-- ADD THIS LOADING CHECK -->
+  <div *ngIf="!users || users.length === 0">
+    <p style="color: #007bff; padding: 20px; text-align: center;">
+      Loading user data...
+    </p>
+  </div>
+  
+  <!-- SHOW TABLE ONLY WHEN DATA EXISTS -->
+  <table *ngIf="users && users.length > 0">
     <thead>
       <tr>
         <th>Email</th>

@@ -30,6 +30,10 @@ export class AdminPoolComponent implements OnInit {
     rejectionReason: string = '';
 
     currentPdfUrl: string | null = null; // add this
+    showRejected = false;
+    showClaimed = false;
+    showPooled = false;
+  
 
     ngOnInit() {
         this.fetchClaimedTasks();
@@ -261,5 +265,26 @@ export class AdminPoolComponent implements OnInit {
     closeAcceptedView() {
         this.showAccepted = false;
         this.viewingAcceptedBatch = null;
+    }
+      
+    scrollToReview() {
+      const element = document.getElementById('reviewSection');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  
+    toggleSection(section: string) {
+      switch(section) {
+        case 'rejected':
+          this.showRejected = !this.showRejected;
+          break;
+        case 'claimed':
+          this.showClaimed = !this.showClaimed;
+          break;
+        case 'pooled':
+          this.showPooled = !this.showPooled;
+          break;
+      }
     }
 }

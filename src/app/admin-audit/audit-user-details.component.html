@@ -1,32 +1,47 @@
 <div class="user-details-container">
-
-    <div class="summary-box">
-      <p><strong>Devices Used:</strong></p>
-      <ul>
-        <li *ngFor="let device of uniqueDevices">{{ device }}</li>
-      </ul>
-    </div>
   
-    <h3>Action Timeline</h3>
-    <table>
-      <thead>
-        <tr>
-          <th>Action</th>
-          <th>Timestamp</th>
-          <th>Object</th>
-          <th>IP</th>
-          <th>Device</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let log of userLogs">
-          <td>{{ log.action }}</td>
-          <td>{{ log.timestamp | date:'short' }}</td>
-          <td>{{ log.objectId || '-' }}</td>
-          <td>{{ log.ipAddress || '-' }}</td>
-          <td>{{ log.userAgent || '-' }}</td>
-        </tr>
-      </tbody>
-    </table>
+  <!-- Add loading message -->
+  <div *ngIf="loading" class="loading-message">
+    Loading user audit details...
   </div>
   
+  <!-- Show content when not loading -->
+  <div *ngIf="!loading">
+    <div *ngIf="userLogs && userLogs.length > 0; else noData">
+      <div class="summary-box">
+        <p><strong>Devices Used:</strong></p>
+        <ul>
+          <li *ngFor="let device of uniqueDevices">{{ device }}</li>
+        </ul>
+      </div>
+    
+      <h3>Action Timeline</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Action</th>
+            <th>Timestamp</th>
+            <th>Object</th>
+            <th>IP</th>
+            <th>Device</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let log of userLogs">
+            <td>{{ log.action }}</td>
+            <td>{{ log.timestamp | date:'short' }}</td>
+            <td>{{ log.objectId || '-' }}</td>
+            <td>{{ log.ipAddress || '-' }}</td>
+            <td>{{ log.userAgent || '-' }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <ng-template #noData>
+      <div class="no-data-message">
+        No audit logs found for this user.
+      </div>
+    </ng-template>
+  </div>
+</div>
