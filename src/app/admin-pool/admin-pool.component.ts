@@ -193,7 +193,7 @@ export class AdminPoolComponent implements OnInit {
 
     // Open the reject dialog
     openRejectDialog() {
-        this.rejectionReason = ''; // Reset the reason
+        this.rejectionReason = '';
         this.showRejectDialog = true;
         console.log("Rejecting UUID:", this.rejectedTasks);
     }
