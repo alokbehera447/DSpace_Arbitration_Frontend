@@ -15,7 +15,6 @@
   appearance: none;
 }
 
-
 :host ::ng-deep .btn-group-toggle > .btn input[type="radio"] {
   position: absolute;
   clip: rect(0,0,0,0);
@@ -32,4 +31,53 @@
 
 :host ::ng-deep .custom-control-input.is-invalid ~ .custom-control-label {
   color: var(--bs-form-invalid-color);
+}
+
+/* ===== NEW STYLES ADDED ===== */
+
+/* Fix error message display logic */
+:host ::ng-deep .invalid-feedback {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+:host ::ng-deep .ng-invalid.ng-touched + .invalid-feedback,
+:host ::ng-deep .is-invalid + .invalid-feedback,
+:host ::ng-deep .form-control.is-invalid ~ .invalid-feedback {
+  opacity: 1 !important;
+}
+
+:host ::ng-deep .ng-valid + .invalid-feedback,
+:host ::ng-deep .is-valid + .invalid-feedback,
+:host ::ng-deep .form-control.is-valid ~ .invalid-feedback {
+  opacity: 0 !important;
+  display: none !important;
+}
+
+/* Ensure checkbox errors work properly */
+:host ::ng-deep .form-check-input.is-invalid ~ .invalid-feedback {
+  display: block !important;
+  opacity: 1 !important;
+}
+
+:host ::ng-deep .form-check-input.is-valid ~ .invalid-feedback {
+  display: none !important;
+  opacity: 0 !important;
+}
+
+/* Fix checkbox label alignment */
+:host ::ng-deep .form-check {
+  display: flex;
+  align-items: center;
+  min-height: 24px;
+}
+
+:host ::ng-deep .form-check-input {
+  margin-top: 0 !important;
+  flex-shrink: 0;
+}
+
+:host ::ng-deep .form-check-label {
+  margin-left: 8px;
+  line-height: 1.4;
 }
