@@ -313,10 +313,16 @@ export class FormComponent implements OnDestroy, OnInit {
     this.blur.emit(event);
     const control: UntypedFormControl = event.control;
     const fieldIndex: number = (event.context && event.context.index) ? event.context.index : 0;
+    
+    // Mark control as touched when user leaves the field
+    control.markAsTouched();
+    
     if (control.valid) {
-      this.formService.removeError(this.formId, event.model.name, fieldIndex);
+      // Clear error when field is valid
+      this.formService.removeError(this.formId, event.model.id, fieldIndex);
     } else {
-      this.formService.addControlErrors(control, this.formId, event.model.name, fieldIndex);
+      // Show error only if field is invalid
+      this.formService.addControlErrors(control, this.formId, event.model.id, fieldIndex);
     }
   }
 
@@ -332,16 +338,44 @@ export class FormComponent implements OnDestroy, OnInit {
   onChange(event: DynamicFormControlEvent): void {
     this.formService.changeForm(this.formId, this.formModel);
     this.formGroup.markAsPristine();
-
+  
     if (this.emitChange) {
       this.change.emit(event);
     }
-
+  
     const control: UntypedFormControl = event.control;
     const fieldIndex: number = (event.context && event.context.index) ? event.context.index : 0;
-    if (control.valid) {
+  
+    // Force update validity immediately
+    control.updateValueAndValidity({ onlySelf: true, emitEvent: false });
+  
+    // Check if field has ANY value (not empty/whitespace)
+    const hasValue = control.value !== null && 
+                     control.value !== undefined && 
+                     control.value !== '' && 
+                     (typeof control.value !== 'string' || control.value.trim() !== '');
+  
+    if (hasValue) {
+      // Field has value, clear the error immediately
       this.formService.removeError(this.formId, event.model.id, fieldIndex);
+      
+      // Also clear the invalid state from the control
+      if (control.invalid) {
+        control.setErrors(null);
+      }
+      
+      // Mark as valid
+      control.markAsDirty();
+      control.markAsTouched();
+    } else {
+      // Field is empty, show error if touched
+      if (control.touched) {
+        this.formService.addControlErrors(control, this.formId, event.model.id, fieldIndex);
+      }
     }
+    
+    // Force change detection to update UI
+    this.changeDetectorRef.detectChanges();
   }
 
   /**
