@@ -1,11 +1,13 @@
-import { NgModule } from "@angular/core"
-import { CommonModule } from "@angular/common"
-import { SafePipeModule } from "./safe-pipe.module"
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { ViewerComponent } from './viewer.component';
 
 @NgModule({
-  declarations: [],
-  imports: [CommonModule, SafePipeModule],
-  exports: [],
+  declarations: [ViewerComponent],
+  imports: [
+    CommonModule,
+    FormsModule
+  ]
 })
-export class ViewerModule {}
-
+export class ViewFilePdfModule {}

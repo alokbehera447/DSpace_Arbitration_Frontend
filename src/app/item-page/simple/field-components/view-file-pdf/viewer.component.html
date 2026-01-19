@@ -1,4 +1,41 @@
 <div class="viewer-container">
+  <!-- PIN Dialog Modal -->
+  <div class="modal-overlay pin-dialog-overlay" *ngIf="showPinDialog">
+    <div class="pin-dialog">
+      <div class="modal-header">
+        <h3>🔐 Digital Signature Required</h3>
+      </div>
+      <div class="modal-body">
+        <p>Please enter your PIN to sign and view the document</p>
+        
+        <div class="pin-input-group">
+          <label for="pin">PIN:</label>
+          <input 
+            type="password" 
+            id="pin"
+            [(ngModel)]="userPin" 
+            (keyup.enter)="submitPin()"
+            placeholder="Enter your PIN"
+            autocomplete="off"
+            [class.error]="pinError"
+            autofocus
+          />
+          <span *ngIf="pinError" class="error-message">
+            <i class="fas fa-exclamation-circle"></i> {{ pinError }}
+          </span>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-cancel" (click)="cancelPinDialog()">
+          <i class="fas fa-times"></i> Cancel
+        </button>
+        <button class="btn-submit" (click)="submitPin()" [disabled]="!userPin || userPin.trim() === ''">
+          <i class="fas fa-signature"></i> Sign & View
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- File Header -->
   <div class="file-header">
     <span class="filename">{{ fileUrl.split('/').pop() }}</span>
@@ -40,8 +77,13 @@
       <!-- Loading -->
       <div *ngIf="isLoading || checkingPermissions" class="loading-overlay">
         <div class="spinner-container">
-          <div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
-          <p class="mt-2">{{ checkingPermissions ? 'Checking permissions...' : 'Loading file...' }}</p>
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <p class="mt-2">
+            <i class="fas fa-spinner fa-spin"></i>
+            {{ checkingPermissions ? 'Checking permissions...' : 'Processing document...' }}
+          </p>
         </div>
       </div>
 
@@ -55,7 +97,7 @@
       </div>
 
       <!-- PDF Viewer -->
-      <div class="pdf-container pdf-image-style" *ngIf="isPdfFile && hasTimeAccess">
+      <div class="pdf-container pdf-image-style" *ngIf="isPdfFile && hasTimeAccess && fileUrl">
         <!-- Time Access Info Banner (always visible above toolbar) -->
         <div *ngIf="hasTimeAccess && timeAccessStatus?.validUntil" class="access-info-banner">
           <i class="fas fa-clock"></i>
@@ -127,7 +169,17 @@
         </div>
 
         <!-- PDF Pages Container -->
-        <div class="pdf-scroll-container pdf-scroll-image" #pdfContainer aria-label="PDF document area"></div>
+        <div class="pdf-scroll-container pdf-scroll-image" #pdfContainer aria-label="PDF document area">
+          <!-- PDF will be rendered here via blob URL -->
+          <iframe 
+            *ngIf="fileUrl" 
+            [src]="fileUrl | safe: 'resourceUrl'" 
+            width="100%" 
+            height="100%" 
+            frameborder="0"
+            title="PDF Document Viewer">
+          </iframe>
+        </div>
       </div>
 
       <!-- Image Viewer -->
@@ -259,7 +311,7 @@
 
   </div>
 
-  <!-- ✅ Custom Confirmation Modal -->
+  <!-- Delete Confirmation Modal -->
   <div class="modal-overlay" *ngIf="showDeleteConfirmation" (click)="cancelDelete()">
     <div class="confirmation-modal" (click)="$event.stopPropagation()">
       <div class="modal-header">

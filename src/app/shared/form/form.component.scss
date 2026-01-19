@@ -56,3 +56,519 @@ select.form-control {
   padding-left: 15px;
   padding-right: 15px;
 }
+
+/* ===== NEW STYLES ADDED BELOW ===== */
+
+/* Form container styling - Professional Government Look */
+.form-horizontal {
+  padding: 30px 40px;
+  margin: 30px auto;
+  background-color: #ffffff;
+  border: 2px solid #aeb1b6;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  max-width: 1200px;
+}
+
+/* Ensure form has proper margins */
+.container-fluid {
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+  padding-bottom: 20px !important;
+  background-color: #f8fafc;
+  min-height: 20vh;
+}
+
+/* Fix input field borders - Make them more prominent and clean */
+/* More specific selector to override other styles */
+[_nghost-dspace-angular-c2697340101] .form-control,
+[_nghost-dspace-angular-c2697340101] [_nghost-dspace-angular-c2697340101] .form-control {
+  border: 2px solid #4a4d51 !important;
+  border-color: #4a4d51 !important;
+}
+[_nghost-dspace-angular-c2697340101] .form-control:not(:focus),
+[_nghost-dspace-angular-c2697340101] [_nghost-dspace-angular-c2697340101] .form-control:not(:focus) {
+  border-color: #b2b7be !important;
+}
+.form-control {
+  // border: 2px solid #a3a8af !important;
+  border-radius: 6px !important;
+  padding: 10px 14px !important;
+  font-size: 14px !important;
+  height: 44px !important;
+  transition: all 0.2s ease !important;
+  background-color: #ffffff !important;
+  color: #374151 !important;
+}
+/* Fix for Case Type dropdown (scrollable-dropdown-input) */
+.scrollable-dropdown-input {
+  // border: 2px solid #d1d5db !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  background-color: #ffffff !important;
+  
+  /* Force show the dropdown arrow */
+  // background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e") !important;
+  // background-repeat: no-repeat !important;
+  // background-position: right 14px center !important;
+  // background-size: 16px 12px !important;
+  // padding-right: 40px !important;
+  // appearance: auto !important; /* This shows the native dropdown arrow */
+  // -webkit-appearance: menulist !important;
+  // -moz-appearance: menulist !important;
+}
+
+/* Remove Bootstrap's invalid state background image that hides the arrow */
+// .scrollable-dropdown-input.is-invalid {
+//   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e") !important;
+//   background-position: right 14px center !important;
+//   padding-right: 40px !important;
+// }
+
+/* Hover state */
+.scrollable-dropdown-input:hover {
+  border-color: #9ca3af !important;
+  background-color: #f9fafb !important;
+}
+
+/* Focus state */
+.scrollable-dropdown-input:focus {
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+  outline: none !important;
+}
+
+/* Also target form-control for this specific field */
+.form-control.scrollable-dropdown-input {
+  border: 2px solid #d1d5db !important;
+  cursor: pointer !important;
+}
+
+/* Override Bootstrap's default dropdown styling that hides the arrow */
+select.scrollable-dropdown-input,
+// select.form-control.scrollable-dropdown-input {
+//   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e") !important;
+//   background-repeat: no-repeat !important;
+//   background-position: right 14px center !important;
+//   background-size: 16px 12px !important;
+//   padding-right: 40px !important;
+// }
+/* Hover state for input fields */
+.form-control:hover {
+  border-color: #9ca3af !important;
+  background-color: #f9fafb !important;
+}
+
+/* Focus state with clean effect */
+.form-control:focus {
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+  outline: none !important;
+  background-color: #ffffff !important;
+}
+
+/* Make sure borders are visible even when not focused */
+.form-control:not(:focus) {
+  border-color: #d1d5db !important;
+}
+
+/* Textarea specific styling */
+textarea.form-control {
+  min-height: 120px !important;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+/* Select dropdown styling */
+.form-select {
+  border: 2px solid #d1d5db !important;
+  border-radius: 6px !important;
+  padding: 10px 14px !important;
+  font-size: 14px !important;
+  height: 44px !important;
+  background-color: #ffffff !important;
+  color: #374151 !important;
+  transition: all 0.2s ease !important;
+}
+
+.form-select:hover {
+  border-color: #9ca3af !important;
+  background-color: #f9fafb !important;
+}
+
+.form-select:focus {
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+}
+
+/* Form labels - Professional government style */
+.form-label {
+  font-weight: 600 !important;
+  color: #1f2937 !important;
+  margin-bottom: 8px !important;
+  font-size: 14px !important;
+  display: block;
+  letter-spacing: 0.3px;
+}
+
+/* Required field indicator */
+.form-label.required::after {
+  content: " *";
+  color: #ef4444;
+  margin-left: 4px;
+}
+
+/* Form hint text styling */
+.text-muted.ds-hint {
+  color: #6b7280 !important;
+  font-size: 12px !important;
+  margin-top: 8px !important;
+  margin-bottom: 5px !important;
+  line-height: 1.5;
+  font-style: normal;
+  background-color: #f3f4f6;
+  // padding: 8px 12px;
+  border-radius: 4px;
+  // border-left: 3px solid #9ca3af;
+}
+
+/* ===== ERROR MESSAGE STYLING ===== */
+
+/* Error message container - ALWAYS VISIBLE */
+.invalid-feedback {
+  color: #dc2626 !important;
+  font-size: 12px !important;
+  margin-top: 6px !important;
+  padding-left: 12px;
+  position: relative;
+  display: block !important; /* Always visible container */
+  opacity: 1 !important;
+  min-height: 20px; /* Reserve space for error messages */
+}
+
+/* Error icon before message */
+.invalid-feedback::before {
+  content: "⚠ ";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 11px;
+}
+
+/* Hide error message content when not needed */
+.invalid-feedback:empty,
+.form-control.is-valid ~ .invalid-feedback,
+.form-select.is-valid ~ .invalid-feedback,
+.ng-valid ~ .invalid-feedback {
+  opacity: 0 !important;
+  height: 0 !important;
+  margin-top: 0 !important;
+  padding: 0 !important;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+/* Hide error when field has value */
+.form-control:not(:placeholder-shown) ~ .invalid-feedback,
+.form-control[value]:not([value=""]) ~ .invalid-feedback,
+.form-control:valid ~ .invalid-feedback,
+.ng-valid ~ .invalid-feedback {
+  opacity: 0 !important;
+  height: 0 !important;
+  margin-top: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  display: block !important;
+  visibility: hidden !important;
+}
+
+/* Show error when field is empty AND touched */
+.form-control:invalid.ng-touched ~ .invalid-feedback,
+.ng-invalid.ng-touched ~ .invalid-feedback {
+  opacity: 1 !important;
+  height: auto !important;
+  margin-top: 6px !important;
+  padding-left: 12px !important;
+  visibility: visible !important;
+}
+
+/* Show error message when field is invalid */
+.form-control.is-invalid ~ .invalid-feedback,
+.form-select.is-invalid ~ .invalid-feedback,
+.ng-invalid.ng-touched ~ .invalid-feedback {
+  opacity: 1 !important;
+  height: auto !important;
+  margin-top: 6px !important;
+  padding-left: 12px !important;
+  min-height: 20px;
+}
+
+/* Invalid state styling - Show red border */
+.form-control.is-invalid {
+  border-color: #dc2626 !important;
+  background-color: #fef2f2 !important;
+  padding-right: 14px !important;
+}
+
+.form-control.is-invalid:hover {
+  border-color: #b91c1c !important;
+}
+
+.form-control.is-invalid:focus {
+  border-color: #dc2626 !important;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1) !important;
+}
+
+/* Valid state styling - Show green border (optional) */
+.form-control.is-valid {
+  border-color: #10b981 !important;
+  background-color: #f0fdf4 !important;
+}
+
+.form-control.is-valid:focus {
+  border-color: #10b981 !important;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1) !important;
+}
+
+/* ===== CHECKBOX STYLING ===== */
+
+/* Fix checkbox styling - professional look */
+.form-check {
+  position: relative;
+  min-height: 15px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-left: 3px;
+}
+
+.form-check-input {
+  width: 20px !important;
+  height: 20px !important;
+  margin-left: -32px !important;
+  margin-top: 0 !important;
+  margin-right: 12px !important;
+  cursor: pointer !important;
+  border: 2px solid #abb0b6 !important;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  top: 4px; 
+}
+
+.form-check-input:checked {
+  background-color: #3b82f6 !important;
+  border-color: #3b82f6 !important;
+}
+
+.form-check-input:hover {
+  border-color: #9ca3af !important;
+}
+
+.form-check-input:focus {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25) !important;
+  outline: none !important;
+}
+
+.form-check-label {
+  cursor: pointer !important;
+  font-size: 14px !important;
+  line-height: 1.5;
+  color: #374151;
+  user-select: none;
+  padding-left: 8px;
+}
+
+/* Checkbox error states */
+.form-check-input.is-invalid {
+  border-color: #dc2626 !important;
+}
+
+.form-check-input.is-invalid ~ .form-check-label {
+  color: #dc2626 !important;
+}
+
+.form-check-input.is-valid {
+  border-color: #10b981 !important;
+}
+
+/* ===== BUTTON STYLING ===== */
+
+.btn {
+  border-radius: 6px !important;
+  padding: 10px 24px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+  border: 2px solid transparent !important;
+  letter-spacing: 0.3px;
+}
+
+.btn-primary {
+  background-color: #2563eb !important;
+  border-color: #2563eb !important;
+  color: white !important;
+}
+
+.btn-primary:hover {
+  background-color: #1d4ed8 !important;
+  border-color: #1d4ed8 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+}
+
+.btn-outline-secondary {
+  color: #6b7280 !important;
+  border-color: #d1d5db !important;
+  background-color: white !important;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #f3f4f6 !important;
+  border-color: #9ca3af !important;
+  color: #374151 !important;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: #6b7280 !important;
+  border-color: #6b7280 !important;
+  color: white !important;
+}
+
+.btn-secondary:hover {
+  background-color: #4b5563 !important;
+  border-color: #4b5563 !important;
+  transform: translateY(-1px);
+}
+
+/* Add/Remove buttons in repeatable fields */
+.ds-form-add-more {
+  color: #2563eb !important;
+  text-decoration: none !important;
+  padding: 8px 16px !important;
+  font-size: 13px !important;
+  font-weight: 500;
+  background-color: #eff6ff;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+  border: 1px solid #dbeafe;
+}
+
+.ds-form-add-more:hover {
+  color: #1d4ed8 !important;
+  background-color: #dbeafe;
+  text-decoration: none !important;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.1);
+}
+
+/* Form groups spacing */
+.mb-3 {
+  margin-bottom: 1rem !important;
+  padding: 0 5px;
+}
+
+/* Row spacing */
+.row {
+  margin-left: -5px;
+  margin-right: -5px;
+}
+
+/* Column padding */
+.col, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12,
+.col-sm, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* Horizontal rule styling */
+hr {
+  margin: 2.5rem 0 !important;
+  border-top: 2px solid #e5e7eb !important;
+  opacity: 1 !important;
+}
+
+/* Form actions container */
+.text-end.space-children-mr {
+  padding-top: 25px;
+  border-top: 2px solid #f3f4f6;
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container-fluid {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+  
+  .form-horizontal {
+    padding: 20px;
+    margin: 15px auto;
+  }
+  
+  .col-sm-6, .col-sm-12 {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  
+  .text-end.space-children-mr {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+}
+
+/* Field grouping for better visual hierarchy */
+.form-group {
+  background-color: white;
+  padding: 16px 20px;
+  border-radius: 8px;
+  border: 1px solid #f3f4f6;
+  margin-bottom: 16px;
+  transition: all 0.2s ease;
+}
+
+.form-group:hover {
+  border-color: #e5e7eb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Readonly field styling */
+.form-control[readonly] {
+  background-color: #f9fafb !important;
+  border-color: #e5e7eb !important;
+  color: #6b7280 !important;
+  cursor: not-allowed;
+}
+
+/* Disabled field styling */
+.form-control:disabled {
+  background-color: #f3f4f6 !important;
+  border-color: #e5e7eb !important;
+  color: #9ca3af !important;
+  cursor: not-allowed;
+}
+
+/* Field focus container */
+.form-control:focus {
+  position: relative;
+  z-index: 2;
+}
+
+/* Required field highlight */
+.required-field {
+  background-color: #fefce8;
+  border-left: 3px solid #f59e0b;
+  padding-left: 12px;
+}
