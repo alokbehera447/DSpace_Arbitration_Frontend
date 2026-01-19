@@ -1,536 +1,3 @@
-// .viewer-container {
-//   display: flex;
-//   flex-direction: column;
-//   height: 100vh;
-// }
-
-// .file-header {
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   padding: 8px 16px;
-//   background-color: white;
-//   border-bottom: 1px solid #ddd;
-// }
-
-// .filename {
-//   font-weight: 500;
-//   font-size: 14px;
-// }
-
-// .header-buttons {
-//   display: flex;
-//   gap: 8px;
-// }
-
-// .icon-button {
-//   display: flex;
-//   align-items: center;
-//   padding: 4px 8px;
-//   background-color: white;
-//   border: 1px solid #ccc;
-//   border-radius: 3px;
-//   cursor: pointer;
-//   font-size: 12px;
-// }
-
-// .back-icon {
-//   margin-right: 4px;
-// }
-
-// .content-container {
-//   display: flex;
-//   flex: 1;
-//   overflow: hidden;
-// }
-
-// .metadata-container {
-//   width: 300px;
-//   min-width: 300px;
-//   background-color: white;
-//   border-right: 1px solid #ddd;
-//   display: flex;
-//   flex-direction: column;
-//   overflow-y: auto;
-//   max-height: 100vh;
-// }
-
-// .metadata-header {
-//   padding: 8px 12px;
-//   background-color: #f0f0f0;
-//   border-bottom: 1px solid #ddd;
-//   font-weight: 500;
-//   font-size: 14px;
-// }
-
-// .metadata-table {
-//   flex: 1;
-//   overflow-y: auto;
-// }
-
-// .metadata-table table {
-//   width: 100%;
-//   border-collapse: collapse;
-// }
-
-// .metadata-table th {
-//   background-color: #f5f5f5;
-//   text-align: left;
-//   padding: 8px 12px;
-//   font-size: 13px;
-//   font-weight: 500;
-//   border-bottom: 1px solid #ddd;
-// }
-
-// .metadata-table td {
-//   padding: 8px 12px;
-//   font-size: 13px;
-//   border-bottom: 1px solid #eee;
-// }
-
-// .file-container {
-//   flex: 1;
-//   display: flex;
-//   flex-direction: column;
-//   overflow: hidden;
-// }
-
-// .pdf-container {
-//   flex: 1;
-//   display: flex;
-//   flex-direction: column;
-//   position: relative;
-//   overflow: hidden;
-// }
-
-// .toolbar {
-//   position: sticky;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-//   display: flex;
-//   justify-content: space-between;
-//   padding: 10px;
-//   background: #f8f8f8;
-//   border-bottom: 1px solid #ddd;
-//   z-index: 10;
-// }
-
-// .toolbar-left,
-// .toolbar-center,
-// .toolbar-right {
-//   display: flex;
-//   align-items: center;
-//   gap: 8px;
-// }
-
-// .page-navigation {
-//   display: flex;
-//   align-items: center;
-//   margin: 0 8px;
-// }
-
-// .page-number-container {
-//   display: flex;
-//   align-items: center;
-// }
-
-// .page-number-box {
-//   width: 30px;
-//   height: 24px;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   border: 1px solid #ccc;
-//   background-color: white;
-//   border-radius: 3px;
-//   font-size: 13px;
-// }
-
-// .page-arrows {
-//   display: flex;
-//   flex-direction: column;
-//   margin-left: 2px;
-// }
-
-// .arrow-button {
-//   width: 16px;
-//   height: 12px;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   background-color: #f0f0f0;
-//   border: 1px solid #ccc;
-//   border-radius: 2px;
-//   padding: 0;
-//   font-size: 8px;
-//   cursor: pointer;
-// }
-
-// .up-arrow {
-//   margin-bottom: 1px;
-// }
-
-// .down-arrow {
-//   margin-top: 1px;
-// }
-
-// .page-separator {
-//   margin-left: 4px;
-//   font-size: 13px;
-// }
-
-// .pdf-scroll-container canvas {
-//   display: block;
-//   margin: 0 auto 16px auto;
-//   /* center horizontally, add bottom space between pages */
-//   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-//   background-color: white;
-//   /* optional for contrast */
-// }
-
-// canvas {
-//   display: block;
-//   margin: 0 auto;
-// }
-
-// .pdf-scroll-container canvas {
-//   max-width: 100%;
-//   /* prevent overflow on small screens */
-//   width: auto;
-//   /* let canvas determine size */
-// }
-
-// /* Scrollbar styling for PDF container */
-// .pdf-scroll-container::-webkit-scrollbar {
-//   width: 8px;
-// }
-
-// .pdf-scroll-container::-webkit-scrollbar-track {
-//   background: #f1f1f1;
-// }
-
-// .pdf-scroll-container::-webkit-scrollbar-thumb {
-//   background: #c1c1c1;
-//   border-radius: 4px;
-// }
-
-// .pdf-scroll-container::-webkit-scrollbar-thumb:hover {
-//   background: #a8a8a8;
-// }
-
-// .pdf-scroll-container {
-//   flex: 1;
-//   overflow: auto;
-//   padding: 16px;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   /* Center all PDF pages clearly */
-// }
-
-// canvas {
-//   margin-bottom: 16px;
-//   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-//   background-color: white;
-//   max-width: 100%;
-// }
-
-// .image-container {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   height: 100%;
-//   overflow: auto;
-//   background-color: white;
-//   width: 100%;
-// }
-
-// .toolbarimg {
-//   position: sticky;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-//   display: flex;
-//   justify-content: space-around;
-//   padding: 10px;
-//   background: #f8f8f8;
-//   border-bottom: 1px solid #ddd;
-//   z-index: 10;
-//   width: 100%;
-// }
-
-// .responsive-image {
-//   max-width: 100%;
-//   max-height: 100%;
-//   object-fit: contain;
-// }
-
-// /* Scrollbar styling for metadata */
-// .metadata-table::-webkit-scrollbar {
-//   width: 8px;
-// }
-
-// .metadata-table::-webkit-scrollbar-track {
-//   background: #f1f1f1;
-// }
-
-// .metadata-table::-webkit-scrollbar-thumb {
-//   background: #c1c1c1;
-//   border-radius: 4px;
-// }
-
-// .metadata-table::-webkit-scrollbar-thumb:hover {
-//   background: #a8a8a8;
-// }
-
-// /* Image container uses same scroll and padding as PDF */
-// .image-container {
-//   flex: 1;
-//   display: flex;
-//   flex-direction: column;
-//   overflow: hidden;
-//   background-color: white;
-// }
-
-// .image-container .toolbar-left,
-// .image-container .toolbar-right {
-//   display: flex;
-//   align-items: center;
-//   gap: 8px;
-// }
-
-// /* This mimics the PDF scroll container behavior */
-// .image-container .pdf-scroll-container {
-//   flex: 1;
-//   overflow: auto;
-//   padding: 16px;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   width: 100%;
-//   /* ensure full width so scrollbar goes to far right */
-//   box-sizing: border-box;
-// }
-
-// /* Mimic canvas styling */
-// .image-container .responsive-image {
-//   max-width: 100%;
-//   max-height: none;
-//   /* allow vertical scroll */
-//   margin-bottom: 16px;
-//   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-//   background-color: white;
-//   transition: transform 0.3s ease;
-// }
-
-// /* Search functionality styles */
-// .search-button {
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-// }
-
-// .search-icon {
-//   font-size: 14px;
-// }
-
-// .search-bar {
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-//   padding: 8px 10px;
-//   background-color: #f0f0f0;
-//   border-bottom: 1px solid #ddd;
-// }
-
-// .search-input-container {
-//   display: flex;
-//   flex: 1;
-//   max-width: 500px;
-// }
-
-// .search-input-container input {
-//   flex: 1;
-//   padding: 6px 10px;
-//   border: 1px solid #ccc;
-//   border-radius: 3px;
-//   font-size: 13px;
-//   margin-right: 8px;
-// }
-
-// .search-input-container button {
-//   padding: 6px 12px;
-//   background-color: #f8f8f8;
-//   border: 1px solid #ccc;
-//   border-radius: 3px;
-//   cursor: pointer;
-//   font-size: 13px;
-// }
-
-// .search-navigation {
-//   display: flex;
-//   align-items: center;
-//   gap: 8px;
-//   font-size: 13px;
-// }
-
-// .search-navigation .icon-button {
-//   padding: 2px 4px;
-// }
-
-// .search-navigation .icon-button[disabled] {
-//   opacity: 0.5;
-//   cursor: not-allowed;
-// }
-
-// .clear-button {
-//   margin-left: 5px;
-// }
-
-// .textLayer {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   z-index: 2;
-//   width: 100%;
-//   height: 100%;
-//   line-height: 1;
-//   white-space: pre;
-//   color: transparent !important;
-//   pointer-events: none;
-//   opacity: 1 !important;
-
-//   span {
-//     position: absolute;
-//     white-space: pre;
-//     transform-origin: 0 0;
-//     background: none !important;
-//     color: transparent !important;
-//   }
-
-//   mark.highlight-search {
-//     background-color: yellow !important;
-//     color: transparent !important;
-//     /* Let original PDF.js-rendered text show */
-//     mix-blend-mode: multiply;
-//     /* Makes highlight blend nicely */
-//     border-radius: 2px;
-//     opacity: 0.6;
-//   }
-
-//   // mark.highlight-search.active {
-//   //   background-color: #ffd700 !important; /* Slightly deeper yellow for current match */
-//   //   opacity: 0.8;
-//   // }                                                              
-// }
-
-// @media (prefers-color-scheme: dark) {
-//   .textLayer mark.highlight-search {
-//     background-color: rgba(255, 255, 0, 0.4) !important;
-//     mix-blend-mode: screen;
-//     /* Better contrast on dark */
-//   }
-// }
-
-// .responsive-video {
-//   width: 100%;
-//   max-height: 80vh;
-// }
-
-// .toolbar-video {
-//   display: flex;
-//   justify-content: flex-end;
-//   padding: 10px;
-//   gap: 8px;
-// }
-
-// .responsive-audio {
-//   width: 100%;
-//   max-height: 80vh;
-// }
-
-// .toolbar-audio {
-//   display: flex;
-//   justify-content: flex-end;
-//   padding: 10px;
-//   gap: 8px;
-// }
-
-
-
-
-// .comment-panel {
-//   background: #f9f9f9;
-//   border-left: 1px solid #ccc;
-//   padding: 1rem;
-//   max-width: 300px;
-//   overflow-y: auto;
-// }
-
-// .comment-box {
-//   border: 1px solid #ddd;
-//   padding: 0.5rem;
-//   margin-bottom: 0.5rem;
-// }
-
-// .add-comment-box textarea {
-//   width: 100%;
-//   resize: vertical;
-// }
-
-
-// .comment-box {
-//   background-color: #f8f9fa;
-//   border: 1px solid #ddd;
-//   border-radius: 8px;
-//   padding: 12px 16px;
-//   margin-bottom: 12px;
-//   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-// }
-
-// .comment-header {
-//   display: flex;
-//   justify-content: space-between;
-//   font-size: 0.875rem;
-//   color: #555;
-//   margin-bottom: 8px;
-// }
-
-// .comment-author {
-//   font-weight: bold;
-// }
-
-// .comment-date {
-//   color: #888;
-//   font-style: italic;
-// }
-
-// .comment-body {
-//   font-size: 1rem;
-//   margin-bottom: 8px;
-//   color: #333;
-// }
-
-// .comment-actions {
-//   text-align: right;
-// }
-
-// .delete-button {
-//   background: none;
-//   border: none;
-//   color: #d9534f;
-//   font-size: 0.9rem;
-//   cursor: pointer;
-//   padding: 4px 8px;
-//   border-radius: 4px;
-// }
-
-// .delete-button:hover {
-//   background-color: #f2dede;
-// }
-
-
 .viewer-container {
   display: flex;
   flex-direction: column;
@@ -1926,4 +1393,137 @@ canvas {
 .icon-button:active i,
 .panel-toggle:active i {
   color: #1251a0 !important;
+}
+
+
+.pin-dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.pin-dialog {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  width: 90%;
+
+  h3 {
+    margin: 0 0 10px 0;
+    color: #333;
+  }
+
+  p {
+    margin: 0 0 20px 0;
+    color: #666;
+  }
+}
+
+.pin-input-group {
+  margin-bottom: 20px;
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #333;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+
+    &:focus {
+      outline: none;
+      border-color: #4CAF50;
+    }
+  }
+
+  .error-message {
+    display: block;
+    color: #f44336;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+}
+
+.pin-dialog-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+
+    &.btn-cancel {
+      background: #f5f5f5;
+      color: #333;
+
+      &:hover {
+        background: #e0e0e0;
+      }
+    }
+
+    &.btn-submit {
+      background: #4CAF50;
+      color: white;
+
+      &:hover {
+        background: #45a049;
+      }
+    }
+  }
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9998;
+
+  .spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #4CAF50;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+  }
+
+  p {
+    margin-top: 20px;
+    color: #333;
+    font-size: 16px;
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
