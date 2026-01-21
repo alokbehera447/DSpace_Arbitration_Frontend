@@ -1527,3 +1527,208 @@ canvas {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+/* Add these styles to your viewer.component.scss */
+
+.pdf-scroll-container {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100%;
+  scroll-behavior: smooth;
+  padding: 20px;
+  background: #525659;
+}
+
+.pdf-page-container {
+  margin-bottom: 20px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.page-label {
+  text-align: center;
+  padding: 10px;
+  color: #666;
+  font-size: 14px;
+  font-weight: 500;
+  background: #f5f5f5;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.canvas-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: white;
+}
+
+.canvas-wrapper canvas {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Smooth scrolling for the entire container */
+.pdf-scroll-container::-webkit-scrollbar {
+  width: 12px;
+}
+
+.pdf-scroll-container::-webkit-scrollbar-track {
+  background: #2a2e32;
+}
+
+.pdf-scroll-container::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 6px;
+}
+
+.pdf-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
+
+/* Loading state for individual pages */
+.pdf-page-container.loading {
+  min-height: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pdf-page-container.loading::after {
+  content: 'Loading page...';
+  color: #999;
+  font-style: italic;
+}
+
+// Cleaner PIN dialog styles
+.pin-dialog {
+  max-width: 480px;
+  
+  .modal-subtitle {
+    margin: 8px 0 0 0;
+    font-size: 14px;
+    color: #666;
+    font-weight: normal;
+    line-height: 1.4;
+  }
+
+  .required {
+    color: #dc3545;
+    font-weight: bold;
+  }
+
+  .pin-input-group {
+    margin-top: 20px;
+    
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #333;
+    }
+    
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-size: 15px;
+      transition: border-color 0.3s;
+      
+      &:focus {
+        outline: none;
+        border-color: #4CAF50;
+      }
+      
+      &.error {
+        border-color: #dc3545;
+      }
+    }
+  }
+
+  .info-box {
+    margin-top: 16px;
+    padding: 14px;
+    background: #e7f3ff;
+    border-left: 4px solid #2196f3;
+    border-radius: 4px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 13px;
+    color: #555;
+    line-height: 1.5;
+
+    i {
+      color: #2196f3;
+      margin-top: 2px;
+      flex-shrink: 0;
+      font-size: 16px;
+    }
+  }
+
+  .error-message {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 6px;
+    font-size: 13px;
+    color: #dc3545;
+    
+    i {
+      font-size: 14px;
+    }
+  }
+  
+  .modal-footer {
+    margin-top: 24px;
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    
+    button {
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      
+      i {
+        font-size: 16px;
+      }
+      
+      &.btn-cancel {
+        background: #f5f5f5;
+        border: 1px solid #ddd;
+        color: #666;
+        
+        &:hover {
+          background: #e0e0e0;
+        }
+      }
+      
+      &.btn-submit {
+        background: #4CAF50;
+        border: none;
+        color: white;
+        
+        &:hover:not(:disabled) {
+          background: #45a049;
+        }
+        
+        &:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+}
