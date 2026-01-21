@@ -2666,31 +2666,6 @@
         "byIdentifier": {
           "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/css-loader/dist/runtime/api.js": 572,
           "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/css-loader/dist/runtime/noSourceMaps.js": 563,
-          "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].rules[0].oneOf[1].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].rules[0].oneOf[1].use[1]!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[6].rules[1].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[6].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[10].use[0]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[10].use[1]!./node_modules/sass-resources-loader/lib/loader.js??ruleSet[1].rules[10].use[2]!./src/app/signature/signature-dashboard.component.scss?ngResource": 735
-        },
-        "usedIds": [
-          563,
-          572,
-          735
-        ]
-      }
-    },
-    {
-      "chunks": {
-        "byName": {
-          "resource": 847
-        },
-        "bySource": {
-          "0 resource": 847
-        },
-        "usedIds": [
-          847
-        ]
-      },
-      "modules": {
-        "byIdentifier": {
-          "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/css-loader/dist/runtime/api.js": 572,
-          "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/css-loader/dist/runtime/noSourceMaps.js": 563,
           "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].rules[0].oneOf[1].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].rules[0].oneOf[1].use[1]!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[6].rules[1].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[6].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[10].use[0]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[10].use[1]!./node_modules/sass-resources-loader/lib/loader.js??ruleSet[1].rules[10].use[2]!./src/themes/dspace/app/header/header.component.scss?ngResource": 358
         },
         "usedIds": [
@@ -8191,6 +8166,31 @@
         "byIdentifier": {
           "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/css-loader/dist/runtime/api.js": 572,
           "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/css-loader/dist/runtime/noSourceMaps.js": 563,
+          "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].rules[0].oneOf[1].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].rules[0].oneOf[1].use[1]!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[6].rules[1].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[6].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[10].use[0]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[10].use[1]!./node_modules/sass-resources-loader/lib/loader.js??ruleSet[1].rules[10].use[2]!./src/app/user-pdf-passwords/user-pdf-password-report.component.scss?ngResource": 988
+        },
+        "usedIds": [
+          563,
+          572,
+          988
+        ]
+      }
+    },
+    {
+      "chunks": {
+        "byName": {
+          "resource": 847
+        },
+        "bySource": {
+          "0 resource": 847
+        },
+        "usedIds": [
+          847
+        ]
+      },
+      "modules": {
+        "byIdentifier": {
+          "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/css-loader/dist/runtime/api.js": 572,
+          "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/css-loader/dist/runtime/noSourceMaps.js": 563,
           "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].rules[0].oneOf[1].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].rules[0].oneOf[1].use[1]!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[6].rules[1].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[6].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[10].use[0]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[10].use[1]!./node_modules/sass-resources-loader/lib/loader.js??ruleSet[1].rules[10].use[2]!./src/app/shared/object-grid/search-result-grid-element/search-result-grid-element.component.scss?ngResource": 143
         },
         "usedIds": [
@@ -10652,8 +10652,8 @@
       "0 ./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/@ngtools/webpack/src/ivy/index.js!./node_modules/@ngtools/webpack/src/index.js!./src/app/app-routes.ts ./home-page/home-page-routes": 2331,
       "0 ./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/@ngtools/webpack/src/ivy/index.js!./node_modules/@ngtools/webpack/src/index.js!./src/app/app-routes.ts ./import-external-page/import-external-page-routes": 7005,
       "0 ./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/@ngtools/webpack/src/ivy/index.js!./node_modules/@ngtools/webpack/src/index.js!./src/app/app-routes.ts ./info/info-routes": 3030,
-      "0 ./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/@ngtools/webpack/src/ivy/index.js!./node_modules/@ngtools/webpack/src/index.js!./src/app/app-routes.ts ./item-page/item-page-routes": 329,
-      "0 ./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/@ngtools/webpack/src/ivy/index.js!./node_modules/@ngtools/webpack/src/index.js!./src/app/app-routes.ts ./item-page/simple/field-components/viewer-routes": 1262,
+      "0 ./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/@ngtools/webpack/src/ivy/index.js!./node_modules/@ngtools/webpack/src/index.js!./src/app/app-routes.ts ./item-page/item-page-routes": 4787,
+      "0 ./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/@ngtools/webpack/src/ivy/index.js!./node_modules/@ngtools/webpack/src/index.js!./src/app/app-routes.ts ./item-page/simple/field-components/viewer-routes": 2016,
       "0 ./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/@ngtools/webpack/src/ivy/index.js!./node_modules/@ngtools/webpack/src/index.js!./src/app/app-routes.ts ./login-page/login-page-routes": 1711,
       "0 ./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/@ngtools/webpack/src/ivy/index.js!./node_modules/@ngtools/webpack/src/index.js!./src/app/app-routes.ts ./logout-page/logout-page-routes": 3177,
       "0 ./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/@ngtools/webpack/src/ivy/index.js!./node_modules/@ngtools/webpack/src/index.js!./src/app/app-routes.ts ./lookup-by-id/lookup-by-id-routes": 3344,
@@ -10820,7 +10820,6 @@
       282,
       305,
       322,
-      329,
       350,
       357,
       372,
@@ -10841,7 +10840,6 @@
       1165,
       1195,
       1210,
-      1262,
       1300,
       1308,
       1332,
@@ -10854,6 +10852,7 @@
       1689,
       1711,
       1743,
+      2016,
       2112,
       2331,
       2336,
@@ -10898,6 +10897,7 @@
       4715,
       4764,
       4776,
+      4787,
       4862,
       4967,
       4983,
@@ -11217,7 +11217,6 @@
       "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/@ngtools/webpack/src/ivy/index.js!./node_modules/@ngtools/webpack/src/index.js!./src/app/core/roles/role-types.ts": 50481,
       "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/@ngtools/webpack/src/ivy/index.js!./node_modules/@ngtools/webpack/src/index.js!./src/app/core/roles/role.service.ts": 68252,
       "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/@ngtools/webpack/src/ivy/index.js!./node_modules/@ngtools/webpack/src/index.js!./src/app/core/serachpage/api-urls.ts": 77140,
-      "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/@ngtools/webpack/src/ivy/index.js!./node_modules/@ngtools/webpack/src/index.js!./src/app/core/serachpage/bitstream-permissions.service.ts": 44786,
       "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/@ngtools/webpack/src/ivy/index.js!./node_modules/@ngtools/webpack/src/index.js!./src/app/core/services/cookie.service.ts": 16401,
       "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/@ngtools/webpack/src/ivy/index.js!./node_modules/@ngtools/webpack/src/index.js!./src/app/core/services/hard-redirect.service.ts": 40769,
       "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/@ngtools/webpack/src/ivy/index.js!./node_modules/@ngtools/webpack/src/index.js!./src/app/core/services/link-head.service.ts": 95960,
@@ -11385,7 +11384,7 @@
       "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/@ngtools/webpack/src/ivy/index.js!./node_modules/@ngtools/webpack/src/index.js!./src/app/item-page/full/field-components/file-section/themed-full-file-section.component.ts": 91665,
       "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/@ngtools/webpack/src/ivy/index.js!./node_modules/@ngtools/webpack/src/index.js!./src/app/item-page/full/full-item-page.component.ts|a1bb21de09f1f36b": 39370,
       "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/@ngtools/webpack/src/ivy/index.js!./node_modules/@ngtools/webpack/src/index.js!./src/app/item-page/full/themed-full-item-page.component.ts": 36221,
-      "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/@ngtools/webpack/src/ivy/index.js!./node_modules/@ngtools/webpack/src/index.js!./src/app/item-page/item-page-routes.ts|0f35030531d6efd7": 50329,
+      "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/@ngtools/webpack/src/ivy/index.js!./node_modules/@ngtools/webpack/src/index.js!./src/app/item-page/item-page-routes.ts|bbcf1fe06735e405": 84787,
       "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/@ngtools/webpack/src/ivy/index.js!./node_modules/@ngtools/webpack/src/index.js!./src/app/item-page/item-page-routing-paths.ts": 56646,
       "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/@ngtools/webpack/src/ivy/index.js!./node_modules/@ngtools/webpack/src/index.js!./src/app/item-page/item-page.resolver.ts": 65826,
       "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/@ngtools/webpack/src/ivy/index.js!./node_modules/@ngtools/webpack/src/index.js!./src/app/item-page/item.resolver.ts": 84000,
@@ -11398,7 +11397,7 @@
       "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/@ngtools/webpack/src/ivy/index.js!./node_modules/@ngtools/webpack/src/index.js!./src/app/item-page/simple/field-components/file-section/file-section.component.ts": 98414,
       "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/@ngtools/webpack/src/ivy/index.js!./node_modules/@ngtools/webpack/src/index.js!./src/app/item-page/simple/field-components/specific-field/title/item-page-title-field.component.ts": 59717,
       "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/@ngtools/webpack/src/ivy/index.js!./node_modules/@ngtools/webpack/src/index.js!./src/app/item-page/simple/field-components/specific-field/title/themed-item-page-field.component.ts": 72656,
-      "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/@ngtools/webpack/src/ivy/index.js!./node_modules/@ngtools/webpack/src/index.js!./src/app/item-page/simple/field-components/viewer-routes.ts|677909a4c202ceb1": 21262,
+      "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/@ngtools/webpack/src/ivy/index.js!./node_modules/@ngtools/webpack/src/index.js!./src/app/item-page/simple/field-components/viewer-routes.ts|d6ad2d0433cc6a2e": 12016,
       "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/@ngtools/webpack/src/ivy/index.js!./node_modules/@ngtools/webpack/src/index.js!./src/app/item-page/simple/item-types/shared/item-relationships-utils.ts": 75873,
       "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/@ngtools/webpack/src/ivy/index.js!./node_modules/@ngtools/webpack/src/index.js!./src/app/item-page/simple/metadata-representation-list/metadata-representation-list.component.ts": 20708,
       "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/@ngtools/webpack/src/ivy/index.js!./node_modules/@ngtools/webpack/src/index.js!./src/app/item-page/versions/item-versions-shared.service.ts": 76245,
@@ -11740,7 +11739,6 @@
       "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/@ngtools/webpack/src/ivy/index.js!./node_modules/@ngtools/webpack/src/index.js!./src/app/shared/utils/safe-url-pipe.ts": 72651,
       "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/@ngtools/webpack/src/ivy/index.js!./node_modules/@ngtools/webpack/src/index.js!./src/app/shared/utils/var.directive.ts": 86585,
       "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/@ngtools/webpack/src/ivy/index.js!./node_modules/@ngtools/webpack/src/index.js!./src/app/shared/view-mode-switch/view-mode-switch.component.ts": 77401,
-      "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/@ngtools/webpack/src/ivy/index.js!./node_modules/@ngtools/webpack/src/index.js!./src/app/signature/signature.module.ts|789879c8e80a2f24": 57115,
       "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/@ngtools/webpack/src/ivy/index.js!./node_modules/@ngtools/webpack/src/index.js!./src/app/statistics-page/collection-statistics-page/collection-statistics-page.component.ts": 80769,
       "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/@ngtools/webpack/src/ivy/index.js!./node_modules/@ngtools/webpack/src/index.js!./src/app/statistics-page/community-statistics-page/community-statistics-page.component.ts": 35343,
       "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/@angular-devkit/build-angular/node_modules/@ngtools/webpack/src/ivy/index.js!./node_modules/@ngtools/webpack/src/index.js!./src/app/statistics-page/item-statistics-page/item-statistics-page.component.ts": 82191,
@@ -12468,8 +12466,6 @@
       "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/p-wait-for/index.js": 78883,
       "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/parseurl/index.js": 35811,
       "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/path-to-regexp/index.js": 59100,
-      "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/pdfjs-dist/build/pdf.js": 51198,
-      "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/pdfjs-dist/build/pdf.worker.min.js": 26634,
       "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/picocolors/picocolors.js": 37873,
       "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/postcss-media-query-parser/dist/index.js": 14497,
       "./node_modules/@angular-devkit/build-angular/src/tools/babel/webpack-loader.js??ruleSet[1].rules[3].use[0]!./node_modules/postcss-media-query-parser/dist/nodes/Container.js": 53860,
@@ -13315,6 +13311,7 @@
       11897,
       11964,
       11999,
+      12016,
       12088,
       12128,
       12211,
@@ -13536,7 +13533,6 @@
       21197,
       21211,
       21245,
-      21262,
       21338,
       21375,
       21385,
@@ -13644,7 +13640,6 @@
       26202,
       26285,
       26349,
-      26634,
       26791,
       26918,
       27122,
@@ -14035,7 +14030,6 @@
       44557,
       44576,
       44771,
-      44786,
       44804,
       44805,
       44812,
@@ -14152,7 +14146,6 @@
       50295,
       50303,
       50322,
-      50329,
       50392,
       50394,
       50454,
@@ -14170,7 +14163,6 @@
       51035,
       51059,
       51125,
-      51198,
       51239,
       51314,
       51349,
@@ -14285,7 +14277,6 @@
       57051,
       57069,
       57071,
-      57115,
       57143,
       57165,
       57167,
@@ -14889,6 +14880,7 @@
       84644,
       84691,
       84742,
+      84787,
       84833,
       85020,
       85049,
