@@ -1,0 +1,162 @@
+<!-- <div class="rt-wrap">
+  <div class="rt-tabs">
+    <button class="tab-btn active" (click)="setTab('realtime')" [class.active]="activeTab === 'realtime'">
+      🔴 Live
+    </button>
+    <button class="tab-btn" (click)="setTab('history')" [class.active]="activeTab === 'history'">
+      📜 History
+    </button>
+  </div>
+
+  <div class="rt-hero">
+    <div>
+      <h1>{{ activeTab === 'history' ? 'Audit History' : 'Real Time Monitoring' }}</h1>
+      <p>{{ activeTab === 'history' ? 'Complete activity log (7 days)' : 'Live security alerts from centralized audit system' }}</p>
+    </div>
+    <div class="rt-hero-right">
+  
+      <button class="btn" (click)="refresh()">
+        {{ activeTab === 'history' ? '🔄 Reload History' : '🔄 Refresh' }}
+      </button>
+      <div class="pill">
+        {{ (activeTab === 'history' ? history.length : alerts.length) }} events
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="loading" class="state">
+    <div style="font-size: 24px;">⏳ Loading...</div>
+  </div>
+
+  <div *ngIf="!loading && (activeTab === 'realtime' ? alerts.length : history.length) === 0" class="state">
+    <div style="font-size: 48px; margin-bottom: 16px;">
+      {{ activeTab === 'history' ? '📋' : '🛡️' }}
+    </div>
+    <h2>{{ activeTab === 'history' ? 'No activity in last 7 days' : 'No suspicious activity detected' }}</h2>
+    <p>
+      {{ activeTab === 'history' ? 'All login/download events logged in centralauditlog.' : 'Monitoring login attempts & bulk downloads. Alerts appear instantly.' }}
+    </p>
+  </div>
+
+  <div class="grid" *ngIf="!loading && (activeTab === 'realtime' ? alerts.length : history.length) > 0">
+    <div class="card" *ngFor="let a of (activeTab === 'realtime' ? alerts : history); let i = index; trackBy: trackByIndex"
+         [ngClass]="severityClass(a.severity)">
+      <div class="top">
+        <div class="ic">{{ icon(a.severity) }}</div>
+        <div class="meta">
+          <div class="title">{{ a.alertType || 'SECURITY EVENT' }}</div>
+          <div class="sub">
+            <span class="user">{{ a.userEmail || 'anonymous' }}</span>
+            <ng-container *ngIf="a.timestamp">
+              <span class="dot">•</span>
+              <span class="time">{{ formatDate(a.timestamp) }}</span>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+      <div class="details">{{ a.details || 'Activity logged' }}</div>
+    </div>
+  </div>
+</div> -->
+
+<div class="rt-wrap">
+
+  <!-- TABS -->
+  <div class="rt-tabs">
+    <button class="tab-btn"
+            (click)="setTab('realtime')"
+            [class.active]="activeTab === 'realtime'">
+      🔴 Live Monitoring
+    </button>
+
+    <button class="tab-btn"
+            (click)="setTab('history')"
+            [class.active]="activeTab === 'history'">
+      📜 Audit History
+    </button>
+  </div>
+
+  <!-- HERO -->
+  <div class="rt-hero">
+    <div>
+      <h1>{{ activeTab === 'history' ? 'Audit History' : 'Real-Time Monitoring' }}</h1>
+      <p>
+        {{ activeTab === 'history'
+          ? 'Complete activity log (last 7 days)'
+          : 'Live security alerts from centralized audit system'
+        }}
+      </p>
+    </div>
+
+    <div class="rt-hero-right">
+      <button class="refresh-btn" (click)="refresh()">⟳ Refresh</button>
+
+      <div class="event-summary">
+        Showing
+        <strong>
+          {{ (currentPage - 1) * pageSize + 1 }} – {{ getRangeEnd() }}
+        </strong>
+        of
+        <strong>
+          {{ activeTab === 'history' ? history.length : alerts.length }}
+        </strong>
+        events
+      </div>
+    </div>
+  </div>
+
+  <!-- LOADING -->
+  <div *ngIf="loading" class="state">⏳ Loading…</div>
+
+  <!-- EMPTY -->
+  <div *ngIf="!loading && paginatedData.length === 0" class="state">
+    <div class="empty-icon">{{ activeTab === 'history' ? '📋' : '🛡️' }}</div>
+    <h2>No activity found</h2>
+    <p>All events are securely logged.</p>
+  </div>
+
+  <!-- GRID -->
+  <div class="grid" *ngIf="!loading && paginatedData.length > 0">
+    <div class="card"
+         *ngFor="let a of paginatedData; trackBy: trackByIndex"
+         [ngClass]="[severityClass(a.severity), activityClass(a)]">
+
+      <div class="top">
+        <div class="ic">{{ icon(a.severity) }}</div>
+        <div>
+          <div class="title">{{ a.alertType }}</div>
+          <div class="sub">
+            <span class="user">{{ a.userEmail }}</span>
+            <span class="time">{{ formatDate(a.timestamp) }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="details">{{ a.details }}</div>
+    </div>
+  </div>
+
+  <!-- PAGINATION -->
+  <div class="pagination" *ngIf="totalPages > 1">
+    <button (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1">Prev</button>
+
+    <button *ngFor="let p of [].constructor(totalPages); let i = index"
+            (click)="changePage(i + 1)"
+            [class.active]="currentPage === i + 1">
+      {{ i + 1 }}
+    </button>
+
+    <button (click)="changePage(currentPage + 1)"
+            [disabled]="currentPage === totalPages">Next</button>
+
+    <select [(ngModel)]="pageSize" (change)="resetPagination()">
+      <option [value]="10">10</option>
+      <option [value]="25">25</option>
+      <option [value]="50">50</option>
+    </select>
+  </div>
+
+</div>
+
+
+
