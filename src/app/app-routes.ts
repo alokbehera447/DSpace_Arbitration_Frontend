@@ -385,7 +385,16 @@ export const APP_ROUTES: Route[] = [
         canActivate: [authenticatedGuard, endUserAgreementCurrentUserGuard],
       },
 
-     
+      {
+        path: "real-time-monitoring",
+        loadChildren: () =>
+          import("./real-time-monitoring/real-time-monitoring.module")
+            .then((m) => m.RealTimeMonitoringModule),
+        canActivate: [authenticatedGuard, endUserAgreementCurrentUserGuard],
+      },
+
+
+
 
       // {
       //   path: "jtdr",
