@@ -118,6 +118,21 @@ export class SearchFormComponent implements OnChanges {
     }
   }
 
+//   ngOnChanges(): void {
+
+//   // ✅ Remove default "*" from Description input (UI only)
+//   if (this.query === '*') {
+//     this.query = '';
+//   }
+
+//   if (isNotEmpty(this.scope)) {
+//     this.dsoService.findById(this.scope)
+//       .pipe(getFirstSucceededRemoteDataPayload())
+//       .subscribe((scope: DSpaceObject) => this.selectedScope.next(scope));
+//   }
+// }
+
+
   /**
    * Updates the search when the form is submitted
    * @param data Values submitted using the form
@@ -130,6 +145,22 @@ export class SearchFormComponent implements OnChanges {
     this.updateSearch(data);
     this.submitSearch.emit(data);
   }
+
+//   onSubmit(data: any) {
+
+//   // 🔥 STOP "*" FROM COMING TO UI
+//   if (!data.query || data.query.trim() === '') {
+//     delete data.query;   // ⬅️ THIS LINE IS CRITICAL
+//   }
+
+//   if (isNotEmpty(this.scope)) {
+//     data = Object.assign(data, { scope: this.scope });
+//   }
+
+//   this.updateSearch(data);
+//   this.submitSearch.emit(data);
+// }
+
 
   /**
    * Updates the search when the current scope has been changed

@@ -16,7 +16,9 @@ export class ProximitySearchComponent implements OnInit {
   mode: 'wildcard' | 'proximity' = 'wildcard';
 
   // Query fields for both modes
-  wildcardQuery = '*';
+  // wildcardQuery = '*';
+  wildcardQuery = '';   // Empty input ✅
+
   proximityQuery = '"JUSTICE ROUTRAY"~3';
   sortBy = "dc.title";
   sortOrder = "ASC";

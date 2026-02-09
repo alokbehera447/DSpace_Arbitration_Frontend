@@ -1,14 +1,12 @@
-<div class="user-list-container">
+<!-- <div class="user-list-container">
   <h2>User Audit Log Summary</h2>
   
-  <!-- ADD THIS LOADING CHECK -->
   <div *ngIf="!users || users.length === 0">
     <p style="color: #007bff; padding: 20px; text-align: center;">
       Loading user data...
     </p>
   </div>
   
-  <!-- SHOW TABLE ONLY WHEN DATA EXISTS -->
   <table *ngIf="users && users.length > 0">
     <thead>
       <tr>
@@ -27,4 +25,39 @@
       </tr>
     </tbody>
   </table>
+</div> -->
+
+<div class="user-list-container">
+  <div class="audit-card">
+    <h2>User Audit Log Summary</h2>
+
+    <!-- Loading state -->
+    <div class="loading" *ngIf="!users || users.length === 0">
+      <span class="spinner"></span>
+      Loading user data...
+    </div>
+
+    <!-- Table -->
+    <div class="table-wrapper" *ngIf="users && users.length > 0">
+      <table>
+        <thead>
+          <tr>
+            <th>Email</th>
+            <th>Last Login</th>
+            <th>Last Logout</th>
+            <th>Duration</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let user of users" (click)="goToDetails(user.userId)">
+            <td class="email">{{ user.email }}</td>
+            <td>{{ user.loginTime | date:'short' }}</td>
+            <td>{{ user.logoutTime | date:'short' }}</td>
+            <td class="duration">{{ user.duration | duration }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>

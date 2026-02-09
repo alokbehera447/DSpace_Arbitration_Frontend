@@ -1,11 +1,9 @@
-<div class="user-details-container">
+<!-- <div class="user-details-container">
   
-  <!-- Add loading message -->
   <div *ngIf="loading" class="loading-message">
     Loading user audit details...
   </div>
   
-  <!-- Show content when not loading -->
   <div *ngIf="!loading">
     <div *ngIf="userLogs && userLogs.length > 0; else noData">
       <div class="summary-box">
@@ -44,4 +42,84 @@
       </div>
     </ng-template>
   </div>
+</div> -->
+
+<div class="user-details-container">
+
+  <!-- Loading -->
+  <div *ngIf="loading" class="loading-message">
+    <span class="spinner"></span>
+    Loading user audit details...
+  </div>
+
+  <!-- Content -->
+  <div *ngIf="!loading">
+
+    <!-- Devices Used -->
+    <div class="card">
+      <h3>Devices Used</h3>
+      <ul class="device-list">
+        <li *ngFor="let device of uniqueDevices">
+          {{ device }}
+        </li>
+      </ul>
+    </div>
+
+    <!-- Action Timeline -->
+    <div class="card">
+      <h3>Action Timeline</h3>
+
+      <div *ngIf="pagedLogs.length > 0; else noData">
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Action</th>
+                <th>Timestamp</th>
+                <th>Object</th>
+                <th>IP</th>
+                <th>Device</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let log of pagedLogs">
+                <td>
+                  <!-- ✅ FINAL SAFE BADGE -->
+                  <span
+                    class="badge"
+                    [ngClass]="getActionClass(log.action)">
+                    {{ log.action || 'UPDATE' }}
+                  </span>
+                </td>
+                <td>{{ log.timestamp | date:'short' }}</td>
+                <td>{{ log.objectId || '-' }}</td>
+                <td>{{ log.ipAddress || '-' }}</td>
+                <td class="device-col">{{ log.userAgent || '-' }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+          <button (click)="prevPage()" [disabled]="page === 1">Prev</button>
+          <span>Page {{ page }} of {{ totalPages }}</span>
+          <button (click)="nextPage()" [disabled]="page === totalPages">Next</button>
+        </div>
+
+      </div>
+
+      <ng-template #noData>
+        <div class="no-data-message">
+          No audit logs found for this user.
+        </div>
+      </ng-template>
+
+    </div>
+  </div>
 </div>
+
+
+

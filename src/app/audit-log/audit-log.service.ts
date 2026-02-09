@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
-import { CURRENT_API_URL } from 'DSpace-IndianJudiciary-FrontEnd/src/app/core/serachpage/api-urls';
+import { CURRENT_API_URL } from '../core/serachpage/api-urls';
 export interface AuditLog {
   id: number;
   userId: string;
