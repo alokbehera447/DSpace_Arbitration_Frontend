@@ -34,3 +34,6 @@ export class FreeTextService {
     return this.http.get<any>(this.baseUrl, { params });
   }
 }
+
+
+

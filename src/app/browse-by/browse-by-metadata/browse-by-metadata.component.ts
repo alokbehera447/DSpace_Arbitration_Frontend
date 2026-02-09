@@ -195,13 +195,13 @@ export class BrowseByMetadataComponent implements OnInit, OnChanges, OnDestroy {
   ssrRenderingDisabled = false;
 
   public constructor(protected route: ActivatedRoute,
-                     protected browseService: BrowseService,
-                     protected dsoService: DSpaceObjectDataService,
-                     protected paginationService: PaginationService,
-                     protected router: Router,
-                     @Inject(APP_CONFIG) public appConfig: AppConfig,
-                     public dsoNameService: DSONameService,
-                     @Inject(PLATFORM_ID) public platformId: any,
+    protected browseService: BrowseService,
+    protected dsoService: DSpaceObjectDataService,
+    protected paginationService: PaginationService,
+    protected router: Router,
+    @Inject(APP_CONFIG) public appConfig: AppConfig,
+    public dsoNameService: DSONameService,
+    @Inject(PLATFORM_ID) public platformId: any,
   ) {
     this.fetchThumbnails = this.appConfig.browseBy.showThumbnails;
     this.paginationConfig = Object.assign(new PaginationComponentOptions(), {
@@ -219,7 +219,7 @@ export class BrowseByMetadataComponent implements OnInit, OnChanges, OnDestroy {
       return;
     }
 
-    
+
     const sortConfig = new SortOptions('default', SortDirection.ASC);
     this.currentPagination$ = this.paginationService.getCurrentPagination(this.paginationConfig.id, this.paginationConfig);
     this.currentSort$ = this.paginationService.getCurrentSort(this.paginationConfig.id, sortConfig);
@@ -246,13 +246,57 @@ export class BrowseByMetadataComponent implements OnInit, OnChanges, OnDestroy {
           this.value = '';
         }
 
-        if (params.startsWith === undefined || params.startsWith === '') {
-          this.startsWith = undefined;
+        // if (typeof params.value === 'string') {
+        //   const v = params.value.trim();
+        //   this.value = (v === '*') ? '' : v;
+        // } else {
+        //   this.value = '';
+        // }
+
+        // // ✅ HIDE DEFAULT "*" COMING FROM SEARCH QUERY (UI ONLY)
+        // if (params.query === '*') {
+        //   // treat it as empty so UI text doesn't show "*"
+        //   params.query = '';
+        // }
+
+
+
+
+
+
+
+        // if (params.startsWith === undefined || params.startsWith === '') {
+        //   this.startsWith = undefined;
+        // }
+
+        // if (typeof params.startsWith === 'string') {
+        //   this.startsWith = params.startsWith.trim();
+        // }
+
+                // --- START FIX ---
+
+        // 1. Clean 'value' (this hides * in the input if user browsing items)
+        if (typeof params.value === 'string') {
+          const v = params.value.trim();
+          this.value = (v === '*' || v === '') ? '' : v;
+        } else {
+          this.value = '';
         }
 
+        // 2. Clean 'startsWith' (this hides * if input is bound to startsWith)
         if (typeof params.startsWith === 'string') {
-          this.startsWith = params.startsWith.trim();
+           const s = params.startsWith.trim();
+           this.startsWith = (s === '*' || s === '') ? undefined : s;
+        } else {
+           this.startsWith = undefined;
         }
+        
+        // 3. IMPORTANT: When we call the API, we must restore '*' if it was effectively empty
+        //    Otherwise, DSpace might not return anything.
+        //    (However, usually empty string '' works as "all" in these service calls).
+        
+        // --- END FIX ---
+
 
         if (isNotEmpty(this.value)) {
           this.updatePageWithItems(browseParamsToOptions(params, scope, currentPage, currentSort, this.browseId, this.fetchThumbnails), this.value, this.authority);

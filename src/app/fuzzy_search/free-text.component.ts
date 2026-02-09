@@ -1,5 +1,5 @@
 import { Component, type OnInit } from "@angular/core"
-import { BehaviorSubject } from "rxjs" 
+import { BehaviorSubject } from "rxjs"
 import { FuzzyServiceService } from "../core/serachpage/fuzzy.service"
 
 @Component({
@@ -19,12 +19,17 @@ export class FuzzySearchComponent implements OnInit {
   endDate = ""
   page = 0
 
-  constructor(private searchPageService: FuzzyServiceService) {}
+  constructor(private searchPageService: FuzzyServiceService) { }
 
+  // ngOnInit() {
+  //   this.freeTextQuery = "~" // Load default results with fuzzy search
+  //   this.fetchCases()
+  // }
   ngOnInit() {
-    this.freeTextQuery = "~" // Load default results with fuzzy search
+    this.freeTextQuery = "" // Empty input, backend handles fuzzy "all"
     this.fetchCases()
   }
+
 
   onSearchClick() {
     this.fetchCases()

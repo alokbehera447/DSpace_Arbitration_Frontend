@@ -1,37 +1,197 @@
+// .user-details-container {
+//     padding: 24px;
+  
+//     .summary-box {
+//       background: #f9f9f9;
+//       padding: 12px;
+//       margin-bottom: 20px;
+//       border-radius: 4px;
+//     }
+  
+//     table {
+//       width: 100%;
+//       border-collapse: collapse;
+  
+//       th, td {
+//         padding: 10px;
+//         border: 1px solid #ccc;
+//       }
+  
+//       tr:hover {
+//         background: #f5f5f5;
+//       }
+//     }
+//   }
+//   .loading-message {
+//   padding: 20px;
+//   text-align: center;
+//   color: #007bff;
+//   font-size: 16px;
+// }
+
+// .no-data-message {
+//   padding: 20px;
+//   text-align: center;
+//   color: #666;
+//   font-size: 16px;
+// }
+
 .user-details-container {
-    padding: 24px;
-  
-    .summary-box {
-      background: #f9f9f9;
-      padding: 12px;
-      margin-bottom: 20px;
-      border-radius: 4px;
-    }
-  
-    table {
-      width: 100%;
-      border-collapse: collapse;
-  
-      th, td {
-        padding: 10px;
-        border: 1px solid #ccc;
-      }
-  
-      tr:hover {
-        background: #f5f5f5;
-      }
-    }
-  }
-  .loading-message {
+  padding: 32px;
+  background: #f5f7fa;
+  min-height: 100vh;
+}
+
+/* Card */
+.card {
+  background: #ffffff;
+  border-radius: 10px;
   padding: 20px;
-  text-align: center;
-  color: #007bff;
-  font-size: 16px;
+  margin-bottom: 24px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+.card h3 {
+  margin-bottom: 16px;
+  font-size: 18px;
+  font-weight: 600;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 8px;
+}
+
+/* Devices */
+.device-list {
+  list-style: disc;
+  padding-left: 20px;
+  font-size: 14px;
+  color: #374151;
+}
+
+/* Table */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: #f1f5f9;
+}
+
+th, td {
+  padding: 12px;
+  font-size: 14px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+tbody tr:hover {
+  background: #f9fafb;
+}
+
+/* Badge base */
+.badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* User actions */
+.badge.login {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.badge.view {
+  background: #ecfdf5;
+  color: #047857;
+}
+
+.badge.download {
+  background: #fff7ed;
+  color: #c2410c;
+}
+
+/* Role actions */
+.badge.role {
+  background: #ede9fe;
+  color: #5b21b6;
+}
+
+/* Permission actions */
+.badge.permission {
+  background: #e0f2fe;
+  color: #075985;
+}
+
+/* Fallback */
+.badge.update {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+/* Device column */
+.device-col {
+  max-width: 360px;
+  font-size: 12px;
+  color: #4b5563;
+  word-break: break-word;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.pagination button {
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Loading */
+.loading-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 40px;
+  color: #2563eb;
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 3px solid #c7d2fe;
+  border-top-color: #2563eb;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
 
 .no-data-message {
-  padding: 20px;
   text-align: center;
-  color: #666;
-  font-size: 16px;
+  padding: 24px;
+  color: #6b7280;
 }
+
+

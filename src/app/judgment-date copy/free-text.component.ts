@@ -21,10 +21,15 @@ export class FreeTextComponent implements OnInit {
 
   constructor(private searchPageService: FreeTextService) {}
 
+  // ngOnInit() {
+  //   this.freeTextQuery = '*'; // Load default results
+  //   this.fetchCases();
+  // }
   ngOnInit() {
-    this.freeTextQuery = '*'; // Load default results
-    this.fetchCases();
-  }
+  this.freeTextQuery = ''; // Empty input, backend handles empty as "all"
+  this.fetchCases();
+}
+
 
   onSearchClick() {
     this.fetchCases();
