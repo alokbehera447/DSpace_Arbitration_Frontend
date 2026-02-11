@@ -99,37 +99,49 @@ tbody tr:hover {
   font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
+  display: inline-block;
 }
 
-/* User actions */
+/* ================= USER ACTIONS ================= */
+
+/* LOGIN */
 .badge.login {
   background: #e0f2fe;
   color: #0369a1;
 }
 
+/* ✅ ADDED LOGOUT (THIS WAS MISSING) */
+.badge.logout {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* VIEW */
 .badge.view {
   background: #ecfdf5;
   color: #047857;
 }
 
+/* DOWNLOAD */
 .badge.download {
   background: #fff7ed;
   color: #c2410c;
 }
 
-/* Role actions */
+/* ================= ADMIN ACTIONS ================= */
+
 .badge.role {
   background: #ede9fe;
   color: #5b21b6;
 }
 
-/* Permission actions */
 .badge.permission {
   background: #e0f2fe;
   color: #075985;
 }
 
-/* Fallback */
+/* ================= FALLBACK ================= */
+
 .badge.update {
   background: #f3f4f6;
   color: #374151;
@@ -193,5 +205,6 @@ tbody tr:hover {
   padding: 24px;
   color: #6b7280;
 }
+
 
 
