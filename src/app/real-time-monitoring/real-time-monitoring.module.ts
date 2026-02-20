@@ -1,17 +1,3 @@
-// import { NgModule } from '@angular/core';
-// import { CommonModule } from '@angular/common';
-// import { RealTimeMonitoringRoutingModule } from './real-time-monitoring-routing.module';
-// import { RealTimeMonitoringComponent } from './real-time-monitoring.component';
-// import { RealTimeMonitoringService } from './real-time-monitoring.service';
-
-// @NgModule({
-//   declarations: [RealTimeMonitoringComponent],
-//   imports: [CommonModule, RealTimeMonitoringRoutingModule],
-//   providers: [RealTimeMonitoringService],
-// })
-// export class RealTimeMonitoringModule {}
-
-
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
