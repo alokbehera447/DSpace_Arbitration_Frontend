@@ -247,18 +247,24 @@ export class ViewerComponent implements OnInit, OnDestroy {
     }
 
     this.route.params.subscribe(params => {
+
       if (params["bitstreamUuid"]) {
         this.currentBitstreamId = params["bitstreamUuid"];
+
+        // ✅ ALWAYS load comments on refresh
+        this.loadComments(this.currentBitstreamId);
+
+        // Permission check
+        this.checkFilePermissions(this.currentBitstreamId);
+
+        // Load PDF with signer logic
+        this.loadWithSignerCheck(this.currentBitstreamId);
       }
 
       if (params["itemUuid"]) {
         this.fetchMetadataFromApi(params["itemUuid"]);
       }
 
-      if (params["bitstreamUuid"]) {
-        this.checkFilePermissions(params["bitstreamUuid"]);
-        this.loadWithSignerCheck(this.currentBitstreamId);
-      }
     });
   }
 
@@ -283,7 +289,7 @@ export class ViewerComponent implements OnInit, OnDestroy {
       next: (status: any) => {
         if (status.timeout) {
           this.isDscAvailable = false;
-          this.loadComments(bitstreamId);
+          // this.loadComments(bitstreamId);
           const proceed = confirm(
             "⚠️ DSC service is taking too long to respond.\n\n" +
             "Click 'OK' to proceed without digital signature.\n" +

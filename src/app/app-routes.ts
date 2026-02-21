@@ -248,7 +248,7 @@ export const APP_ROUTES: Route[] = [
           },
           {
             path: "dc_party_firstrespondent",
-            component: FreeTextComponent3,
+            component: VideoSearchComponent,
             data: { enableRSS: true },
             canActivate: [authenticatedGuard, endUserAgreementCurrentUserGuard],
           },
