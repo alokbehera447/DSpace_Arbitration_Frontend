@@ -355,7 +355,7 @@
 <div class="container">
 
   <!-- ================= SEARCH ================= -->
-  <div class="card">
+  <div class="card mb-4">
     <div class="card-header section-header">
       <h5>Search Case</h5>
     </div>
@@ -371,10 +371,11 @@
           </select>
         </div>
 
-        <!-- CINO -->
+        <!-- CINO SEARCH -->
         <ng-container *ngIf="searchMode === 'cino'">
           <div class="col-md-6">
             <label class="form-label">CINO Number</label>
+
             <div class="input-group">
               <input
                 class="form-control"
@@ -383,15 +384,20 @@
                 (input)="onSearchInput()"
                 [disabled]="loading"
               />
-              <button class="btn btn-primary" (click)="searchItems()">
-                <span *ngIf="loading" class="spinner-border spinner-border-sm me-1"></span>
+
+              <button
+                class="btn btn-primary px-4"
+                type="button"
+                (click)="searchItems()">
+                <span *ngIf="loading"
+                      class="spinner-border spinner-border-sm me-2"></span>
                 Search
               </button>
             </div>
           </div>
         </ng-container>
 
-        <!-- CASE -->
+        <!-- CASE SEARCH -->
         <ng-container *ngIf="searchMode === 'case'">
           <div class="col-md-2">
             <label class="form-label">Case No</label>
@@ -409,10 +415,16 @@
           </div>
 
           <div class="col-md-3 d-flex gap-2">
-            <button class="btn btn-primary w-100" [disabled]="loading" (click)="searchItems()">
+            <button class="btn btn-primary w-100"
+                    [disabled]="loading"
+                    (click)="searchItems()">
               Search
             </button>
-            <button class="btn btn-outline-dark" (click)="clearCaseInputs()">Clear</button>
+
+            <button class="btn btn-outline-dark"
+                    (click)="clearCaseInputs()">
+              Clear
+            </button>
           </div>
         </ng-container>
 
@@ -420,8 +432,45 @@
     </div>
   </div>
 
+  <!-- ================= SEARCH RESULTS ================= -->
+  <div class="card mb-4" *ngIf="searchResults?.length">
+    <div class="card-header section-header">
+      <h5>Search Results</h5>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table table-hover align-middle">
+        <thead>
+          <tr>
+            <th>CINO</th>
+            <th>File Name</th>
+            <th>Created</th>
+            <th class="text-center">Action</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let file of searchResults">
+            <td>{{ file.cino }}</td>
+            <td>{{ file.fileName }}</td>
+            <td>{{ file.createdAt | date:'medium' }}</td>
+            <td class="text-center">
+              <button
+                class="btn btn-sm"
+                [ngClass]="isInCart(file) ? 'btn-secondary' : 'btn-outline-primary'"
+                (click)="addSingleToCart(file)"
+                [disabled]="isInCart(file)">
+                {{ isInCart(file) ? 'Added' : 'Add to Queue' }}
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
   <!-- ================= REPORT ================= -->
-  <div class="card">
+  <div class="card mb-4">
     <div class="card-header section-header">
       <h5>Report</h5>
     </div>
@@ -431,17 +480,22 @@
 
         <div class="col-md-3">
           <label class="form-label">From</label>
-          <input type="date" class="form-control" [(ngModel)]="reportFrom">
+          <input type="date"
+                 class="form-control"
+                 [(ngModel)]="reportFrom">
         </div>
 
         <div class="col-md-3">
           <label class="form-label">To</label>
-          <input type="date" class="form-control" [(ngModel)]="reportTo">
+          <input type="date"
+                 class="form-control"
+                 [(ngModel)]="reportTo">
         </div>
 
         <div class="col-md-3">
           <label class="form-label">Format</label>
-          <select class="form-select" [(ngModel)]="reportFormat">
+          <select class="form-select"
+                  [(ngModel)]="reportFormat">
             <option value="csv">CSV</option>
             <option value="pdf">PDF</option>
           </select>
@@ -452,7 +506,8 @@
             class="btn btn-outline-dark w-100"
             [disabled]="reportLoading || !reportFrom || !reportTo"
             (click)="downloadReport()">
-            <span *ngIf="reportLoading" class="spinner-border spinner-border-sm me-1"></span>
+            <span *ngIf="reportLoading"
+                  class="spinner-border spinner-border-sm me-2"></span>
             Download Report
           </button>
         </div>
@@ -462,13 +517,12 @@
   </div>
 
   <!-- ================= SUBMISSION QUEUE ================= -->
-  <div class="card submission-queue-card my-4">
+  <div class="card submission-queue-card mb-4">
     <div class="submission-queue-body">
 
       <div class="queue-left">
         <div class="queue-icon"></div>
-
-        <div class="queue-text">
+        <div>
           <div class="queue-title">Submission Queue</div>
           <div class="queue-subtitle">
             Files selected and pending for submission
@@ -478,7 +532,8 @@
 
       <div class="queue-right">
         <span class="queue-badge">{{ cartCount }}</span>
-        <button class="queue-button" (click)="openCart()">
+        <button class="queue-button"
+                (click)="openCart()">
           View Queue
         </button>
       </div>
@@ -489,30 +544,35 @@
   <!-- ================= GENERATED FILES ================= -->
   <div class="card mt-4" *ngIf="generatedFiles.length">
 
-    <div class="card-header section-header d-flex justify-content-between">
+    <div class="card-header section-header d-flex justify-content-between align-items-center">
       <h5>Generated Files</h5>
 
       <div class="d-flex gap-2">
-        <select class="form-select form-select-sm" [(ngModel)]="filterSubmitted">
+        <select class="form-select form-select-sm"
+                [(ngModel)]="filterSubmitted">
           <option value="">All</option>
           <option value="submit">Submitted</option>
           <option value="notSubmitted">Not Submitted</option>
         </select>
 
-        <select class="form-select form-select-sm" [(ngModel)]="sortDir">
+        <select class="form-select form-select-sm"
+                [(ngModel)]="sortDir">
           <option value="desc">Newest</option>
           <option value="asc">Oldest</option>
         </select>
 
-        <button class="btn btn-sm btn-primary" (click)="applyFilters()">Apply</button>
+        <button class="btn btn-sm btn-primary"
+                (click)="applyFilters()">
+          Apply
+        </button>
       </div>
     </div>
 
     <div class="table-responsive">
-      <table class="table table-hover">
+      <table class="table table-hover align-middle">
         <thead>
           <tr>
-            <th>Select</th>
+            <th class="checkbox-col ps-4">Select</th>
             <th>File Name</th>
             <th>CINO</th>
             <th>Created</th>
@@ -525,18 +585,30 @@
 
         <tbody>
           <tr *ngFor="let file of generatedFiles">
-            <td><input type="checkbox" [(ngModel)]="file.selected"></td>
+            <td class="checkbox-col ps-4">
+              <input type="checkbox"
+                     class="form-check-input"
+                     [(ngModel)]="file.selected"
+                     (change)="onGeneratedSelectionChange()" />
+            </td>
+
             <td>{{ file.fileName }}</td>
             <td>{{ file.cinoNumber }}</td>
             <td>{{ file.createdAt | date:'short' }}</td>
             <td>{{ file.fileCount || '-' }}</td>
             <td>{{ file.userFriendlyPostResponse }}</td>
             <td>{{ file.userFriendlyCheckResponse }}</td>
+
             <td>
-              <button class="btn btn-info btn-sm" *ngIf="file.ackId" (click)="checkStatus(file)">
+              <button class="btn btn-info btn-sm"
+                      *ngIf="file.ackId"
+                      (click)="checkStatus(file)">
                 Status
               </button>
-              <button class="btn btn-primary btn-sm" *ngIf="!file.ackId" (click)="submitFile(file)">
+
+              <button class="btn btn-primary btn-sm"
+                      *ngIf="!file.ackId"
+                      (click)="submitFile(file)">
                 Submit
               </button>
             </td>
@@ -545,14 +617,14 @@
       </table>
     </div>
 
-    <div class="card-footer d-flex justify-content-center gap-3">
+    <div class="card-footer d-flex justify-content-center align-items-center gap-3">
       <button class="btn btn-outline-primary btn-sm"
               [disabled]="currentPage === 0"
               (click)="loadGeneratedFiles(currentPage - 1)">
         Previous
       </button>
 
-      <span>Page {{ currentPage + 1 }} / {{ totalPages }}</span>
+      <span>Page {{ currentPage + 1 }} of {{ totalPages }}</span>
 
       <button class="btn btn-outline-primary btn-sm"
               [disabled]="currentPage + 1 >= totalPages"
@@ -560,13 +632,91 @@
         Next
       </button>
     </div>
-  </div>
 
-  <div *ngIf="!generatedFiles.length" class="empty-state">
-    No generated files found.
   </div>
 
 </div>
+
+
+<!-- ================= QUEUE MODAL (FIXED) ================= -->
+<div *ngIf="showCart">
+
+  <div class="modal-backdrop fade show"
+       (click)="closeCart()"></div>
+
+  <div class="modal d-block">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content"
+           (click)="$event.stopPropagation()">
+
+        <div class="modal-header">
+          <h5 class="modal-title">
+            Submission Queue ({{ cartCount }})
+          </h5>
+          <button type="button"
+                  class="btn-close"
+                  (click)="closeCart()"></button>
+        </div>
+
+        <div class="modal-body">
+
+          <ng-container *ngIf="cartCount > 0; else emptyCart">
+
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>File Name</th>
+                  <th>CINO</th>
+                  <th>Created</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr *ngFor="let row of cartView; trackBy: trackByCart">
+                  <td>{{ row.fileName }}</td>
+                  <td>{{ row.cino }}</td>
+                  <td>{{ row.createdAt | date:'medium' }}</td>
+                  <td>
+                    <button class="btn btn-sm btn-outline-danger"
+                            (click)="removeFromCart(row._raw)">
+                      Remove
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+          </ng-container>
+
+          <ng-template #emptyCart>
+            <div class="empty-state text-center py-4">
+              Your queue is empty.
+            </div>
+          </ng-template>
+
+        </div>
+
+        <div class="modal-footer d-flex justify-content-between">
+          <button class="btn btn-outline-danger"
+                  (click)="clearCart()"
+                  [disabled]="!cartCount">
+            Clear Queue
+          </button>
+
+          <button class="btn btn-success"
+                  (click)="closeCart(); generateFiles()"
+                  [disabled]="!cartCount">
+            Generate Zip File
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
 
 
 
