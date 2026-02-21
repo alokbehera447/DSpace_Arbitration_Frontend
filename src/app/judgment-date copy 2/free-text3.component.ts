@@ -11,7 +11,7 @@ export class FreeTextComponent3 implements OnInit {
   private caseListSubject = new BehaviorSubject<any[]>([]);
   caseList$ = this.caseListSubject.asObservable();
 
-  freeTextQuery: string = ''; // Free text search input
+  freeTextQuery: string = '';
   sortBy: string = 'dc.title';
   sortOrder: string = 'ASC';
   resultsPerPage: number = 10;

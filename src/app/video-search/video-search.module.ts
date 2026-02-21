@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { VideoSearchComponent } from './video-search.component';
+import { VideoSearchService } from '../core/serachpage/video-search';
 
 @NgModule({
   declarations: [
@@ -10,7 +12,14 @@ import { VideoSearchComponent } from './video-search.component';
   ],
   imports: [
     CommonModule,
-    ReactiveFormsModule   // <-- REQUIRED HERE
+    ReactiveFormsModule,
+    HttpClientModule
+  ],
+  providers: [
+    VideoSearchService
+  ],
+  exports: [
+    VideoSearchComponent
   ]
 })
-export class VideoSearchModule {}
+export class VideoSearchModule { }

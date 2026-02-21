@@ -1,33 +1,53 @@
 <div class="video-search-container">
-  <h2>Search Video Transcripts</h2>
 
-  <input
-    type="text"
-    class="form-control"
-    placeholder="Search video transcript..."
-    [formControl]="transcriptControl"
-  />
+  <h2>Search Case Transcript</h2>
 
-  <button class="btn btn-secondary mt-2" (click)="onSearchClick()">
-    Search
-  </button>
+  <div class="input-group mb-3">
+    <input
+      type="text"
+      class="form-control"
+      [formControl]="transcriptControl"
+      placeholder="Search transcript..."
+      (keyup.enter)="onSearchClick()"
+    />
+    <button class="btn btn-primary" (click)="onSearchClick()">
+      Search
+    </button>
+  </div>
 
-  <div *ngFor="let video of videoList$ | async" class="video-card mt-4">
+  <div *ngIf="loading" class="text-center">Loading...</div>
 
-    <h4>{{ video.title }}</h4>
-    <p><strong>Transcript:</strong> {{ video.transcript }}</p>
+  <div *ngIf="(caseList$ | async)?.length === 0 && transcriptControl.value">
+    No cases found.
+  </div>
 
-    <div *ngIf="video.videoUrl; else noVideo">
-      <video width="400" controls>
-        <source [src]="video.videoUrl" type="video/mp4">
-      </video>
+  <div *ngFor="let caseItem of caseList$ | async" class="case-card">
 
-      <p><a [href]="video.videoUrl" target="_blank">Open Video</a></p>
+    <h5>Case Details</h5>
+
+    <p><strong>Case Number:</strong> {{ caseItem.caseNumber }}</p>
+    <p><strong>Case Type:</strong> {{ caseItem.caseType }}</p>
+    <p><strong>Case Year:</strong> {{ caseItem.caseYear }}</p>
+
+    <div class="mt-3">
+      <a
+        [href]="caseItem.itemUrl"
+        target="_blank"
+        class="btn btn-outline-primary me-2"
+      >
+        View Item
+      </a>
+
+      <a
+        *ngIf="caseItem.videoUrl"
+        [href]="caseItem.videoUrl"
+        target="_blank"
+        class="btn btn-primary"
+      >
+        View Video
+      </a>
     </div>
 
-    <ng-template #noVideo>
-      <p>No video file found.</p>
-    </ng-template>
-
   </div>
+
 </div>

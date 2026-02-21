@@ -1,34 +1,64 @@
+// COPY THIS ENTIRE FILE TO: src/app/core/serachpage/video-search.ts
+// (or wherever your VideoSearchService is located)
+
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { CURRENT_API_URL } from '../serachpage/api-urls';
+import { CURRENT_API_URL } from './api-urls';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class VideoSearchService {
-  private baseUrl = `${CURRENT_API_URL}/server/api/discover/search/objects`;
 
-  constructor(private http: HttpClient) {}
+  private apiUrl = `${CURRENT_API_URL}/server/api`;
 
-  searchVideos(
-    transcriptQuery: string,
-    resultsPerPage: number = 10
-  ): Observable<any> {
+  constructor(private http: HttpClient) { }
+
+  /**
+   * Search for videos by transcript content using filter approach
+   * This matches the pattern used for judge name search in DSpace
+   * Pattern: dc.contributor.author → f.author
+   * Pattern: dc.description.transcript → f.transcript
+   */
+  searchVideos(query: string, size: number = 10, page: number = 0): Observable<any> {
 
     let params = new HttpParams()
-      .set('query', '*') 
-      .set('size', resultsPerPage.toString())
-      .set('sort', 'dc.title,ASC');
+      .set('query', query)   // FULL TEXT SEARCH
+      .set('sort', 'dc.title,ASC')
+      .set('size', size.toString())
+      .set('page', page.toString())
+      .set('embed', 'searchResult.objects.indexableObject.bitstreams');
 
-    if (transcriptQuery) {
-      params = params.append('f.dc.transcript', `${transcriptQuery},contains`);
-    }
+    console.log('🔍 Search API URL:', `${this.apiUrl}/discover/search/objects`);
+    console.log('📋 Search params:', params.toString());
 
-    // Optional: return only items that have video link metadata
-    // (modify based on your DSpace metadata field names)
-    params = params.append('f.dc.type', 'video,equals');
+    return this.http.get(`${this.apiUrl}/discover/search/objects`, { params });
+  }
 
-    return this.http.get<any>(this.baseUrl, { params });
+  /**
+   * Get item details by UUID
+   */
+  getItemByUuid(uuid: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/core/items/${uuid}`);
+  }
+
+  /**
+   * Get bitstreams for an item
+   */
+  getItemBitstreams(uuid: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/core/items/${uuid}/bitstreams`);
+  }
+  getItemBundles(itemUuid: string) {
+    return this.http.get(
+      `${this.apiUrl}/core/items/${itemUuid}/bundles`
+    );
+  }
+
+  getBundleBitstreams(bundleUuid: string) {
+    return this.http.get(
+      `${this.apiUrl}/core/bundles/${bundleUuid}/bitstreams`
+    );
   }
 }

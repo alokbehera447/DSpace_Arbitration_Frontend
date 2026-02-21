@@ -222,10 +222,10 @@
       <!-- Video Viewer -->
       <div class="video-container" *ngIf="isVideoFile && hasTimeAccess">
         <!-- Video Toolbar -->
-        <div class="toolbar toolbar-video">
+        <!-- <div class="toolbar toolbar-video">
           <button class="icon-button" (click)="openVideoInNewTab()">↗</button>
           <button *ngIf="canDownloadFile" class="icon-button" (click)="downloadVideo()">⬇</button>
-        </div>
+        </div> -->
 
         <!-- Video Player -->
         <div class="pdf-scroll-container">
@@ -253,15 +253,6 @@
             Your browser does not support the audio tag.
           </audio>
         </div>
-      </div>
-
-      <!-- Permission Notices -->
-      <div *ngIf="!canDownloadFile && hasTimeAccess" class="permission-notice download-notice">
-        ⚠️ Download not permitted for this file
-      </div>
-
-      <div *ngIf="!canPrintFile && hasTimeAccess" class="permission-notice print-notice">
-        ⚠️ Printing not permitted for this file
       </div>
     </div>
 

@@ -15,9 +15,9 @@ export class SearchPageComponent implements OnInit {
   caseNumber: string = '';
   caseType: string = '';
   caseYear: string = '';
-  sortBy: string = 'dc.title'; // Default sorting field
-  sortOrder: string = 'ASC'; // Default sorting order
-  resultsPerPage: number = 10; // Default results per page
+  sortBy: string = 'dc.title';
+  sortOrder: string = 'ASC';
+  resultsPerPage: number = 10;
   caseTypeOptions: string[] = [];
 
   constructor(private searchPageService: SearchPageService , private facetsService: FacetsService) {}
