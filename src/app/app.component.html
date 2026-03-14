@@ -1,3 +1,6 @@
 <ds-root
   [shouldShowFullscreenLoader]="(isAuthBlocking$ | async) || (isThemeLoading$ | async)"
   [shouldShowRouteLoader]="isRouteLoading$ | async"></ds-root>
+
+  <!-- Floating AI Assistant -->
+<app-ai-assistant></app-ai-assistant>

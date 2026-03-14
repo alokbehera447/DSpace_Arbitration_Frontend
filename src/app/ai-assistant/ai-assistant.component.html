@@ -1,0 +1,78 @@
+<div class="ai-wrapper">
+
+  <!-- Floating Robot Button -->
+  <div class="robot-container" *ngIf="!isOpen" (click)="toggleChat()">
+    <div class="robot-glow"></div>
+    <img src="assets/images/chatbot.png" alt="AI Assistant">
+  </div>
+
+  <!-- Chat Window -->
+  <div class="chat-container" *ngIf="isOpen">
+
+    <div class="robot-top">
+      <div class="robot-glow-small"></div>
+      <img src="assets/images/chatbot.png" alt="AI Assistant">
+    </div>
+
+    <div class="chat-box">
+
+      <!-- Header -->
+      <div class="chat-header">
+        <div class="assistant-title">
+          <span class="status-dot"></span>
+          AI Legal Assistant
+        </div>
+        <button (click)="toggleChat()">✕</button>
+      </div>
+
+      <!-- Messages -->
+      <div class="chat-body">
+
+        <div *ngFor="let msg of messages"
+             [ngClass]="msg.type === 'user' ? 'user-message' : 'bot-message'">
+
+          <div class="result-item">
+
+            <div class="result-title">
+              {{ msg.text }}
+            </div>
+
+            <a *ngIf="msg.link"
+               [href]="msg.link"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="view-link">
+              View Case →
+            </a>
+
+          </div>
+
+        </div>
+
+        <div *ngIf="loading" class="bot-message typing">
+          🔍 Searching...
+        </div>
+
+      </div>
+
+      <!-- Modern Search Input -->
+      <div class="chat-input">
+
+        <div class="search-wrapper">
+          <input
+            [(ngModel)]="userMessage"
+            (keydown.enter)="sendMessage(); $event.preventDefault()"
+            placeholder="What are you looking for?"
+          />
+
+          <button (click)="sendMessage()">
+            🔎
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>

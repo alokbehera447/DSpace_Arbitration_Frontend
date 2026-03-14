@@ -1,39 +1,52 @@
 import { AsyncPipe, DOCUMENT, isPlatformBrowser } from "@angular/common"
 import {
-   AfterViewInit,
+  AfterViewInit,
   ChangeDetectionStrategy,
   Component,
   HostListener,
   Inject,
-   OnInit,
+  OnInit,
   PLATFORM_ID,
 } from "@angular/core"
-import { NavigationCancel, NavigationEnd, NavigationStart,  Router } from "@angular/router"
-import  { NgbModal, NgbModalConfig } from "@ng-bootstrap/ng-bootstrap"
-import { select,  Store } from "@ngrx/store"
-import  { TranslateService } from "@ngx-translate/core"
-import { BehaviorSubject,  Observable } from "rxjs"
+import { NavigationCancel, NavigationEnd, NavigationStart, Router } from "@angular/router"
+import { NgbModal, NgbModalConfig } from "@ng-bootstrap/ng-bootstrap"
+import { select, Store } from "@ngrx/store"
+import { TranslateService } from "@ngx-translate/core"
+import { BehaviorSubject, Observable } from "rxjs"
 import { delay, distinctUntilChanged, take, withLatestFrom } from "rxjs/operators"
 
 import { environment } from "../environments/environment"
-import  { AuthService } from "./core/auth/auth.service"
+import { AuthService } from "./core/auth/auth.service"
 import { isAuthenticationBlocking } from "./core/auth/selectors"
-import {  NativeWindowRef, NativeWindowService } from "./core/services/window.service"
+import { NativeWindowRef, NativeWindowService } from "./core/services/window.service"
 import { distinctNext } from "./core/shared/distinct-next"
 import { ThemedRootComponent } from "./root/themed-root.component"
 import { HostWindowResizeAction } from "./shared/host-window.actions"
 import { IdleModalComponent } from "./shared/idle-modal/idle-modal.component"
-import  { CSSVariableService } from "./shared/sass-helper/css-variable.service"
-import  { HostWindowState } from "./shared/search/host-window.reducer"
-import  { ThemeService } from "./shared/theme-support/theme.service"
+import { CSSVariableService } from "./shared/sass-helper/css-variable.service"
+import { HostWindowState } from "./shared/search/host-window.reducer"
+import { ThemeService } from "./shared/theme-support/theme.service"
 
+
+
+import { AiAssistantComponent } from "./ai-assistant/ai-assistant.component";
+
+
+// @Component({
+//   selector: "ds-app",
+//   templateUrl: "./app.component.html",
+//   styleUrls: ["./app.component.scss"],
+//   changeDetection: ChangeDetectionStrategy.OnPush,
+//   standalone: true,
+//   imports: [ThemedRootComponent, AsyncPipe],
+// })
 @Component({
   selector: "ds-app",
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [ThemedRootComponent, AsyncPipe],
+  imports: [ThemedRootComponent, AsyncPipe, AiAssistantComponent],
 })
 export class AppComponent implements OnInit, AfterViewInit {
   notificationOptions
