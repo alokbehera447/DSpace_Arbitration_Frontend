@@ -98,12 +98,18 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     /** Implement behavior for interface {@link ModalBeforeDismiss} */
-    this.modalConfig.beforeDismiss = async function () {
-      if (typeof this?.componentInstance?.beforeDismiss === "function") {
-        return this.componentInstance.beforeDismiss()
-      }
+    // this.modalConfig.beforeDismiss = async function () {
+    //   if (typeof this?.componentInstance?.beforeDismiss === "function") {
+    //     return this.componentInstance.beforeDismiss()
+    //   }
 
-      // fall back to default behavior
+    //   // fall back to default behavior
+    //   return true
+    // }
+    (this.modalConfig as any).beforeDismiss = async function () {
+      if (typeof (this as any)?.componentInstance?.beforeDismiss === "function") {
+        return (this as any).componentInstance.beforeDismiss()
+      }
       return true
     }
 
@@ -178,3 +184,4 @@ export class AppComponent implements OnInit, AfterViewInit {
     })
   }
 }
+
