@@ -280,7 +280,8 @@ export class RealTimeMonitoringComponent implements OnInit, OnDestroy {
           // ADD YOUR SUPER ADMIN EMAILS HERE
           const adminEmails = [
             'admin@gmail.com',
-            'superadmin@yourdomain.com'
+            'superadmin@yourdomain.com',
+            'alok@gmail.com'
           ];
 
           const isSuperAdmin = adminEmails.includes(userEmail);

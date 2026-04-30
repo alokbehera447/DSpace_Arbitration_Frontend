@@ -29,7 +29,7 @@ import { ThemeService } from "./shared/theme-support/theme.service"
 
 
 
-import { AiAssistantComponent } from "./ai-assistant/ai-assistant.component";
+// import { AiAssistantComponent } from "./ai-assistant/ai-assistant.component";
 
 
 // @Component({
@@ -46,7 +46,7 @@ import { AiAssistantComponent } from "./ai-assistant/ai-assistant.component";
   styleUrls: ["./app.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [ThemedRootComponent, AsyncPipe, AiAssistantComponent],
+  imports: [ThemedRootComponent, AsyncPipe],
 })
 export class AppComponent implements OnInit, AfterViewInit {
   notificationOptions
