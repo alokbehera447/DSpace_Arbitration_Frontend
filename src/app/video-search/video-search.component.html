@@ -1,53 +1,125 @@
-<div class="video-search-container">
+<div class="video-search-page">
 
-  <h2>Search Case Transcript</h2>
+  <!-- HERO -->
+  <section class="hero-banner">
 
-  <div class="input-group mb-3">
-    <input
-      type="text"
-      class="form-control"
-      [formControl]="transcriptControl"
-      placeholder="Search transcript..."
-      (keyup.enter)="onSearchClick()"
-    />
-    <button class="btn btn-primary" (click)="onSearchClick()">
-      Search
-    </button>
-  </div>
-
-  <div *ngIf="loading" class="text-center">Loading...</div>
-
-  <div *ngIf="(caseList$ | async)?.length === 0 && transcriptControl.value">
-    No cases found.
-  </div>
-
-  <div *ngFor="let caseItem of caseList$ | async" class="case-card">
-
-    <h5>Case Details</h5>
-
-    <p><strong>Case Number:</strong> {{ caseItem.caseNumber }}</p>
-    <p><strong>Case Type:</strong> {{ caseItem.caseType }}</p>
-    <p><strong>Case Year:</strong> {{ caseItem.caseYear }}</p>
-
-    <div class="mt-3">
-      <a
-        [href]="caseItem.itemUrl"
-        target="_blank"
-        class="btn btn-outline-primary me-2"
-      >
-        View Item
-      </a>
-
-      <a
-        *ngIf="caseItem.videoUrl"
-        [href]="caseItem.videoUrl"
-        target="_blank"
-        class="btn btn-primary"
-      >
-        View Video
-      </a>
+    <div class="hero-subtitle">
+      ORISSA HIGH COURT DIGITAL ARCHIVE
     </div>
 
+    <h1 class="hero-title">
+      Search Case Transcript
+    </h1>
+
+    <p class="hero-description">
+      Search archived court transcripts, judicial proceedings and video records.
+    </p>
+
+  </section>
+
+  <!-- SEARCH PANEL -->
+  <section class="search-panel">
+
+    <h2 class="panel-title">
+      Transcript Search
+    </h2>
+
+    <div class="search-box">
+
+      <input type="text" class="search-input" [formControl]="transcriptControl" placeholder="Search transcript..."
+        (keyup.enter)="onSearchClick()" />
+
+      <button class="search-btn" (click)="onSearchClick()">
+        <i class="fas fa-search"></i>
+        Search
+      </button>
+
+    </div>
+
+  </section>
+
+  <!-- LOADING -->
+  <div *ngIf="loading" class="loading-box">
+    Loading transcript results...
   </div>
+
+  <!-- EMPTY -->
+  <div *ngIf="(caseList$ | async)?.length === 0 && transcriptControl.value" class="empty-box">
+    No matching transcript records found.
+  </div>
+
+  <!-- RESULTS -->
+  <section class="results-panel" *ngIf="(caseList$ | async)?.length">
+
+    <div class="results-header">
+
+      <h2>
+        Transcript Results
+      </h2>
+
+      <div class="results-badge">
+        {{ (caseList$ | async)?.length }} Results
+      </div>
+
+    </div>
+
+    <div class="results-grid">
+
+      <div *ngFor="let caseItem of caseList$ | async" class="case-card">
+
+        <div class="card-header">
+
+          <h3>
+            {{ caseItem.caseType || 'Case Record' }}
+          </h3>
+
+          <span class="case-year">
+            {{ caseItem.caseYear }}
+          </span>
+
+        </div>
+
+        <div class="case-details">
+
+          <div class="detail-item">
+            <span class="label">Case Number</span>
+            <span class="value">
+              {{ caseItem.caseNumber || 'N/A' }}
+            </span>
+          </div>
+
+          <div class="detail-item">
+            <span class="label">Case Type</span>
+            <span class="value">
+              {{ caseItem.caseType || 'N/A' }}
+            </span>
+          </div>
+
+          <div class="detail-item">
+            <span class="label">Case Year</span>
+            <span class="value">
+              {{ caseItem.caseYear || 'N/A' }}
+            </span>
+          </div>
+
+        </div>
+
+        <div class="card-actions">
+
+          <a [href]="caseItem.itemUrl" target="_blank" class="view-btn">
+            View Item
+          </a>
+
+          <a *ngIf="caseItem.videoUrl" [href]="caseItem.videoUrl" target="_blank" class="video-btn">
+            View Video
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
 
 </div>

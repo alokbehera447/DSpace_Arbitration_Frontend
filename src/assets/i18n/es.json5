@@ -519,8 +519,8 @@
   // "admin.access-control.epeople.form.table.name": "Name",
   "admin.access-control.epeople.form.table.name": "Nombre",
 
-  // "admin.access-control.epeople.form.table.collectionOrCommunity": "Collection/Community",
-  "admin.access-control.epeople.form.table.collectionOrCommunity": "Colección/Comunidad",
+  // "admin.access-control.epeople.form.table.collectionOrCase Category": "Collection/Case Category",
+  "admin.access-control.epeople.form.table.collectionOrCase Category": "Colección/Comunidad",
 
   // "admin.access-control.epeople.form.memberOfNoGroups": "This EPerson is not a member of any groups",
   "admin.access-control.epeople.form.memberOfNoGroups": "Este usuario no es miembro de ningún grupo",
@@ -576,8 +576,8 @@
   // "admin.access-control.groups.table.name": "Name",
   "admin.access-control.groups.table.name": "Nombre",
 
-  // "admin.access-control.groups.table.collectionOrCommunity": "Collection/Community",
-  "admin.access-control.groups.table.collectionOrCommunity": "Colección/Comunidad",
+  // "admin.access-control.groups.table.collectionOrCase Category": "Collection/Case Category",
+  "admin.access-control.groups.table.collectionOrCase Category": "Colección/Comunidad",
 
   // "admin.access-control.groups.table.members": "Members",
   "admin.access-control.groups.table.members": "Miembros",
@@ -618,8 +618,8 @@
   // "admin.access-control.groups.form.groupName": "Group name",
   "admin.access-control.groups.form.groupName": "Nombre del grupo",
 
-  // "admin.access-control.groups.form.groupCommunity": "Community or Collection",
-  "admin.access-control.groups.form.groupCommunity": "Comunidad o Colección",
+  // "admin.access-control.groups.form.groupCase Category": "Case Category or Collection",
+  "admin.access-control.groups.form.groupCase Category": "Comunidad o Colección",
 
   // "admin.access-control.groups.form.groupDescription": "Description",
   "admin.access-control.groups.form.groupDescription": "Descripción",
@@ -750,8 +750,8 @@
   // "admin.access-control.groups.form.subgroups-list.table.name": "Name",
   "admin.access-control.groups.form.subgroups-list.table.name": "Nombre",
 
-  // "admin.access-control.groups.form.subgroups-list.table.collectionOrCommunity": "Collection/Community",
-  "admin.access-control.groups.form.subgroups-list.table.collectionOrCommunity": "Colección/Comunidad",
+  // "admin.access-control.groups.form.subgroups-list.table.collectionOrCase Category": "Collection/Case Category",
+  "admin.access-control.groups.form.subgroups-list.table.collectionOrCase Category": "Colección/Comunidad",
 
   // "admin.access-control.groups.form.subgroups-list.table.edit": "Remove / Add",
   "admin.access-control.groups.form.subgroups-list.table.edit": "Eliminar / Agregar",
@@ -822,7 +822,7 @@
   // "admin.reports.collections.head": "Collection Filter Report",
   "admin.reports.collections.head": "Informe de Colecciones Filtradas",
 
-  // "admin.reports.button.show-collections": "Show Collections",
+  // "admin.reports.button.show-collections": "Show Case Types",
   "admin.reports.button.show-collections": "Mostrar Colecciones",
 
   // "admin.reports.collections.collections-report": "Collection Report",
@@ -831,7 +831,7 @@
   // "admin.reports.collections.item-results": "Item Results",
   "admin.reports.collections.item-results": "Resultados de ítem",
 
-  // "admin.reports.collections.community": "Community",
+  // "admin.reports.collections.community": "Case Category",
   "admin.reports.collections.community": "Comunidad",
 
   // "admin.reports.collections.collection": "Collection",
@@ -1682,7 +1682,7 @@
   // "collection.create.notifications.success": "Successfully created the Collection",
   "collection.create.notifications.success": "Colección creada con éxito",
 
-  // "collection.create.sub-head": "Create a Collection for Community {{ parent }}",
+  // "collection.create.sub-head": "Create a Collection for Case Category {{ parent }}",
   "collection.create.sub-head": "Crea una colección para la comunidad {{ parent }}",
 
   // "collection.curate.header": "Curate Collection: {{collection}}",
@@ -1736,7 +1736,7 @@
   // "collection.edit.item-mapper.description": "This is the item mapper tool that allows collection administrators to map items from other collections into this collection. You can search for items from other collections and map them, or browse the list of currently mapped items.",
   "collection.edit.item-mapper.description": "Esta es la herramienta de mapeo de ítems que permite a los administradores de colecciones asignar ítems de otras colecciones a esta colección. Puede buscar ítems de otras colecciones y mapearlos, o explorar la lista de ítems mapeados actualmente.",
 
-  // "collection.edit.item-mapper.head": "Item Mapper - Map Items from Other Collections",
+  // "collection.edit.item-mapper.head": "Item Mapper - Map Items from Other Case Types",
   "collection.edit.item-mapper.head": "Mapeo de ítems: mapea ítems de otras colecciones",
 
   // "collection.edit.item-mapper.no-search": "Please enter a query to search",
@@ -2084,13 +2084,13 @@
   // "collection.source.update.notifications.error.title": "Server Error",
   "collection.source.update.notifications.error.title": "Error del Servidor",
 
-  // "communityList.breadcrumbs": "Community List",
+  // "communityList.breadcrumbs": "Case Category List",
   "communityList.breadcrumbs": "Lista de comunidades",
 
-  // "communityList.tabTitle": "Community List",
+  // "communityList.tabTitle": "Case Category List",
   "communityList.tabTitle": "Lista de comunidades",
 
-  // "communityList.title": "List of Communities",
+  // "communityList.title": "List of Case Categories",
   "communityList.title": "Lista de Comunidades",
 
   // "communityList.showMore": "Show More",
@@ -2105,22 +2105,22 @@
   // "community.browse.logo": "Browse for a community logo",
   "community.browse.logo": "Buscar un logotipo de la comunidad",
 
-  // "community.subcoms-cols.breadcrumbs": "Subcommunities and Collections",
+  // "community.subcoms-cols.breadcrumbs": "Subcommunities and Case Types",
   "community.subcoms-cols.breadcrumbs": "Subcomunidades y colecciones",
 
-  // "community.create.breadcrumbs": "Create Community",
+  // "community.create.breadcrumbs": "Create Case Category",
   "community.create.breadcrumbs": "Crear comunidad",
 
-  // "community.create.head": "Create a Community",
+  // "community.create.head": "Create a Case Category",
   "community.create.head": "Crear una comunidad",
 
-  // "community.create.notifications.success": "Successfully created the Community",
+  // "community.create.notifications.success": "Successfully created the Case Category",
   "community.create.notifications.success": "Comunidad creada con éxito",
 
-  // "community.create.sub-head": "Create a Sub-Community for Community {{ parent }}",
+  // "community.create.sub-head": "Create a Sub-Case Category for Case Category {{ parent }}",
   "community.create.sub-head": "Crear una subcomunidad para la comunidad {{ parent }}",
 
-  // "community.curate.header": "Curate Community: {{community}}",
+  // "community.curate.header": "Curate Case Category: {{community}}",
   "community.curate.header": "Comunidad seleccionada: {{ community }}",
 
   // "community.delete.cancel": "Cancel",
@@ -2132,10 +2132,10 @@
   // "community.delete.processing": "Deleting...",
   "community.delete.processing": "Eliminando...",
 
-  // "community.delete.head": "Delete Community",
+  // "community.delete.head": "Delete Case Category",
   "community.delete.head": "Eliminar comunidad",
 
-  // "community.delete.notification.fail": "Community could not be deleted",
+  // "community.delete.notification.fail": "Case Category could not be deleted",
   "community.delete.notification.fail": "No se pudo eliminar la comunidad",
 
   // "community.delete.notification.success": "Successfully deleted community",
@@ -2147,10 +2147,10 @@
   // "community.edit.delete": "Delete this community",
   "community.edit.delete": "Eliminar esta comunidad",
 
-  // "community.edit.head": "Edit Community",
+  // "community.edit.head": "Edit Case Category",
   "community.edit.head": "Editar comunidad",
 
-  // "community.edit.breadcrumbs": "Edit Community",
+  // "community.edit.breadcrumbs": "Edit Case Category",
   "community.edit.breadcrumbs": "Editar comunidad",
 
   // "community.edit.logo.delete.title": "Delete logo",
@@ -2165,7 +2165,7 @@
   // "community-collection.edit.logo.delete-undo.title": "Undo delete",
   "community-collection.edit.logo.delete-undo.title": "Deshacer eliminación",
 
-  // "community.edit.logo.label": "Community logo",
+  // "community.edit.logo.label": "Case Category logo",
   "community.edit.logo.label": "Logotipo de la comunidad",
 
   // "community.edit.logo.notifications.add.error": "Uploading community logo failed. Please verify the content before retrying.",
@@ -2186,7 +2186,7 @@
   // "community.edit.logo.upload": "Drop a community logo to upload",
   "community.edit.logo.upload": "Suelta un logotipo de la comunidad para cargar",
 
-  // "community.edit.notifications.success": "Successfully edited the Community",
+  // "community.edit.notifications.success": "Successfully edited the Case Category",
   "community.edit.notifications.success": "Editó con éxito la comunidad",
 
   // "community.edit.notifications.unauthorized": "You do not have privileges to make this change",
@@ -2201,37 +2201,37 @@
   // "community.edit.tabs.curate.head": "Curate",
   "community.edit.tabs.curate.head": "Curar",
 
-  // "community.edit.tabs.curate.title": "Community Edit - Curate",
+  // "community.edit.tabs.curate.title": "Case Category Edit - Curate",
   "community.edit.tabs.curate.title": "Edición de la comunidad - Curar",
 
   // "community.edit.tabs.access-control.head": "Access Control",
   "community.edit.tabs.access-control.head": "Control de acceso",
 
-  // "community.edit.tabs.access-control.title": "Community Edit - Access Control",
+  // "community.edit.tabs.access-control.title": "Case Category Edit - Access Control",
   "community.edit.tabs.access-control.title": "Edición de la comunidad: Control de acceso",
 
   // "community.edit.tabs.metadata.head": "Edit Metadata",
   "community.edit.tabs.metadata.head": "Editar metadatos",
 
-  // "community.edit.tabs.metadata.title": "Community Edit - Metadata",
+  // "community.edit.tabs.metadata.title": "Case Category Edit - Metadata",
   "community.edit.tabs.metadata.title": "Edición de la comunidad: metadatos",
 
   // "community.edit.tabs.roles.head": "Assign Roles",
   "community.edit.tabs.roles.head": "Asignar roles",
 
-  // "community.edit.tabs.roles.title": "Community Edit - Roles",
+  // "community.edit.tabs.roles.title": "Case Category Edit - Roles",
   "community.edit.tabs.roles.title": "Edición de la comunidad: funciones",
 
   // "community.edit.tabs.authorizations.head": "Authorizations",
   "community.edit.tabs.authorizations.head": "Autorizaciones",
 
-  // "community.edit.tabs.authorizations.title": "Community Edit - Authorizations",
+  // "community.edit.tabs.authorizations.title": "Case Category Edit - Authorizations",
   "community.edit.tabs.authorizations.title": "Edición de la comunidad: autorizaciones",
 
-  // "community.listelement.badge": "Community",
+  // "community.listelement.badge": "Case Category",
   "community.listelement.badge": "Comunidad",
 
-  // "community.logo": "Community logo",
+  // "community.logo": "Case Category logo",
   "community.logo": "Logotipo de la comunidad",
 
   // "comcol-role.edit.no-group": "None",
@@ -2258,7 +2258,7 @@
   // "comcol-role.edit.collection-admin.name": "Administrators",
   "comcol-role.edit.collection-admin.name": "Administradores",
 
-  // "comcol-role.edit.community-admin.description": "Community administrators can create sub-communities or collections, and manage or assign management for those sub-communities or collections. In addition, they decide who can submit items to any sub-collections, edit item metadata (after submission), and add (map) existing items from other collections (subject to authorization).",
+  // "comcol-role.edit.community-admin.description": "Case Category administrators can create sub-communities or collections, and manage or assign management for those sub-communities or collections. In addition, they decide who can submit items to any sub-collections, edit item metadata (after submission), and add (map) existing items from other collections (subject to authorization).",
   "comcol-role.edit.community-admin.description": "Los administradores de la comunidad pueden crear subcomunidades o colecciones y gestionar o asignar la gestión para esas subcomunidades o colecciones. Además, deciden quién puede enviar ítems a las subcolecciones, editar los metadatos del ítem (después del envío) y agregar (mapear) ítems existentes de otras colecciones (sujeto a autorización).",
 
   // "comcol-role.edit.collection-admin.description": "Collection administrators decide who can submit items to the collection, edit item metadata (after submission), and add (map) existing items from other collections to this collection (subject to authorization for that collection).",
@@ -2342,16 +2342,16 @@
   // "community.page.news": "News",
   "community.page.news": "Noticias",
 
-  // "community.all-lists.head": "Subcommunities and Collections",
+  // "community.all-lists.head": "Subcommunities and Case Types",
   "community.all-lists.head": "Subcomunidades y colecciones",
 
   // "community.search.results.head": "Search Results",
   "community.search.results.head": "Resultados de la búsqueda",
 
-  // "community.sub-collection-list.head": "Collections in this Community",
+  // "community.sub-collection-list.head": "Case Types in this Case Category",
   "community.sub-collection-list.head": "Colecciones de esta comunidad",
 
-  // "community.sub-community-list.head": "Communities in this Community",
+  // "community.sub-community-list.head": "Case Categories in this Case Category",
   "community.sub-community-list.head": "Comunidades de esta comunidad",
 
   // "cookies.consent.accept-all": "Accept all",
@@ -3176,7 +3176,7 @@
   // "home.title": "Home",
   "home.title": "Inicio",
 
-  // "home.top-level-communities.head": "Communities in DSpace",
+  // "home.top-level-communities.head": "Case Categories in DSpace",
   "home.top-level-communities.head": "Comunidades en DSpace",
 
   // "home.top-level-communities.help": "Select a community to browse its collections.",
@@ -3542,7 +3542,7 @@
   // "item.edit.item-mapper.description": "This is the item mapper tool that allows administrators to map this item to other collections. You can search for collections and map them, or browse the list of collections the item is currently mapped to.",
   "item.edit.item-mapper.description": "Esta es la herramienta de asignación de ítems que permite a los administradores asignar este ítem a otras colecciones. Puede buscar colecciones y mapearlas, o explorar la lista de colecciones a las que el ítem está mapeado actualmente.",
 
-  // "item.edit.item-mapper.head": "Item Mapper - Map Item to Collections",
+  // "item.edit.item-mapper.head": "Item Mapper - Map Item to Case Types",
   "item.edit.item-mapper.head": "Asignador de ítems: asigna ítems a colecciones",
 
   // "item.edit.item-mapper.item": "Item: \"<b>{{name}}</b>\"",
@@ -3887,11 +3887,11 @@
   // "item.edit.tabs.status.buttons.delete.label": "Completely expunge item",
   "item.edit.tabs.status.buttons.delete.label": "Borrar completamente el ítem:",
 
-  // "item.edit.tabs.status.buttons.mappedCollections.button": "Mapped collections",
-  "item.edit.tabs.status.buttons.mappedCollections.button": "Colecciones mapeadas",
+  // "item.edit.tabs.status.buttons.mappedCase Types.button": "Mapped collections",
+  "item.edit.tabs.status.buttons.mappedCase Types.button": "Colecciones mapeadas",
 
-  // "item.edit.tabs.status.buttons.mappedCollections.label": "Manage mapped collections",
-  "item.edit.tabs.status.buttons.mappedCollections.label": "Administrar colecciones mapeadas",
+  // "item.edit.tabs.status.buttons.mappedCase Types.label": "Manage mapped collections",
+  "item.edit.tabs.status.buttons.mappedCase Types.label": "Administrar colecciones mapeadas",
 
   // "item.edit.tabs.status.buttons.move.button": "Move this Item to a different Collection",
   "item.edit.tabs.status.buttons.move.button": "Mover este ítem a una colección diferente",
@@ -4088,7 +4088,7 @@
   // "item.page.citation": "Citation",
   "item.page.citation": "Citación",
 
-  // "item.page.collections": "Collections",
+  // "item.page.collections": "Case Types",
   "item.page.collections": "Colecciones",
 
   // "item.page.collections.loading": "Loading...",
@@ -4844,7 +4844,7 @@
   // "menu.section.reports": "Reports",
   "menu.section.reports": "Informes",
 
-  // "menu.section.reports.collections": "Filtered Collections",
+  // "menu.section.reports.collections": "Filtered Case Types",
   "menu.section.reports.collections": "Colecciones filtradas",
 
   // "menu.section.reports.queries": "Metadata Query",
@@ -4853,7 +4853,7 @@
   // "menu.section.admin_search": "Admin Search",
   "menu.section.admin_search": "Búsqueda de administrador",
 
-  // "menu.section.browse_community": "This Community",
+  // "menu.section.browse_community": "This Case Category",
   "menu.section.browse_community": "Esta comunidad",
 
   // "menu.section.browse_community_by_author": "By Author",
@@ -4886,7 +4886,7 @@
   // "menu.section.browse_global_by_title": "By Title",
   "menu.section.browse_global_by_title": "Por titulo",
 
-  // "menu.section.browse_global_communities_and_collections": "Communities & Collections",
+  // "menu.section.browse_global_communities_and_collections": "Case Categories & Case Types",
   "menu.section.browse_global_communities_and_collections": "Comunidades",
 
   // "menu.section.control_panel": "Control Panel",
@@ -4901,7 +4901,7 @@
   // "menu.section.edit_collection": "Collection",
   "menu.section.edit_collection": "Colección",
 
-  // "menu.section.edit_community": "Community",
+  // "menu.section.edit_community": "Case Category",
   "menu.section.edit_community": "Comunidad",
 
   // "menu.section.edit_item": "Item",
@@ -4913,7 +4913,7 @@
   // "menu.section.export_collection": "Collection",
   "menu.section.export_collection": "Colección",
 
-  // "menu.section.export_community": "Community",
+  // "menu.section.export_community": "Case Category",
   "menu.section.export_community": "Comunidad",
 
   // "menu.section.export_item": "Item",
@@ -4994,7 +4994,7 @@
   // "menu.section.new_collection": "Collection",
   "menu.section.new_collection": "Colección",
 
-  // "menu.section.new_community": "Community",
+  // "menu.section.new_community": "Case Category",
   "menu.section.new_community": "Comunidad",
 
   // "menu.section.new_item": "Item",
@@ -5150,7 +5150,7 @@
   // "mydspace.results.no-authors": "No Authors",
   "mydspace.results.no-authors": "Sin autores",
 
-  // "mydspace.results.no-collections": "No Collections",
+  // "mydspace.results.no-collections": "No Case Types",
   "mydspace.results.no-collections": "No hay colecciones",
 
   // "mydspace.results.no-date": "No Date",
@@ -5228,7 +5228,7 @@
   // "nav.browse.header": "All of DSpace",
   "nav.browse.header": "Todo DSpace",
 
-  // "nav.community-browse.header": "By Community",
+  // "nav.community-browse.header": "By Case Category",
   "nav.community-browse.header": "Por comunidad",
 
   // "nav.context-help-toggle": "Toggle context help",
@@ -6302,7 +6302,7 @@
   // "resource-policies.add.for.item": "Add a new Item policy",
   "resource-policies.add.for.item": "Agregar una nueva política de Item",
 
-  // "resource-policies.add.for.community": "Add a new Community policy",
+  // "resource-policies.add.for.community": "Add a new Case Category policy",
   "resource-policies.add.for.community": "Agregar una nueva política de Comunidad",
 
   // "resource-policies.add.for.collection": "Add a new Collection policy",
@@ -6467,7 +6467,7 @@
   // "resource-policies.table.headers.title.for.item": "Policies for Item",
   "resource-policies.table.headers.title.for.item": "Políticas para el ítem",
 
-  // "resource-policies.table.headers.title.for.community": "Policies for Community",
+  // "resource-policies.table.headers.title.for.community": "Policies for Case Category",
   "resource-policies.table.headers.title.for.community": "Políticas para la comunidad",
 
   // "resource-policies.table.headers.title.for.collection": "Policies for Collection",
@@ -8369,7 +8369,7 @@
   // "subscriptions.table.not-available-message": "The subscribed item has been deleted, or you don't currently have the permission to view it",
   "subscriptions.table.not-available-message": "El ítem suscrito ha sido eliminado, o actualmente usted no tiene permisos suficiente para poder visualizarlo.",
 
-  // "subscriptions.table.empty.message": "You do not have any subscriptions at this time. To subscribe to email updates for a Community or Collection, use the subscription button on the object's page.",
+  // "subscriptions.table.empty.message": "You do not have any subscriptions at this time. To subscribe to email updates for a Case Category or Collection, use the subscription button on the object's page.",
   "subscriptions.table.empty.message": "Usted no tiene suscripciones. Para subscribirse a las actualizaciones por correo electrónico de una Comunidad o Colección, utilice el botón de suscripción en la página del objeto.",
 
   // "thumbnail.default.alt": "Thumbnail Image",

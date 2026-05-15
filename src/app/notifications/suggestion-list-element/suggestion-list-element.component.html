@@ -3,9 +3,8 @@
     <!-- Bulk Selection Panel -->
     <div class="col-1 text-center align-self-center">
       <div class="">
-        <input type="checkbox" class="form-check-input"
-               [checked]="isSelected" (change)="changeSelected($event)"
-               [attr.aria-label]="object.display"/>
+        <input type="checkbox" class="form-check-input" [checked]="isSelected" (change)="changeSelected($event)"
+          [attr.aria-label]="object.display" />
       </div>
     </div>
     <!-- Total Score Panel -->
@@ -17,22 +16,14 @@
     </div>
     <!-- Suggestion Panel -->
     <div class="col">
-        <!-- Object Preview -->
-        <ds-item-search-result-list-element
-          [showLabel]="false"
-          [showThumbnails]="false"
-          [object]="listableObject"
-          [linkType]="0"
-        ></ds-item-search-result-list-element>
-        <!-- Actions -->
-      <ds-suggestion-actions class="parent mt-2" [hasEvidence]="hasEvidences()"
-                             [seeEvidence]="seeEvidence"
-                             [object]="object"
-                             [isCollectionFixed]="isCollectionFixed"
-                             (approveAndImport)="onApproveAndImport($event)"
-                             (seeEvidences)="onSeeEvidences($event)"
-                             (ignoreSuggestionClicked)="onIgnoreSuggestion($event)"
-      ></ds-suggestion-actions>
+      <!-- Object Preview -->
+      <ds-item-search-result-list-element [showLabel]="false" [showThumbnails]="false" [object]="listableObject"
+        [linkType]="0"></ds-item-search-result-list-element>
+      <!-- Actions -->
+      <ds-suggestion-actions class="parent mt-2" [hasEvidence]="hasEvidences()" [seeEvidence]="seeEvidence"
+        [object]="object" [isCollectionFixed]="isCollectionFixed" (approveAndImport)="onApproveAndImport($event)"
+        (seeEvidences)="onSeeEvidences($event)"
+        (ignoreSuggestionClicked)="onIgnoreSuggestion($event)"></ds-suggestion-actions>
     </div>
   </div>
   <!-- Evidences Panel -->

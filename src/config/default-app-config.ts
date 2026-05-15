@@ -398,10 +398,10 @@ export class DefaultAppConfig implements AppConfig {
     //   extends: 'custom',
     //   handle: '10673/12'
     // },
-    // {
-    //   // A theme with only a name will match every route
-    //   name: 'custom'
-    // },
+    {
+      // A theme with only a name will match every route
+      name: 'custom'
+    },
     // {
     //   // This theme will use the default bootstrap styling for DSpace components
     //   name: BASE_THEME_NAME

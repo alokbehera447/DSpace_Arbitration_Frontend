@@ -702,9 +702,9 @@
   // TODO New key - Add a translation
   "admin.reports.collections.head": "Collection Filter Report",
 
-  //"admin.reports.button.show-collections": "Show Collections",
+  //"admin.reports.button.show-collections": "Show Case Types",
   // TODO New key - Add a translation
-  "admin.reports.button.show-collections": "Show Collections",
+  "admin.reports.button.show-collections": "Show Case Types",
 
   //"admin.reports.collections.collections-report": "Collection Report",
   // TODO New key - Add a translation
@@ -714,9 +714,9 @@
   // TODO New key - Add a translation
   "admin.reports.collections.item-results": "Item Results",
 
-  //"admin.reports.collections.community": "Community",
+  //"admin.reports.collections.community": "Case Category",
   // TODO New key - Add a translation
-  "admin.reports.collections.community": "Community",
+  "admin.reports.collections.community": "Case Category",
 
   //"admin.reports.collections.collection": "Collection",
   // TODO New key - Add a translation
@@ -1432,7 +1432,7 @@
   // "collection.create.notifications.success": "Successfully created the Collection",
   "collection.create.notifications.success": "Sammlung erfolgreich angelegt",
 
-  // "collection.create.sub-head": "Create a Collection for Community {{ parent }}",
+  // "collection.create.sub-head": "Create a Collection for Case Category {{ parent }}",
   "collection.create.sub-head": "Eine Sammlung in dem Bereich {{ parent }} anlegen",
 
   // "collection.curate.header": "Curate Collection: {{collection}}",
@@ -1493,7 +1493,7 @@
   // "collection.edit.item-mapper.description": "This is the item mapper tool that allows collection administrators to map items from other collections into this collection. You can search for items from other collections and map them, or browse the list of currently mapped items.",
   "collection.edit.item-mapper.description": "Sammlungsadministrator:innen haben die Möglichkeit Items von einer Sammlung in eine andere zu spiegeln. Man kann nach Items in anderen Sammlungen suchen und diese spiegeln oder sich eine Liste der gespiegelten Items anzeigen lassen.",
 
-  // "collection.edit.item-mapper.head": "Item Mapper - Map Items from Other Collections",
+  // "collection.edit.item-mapper.head": "Item Mapper - Map Items from Other Case Types",
   "collection.edit.item-mapper.head": "Item spiegeln - Spiegelt Items aus anderen Sammlungen",
 
   // "collection.edit.item-mapper.no-search": "Please enter a query to search",
@@ -1765,13 +1765,13 @@
   // "community.edit.logo.delete.title": "Delete logo",
   "community.edit.logo.delete.title": "Logo löschen",
 
-  // "communityList.breadcrumbs": "Community List",
+  // "communityList.breadcrumbs": "Case Category List",
   "communityList.breadcrumbs": "Bereichsliste",
 
-  // "communityList.tabTitle": "Community List",
+  // "communityList.tabTitle": "Case Category List",
   "communityList.tabTitle": "Bereichsliste",
 
-  // "communityList.title": "List of Communities",
+  // "communityList.title": "List of Case Categories",
   "communityList.title": "Liste der Bereiche",
 
   // "communityList.showMore": "Show More",
@@ -1779,16 +1779,16 @@
 
 
 
-  // "community.create.head": "Create a Community",
+  // "community.create.head": "Create a Case Category",
   "community.create.head": "Bereich anlegen",
 
-  // "community.create.notifications.success": "Successfully created the Community",
+  // "community.create.notifications.success": "Successfully created the Case Category",
   "community.create.notifications.success": "Bereich erfolgreich angelegt",
 
-  // "community.create.sub-head": "Create a Sub-Community for Community {{ parent }}",
+  // "community.create.sub-head": "Create a Sub-Case Category for Case Category {{ parent }}",
   "community.create.sub-head": "Teilbereich im Bereich {{ parent }} anlegen",
 
-  // "community.curate.header": "Curate Community: {{community}}",
+  // "community.curate.header": "Curate Case Category: {{community}}",
   "community.curate.header": "Bereich: {{community}} pflegen",
 
   // "community.delete.cancel": "Cancel",
@@ -1797,10 +1797,10 @@
   // "community.delete.confirm": "Confirm",
   "community.delete.confirm": "Bestätigen",
 
-  // "community.delete.head": "Delete Community",
+  // "community.delete.head": "Delete Case Category",
   "community.delete.head": "Bereich Löschen",
 
-  // "community.delete.notification.fail": "Community could not be deleted",
+  // "community.delete.notification.fail": "Case Category could not be deleted",
   "community.delete.notification.fail": "Der Bereich konnte nicht gelöscht werden.",
 
   // "community.delete.notification.success": "Successfully deleted community",
@@ -1812,20 +1812,20 @@
   // "community.edit.delete": "Delete this community",
   "community.edit.delete": "Diesen Bereich löschen",
 
-  // "community.edit.head": "Edit Community",
+  // "community.edit.head": "Edit Case Category",
   "community.edit.head": "Bereich bearbeiten",
 
-  // "community.edit.breadcrumbs": "Edit Community",
+  // "community.edit.breadcrumbs": "Edit Case Category",
   "community.edit.breadcrumbs": "Bereich bearbeiten",
 
 
-  // "community.edit.logo.label": "Community logo",
+  // "community.edit.logo.label": "Case Category logo",
   "community.edit.logo.label": "Bereichslogo",
 
-  // "community.edit.logo.notifications.add.error": "Uploading Community logo failed. Please verify the content before retrying.",
+  // "community.edit.logo.notifications.add.error": "Uploading Case Category logo failed. Please verify the content before retrying.",
   "community.edit.logo.notifications.add.error": "Hochladen des Bereichslogos fehlgeschlagen. Bitte überprüfen Sie den Inhalt bevor Sie es erneut versuchen.",
 
-  // "community.edit.logo.notifications.add.success": "Upload Community logo successful.",
+  // "community.edit.logo.notifications.add.success": "Upload Case Category logo successful.",
   "community.edit.logo.notifications.add.success": "Hochladen des Bereichslogos erfolgreich.",
 
   // "community.edit.logo.notifications.delete.success.title": "Logo deleted",
@@ -1837,18 +1837,18 @@
   // "community.edit.logo.notifications.delete.error.title": "Error deleting logo",
   "community.edit.logo.notifications.delete.error.title": "Fehler beim Löschen des Logos",
 
-  // "community.edit.logo.upload": "Drop a Community Logo to upload",
+  // "community.edit.logo.upload": "Drop a Case Category Logo to upload",
   "community.edit.logo.upload": "Ziehen Sie ein Bereichslogo herüber, um es hochzuladen",
 
 
 
-  // "community.edit.notifications.success": "Successfully edited the Community",
+  // "community.edit.notifications.success": "Successfully edited the Case Category",
   "community.edit.notifications.success": "Bereich erfolgreich bearbeitet",
 
   // "community.edit.notifications.unauthorized": "You do not have privileges to make this change",
   "community.edit.notifications.unauthorized": "Sie haben keine Berechtigung, diese Änderung vorzunehmen",
 
-  // "community.edit.notifications.error": "An error occured while editing the Community",
+  // "community.edit.notifications.error": "An error occured while editing the Case Category",
   "community.edit.notifications.error": "Bei der Bearbeitung des Bereichs ist ein Fehler aufgetreten",
 
   // "community.edit.return": "Return",
@@ -1859,30 +1859,30 @@
   // "community.edit.tabs.curate.head": "Curate",
   "community.edit.tabs.curate.head": "Datenpflege",
 
-  // "community.edit.tabs.curate.title": "Community Edit - Curate",
+  // "community.edit.tabs.curate.title": "Case Category Edit - Curate",
   "community.edit.tabs.curate.title": "Bereich bearbeiten - Datenpflege",
 
   // "community.edit.tabs.metadata.head": "Edit Metadata",
   "community.edit.tabs.metadata.head": "Metadaten bearbeiten",
 
-  // "community.edit.tabs.metadata.title": "Community Edit - Metadata",
+  // "community.edit.tabs.metadata.title": "Case Category Edit - Metadata",
   "community.edit.tabs.metadata.title": "Bereich bearbeiten - Metadaten",
 
   // "community.edit.tabs.roles.head": "Assign Roles",
   "community.edit.tabs.roles.head": "Rollen zuordnen",
 
-  // "community.edit.tabs.roles.title": "Community Edit - Roles",
+  // "community.edit.tabs.roles.title": "Case Category Edit - Roles",
   "community.edit.tabs.roles.title": "Bereich bearbeiten - Rollen",
 
   // "community.edit.tabs.authorizations.head": "Authorizations",
   "community.edit.tabs.authorizations.head": "Berechtigungen",
 
-  // "community.edit.tabs.authorizations.title": "Community Edit - Authorizations",
+  // "community.edit.tabs.authorizations.title": "Case Category Edit - Authorizations",
   "community.edit.tabs.authorizations.title": "Bereich bearbeiten - Berechtigungen",
 
 
 
-  // "community.listelement.badge": "Community",
+  // "community.listelement.badge": "Case Category",
   "community.listelement.badge": "Bereich",
 
 
@@ -1907,8 +1907,8 @@
   "comcol-role.edit.collection-admin.name": "Administrator:innen",
 
 
-  // "comcol-role.edit.community-admin.description": "Community administrators can create sub-communities or collections, and manage or assign management for those sub-communities or collections. In addition, they decide who can submit items to any sub-collections, edit item metadata (after submission), and add (map) existing items from other collections (subject to authorization).",
-  "comcol-role.edit.community-admin.description": "Community-Administrator:innen können Teilbereiche oder Sammlungen erstellen, verwalten oder die Verwaltung anderen zuweisen. Darüber hinaus entscheiden sie, wer Items zu einer Teilsammlung einreichen, Item-Metadaten bearbeiten (nach der Einreichung) und bestehende Items von anderen Sammlungen verknüpfen kann (vorbehaltlich einer Berechtigung).",
+  // "comcol-role.edit.community-admin.description": "Case Category administrators can create sub-communities or collections, and manage or assign management for those sub-communities or collections. In addition, they decide who can submit items to any sub-collections, edit item metadata (after submission), and add (map) existing items from other collections (subject to authorization).",
+  "comcol-role.edit.community-admin.description": "Case Category-Administrator:innen können Teilbereiche oder Sammlungen erstellen, verwalten oder die Verwaltung anderen zuweisen. Darüber hinaus entscheiden sie, wer Items zu einer Teilsammlung einreichen, Item-Metadaten bearbeiten (nach der Einreichung) und bestehende Items von anderen Sammlungen verknüpfen kann (vorbehaltlich einer Berechtigung).",
 
   // "comcol-role.edit.collection-admin.description": "Collection administrators decide who can submit items to the collection, edit item metadata (after submission), and add (map) existing items from other collections to this collection (subject to authorization for that collection).",
   "comcol-role.edit.collection-admin.description": "Sammlungsadministrator:innen entscheiden, wer Items zu einer Sammlung einreichen, Item-Metadaten bearbeiten (nach der Einreichung) and und bestehende Items von anderen Sammlungen mit dieser Sammlung verknüpfen kann (vorbehaltlich einer Berechtigung für diese Sammlung).",
@@ -1934,8 +1934,8 @@
   // "comcol-role.edit.bitstream_read.name": "Default bitstream read access",
   "comcol-role.edit.bitstream_read.name": "Standardeinstellungen für den Lesezugriff auf Dateien",
 
-  // "comcol-role.edit.bitstream_read.description": "Community administrators can create sub-communities or collections, and manage or assign management for those sub-communities or collections. In addition, they decide who can submit items to any sub-collections, edit item metadata (after submission), and add (map) existing items from other collections (subject to authorization).",
-  "comcol-role.edit.bitstream_read.description": "Community-Administrator:innen können Teilbereiche oder Sammlungen erstellen, verwalten oder die Verwaltung anderen zuweisen. Darüber hinaus entscheiden sie, wer Items zu einer Teilsammlung einreichen, Item-Metadaten bearbeiten (nach der Einreichung) und bestehende Items von anderen Sammlungen verknüpfen kann (vorbehaltlich einer Berechtigung).",
+  // "comcol-role.edit.bitstream_read.description": "Case Category administrators can create sub-communities or collections, and manage or assign management for those sub-communities or collections. In addition, they decide who can submit items to any sub-collections, edit item metadata (after submission), and add (map) existing items from other collections (subject to authorization).",
+  "comcol-role.edit.bitstream_read.description": "Case Category-Administrator:innen können Teilbereiche oder Sammlungen erstellen, verwalten oder die Verwaltung anderen zuweisen. Darüber hinaus entscheiden sie, wer Items zu einer Teilsammlung einreichen, Item-Metadaten bearbeiten (nach der Einreichung) und bestehende Items von anderen Sammlungen verknüpfen kann (vorbehaltlich einer Berechtigung).",
 
   // "comcol-role.edit.bitstream_read.anonymous-group": "Default read for incoming bitstreams is currently set to Anonymous.",
   "comcol-role.edit.bitstream_read.anonymous-group": "Freigeschaltete Dateien sind standardmäßig für jede:n öffentlich sichtbar.",
@@ -1993,13 +1993,13 @@
   // "community.page.news": "News",
   "community.page.news": "Neuigkeiten",
 
-  // "community.all-lists.head": "Subcommunities and Collections",
+  // "community.all-lists.head": "Subcommunities and Case Types",
   "community.all-lists.head": "Teilbereiche in diesem Bereich",
 
-  // "community.sub-collection-list.head": "Collections of this Community",
+  // "community.sub-collection-list.head": "Case Types of this Case Category",
   "community.sub-collection-list.head": "Sammlungen in diesem Bereich",
 
-  // "community.sub-community-list.head": "Communities of this Community",
+  // "community.sub-community-list.head": "Case Categories of this Case Category",
   "community.sub-community-list.head": "Teilbereiche in diesem Bereich",
 
 
@@ -2550,7 +2550,7 @@
   // "home.title": "Home",
   "home.title": "Startseite",
 
-  // "home.top-level-communities.head": "Communities in DSpace",
+  // "home.top-level-communities.head": "Case Categories in DSpace",
   "home.top-level-communities.head": "Hauptbereiche in DSpace",
 
   // "home.top-level-communities.help": "Select a community to browse its collections.",
@@ -2825,7 +2825,7 @@
   // "item.edit.item-mapper.description": "This is the item mapper tool that allows administrators to map this item to other collections. You can search for collections and map them, or browse the list of collections the item is currently mapped to.",
   "item.edit.item-mapper.description": "Sammlungsadministrator:innen haben die Möglichkeit Items von einer Sammlung in eine andere zu spiegeln. Man kann nach Items in anderen Sammlungen suchen und diese spiegeln oder sich eine Liste der gespiegelten Items anzeigen lassen.",
 
-  // "item.edit.item-mapper.head": "Item Mapper - Map Item to Collections",
+  // "item.edit.item-mapper.head": "Item Mapper - Map Item to Case Types",
   "item.edit.item-mapper.head": "Item spiegeln - Spiegelt ein Item in andere Sammlungen",
 
   // "item.edit.item-mapper.item": "Item: \"<b>{{name}}</b>\"",
@@ -3126,11 +3126,11 @@
   // "item.edit.tabs.status.buttons.delete.label": "Completely expunge item",
   "item.edit.tabs.status.buttons.delete.label": "Unwiderruflich löschen",
 
-  // "item.edit.tabs.status.buttons.mappedCollections.button": "Mapped collections",
-  "item.edit.tabs.status.buttons.mappedCollections.button": "Gespiegelte Sammlungen",
+  // "item.edit.tabs.status.buttons.mappedCase Types.button": "Mapped collections",
+  "item.edit.tabs.status.buttons.mappedCase Types.button": "Gespiegelte Sammlungen",
 
-  // "item.edit.tabs.status.buttons.mappedCollections.label": "Manage mapped collections",
-  "item.edit.tabs.status.buttons.mappedCollections.label": "Gespiegelte Sammlungen bearbeiten",
+  // "item.edit.tabs.status.buttons.mappedCase Types.label": "Manage mapped collections",
+  "item.edit.tabs.status.buttons.mappedCase Types.label": "Gespiegelte Sammlungen bearbeiten",
 
   // "item.edit.tabs.status.buttons.move.button": "Move this Item to a different Collection",
   "item.edit.tabs.status.buttons.move.button": "Verschieben Sie diesen Artikel in eine andere Sammlung",
@@ -3258,7 +3258,7 @@
   // "item.page.citation": "Citation",
   "item.page.citation": "Zitierform",
 
-  // "item.page.collections": "Collections",
+  // "item.page.collections": "Case Types",
   "item.page.collections": "Sammlungen",
 
   // "item.page.date": "Date",
@@ -3619,7 +3619,7 @@
   // "menu.section.reports": "Reports",
   "menu.section.reports": "Berichte",
 
-  // "menu.section.reports.collections": "Filtered Collections",
+  // "menu.section.reports.collections": "Filtered Case Types",
   "menu.section.reports.collections": "Filtrierte Sammlungen",
 
   // "menu.section.reports.queries": "Metadata Query",
@@ -3630,7 +3630,7 @@
 
 
 
-  // "menu.section.browse_community": "This Community",
+  // "menu.section.browse_community": "This Case Category",
   "menu.section.browse_community": "Dieser Bereich",
 
   // "menu.section.browse_community_by_author": "By Author",
@@ -3657,7 +3657,7 @@
   // "menu.section.browse_global_by_title": "By Title",
   "menu.section.browse_global_by_title": "Nach Titel",
 
-  // "menu.section.browse_global_communities_and_collections": "Communities & Collections",
+  // "menu.section.browse_global_communities_and_collections": "Case Categories & Case Types",
   "menu.section.browse_global_communities_and_collections": "Bereiche & Sammlungen",
 
 
@@ -3676,7 +3676,7 @@
   // "menu.section.edit_collection": "Collection",
   "menu.section.edit_collection": "Sammlung",
 
-  // "menu.section.edit_community": "Community",
+  // "menu.section.edit_community": "Case Category",
   "menu.section.edit_community": "Bereich",
 
   // "menu.section.edit_item": "Item",
@@ -3690,7 +3690,7 @@
   // "menu.section.export_collection": "Collection",
   "menu.section.export_collection": "Sammlung",
 
-  // "menu.section.export_community": "Community",
+  // "menu.section.export_community": "Case Category",
   "menu.section.export_community": "Bereich",
 
   // "menu.section.export_item": "Item",
@@ -3766,7 +3766,7 @@
   // "menu.section.new_collection": "Collection",
   "menu.section.new_collection": "Sammlung",
 
-  // "menu.section.new_community": "Community",
+  // "menu.section.new_community": "Case Category",
   "menu.section.new_community": "Bereich",
 
   // "menu.section.new_item": "Item",
@@ -3913,7 +3913,7 @@
   // "mydspace.results.no-authors": "No Authors",
   "mydspace.results.no-authors": "Keine Autor:innen",
 
-  // "mydspace.results.no-collections": "No Collections",
+  // "mydspace.results.no-collections": "No Case Types",
   "mydspace.results.no-collections": "Keine Sammlungen",
 
   // "mydspace.results.no-date": "No Date",
@@ -3978,7 +3978,7 @@
   // "nav.browse.header": "All of DSpace",
   "nav.browse.header": "Das gesamte Repositorium",
 
-  // "nav.community-browse.header": "By Community",
+  // "nav.community-browse.header": "By Case Category",
   "nav.community-browse.header": "Nach Bereich",
 
   // "nav.language": "Language switch",
@@ -4608,7 +4608,7 @@
   // "resource-policies.add.for.item": "Add a new Item policy",
   "resource-policies.add.for.item": "Eine neue Item-Richtlinie hinzufügen",
 
-  // "resource-policies.add.for.community": "Add a new Community policy",
+  // "resource-policies.add.for.community": "Add a new Case Category policy",
   "resource-policies.add.for.community": "Eine neue Bereiche-Richtlinie hinzufügen",
 
   // "resource-policies.add.for.collection": "Add a new Collection policy",
@@ -4740,7 +4740,7 @@
   // "resource-policies.table.headers.title.for.item": "Policies for Item",
   "resource-policies.table.headers.title.for.item": "Richtlinien für Items",
 
-  // "resource-policies.table.headers.title.for.community": "Policies for Community",
+  // "resource-policies.table.headers.title.for.community": "Policies for Case Category",
   "resource-policies.table.headers.title.for.community": "Richtlinien für Bereiche",
 
   // "resource-policies.table.headers.title.for.collection": "Policies for Collection",

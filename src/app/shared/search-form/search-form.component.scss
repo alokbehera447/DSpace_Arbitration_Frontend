@@ -1,9 +1,236 @@
-// temporary fix for bootstrap 4 beta btn color issue
-.btn-secondary {
-  background-color: var(--bs-input-bg);
-  color: var(--bs-input-color);
+// // temporary fix for bootstrap 4 beta btn color issue
+// .btn-secondary {
+//   background-color: var(--bs-input-bg);
+//   color: var(--bs-input-color);
+// }
+
+// .scope-button {
+//   max-width: var(--ds-search-form-scope-max-width);
+// }
+
+
+
+// =========================================
+// MODERN DARK JUDICIARY SEARCH
+// =========================================
+
+.modern-search-wrapper {
+
+  width: 100%;
 }
 
+.modern-search-group {
+
+  display: flex;
+
+  align-items: stretch;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  background:
+    rgba(255, 255, 255, 0.05);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(14px);
+
+  box-shadow:
+    0 14px 34px rgba(0, 0, 0, 0.24);
+}
+
+/* =========================================
+   SCOPE BUTTON
+========================================= */
+
 .scope-button {
+
   max-width: var(--ds-search-form-scope-max-width);
+
+  border: none !important;
+
+  border-right:
+    1px solid rgba(255, 255, 255, 0.08) !important;
+
+  background:
+    rgba(255, 255, 255, 0.04) !important;
+
+  color: rgba(255, 255, 255, 0.82) !important;
+
+  padding: 0 20px;
+
+  font-weight: 500;
+
+  transition: all 0.25s ease;
+}
+
+.scope-button:hover {
+
+  background:
+    rgba(255, 255, 255, 0.08) !important;
+
+  color: #ffffff !important;
+}
+
+/* =========================================
+   INPUT WRAPPER
+========================================= */
+
+.search-input-wrapper {
+
+  position: relative;
+
+  flex: 1;
+}
+
+/* =========================================
+   SEARCH ICON
+========================================= */
+
+.search-inside-icon {
+
+  position: absolute;
+
+  left: 22px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #64748b;
+
+  font-size: 0.95rem;
+
+  z-index: 5;
+}
+
+/* =========================================
+   INPUT
+========================================= */
+
+.search-input-wrapper .form-control {
+
+  height: 66px;
+
+  border: none !important;
+
+  border-radius: 0 !important;
+
+  background:
+    rgba(255, 255, 255, 0.94);
+
+  padding-left: 56px !important;
+
+  padding-right: 20px;
+
+  color: #0f172a;
+
+  font-size: 1rem;
+
+  font-weight: 500;
+
+  box-shadow: none !important;
+}
+
+/* PLACEHOLDER */
+
+.search-input-wrapper .form-control::placeholder {
+
+  color: #64748b;
+
+  font-size: 0.96rem;
+
+  font-weight: 400;
+}
+
+/* FOCUS */
+
+.search-input-wrapper .form-control:focus {
+
+  background: #ffffff;
+
+  outline: none !important;
+
+  box-shadow: none !important;
+}
+
+/* =========================================
+   SEARCH BUTTON
+========================================= */
+
+.search-button {
+
+  height: 66px;
+
+  padding: 0 34px;
+
+  border: none !important;
+
+  border-radius: 0 !important;
+
+  background:
+    linear-gradient(135deg,
+      #0d8a94,
+      #0a6670) !important;
+
+  color: #ffffff !important;
+
+  font-size: 0.96rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.2px;
+
+  transition: all 0.25s ease;
+}
+
+.search-button:hover {
+
+  background:
+    linear-gradient(135deg,
+      #11a0ac,
+      #0d7f89) !important;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.22);
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .modern-search-group {
+
+    flex-direction: column;
+
+    background: transparent;
+
+    border: none;
+
+    box-shadow: none;
+
+    gap: 12px;
+  }
+
+  .scope-button,
+  .search-input-wrapper .form-control,
+  .search-button {
+
+    width: 100%;
+
+    border-radius: 18px !important;
+  }
+
+  .search-button {
+
+    justify-content: center;
+  }
 }

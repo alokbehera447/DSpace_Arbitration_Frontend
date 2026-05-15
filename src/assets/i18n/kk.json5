@@ -463,8 +463,8 @@
   // "admin.access-control.epeople.form.table.name": "Name",
   "admin.access-control.epeople.form.table.name": "Аты",
 
-  // "admin.access-control.epeople.form.table.collectionOrCommunity": "Collection/Community",
-  "admin.access-control.epeople.form.table.collectionOrCommunity": "Жинақ/Қауымдастық",
+  // "admin.access-control.epeople.form.table.collectionOrCase Category": "Collection/Case Category",
+  "admin.access-control.epeople.form.table.collectionOrCase Category": "Жинақ/Қауымдастық",
 
   // "admin.access-control.epeople.form.memberOfNoGroups": "This EPerson is not a member of any groups",
   "admin.access-control.epeople.form.memberOfNoGroups": "Бұл адам ешқандай топтың мүшесі емес",
@@ -522,8 +522,8 @@
   // "admin.access-control.groups.table.name": "Name",
   "admin.access-control.groups.table.name": "Аты",
 
-  // "admin.access-control.groups.table.collectionOrCommunity": "Collection/Community",
-  "admin.access-control.groups.table.collectionOrCommunity": "Жинақ/Қауымдастық",
+  // "admin.access-control.groups.table.collectionOrCase Category": "Collection/Case Category",
+  "admin.access-control.groups.table.collectionOrCase Category": "Жинақ/Қауымдастық",
 
   // "admin.access-control.groups.table.members": "Members",
   "admin.access-control.groups.table.members": "Қатысушылар",
@@ -566,8 +566,8 @@
   // "admin.access-control.groups.form.groupName": "Group name",
   "admin.access-control.groups.form.groupName": "Топтың атауы",
 
-  // "admin.access-control.groups.form.groupCommunity": "Community or Collection",
-  "admin.access-control.groups.form.groupCommunity": "Жинақ немесе Қауымдастық",
+  // "admin.access-control.groups.form.groupCase Category": "Case Category or Collection",
+  "admin.access-control.groups.form.groupCase Category": "Жинақ немесе Қауымдастық",
 
   // "admin.access-control.groups.form.groupDescription": "Description",
   "admin.access-control.groups.form.groupDescription": "Сипаттама",
@@ -704,8 +704,8 @@
   // "admin.access-control.groups.form.subgroups-list.table.name": "Name",
   "admin.access-control.groups.form.subgroups-list.table.name": "Аты",
 
-  // "admin.access-control.groups.form.subgroups-list.table.collectionOrCommunity": "Collection/Community",
-  "admin.access-control.groups.form.subgroups-list.table.collectionOrCommunity": "Жинақ/Қауымдастық",
+  // "admin.access-control.groups.form.subgroups-list.table.collectionOrCase Category": "Collection/Case Category",
+  "admin.access-control.groups.form.subgroups-list.table.collectionOrCase Category": "Жинақ/Қауымдастық",
 
   // "admin.access-control.groups.form.subgroups-list.table.edit": "Remove / Add",
   "admin.access-control.groups.form.subgroups-list.table.edit": "Жою / Қосу",
@@ -760,9 +760,9 @@
   // TODO New key - Add a translation
   "admin.reports.collections.head": "Collection Filter Report",
 
-  //"admin.reports.button.show-collections": "Show Collections",
+  //"admin.reports.button.show-collections": "Show Case Types",
   // TODO New key - Add a translation
-  "admin.reports.button.show-collections": "Show Collections",
+  "admin.reports.button.show-collections": "Show Case Types",
 
   //"admin.reports.collections.collections-report": "Collection Report",
   // TODO New key - Add a translation
@@ -772,9 +772,9 @@
   // TODO New key - Add a translation
   "admin.reports.collections.item-results": "Item Results",
 
-  //"admin.reports.collections.community": "Community",
+  //"admin.reports.collections.community": "Case Category",
   // TODO New key - Add a translation
-  "admin.reports.collections.community": "Community",
+  "admin.reports.collections.community": "Case Category",
 
   //"admin.reports.collections.collection": "Collection",
   // TODO New key - Add a translation
@@ -1551,7 +1551,7 @@
   // "collection.create.notifications.success": "Successfully created the Collection",
   "collection.create.notifications.success": "Топтама сәтті жасалды",
 
-  // "collection.create.sub-head": "Create a Collection for Community {{ parent }}",
+  // "collection.create.sub-head": "Create a Collection for Case Category {{ parent }}",
   "collection.create.sub-head": "Қауымдастық үшін Топтама жасау {{ parent }}",
 
   // "collection.curate.header": "Curate Collection: {{collection}}",
@@ -1609,7 +1609,7 @@
   // "collection.edit.item-mapper.description": "This is the item mapper tool that allows collection administrators to map items from other collections into this collection. You can search for items from other collections and map them, or browse the list of currently mapped items.",
   "collection.edit.item-mapper.description": "Бұл топтама әкімшілеріне басқа топтамалардан осы топтамаға элементтерді көрсетуге мүмкіндік беретін элементтерді көрсету құралы. Сіз басқа топтамалардандан заттарды іздей аласыз және оларды картаға түсіре аласыз немесе ағымдағы көрсетілген элементтердің тізімін көре аласыз.",
 
-  // "collection.edit.item-mapper.head": "Item Mapper - Map Items from Other Collections",
+  // "collection.edit.item-mapper.head": "Item Mapper - Map Items from Other Case Types",
   "collection.edit.item-mapper.head": "Элементті Түрлендіру - Басқа топтамалардан элементтерді көрсету",
 
   // "collection.edit.item-mapper.no-search": "Please enter a query to search",
@@ -1958,14 +1958,14 @@
 
 
 
-  // "communityList.breadcrumbs": "Community List",
+  // "communityList.breadcrumbs": "Case Category List",
   "communityList.breadcrumbs": "Қауымдастықтар тізімі",
 
-  // "communityList.tabTitle": "Community List",
+  // "communityList.tabTitle": "Case Category List",
   // TODO Source message changed - Revise the translation
   "communityList.tabTitle": " Қауымдастық Тізімі",
 
-  // "communityList.title": "List of Communities",
+  // "communityList.title": "List of Case Categories",
   "communityList.title": "Қауымдастықтар тізімі",
 
   // "communityList.showMore": "Show More",
@@ -1973,16 +1973,16 @@
 
 
 
-  // "community.create.head": "Create a Community",
+  // "community.create.head": "Create a Case Category",
   "community.create.head": "Қауымдастық Құру",
 
-  // "community.create.notifications.success": "Successfully created the Community",
+  // "community.create.notifications.success": "Successfully created the Case Category",
   "community.create.notifications.success": "Қауымдастық Сәтті құрылды",
 
-  // "community.create.sub-head": "Create a Sub-Community for Community {{ parent }}",
+  // "community.create.sub-head": "Create a Sub-Case Category for Case Category {{ parent }}",
   "community.create.sub-head": "Қауымдастық үшін Қосалқы Қауымдастық Жасаңыз {{ parent }}",
 
-  // "community.curate.header": "Curate Community: {{community}}",
+  // "community.curate.header": "Curate Case Category: {{community}}",
   "community.curate.header": "Кураторлық Қауымдастық: {{community}}",
 
   // "community.delete.cancel": "Cancel",
@@ -1994,10 +1994,10 @@
   // "community.delete.processing": "Deleting...",
   "community.delete.processing": "Жоюда...",
 
-  // "community.delete.head": "Delete Community",
+  // "community.delete.head": "Delete Case Category",
   "community.delete.head": "Қауымдастықты Жою",
 
-  // "community.delete.notification.fail": "Community could not be deleted",
+  // "community.delete.notification.fail": "Case Category could not be deleted",
   "community.delete.notification.fail": "Қауымдастықты жою мүмкін емес",
 
   // "community.delete.notification.success": "Successfully deleted community",
@@ -2009,10 +2009,10 @@
   // "community.edit.delete": "Delete this community",
   "community.edit.delete": "Бұл қауымдастықты жойыңыз",
 
-  // "community.edit.head": "Edit Community",
+  // "community.edit.head": "Edit Case Category",
   "community.edit.head": "Қауымдастықты Өзгерту",
 
-  // "community.edit.breadcrumbs": "Edit Community",
+  // "community.edit.breadcrumbs": "Edit Case Category",
   "community.edit.breadcrumbs": "Қауымдастықты өңдеу",
 
 
@@ -2022,13 +2022,13 @@
   // "community.edit.logo.delete-undo.title": "Undo delete",
   "community.edit.logo.delete-undo.title": "Өшірмеу",
 
-  // "community.edit.logo.label": "Community logo",
+  // "community.edit.logo.label": "Case Category logo",
   "community.edit.logo.label": "Қауымдастық логотипі",
 
-  // "community.edit.logo.notifications.add.error": "Uploading Community logo failed. Please verify the content before retrying.",
+  // "community.edit.logo.notifications.add.error": "Uploading Case Category logo failed. Please verify the content before retrying.",
   "community.edit.logo.notifications.add.error": "Қауымдастық логотипін жүктеу мүмкін емес. Қайта қолданар алдында мазмұның тексеріңіз.",
 
-  // "community.edit.logo.notifications.add.success": "Upload Community logo successful.",
+  // "community.edit.logo.notifications.add.success": "Upload Case Category logo successful.",
   "community.edit.logo.notifications.add.success": "Қауымдастық логотипін жүктеу сәтті өтті.",
 
   // "community.edit.logo.notifications.delete.success.title": "Logo deleted",
@@ -2040,18 +2040,18 @@
   // "community.edit.logo.notifications.delete.error.title": "Error deleting logo",
   "community.edit.logo.notifications.delete.error.title": "Логотипті жою қатесі",
 
-  // "community.edit.logo.upload": "Drop a Community Logo to upload",
+  // "community.edit.logo.upload": "Drop a Case Category Logo to upload",
   "community.edit.logo.upload": "Жүктеу үшін Қауымдастық Логотипін жойыңыз",
 
 
 
-  // "community.edit.notifications.success": "Successfully edited the Community",
+  // "community.edit.notifications.success": "Successfully edited the Case Category",
   "community.edit.notifications.success": "Сәтті өзгертілген Қауымдастық",
 
   // "community.edit.notifications.unauthorized": "You do not have privileges to make this change",
   "community.edit.notifications.unauthorized": "Бұл өзгерісті жасауға Сіздің құқығыңыз жоқ",
 
-  // "community.edit.notifications.error": "An error occured while editing the Community",
+  // "community.edit.notifications.error": "An error occured while editing the Case Category",
   "community.edit.notifications.error": "Қауымдастықты өзгерту кезінде қате орын алды",
 
   // "community.edit.return": "Back",
@@ -2063,30 +2063,30 @@
   // "community.edit.tabs.curate.head": "Curate",
   "community.edit.tabs.curate.head": "Куратор",
 
-  // "community.edit.tabs.curate.title": "Community Edit - Curate",
+  // "community.edit.tabs.curate.title": "Case Category Edit - Curate",
   "community.edit.tabs.curate.title": "Қауымдастық Өзгерту - Куратор",
 
   // "community.edit.tabs.metadata.head": "Edit Metadata",
   "community.edit.tabs.metadata.head": "Метадеректерді Өзгерту",
 
-  // "community.edit.tabs.metadata.title": "Community Edit - Metadata",
+  // "community.edit.tabs.metadata.title": "Case Category Edit - Metadata",
   "community.edit.tabs.metadata.title": "Қауымдастықты Өзгерту-Метадеректер",
 
   // "community.edit.tabs.roles.head": "Assign Roles",
   "community.edit.tabs.roles.head": "Рөлдерді Бөлу",
 
-  // "community.edit.tabs.roles.title": "Community Edit - Roles",
+  // "community.edit.tabs.roles.title": "Case Category Edit - Roles",
   "community.edit.tabs.roles.title": "Қауымдастықты Өзгерту - Рөлдер",
 
   // "community.edit.tabs.authorizations.head": "Authorizations",
   "community.edit.tabs.authorizations.head": "Рұқсаттар",
 
-  // "community.edit.tabs.authorizations.title": "Community Edit - Authorizations",
+  // "community.edit.tabs.authorizations.title": "Case Category Edit - Authorizations",
   "community.edit.tabs.authorizations.title": "Қауымдастықты Өзгерту - Рұқсаттар",
 
 
 
-  // "community.listelement.badge": "Community",
+  // "community.listelement.badge": "Case Category",
   "community.listelement.badge": "Қауымдастық",
 
 
@@ -2117,7 +2117,7 @@
   "comcol-role.edit.collection-admin.name": "Әкімшілер",
 
 
-  // "comcol-role.edit.community-admin.description": "Community administrators can create sub-communities or collections, and manage or assign management for those sub-communities or collections. In addition, they decide who can submit items to any sub-collections, edit item metadata (after submission), and add (map) existing items from other collections (subject to authorization).",
+  // "comcol-role.edit.community-admin.description": "Case Category administrators can create sub-communities or collections, and manage or assign management for those sub-communities or collections. In addition, they decide who can submit items to any sub-collections, edit item metadata (after submission), and add (map) existing items from other collections (subject to authorization).",
   "comcol-role.edit.community-admin.description": "Қауымдастық әкімшілері ішкі қауымдастықтарды немесе коллекцияларды құра алады және оларды басқара алады немесе сол ішкі қауымдастықтарға немесе коллекцияларға басқару тағайындай алады. Сонымен қатар, олар кез-келген кірістірілген коллекцияларға элементтерді кім жібере алатындығын, элементтердің метадеректерін өңдеуді (жібергеннен кейін) және басқа коллекциялардан бар элементтерді қосуды (сәйкестендіруді) шешеді (авторизация жағдайында).",
 
   // "comcol-role.edit.collection-admin.description": "Collection administrators decide who can submit items to the collection, edit item metadata (after submission), and add (map) existing items from other collections to this collection (subject to authorization for that collection).",
@@ -2144,7 +2144,7 @@
   // "comcol-role.edit.bitstream_read.name": "Default bitstream read access",
   "comcol-role.edit.bitstream_read.name": "Әдепкі бит ағынын оқуға қол жеткізу",
 
-  // "comcol-role.edit.bitstream_read.description": "Community administrators can create sub-communities or collections, and manage or assign management for those sub-communities or collections. In addition, they decide who can submit items to any sub-collections, edit item metadata (after submission), and add (map) existing items from other collections (subject to authorization).",
+  // "comcol-role.edit.bitstream_read.description": "Case Category administrators can create sub-communities or collections, and manage or assign management for those sub-communities or collections. In addition, they decide who can submit items to any sub-collections, edit item metadata (after submission), and add (map) existing items from other collections (subject to authorization).",
   "comcol-role.edit.bitstream_read.description": "Қауымдастық әкімшілері ішкі қауымдастықтарды немесе коллекцияларды құра алады және оларды басқара алады немесе сол ішкі қауымдастықтарға немесе коллекцияларға басқару тағайындай алады. Сонымен қатар, олар кез-келген кірістірілген коллекцияларға элементтерді кім жібере алатындығын, элементтердің метадеректерін өңдеуді (жібергеннен кейін) және басқа коллекциялардан бар элементтерді қосуды (сәйкестендіруді) шешеді (авторизация жағдайында).",
 
   // "comcol-role.edit.bitstream_read.anonymous-group": "Default read for incoming bitstreams is currently set to Anonymous.",
@@ -2203,13 +2203,13 @@
   // "community.page.news": "News",
   "community.page.news": "Жаңалықтыр",
 
-  // "community.all-lists.head": "Subcommunities and Collections",
+  // "community.all-lists.head": "Subcommunities and Case Types",
   "community.all-lists.head": "Қосалқы қауымдамтықтар мен топтамалар",
 
-  // "community.sub-collection-list.head": "Collections of this Community",
+  // "community.sub-collection-list.head": "Case Types of this Case Category",
   "community.sub-collection-list.head": "Қауымдастық Топтамалары",
 
-  // "community.sub-community-list.head": "Communities of this Community",
+  // "community.sub-community-list.head": "Case Categories of this Case Category",
   "community.sub-community-list.head": "Осы қоғамдастық шеңберіндегі қауымдастықтар",
 
 
@@ -2893,7 +2893,7 @@
   // "home.title": "Home",
   "home.title": "Басты",
 
-  // "home.top-level-communities.head": "Communities in DSpace",
+  // "home.top-level-communities.head": "Case Categories in DSpace",
   "home.top-level-communities.head": "DSpace-тегі қауымдастықтар",
 
   // "home.top-level-communities.help": "Select a community to browse its collections.",
@@ -3174,7 +3174,7 @@
   // "item.edit.item-mapper.description": "This is the item mapper tool that allows administrators to map this item to other collections. You can search for collections and map them, or browse the list of collections the item is currently mapped to.",
   "item.edit.item-mapper.description": "Бұл әкімшілерге осы элементті басқа жинақтармен салыстыруға мүмкіндік беретін элементті салыстыру құралы. Жинақтарды іздеуге және оларды салыстыруға немесе элемент қазіргі уақытта салыстырылған жинақтар тізімін шолуға болады.",
 
-  // "item.edit.item-mapper.head": "Item Mapper - Map Item to Collections",
+  // "item.edit.item-mapper.head": "Item Mapper - Map Item to Case Types",
   "item.edit.item-mapper.head": "Элемент салыстырушы - Элементті коллекциялармен салыстыру",
 
   // "item.edit.item-mapper.item": "Item: \"<b>{{name}}</b>\"",
@@ -3487,11 +3487,11 @@
   // "item.edit.tabs.status.buttons.delete.label": "Completely expunge item",
   "item.edit.tabs.status.buttons.delete.label": "Элементті толығымен алып тастаңыз",
 
-  // "item.edit.tabs.status.buttons.mappedCollections.button": "Mapped collections",
-  "item.edit.tabs.status.buttons.mappedCollections.button": "Салыстырмалы коллекциялар",
+  // "item.edit.tabs.status.buttons.mappedCase Types.button": "Mapped collections",
+  "item.edit.tabs.status.buttons.mappedCase Types.button": "Салыстырмалы коллекциялар",
 
-  // "item.edit.tabs.status.buttons.mappedCollections.label": "Manage mapped collections",
-  "item.edit.tabs.status.buttons.mappedCollections.label": "Салыстырмалы коллекцияларды басқару",
+  // "item.edit.tabs.status.buttons.mappedCase Types.label": "Manage mapped collections",
+  "item.edit.tabs.status.buttons.mappedCase Types.label": "Салыстырмалы коллекцияларды басқару",
 
   // "item.edit.tabs.status.buttons.move.button": "Move this Item to a different Collection",
   "item.edit.tabs.status.buttons.move.button": "Ысыру...",
@@ -3630,7 +3630,7 @@
   // "item.page.citation": "Citation",
   "item.page.citation": "Дәйексөз",
 
-  // "item.page.collections": "Collections",
+  // "item.page.collections": "Case Types",
   "item.page.collections": "Жинақтар",
 
   // "item.page.collections.loading": "Loading...",
@@ -4215,9 +4215,9 @@
   // TODO New key - Add a translation
   "menu.section.reports": "Reports",
 
-  // "menu.section.reports.collections": "Filtered Collections",
+  // "menu.section.reports.collections": "Filtered Case Types",
   // TODO New key - Add a translation
-  "menu.section.reports.collections": "Filtered Collections",
+  "menu.section.reports.collections": "Filtered Case Types",
 
   // "menu.section.reports.queries": "Metadata Query",
   // TODO New key - Add a translation
@@ -4229,7 +4229,7 @@
 
 
 
-  // "menu.section.browse_community": "This Community",
+  // "menu.section.browse_community": "This Case Category",
   "menu.section.browse_community": "Бұл қауымдастық",
 
   // "menu.section.browse_community_by_author": "By Author",
@@ -4256,7 +4256,7 @@
   // "menu.section.browse_global_by_title": "By Title",
   "menu.section.browse_global_by_title": "Атауымен",
 
-  // "menu.section.browse_global_communities_and_collections": "Communities & Collections",
+  // "menu.section.browse_global_communities_and_collections": "Case Categories & Case Types",
   "menu.section.browse_global_communities_and_collections": "Қауымдастықтар мен коллекциялар",
 
 
@@ -4275,7 +4275,7 @@
   // "menu.section.edit_collection": "Collection",
   "menu.section.edit_collection": "Жинақ",
 
-  // "menu.section.edit_community": "Community",
+  // "menu.section.edit_community": "Case Category",
   "menu.section.edit_community": "Қауымдастық",
 
   // "menu.section.edit_item": "Item",
@@ -4289,7 +4289,7 @@
   // "menu.section.export_collection": "Collection",
   "menu.section.export_collection": "Жинақ",
 
-  // "menu.section.export_community": "Community",
+  // "menu.section.export_community": "Case Category",
   "menu.section.export_community": "Қауымдастық",
 
   // "menu.section.export_item": "Item",
@@ -4371,7 +4371,7 @@
   // "menu.section.new_collection": "Collection",
   "menu.section.new_collection": "Жинақ",
 
-  // "menu.section.new_community": "Community",
+  // "menu.section.new_community": "Case Category",
   "menu.section.new_community": "Қауымдастық",
 
   // "menu.section.new_item": "Item",
@@ -4533,7 +4533,7 @@
   // "mydspace.results.no-authors": "No Authors",
   "mydspace.results.no-authors": "Авторлар жоқ",
 
-  // "mydspace.results.no-collections": "No Collections",
+  // "mydspace.results.no-collections": "No Case Types",
   "mydspace.results.no-collections": "Жинақтар жоқ",
 
   // "mydspace.results.no-date": "No Date",
@@ -4601,7 +4601,7 @@
   // "nav.browse.header": "All of DSpace",
   "nav.browse.header": "Барлық DSpace",
 
-  // "nav.community-browse.header": "By Community",
+  // "nav.community-browse.header": "By Case Category",
   "nav.community-browse.header": "Қауымдастық бойынша",
 
   // "nav.language": "Language switch",
@@ -5285,7 +5285,7 @@
   // "resource-policies.add.for.item": "Add a new Item policy",
   "resource-policies.add.for.item": "Жаңа элемент саясатын қосу",
 
-  // "resource-policies.add.for.community": "Add a new Community policy",
+  // "resource-policies.add.for.community": "Add a new Case Category policy",
   "resource-policies.add.for.community": "Жаңа қауымдастық саясатын қосу",
 
   // "resource-policies.add.for.collection": "Add a new Collection policy",
@@ -5443,7 +5443,7 @@
   // "resource-policies.table.headers.title.for.item": "Policies for Item",
   "resource-policies.table.headers.title.for.item": "Өнімге арналған саясат",
 
-  // "resource-policies.table.headers.title.for.community": "Policies for Community",
+  // "resource-policies.table.headers.title.for.community": "Policies for Case Category",
   "resource-policies.table.headers.title.for.community": "Қоғамға арналған саясат",
 
   // "resource-policies.table.headers.title.for.collection": "Policies for Collection",

@@ -1,231 +1,355 @@
 <div class="case-search-container">
-  <h1>By Case Type / Number / Year</h1>
 
-  <form>
-    <div class="search-fields">
-      <div class="field-group">
-        <label for="caseNumber">Case Type</label>
-        <select class="field-group" id="caseType" [(ngModel)]="caseType" name="caseType">
-          <option value="">-- Select Case Type --</option>
-          <option *ngFor="let option of caseTypeOptions" [value]="option">{{ option }}</option>
-        </select>           
-      </div>
+  <!-- HERO SECTION -->
 
-      <div class="field-group">
-        <label for="caseNumber">Case Number</label>
-        <input type="text" id="caseNumber" [(ngModel)]="caseNumber" name="caseNumber">
-      </div>
+  <section class="hero-banner">
 
-      <div class="field-group">
-        <label for="caseYear">Case Year</label>
-        <input type="text" id="caseYear" [(ngModel)]="caseYear" name="caseYear">
-      </div>
-
-      <div class="button-group">
-        <button type="button" class="search-btn" (click)="searchCases()">Search</button>
-        <button type="button" class="reset-btn" (click)="resetForm()">Reset</button>
-      </div>
+    <div class="hero-subtitle">
+      ORISSA HIGH COURT DIGITAL ARCHIVE
     </div>
-  </form>
 
-  <div class="settings-section">
-    <h2>Settings</h2>
+    <div class="hero-title">
+      By Case Type / Number / Year
+    </div>
+
+    <div class="hero-description">
+      Search archived legal case files,
+      judicial proceedings, judgments,
+      petitions and court records.
+    </div>
+
+  </section>
+
+  <!-- SEARCH PANEL -->
+
+  <section class="search-panel">
+
+    <div class="panel-title">
+
+      <h2>
+        Search Parameters
+      </h2>
+
+    </div>
+
+    <form>
+
+      <div class="search-fields">
+
+        <!-- CASE TYPE -->
+
+        <div class="field-group">
+
+          <label>
+            Case Type
+          </label>
+
+          <select [(ngModel)]="caseType" name="caseType">
+
+            <option value="">
+              Select Case Type
+            </option>
+
+            <option *ngFor="let option of caseTypeOptions" [value]="option">
+
+              {{ option }}
+
+            </option>
+
+          </select>
+
+        </div>
+
+        <!-- CASE NUMBER -->
+
+        <div class="field-group">
+
+          <label>
+            Case Number
+          </label>
+
+          <input type="text" [(ngModel)]="caseNumber" name="caseNumber" placeholder="Enter case number">
+
+        </div>
+
+        <!-- CASE YEAR -->
+
+        <div class="field-group">
+
+          <label>
+            Case Year
+          </label>
+
+          <input type="text" [(ngModel)]="caseYear" name="caseYear" placeholder="Enter year">
+
+        </div>
+
+        <!-- BUTTONS -->
+
+        <div class="button-group">
+
+          <button type="button" class="search-btn" (click)="searchCases()">
+
+            Search
+
+          </button>
+
+          <button type="button" class="reset-btn" (click)="resetForm()">
+
+            Reset
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </form>
+
+  </section>
+
+  <!-- SETTINGS -->
+
+  <section class="settings-panel">
+
     <div class="settings-controls">
-      <div class="setting-group">
-        <label for="sortBy">Sort By</label>
-        <select id="sortBy" [(ngModel)]="sortBy" name="sortBy">
-          <!-- <option value="dc.title">Title</option> -->
-          <option value="dc.title">Case Number</option>
-          <option value="dc.casetype">Case Type</option>
-          <option value="dc.caseyear">Case Year</option>
-          <option value="dc.pname">First Petitioner</option>
-          <option value="dc.rname">First Respondent</option>
-          <option value="dc.paname">Petitioner's Advocate Name</option>
-          <option value="dc.raname">Respondent's Advocate Name</option>
-        </select>
-      </div>
+
+      <!-- SORT BY -->
 
       <div class="setting-group">
-        <label for="sortOrder">Sort Order</label>
-        <select id="sortOrder" [(ngModel)]="sortOrder" name="sortOrder">
-          <option value="ASC">Ascending</option>
-          <option value="DESC">Descending</option>
+
+        <label>
+          Sort By
+        </label>
+
+        <select [(ngModel)]="sortBy" name="sortBy">
+
+          <option value="dc.title">
+            Case Number
+          </option>
+
+          <option value="dc.casetype">
+            Case Type
+          </option>
+
+          <option value="dc.caseyear">
+            Case Year
+          </option>
+
+          <option value="dc.pname">
+            Petitioner
+          </option>
+
+          <option value="dc.rname">
+            Respondent
+          </option>
+
         </select>
+
       </div>
 
+      <!-- SORT ORDER -->
+
       <div class="setting-group">
-        <label for="resultsPerPage">Results per page</label>
-        <select id="resultsPerPage" [(ngModel)]="resultsPerPage" name="resultsPerPage">
+
+        <label>
+          Sort Order
+        </label>
+
+        <select [(ngModel)]="sortOrder" name="sortOrder">
+
+          <option value="ASC">
+            Ascending
+          </option>
+
+          <option value="DESC">
+            Descending
+          </option>
+
+        </select>
+
+      </div>
+
+      <!-- RESULTS -->
+
+      <div class="setting-group">
+
+        <label>
+          Results Per Page
+        </label>
+
+        <select [(ngModel)]="resultsPerPage" name="resultsPerPage" (change)="searchCases()">
+
           <option [value]="5">5</option>
           <option [value]="10">10</option>
           <option [value]="25">25</option>
           <option [value]="50">50</option>
           <option [value]="100">100</option>
+
         </select>
+
       </div>
+
     </div>
-  </div>
 
+  </section>
 
+  <!-- RESULTS PANEL -->
 
-  <div class="search-results">
-    <h2>Search Results</h2>
+  <section class="results-panel">
 
-    <!-- <p >Loading...</p> -->
+    <div class="results-header">
 
-    <!-- <p class="no-results">
-          Your search returned no results. Having trouble finding what you're looking for? Try putting quotes around it.
-        </p> -->
+      <h2>
+        Judicial Records
+      </h2>
 
-    <table class="table ">
-      <thead>
-        <tr>
-          <th>CASE TYPE</th>
-          <th>CASE NUMBER</th>
-          <th>CASE YEAR</th>
-          <th>DISTRICT</th>
-          <th>JUDGE NAME</th>
-          <th>FIRST PETITIONER</th>
-          <th>FIRST RESPONDENT</th>
-          <th>Disposal Date</th>
+      <div class="results-badge">
 
-        </tr>
-      </thead>
-      <tbody>
         <ng-container *ngIf="(caseList$ | async) as caseList">
-          <tr *ngFor="let caseItem of caseList">
-            <td class="case-result-text">
-              <a [routerLink]="['/items', caseItem.uuid]" class="case-link">
-                {{ caseItem.metadata?.['dc.casetype']?.[0]?.value || 'N/A' }}
-              </a>
-            </td>
-            <td class="case-result-text">
-              <a [routerLink]="['/items', caseItem.uuid]" class="case-link">
-                {{ caseItem.metadata?.['dc.title']?.[0]?.value || 'N/A' }}
-              </a>
-            </td>
-            <td class="case-result-text">
-              <a [routerLink]="['/items', caseItem.uuid]" class="case-link">
-                {{ caseItem.metadata?.['dc.caseyear']?.[0]?.value || 'N/A' }}
-              </a>
-            </td>
-            <td class="case-result-text">
-              <a [routerLink]="['/items', caseItem.uuid]" class="case-link">
-                {{ caseItem.metadata?.['dc.district']?.[0]?.value || 'N/A' }}
-              </a>
-            </td>
-            <td class="case-result-text">
-              <a [routerLink]="['/items', caseItem.uuid]" class="case-link">
-                {{ caseItem.metadata?.['dc.contributor.author']?.[0]?.value || 'N/A' }}
-              </a>
-            </td>
-            <td class="case-result-text">
-              <a [routerLink]="['/items', caseItem.uuid]" class="case-link">
-                {{ caseItem.metadata?.['dc.pname']?.[0]?.value || 'N/A' }}
-              </a>
-            </td>
-            <td class="case-result-text">
-              <a [routerLink]="['/items', caseItem.uuid]" class="case-link">
-                {{ caseItem.metadata?.['dc.rname']?.[0]?.value || 'N/A' }}
-              </a>
-            </td>
-            <td class="case-result-text">
-              <a [routerLink]="['/items', caseItem.uuid]" class="case-link">
-                {{ caseItem.metadata?.['dc.date.disposal']?.[0]?.value || 'N/A' }}
-              </a>
-            </td>
-          </tr>          
+
+          Displaying {{ caseList.length }} Results
         </ng-container>
-      </tbody>
-    </table>
 
+      </div>
 
-    <!-- <table class="table">
-          <thead>
-            <tr>
-              <th>Title</th>
-              <th>Case Number</th>
-              <th>Case Type</th>
-              <th>Author</th>
-              <th>Date Issued</th>
-              <th>Type</th>
-              <th>Link</th>
-            </tr>
-          </thead>
-          <tbody>
-            <ng-container *ngIf="(caseList$ | async) as caseList">
-              <tr *ngFor="let caseItem of caseList" 
-              >
-                <td>{{ caseItem?.['dc.title']?.[0]?.value || 'Untitled' }}</td>
-                <td>{{ caseItem?.['dc.case.number']?.[0]?.value || 'N/A' }}</td>
-                <td>{{ caseItem?.['dc.case.type']?.[0]?.value || 'N/A' }}</td>
-                <td>{{ caseItem?.['dc.contributor.author']?.[0]?.value || 'N/A' }}</td>
-                <td>{{ caseItem?.['dc.date.issued']?.[0]?.value || 'N/A' }}</td>
-                <td>{{ caseItem?.['dc.type']?.[0]?.value || 'N/A' }}</td>
-                <td>
-                  <a *ngIf="caseItem?.['dc.identifier.uri']?.[0]?.value" 
-                     [href]="caseItem?.['dc.identifier.uri'][0].value" target="_blank">
-                    View Case
-                  </a>
-                </td>
-              </tr>
-            </ng-container>
-          </tbody>
-        </table> -->
+    </div>
 
-  </div>
+    <!-- NO RESULTS -->
+
+    <div class="no-results" *ngIf="(caseList$ | async)?.length === 0">
+
+      No judicial records found.
+
+    </div>
+
+    <!-- TABLE -->
+
+    <div class="table-wrapper" *ngIf="(caseList$ | async)?.length > 0">
+
+      <table class="results-table">
+
+        <thead>
+
+          <tr>
+
+            <th>Case Type</th>
+            <th>Case No</th>
+            <th>Year</th>
+            <th>District</th>
+            <th>Judge</th>
+            <th>Petitioner</th>
+            <th>Respondent</th>
+            <th>Disposal Date</th>
+
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr *ngFor="let caseItem of (caseList$ | async)">
+
+            <!-- CASE TYPE -->
+
+            <td>
+
+              {{
+              caseItem.metadata?.['dc.casetype']?.[0]?.value
+              || 'N/A'
+              }}
+
+            </td>
+
+            <!-- CASE NUMBER -->
+
+            <td>
+
+              <a [routerLink]="['/items', caseItem.uuid]" class="case-link">
+
+                {{
+                caseItem.metadata?.['dc.title']?.[0]?.value
+                || 'N/A'
+                }}
+
+              </a>
+
+            </td>
+
+            <!-- YEAR -->
+
+            <td>
+
+              {{
+              caseItem.metadata?.['dc.caseyear']?.[0]?.value
+              || 'N/A'
+              }}
+
+            </td>
+
+            <!-- DISTRICT -->
+
+            <td>
+
+              {{
+              caseItem.metadata?.['dc.district']?.[0]?.value
+              || 'N/A'
+              }}
+
+            </td>
+
+            <!-- JUDGE -->
+
+            <td>
+
+              {{
+              caseItem.metadata?.['dc.contributor.author']?.[0]?.value
+              || 'N/A'
+              }}
+
+            </td>
+
+            <!-- PETITIONER -->
+
+            <td>
+
+              {{
+              caseItem.metadata?.['dc.pname']?.[0]?.value
+              || 'N/A'
+              }}
+
+            </td>
+
+            <!-- RESPONDENT -->
+
+            <td>
+
+              {{
+              caseItem.metadata?.['dc.rname']?.[0]?.value
+              || 'N/A'
+              }}
+
+            </td>
+
+            <!-- DISPOSAL -->
+
+            <td>
+
+              {{
+              caseItem.metadata?.['dc.date.disposal']?.[0]?.value
+              || 'N/A'
+              }}
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </section>
+
 </div>
-
-<!-- <div *ngIf="searchResults?._embedded?.searchResult?._embedded?.objects?.length > 0" class="results-list">
-  <h2>this is my componets</h2>
-  <div class="results-count">
-    Found {{ searchResults._embedded.searchResult._embedded.objects.length }} results
-  </div>
-  
-  <div class="result-item" *ngFor="let item of searchResults._embedded.searchResult._embedded.objects">
-    <div class="result-header">
-      <h3>
-        {{ item?._embedded?.indexableObject?.metadata?.['dc.title']?.[0]?.value || 'Untitled' }}
-      </h3>
-    </div>
-
-    <div class="result-metadata">
-      <div class="metadata-row">
-        <span class="metadata-label">Case Number:</span>
-        <span class="metadata-value">
-          {{ item?._embedded?.indexableObject?.metadata?.['dc.case.number']?.[0]?.value || 'N/A' }}
-        </span>
-      </div>
-
-      <div class="metadata-row">
-        <span class="metadata-label">Case Type:</span>
-        <span class="metadata-value">
-          {{ item?._embedded?.indexableObject?.metadata?.['dc.case.type']?.[0]?.value || 'N/A' }}
-        </span>
-      </div>
-
-      <div class="metadata-row">
-        <span class="metadata-label">Author:</span>
-        <span class="metadata-value">
-          {{ item?._embedded?.indexableObject?.metadata?.['dc.contributor.author']?.[0]?.value || 'N/A' }}
-        </span>
-      </div>
-
-      <div class="metadata-row">
-        <span class="metadata-label">Date Issued:</span>
-        <span class="metadata-value">
-          {{ item?._embedded?.indexableObject?.metadata?.['dc.date.issued']?.[0]?.value || 'N/A' }}
-        </span>
-      </div>
-
-      <div class="metadata-row">
-        <span class="metadata-label">Identifier:</span>
-        <span class="metadata-value">
-          <a [href]="item?._embedded?.indexableObject?.metadata?.['dc.identifier.uri']?.[0]?.value" target="_blank">
-            {{ item?._embedded?.indexableObject?.metadata?.['dc.identifier.uri']?.[0]?.value || 'N/A' }}
-          </a>
-        </span>
-      </div>
-    </div>
-  </div>
-</div> -->

@@ -434,8 +434,8 @@
   // "admin.access-control.epeople.form.table.name": "Name",
   "admin.access-control.epeople.form.table.name": "নাম",
 
-  // "admin.access-control.epeople.form.table.collectionOrCommunity": "Collection/Community",
-  "admin.access-control.epeople.form.table.collectionOrCommunity": "সংগ্রহ / সম্প্রদায়",
+  // "admin.access-control.epeople.form.table.collectionOrCase Category": "Collection/Case Category",
+  "admin.access-control.epeople.form.table.collectionOrCase Category": "সংগ্রহ / সম্প্রদায়",
 
   // "admin.access-control.epeople.form.memberOfNoGroups": "This EPerson is not a member of any groups",
   "admin.access-control.epeople.form.memberOfNoGroups": "এই ই-পারসন কোন দলের সদস্য নয়",
@@ -493,8 +493,8 @@
   // "admin.access-control.groups.table.name": "Name",
   "admin.access-control.groups.table.name": "নাম",
 
-  // "admin.access-control.groups.table.collectionOrCommunity": "Collection/Community",
-  "admin.access-control.groups.table.collectionOrCommunity": "সংগ্রহ / সম্প্রদায়",
+  // "admin.access-control.groups.table.collectionOrCase Category": "Collection/Case Category",
+  "admin.access-control.groups.table.collectionOrCase Category": "সংগ্রহ / সম্প্রদায়",
 
   // "admin.access-control.groups.table.members": "Members",
   "admin.access-control.groups.table.members": "সদস্যগণ",
@@ -537,8 +537,8 @@
   // "admin.access-control.groups.form.groupName": "Group name",
   "admin.access-control.groups.form.groupName": "দলের নাম",
 
-  // "admin.access-control.groups.form.groupCommunity": "Community or Collection",
-  "admin.access-control.groups.form.groupCommunity": "সম্প্রদায় বা সংগ্রহ",
+  // "admin.access-control.groups.form.groupCase Category": "Case Category or Collection",
+  "admin.access-control.groups.form.groupCase Category": "সম্প্রদায় বা সংগ্রহ",
 
   // "admin.access-control.groups.form.groupDescription": "Description",
   "admin.access-control.groups.form.groupDescription": "বর্ণনা",
@@ -675,8 +675,8 @@
   // "admin.access-control.groups.form.subgroups-list.table.name": "Name",
   "admin.access-control.groups.form.subgroups-list.table.name": "নাম",
 
-  // "admin.access-control.groups.form.subgroups-list.table.collectionOrCommunity": "Collection/Community",
-  "admin.access-control.groups.form.subgroups-list.table.collectionOrCommunity": "সংগ্রহ / সম্প্রদায়",
+  // "admin.access-control.groups.form.subgroups-list.table.collectionOrCase Category": "Collection/Case Category",
+  "admin.access-control.groups.form.subgroups-list.table.collectionOrCase Category": "সংগ্রহ / সম্প্রদায়",
 
   // "admin.access-control.groups.form.subgroups-list.table.edit": "Remove / Add",
   "admin.access-control.groups.form.subgroups-list.table.edit": "অপসারণ / যোগ করুন",
@@ -729,9 +729,9 @@
   // TODO New key - Add a translation
   "admin.reports.collections.head": "Collection Filter Report",
 
-  //"admin.reports.button.show-collections": "Show Collections",
+  //"admin.reports.button.show-collections": "Show Case Types",
   // TODO New key - Add a translation
-  "admin.reports.button.show-collections": "Show Collections",
+  "admin.reports.button.show-collections": "Show Case Types",
 
   //"admin.reports.collections.collections-report": "Collection Report",
   // TODO New key - Add a translation
@@ -741,9 +741,9 @@
   // TODO New key - Add a translation
   "admin.reports.collections.item-results": "Item Results",
 
-  //"admin.reports.collections.community": "Community",
+  //"admin.reports.collections.community": "Case Category",
   // TODO New key - Add a translation
-  "admin.reports.collections.community": "Community",
+  "admin.reports.collections.community": "Case Category",
 
   //"admin.reports.collections.collection": "Collection",
   // TODO New key - Add a translation
@@ -1496,7 +1496,7 @@
   // "collection.create.notifications.success": "Successfully created the Collection",
   "collection.create.notifications.success": "সফলভাবে সংগ্রহ তৈরি",
 
-  // "collection.create.sub-head": "Create a Collection for Community {{ parent }}",
+  // "collection.create.sub-head": "Create a Collection for Case Category {{ parent }}",
   "collection.create.sub-head": "সম্প্রদায়ের জন্য একটি সংগ্রহ তৈরি করুন {{praent}}",
 
   // "collection.curate.header": "Curate Collection: {{collection}}",
@@ -1554,7 +1554,7 @@
   // "collection.edit.item-mapper.description": "This is the item mapper tool that allows collection administrators to map items from other collections into this collection. You can search for items from other collections and map them, or browse the list of currently mapped items.",
   "collection.edit.item-mapper.description": "এটি আইটেম ম্যাপার টুল যা সংগ্রহের অ্যাডমিনিস্ট্রেটররা এই সংগ্রহে অন্যান্য সংগ্রহ থেকে আইটেমগুলি মানচিত্রের অনুমতি দেয়। আপনি অন্যান্য সংগ্রহ থেকে আইটেমগুলি অনুসন্ধান করতে এবং তাদের মানচিত্র বা বর্তমানে ম্যাপযুক্ত আইটেমগুলির তালিকা ব্রাউজ করতে পারেন।",
 
-  // "collection.edit.item-mapper.head": "Item Mapper - Map Items from Other Collections",
+  // "collection.edit.item-mapper.head": "Item Mapper - Map Items from Other Case Types",
   "collection.edit.item-mapper.head": "আইটেম ম্যাপার - অন্যান্য সংগ্রহ থেকে সমন্নয়কৃত আইটেম",
 
   // "collection.edit.item-mapper.no-search": "Please enter a query to search",
@@ -1872,13 +1872,13 @@
 
 
 
-  // "communityList.breadcrumbs": "Community List",
+  // "communityList.breadcrumbs": "Case Category List",
   "communityList.breadcrumbs": "কমিউনিটির তালিকা",
 
-  // "communityList.tabTitle": "Community List",
+  // "communityList.tabTitle": "Case Category List",
   "communityList.tabTitle": "কমিউনিটির তালিকা",
 
-  // "communityList.title": "List of Communities",
+  // "communityList.title": "List of Case Categories",
   "communityList.title": "সম্প্রদায়ের তালিকা",
 
   // "communityList.showMore": "Show More",
@@ -1886,16 +1886,16 @@
 
 
 
-  // "community.create.head": "Create a Community",
+  // "community.create.head": "Create a Case Category",
   "community.create.head": "একটি সম্প্রদায় তৈরি করুন",
 
-  // "community.create.notifications.success": "Successfully created the Community",
+  // "community.create.notifications.success": "Successfully created the Case Category",
   "community.create.notifications.success": "সফলভাবে সম্প্রদায় তৈরি হয়েছে",
 
-  // "community.create.sub-head": "Create a Sub-Community for Community {{ parent }}",
+  // "community.create.sub-head": "Create a Sub-Case Category for Case Category {{ parent }}",
   "community.create.sub-head": "সম্প্রদায়ের জন্য একটি উপ-সম্প্রদায় তৈরি করুন {{praent}}",
 
-  // "community.curate.header": "Curate Community: {{community}}",
+  // "community.curate.header": "Curate Case Category: {{community}}",
   "community.curate.header": "কিউরেট সম্প্রদায়: {{community}}",
 
   // "community.delete.cancel": "Cancel",
@@ -1907,10 +1907,10 @@
   // "community.delete.processing": "Deleting...",
   "community.delete.processing": "মুছে ফেলা হচ্ছে ...",
 
-  // "community.delete.head": "Delete Community",
+  // "community.delete.head": "Delete Case Category",
   "community.delete.head": "কমিউনিটি মুছুন",
 
-  // "community.delete.notification.fail": "Community could not be deleted",
+  // "community.delete.notification.fail": "Case Category could not be deleted",
   "community.delete.notification.fail": "সম্প্রদায় মুছে ফেলা যাবে না",
 
   // "community.delete.notification.success": "Successfully deleted community",
@@ -1922,10 +1922,10 @@
   // "community.edit.delete": "Delete this community",
   "community.edit.delete": "এই সম্প্রদায় মুছে ফেলুন",
 
-  // "community.edit.head": "Edit Community",
+  // "community.edit.head": "Edit Case Category",
   "community.edit.head": "সম্প্রদায় সম্পাদনা করুন",
 
-  // "community.edit.breadcrumbs": "Edit Community",
+  // "community.edit.breadcrumbs": "Edit Case Category",
   "community.edit.breadcrumbs": "সম্প্রদায় সম্পাদনা করুন",
 
 
@@ -1935,13 +1935,13 @@
   // "community.edit.logo.delete-undo.title": "Undo delete",
   "community.edit.logo.delete-undo.title": "মুছে ফেলা বাতিল করুন",
 
-  // "community.edit.logo.label": "Community logo",
+  // "community.edit.logo.label": "Case Category logo",
   "community.edit.logo.label": "কমিউনিটি লোগো",
 
-  // "community.edit.logo.notifications.add.error": "Uploading Community logo failed. Please verify the content before retrying.",
+  // "community.edit.logo.notifications.add.error": "Uploading Case Category logo failed. Please verify the content before retrying.",
   "community.edit.logo.notifications.add.error": "কমিউনিটি লোগো আপলোড ব্যর্থ হয়েছে। পুনরায় চেষ্টা করার আগে কন্টেন্ট যাচাই করুন।",
 
-  // "community.edit.logo.notifications.add.success": "Upload Community logo successful.",
+  // "community.edit.logo.notifications.add.success": "Upload Case Category logo successful.",
   "community.edit.logo.notifications.add.success": "কমিউনিটি লোগো সফল আপলোড করুন।",
 
   // "community.edit.logo.notifications.delete.success.title": "Logo deleted",
@@ -1953,18 +1953,18 @@
   // "community.edit.logo.notifications.delete.error.title": "Error deleting logo",
   "community.edit.logo.notifications.delete.error.title": "লোগো মুছে ফেলতে ত্রুটি হয়েছে",
 
-  // "community.edit.logo.upload": "Drop a Community Logo to upload",
+  // "community.edit.logo.upload": "Drop a Case Category Logo to upload",
   "community.edit.logo.upload": "আপলোড করার জন্য একটি কমিউনিটি লোগো ড্রপ করুন",
 
 
 
-  // "community.edit.notifications.success": "Successfully edited the Community",
+  // "community.edit.notifications.success": "Successfully edited the Case Category",
   "community.edit.notifications.success": "সফলভাবে সম্প্রদায় সম্পাদনা",
 
   // "community.edit.notifications.unauthorized": "You do not have privileges to make this change",
   "community.edit.notifications.unauthorized": "এই পরিবর্তন করতে আপনার বিশেষাধিকার নেই",
 
-  // "community.edit.notifications.error": "An error occured while editing the Community",
+  // "community.edit.notifications.error": "An error occured while editing the Case Category",
   "community.edit.notifications.error": "সম্প্রদায় সম্পাদনা করার সময় একটি ত্রুটি ঘটেছে",
 
   // "community.edit.return": "Back",
@@ -1975,30 +1975,30 @@
   // "community.edit.tabs.curate.head": "Curate",
   "community.edit.tabs.curate.head": "কিউরেট",
 
-  // "community.edit.tabs.curate.title": "Community Edit - Curate",
+  // "community.edit.tabs.curate.title": "Case Category Edit - Curate",
   "community.edit.tabs.curate.title": "কমিউনিটি সম্পাদনা - কিউরেট",
 
   // "community.edit.tabs.metadata.head": "Edit Metadata",
   "community.edit.tabs.metadata.head": "মেটাডেটা সম্পাদনা করুন",
 
-  // "community.edit.tabs.metadata.title": "Community Edit - Metadata",
+  // "community.edit.tabs.metadata.title": "Case Category Edit - Metadata",
   "community.edit.tabs.metadata.title": "কমিউনিটি সম্পাদনা - মেটাডাটা",
 
   // "community.edit.tabs.roles.head": "Assign Roles",
   "community.edit.tabs.roles.head": "ভূমিকা (রোল) বরাদ্দ করুন",
 
-  // "community.edit.tabs.roles.title": "Community Edit - Roles",
+  // "community.edit.tabs.roles.title": "Case Category Edit - Roles",
   "community.edit.tabs.roles.title": "কমিউনিটি সম্পাদনা - ভূমিকা (রোল)",
 
   // "community.edit.tabs.authorizations.head": "Authorizations",
   "community.edit.tabs.authorizations.head": "অনুমোদনসমূহ",
 
-  // "community.edit.tabs.authorizations.title": "Community Edit - Authorizations",
+  // "community.edit.tabs.authorizations.title": "Case Category Edit - Authorizations",
   "community.edit.tabs.authorizations.title": "কমিউনিটি সম্পাদনা - অনুমোদনসমূহ",
 
 
 
-  // "community.listelement.badge": "Community",
+  // "community.listelement.badge": "Case Category",
   "community.listelement.badge": "সম্প্রদায়",
 
 
@@ -2023,7 +2023,7 @@
   "comcol-role.edit.collection-admin.name": "প্রশাসক",
 
 
-  // "comcol-role.edit.community-admin.description": "Community administrators can create sub-communities or collections, and manage or assign management for those sub-communities or collections. In addition, they decide who can submit items to any sub-collections, edit item metadata (after submission), and add (map) existing items from other collections (subject to authorization).",
+  // "comcol-role.edit.community-admin.description": "Case Category administrators can create sub-communities or collections, and manage or assign management for those sub-communities or collections. In addition, they decide who can submit items to any sub-collections, edit item metadata (after submission), and add (map) existing items from other collections (subject to authorization).",
   "comcol-role.edit.community-admin.description": "কমিউনিটি অ্যাডমিনিস্ট্রেটররা উপ-সম্প্রদায়গুলি বা সংগ্রহগুলি তৈরি করতে পারে এবং সেই উপ-সম্প্রদায়গুলির বা সংগ্রহগুলির জন্য পরিচালনা বা পরিচালনা করতে পারে। উপরন্তু তারা যে কোনও উপ-সংগ্রহগুলিতে আইটেম জমা দিতে পারে তা মেটাডেটা (জমা দেওয়ার পরে) এবং অন্যান্য সংগ্রহগুলির (মানচিত্র) বিদ্যমান আইটেমগুলি (অনুমোদন সাপেক্ষে) যোগ করতে পারে তা নির্ধারণ করে।",
 
   // "comcol-role.edit.collection-admin.description": "Collection administrators decide who can submit items to the collection, edit item metadata (after submission), and add (map) existing items from other collections to this collection (subject to authorization for that collection).",
@@ -2050,7 +2050,7 @@
   // "comcol-role.edit.bitstream_read.name": "Default bitstream read access",
   "comcol-role.edit.bitstream_read.name": "ডিফল্ট বিটস্ট্রিম পড়ার অ্যাক্সেস",
 
-  // "comcol-role.edit.bitstream_read.description": "Community administrators can create sub-communities or collections, and manage or assign management for those sub-communities or collections. In addition, they decide who can submit items to any sub-collections, edit item metadata (after submission), and add (map) existing items from other collections (subject to authorization).",
+  // "comcol-role.edit.bitstream_read.description": "Case Category administrators can create sub-communities or collections, and manage or assign management for those sub-communities or collections. In addition, they decide who can submit items to any sub-collections, edit item metadata (after submission), and add (map) existing items from other collections (subject to authorization).",
   "comcol-role.edit.bitstream_read.description": "কমিউনিটি অ্যাডমিনিস্ট্রেটররা উপ-সম্প্রদায়গুলি বা সংগ্রহগুলি তৈরি করতে পারে এবং সেই উপ-সম্প্রদায়গুলির বা সংগ্রহগুলির জন্য পরিচালনা বা পরিচালনা করতে পারে। উপরন্তু তারা যে কোনও উপ-সংগ্রহগুলিতে আইটেম জমা দিতে পারে তা মেটাডেটা (জমা দেওয়ার পরে) এবং অন্যান্য সংগ্রহগুলির (মানচিত্র) বিদ্যমান আইটেমগুলি (অনুমোদন সাপেক্ষে) যোগ করতে পারে তা নির্ধারণ করে।",
 
   // "comcol-role.edit.bitstream_read.anonymous-group": "Default read for incoming bitstreams is currently set to Anonymous.",
@@ -2109,13 +2109,13 @@
   // "community.page.news": "News",
   "community.page.news": "সংবাদ",
 
-  // "community.all-lists.head": "Subcommunities and Collections",
+  // "community.all-lists.head": "Subcommunities and Case Types",
   "community.all-lists.head": "উপ-সম্প্রদায় এবং সংগ্রহ",
 
-  // "community.sub-collection-list.head": "Collections of this Community",
+  // "community.sub-collection-list.head": "Case Types of this Case Category",
   "community.sub-collection-list.head": "এই সম্প্রদায়ের সংগ্রহ",
 
-  // "community.sub-community-list.head": "Communities of this Community",
+  // "community.sub-community-list.head": "Case Categories of this Case Category",
   "community.sub-community-list.head": "এই সম্প্রদায়ের সম্প্রদায়",
 
 
@@ -2708,7 +2708,7 @@
   // "home.title": "Home",
   "home.title": "হোম",
 
-  // "home.top-level-communities.head": "Communities in DSpace",
+  // "home.top-level-communities.head": "Case Categories in DSpace",
   "home.top-level-communities.head": "ডিস্পেস এর  সম্প্রদায়",
 
   // "home.top-level-communities.help": "Select a community to browse its collections.",
@@ -2987,7 +2987,7 @@
   // "item.edit.item-mapper.description": "This is the item mapper tool that allows administrators to map this item to other collections. You can search for collections and map them, or browse the list of collections the item is currently mapped to.",
   "item.edit.item-mapper.description": "এটি আইটেম ম্যাপার টুল যা প্রশাসকদের এই আইটেমটিকে অন্যান্য সংগ্রহগুলিতে মানচিত্র করতে দেয়। আপনি সংগ্রহগুলি এবং তাদের মানচিত্রের জন্য অনুসন্ধান করতে পারেন বা সংগ্রহের তালিকাটি বর্তমানে ম্যাপ করা হয়েছে।",
 
-  // "item.edit.item-mapper.head": "Item Mapper - Map Item to Collections",
+  // "item.edit.item-mapper.head": "Item Mapper - Map Item to Case Types",
   "item.edit.item-mapper.head": "আইটেম ম্যাপার - সংগ্রহের মানচিত্র আইটেম",
 
   // "item.edit.item-mapper.item": "Item: \"<b>{{name}}</b>\"",
@@ -3300,11 +3300,11 @@
   // "item.edit.tabs.status.buttons.delete.label": "Completely expunge item",
   "item.edit.tabs.status.buttons.delete.label": "সম্পূর্ণরূপে আইটেম এক্সপোজ করুন",
 
-  // "item.edit.tabs.status.buttons.mappedCollections.button": "Mapped collections",
-  "item.edit.tabs.status.buttons.mappedCollections.button": "ম্যাপ সংগ্রহ",
+  // "item.edit.tabs.status.buttons.mappedCase Types.button": "Mapped collections",
+  "item.edit.tabs.status.buttons.mappedCase Types.button": "ম্যাপ সংগ্রহ",
 
-  // "item.edit.tabs.status.buttons.mappedCollections.label": "Manage mapped collections",
-  "item.edit.tabs.status.buttons.mappedCollections.label": "ম্যাপড সংগ্রহ পরিচালনা করুন",
+  // "item.edit.tabs.status.buttons.mappedCase Types.label": "Manage mapped collections",
+  "item.edit.tabs.status.buttons.mappedCase Types.label": "ম্যাপড সংগ্রহ পরিচালনা করুন",
 
   // "item.edit.tabs.status.buttons.move.button": "Move this Item to a different Collection",
   "item.edit.tabs.status.buttons.move.button": "সরানো ...",
@@ -3435,7 +3435,7 @@
   // "item.page.citation": "Citation",
   "item.page.citation": "উদ্ধৃতি",
 
-  // "item.page.collections": "Collections",
+  // "item.page.collections": "Case Types",
   "item.page.collections": "সংগ্রহগুলি",
 
   // "item.page.collections.loading": "Loading...",
@@ -3970,9 +3970,9 @@
   // TODO New key - Add a translation
   "menu.section.reports": "Reports",
 
-  // "menu.section.reports.collections": "Filtered Collections",
+  // "menu.section.reports.collections": "Filtered Case Types",
   // TODO New key - Add a translation
-  "menu.section.reports.collections": "Filtered Collections",
+  "menu.section.reports.collections": "Filtered Case Types",
 
   // "menu.section.reports.queries": "Metadata Query",
   // TODO New key - Add a translation
@@ -3983,7 +3983,7 @@
 
 
 
-  // "menu.section.browse_community": "This Community",
+  // "menu.section.browse_community": "This Case Category",
   "menu.section.browse_community": "এই সম্প্রদায়",
 
   // "menu.section.browse_community_by_author": "By Author",
@@ -4010,7 +4010,7 @@
   // "menu.section.browse_global_by_title": "By Title",
   "menu.section.browse_global_by_title": "শিরোনাম দ্বারা",
 
-  // "menu.section.browse_global_communities_and_collections": "Communities & Collections",
+  // "menu.section.browse_global_communities_and_collections": "Case Categories & Case Types",
   "menu.section.browse_global_communities_and_collections": "সম্প্রদায় ও সংগ্রহ",
 
 
@@ -4029,7 +4029,7 @@
   // "menu.section.edit_collection": "Collection",
   "menu.section.edit_collection": "সংগ্রহ",
 
-  // "menu.section.edit_community": "Community",
+  // "menu.section.edit_community": "Case Category",
   "menu.section.edit_community": "সম্প্রদায়",
 
   // "menu.section.edit_item": "Item",
@@ -4043,7 +4043,7 @@
   // "menu.section.export_collection": "Collection",
   "menu.section.export_collection": "সংগ্রহ",
 
-  // "menu.section.export_community": "Community",
+  // "menu.section.export_community": "Case Category",
   "menu.section.export_community": "সম্প্রদায়",
 
   // "menu.section.export_item": "Item",
@@ -4122,7 +4122,7 @@
   // "menu.section.new_collection": "Collection",
   "menu.section.new_collection": "সংগ্রহ",
 
-  // "menu.section.new_community": "Community",
+  // "menu.section.new_community": "Case Category",
   "menu.section.new_community": "সম্প্রদায়",
 
   // "menu.section.new_item": "Item",
@@ -4272,7 +4272,7 @@
   // "mydspace.results.no-authors": "No Authors",
   "mydspace.results.no-authors": "কোন লেখক",
 
-  // "mydspace.results.no-collections": "No Collections",
+  // "mydspace.results.no-collections": "No Case Types",
   "mydspace.results.no-collections": "কোন সংগ্রহ",
 
   // "mydspace.results.no-date": "No Date",
@@ -4340,7 +4340,7 @@
   // "nav.browse.header": "All of DSpace",
   "nav.browse.header": "ডিস্পেসের সবকিছু",
 
-  // "nav.community-browse.header": "By Community",
+  // "nav.community-browse.header": "By Case Category",
   "nav.community-browse.header": "সম্প্রদায় দ্বারা",
 
   // "nav.language": "Language switch",
@@ -4954,7 +4954,7 @@
   // "resource-policies.add.for.item": "Add a new Item policy",
   "resource-policies.add.for.item": "একটি নতুন আইটেম নীতি যোগ করুন",
 
-  // "resource-policies.add.for.community": "Add a new Community policy",
+  // "resource-policies.add.for.community": "Add a new Case Category policy",
   "resource-policies.add.for.community": "একটি নতুন সম্প্রদায় নীতি যোগ করুন",
 
   // "resource-policies.add.for.collection": "Add a new Collection policy",
@@ -5087,7 +5087,7 @@
   // "resource-policies.table.headers.title.for.item": "Policies for Item",
   "resource-policies.table.headers.title.for.item": "আইটেমের জন্য নীতি",
 
-  // "resource-policies.table.headers.title.for.community": "Policies for Community",
+  // "resource-policies.table.headers.title.for.community": "Policies for Case Category",
   "resource-policies.table.headers.title.for.community": "সম্প্রদায়ের জন্য নীতি",
 
   // "resource-policies.table.headers.title.for.collection": "Policies for Collection",

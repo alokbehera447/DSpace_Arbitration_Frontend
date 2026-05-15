@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core'; 
-import { BehaviorSubject } from 'rxjs';   
+import { Component, OnInit } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { JudegNameService } from '../core/serachpage/judgename.service';
 
 @Component({
@@ -10,25 +10,25 @@ import { JudegNameService } from '../core/serachpage/judgename.service';
 export class JudgeNameComponent implements OnInit {
   private caseListSubject = new BehaviorSubject<any[]>([]);
   caseList$ = this.caseListSubject.asObservable();
- 
+
   judgeName: string = '';
   sortBy: string = 'dc.title'; // Default sorting field
   sortOrder: string = 'ASC'; // Default sorting order
   resultsPerPage: number = 10; // Default results per page
- 
 
-  constructor(private searchPageService: JudegNameService  ) {}
+
+  constructor(private searchPageService: JudegNameService) { }
 
   ngOnInit() {
-    this.fetchCases(); 
+    this.fetchCases();
   }
 
   fetchCases() {
     this.searchPageService.getSearchResults(
-   
-      this.judgeName, 
-      this.sortBy, 
-      this.sortOrder, 
+
+      this.judgeName,
+      this.sortBy,
+      this.sortOrder,
       this.resultsPerPage
     ).subscribe(
       (response) => {
@@ -42,7 +42,7 @@ export class JudgeNameComponent implements OnInit {
   }
   loadCases(response: any) {
     const objects = response?._embedded?.searchResult?._embedded?.objects || [];
-  
+
     const caseList = objects
       .map(obj => {
         const indexableObject = obj?._embedded?.indexableObject;
@@ -52,17 +52,17 @@ export class JudgeNameComponent implements OnInit {
         };
       })
       .filter(item => item.uuid && item.metadata?.['dc.casetype']?.[0]?.value);
-  
+
     console.log('✅ Processed Case List:', caseList);
     this.caseListSubject.next(caseList);
   }
-  
- 
+
+
   searchCases() {
     this.fetchCases();
   }
 
-  resetForm() { 
+  resetForm() {
     this.judgeName = '';
     this.sortBy = 'dc.title';
     this.sortOrder = 'ASC';

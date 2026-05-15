@@ -43,7 +43,7 @@
   "admin.access-control.epeople.form.notification.edited.success": "Έγινε επιτυχής επεξεργασία του EPerson \"{{name}}\"",
   "admin.access-control.epeople.form.requireCertificate": "Απαιτεί πιστοποιητικό",
   "admin.access-control.epeople.form.return": "Επιστροφή",
-  "admin.access-control.epeople.form.table.collectionOrCommunity": "Συλλογή/Κοινότητα",
+  "admin.access-control.epeople.form.table.collectionOrCase Category": "Συλλογή/Κοινότητα",
   "admin.access-control.epeople.form.table.id": "ID",
   "admin.access-control.epeople.form.table.name": "Ονομα",
   "admin.access-control.epeople.head": "Χρήστες",
@@ -74,7 +74,7 @@
   "admin.access-control.groups.form.delete-group.modal.confirm": "Διαγραφή",
   "admin.access-control.groups.form.delete-group.modal.header": "Διαγραφή ομάδας \"{{ dsoName }}\"",
   "admin.access-control.groups.form.delete-group.modal.info": "Είστε βέβαιοι ότι θέλετε να διαγράψετε την ομάδα \"{{ dsoName }}\"",
-  "admin.access-control.groups.form.groupCommunity": "Κοινότητα ή Συλλογή",
+  "admin.access-control.groups.form.groupCase Category": "Κοινότητα ή Συλλογή",
   "admin.access-control.groups.form.groupDescription": "Περιγραφή",
   "admin.access-control.groups.form.groupName": "Όνομα ομάδας",
   "admin.access-control.groups.form.head.create": "Δημιουργία ομάδας",
@@ -125,7 +125,7 @@
   "admin.access-control.groups.form.subgroups-list.notification.success.deleteSubgroup": "Η υποομάδα διαγράφηκε επιτυχώς: \"{{name}}\"",
   "admin.access-control.groups.form.subgroups-list.search.button": "Αναζήτηση",
   "admin.access-control.groups.form.subgroups-list.search.head": "Προσθήκη υποομάδας",
-  "admin.access-control.groups.form.subgroups-list.table.collectionOrCommunity": "Συλλογή/Κοινότητα",
+  "admin.access-control.groups.form.subgroups-list.table.collectionOrCase Category": "Συλλογή/Κοινότητα",
   "admin.access-control.groups.form.subgroups-list.table.edit": "Αφαίρεση / Προσθήκη",
   "admin.access-control.groups.form.subgroups-list.table.edit.buttons.add": "Προσθήκη υποομάδας με όνομα \"{{name}}\"",
   "admin.access-control.groups.form.subgroups-list.table.edit.buttons.remove": "Κατάργηση υποομάδας με όνομα \"{{name}}\"",
@@ -141,7 +141,7 @@
   "admin.access-control.groups.search.head": "Αναζήτηση ομάδων",
   "admin.access-control.groups.search.placeholder": "Αναζήτηση ομάδων...",
   "admin.access-control.groups.singleGroup.breadcrumbs": "Επεξεργασία ομάδας",
-  "admin.access-control.groups.table.collectionOrCommunity": "Συλλογή/Κοινότητα",
+  "admin.access-control.groups.table.collectionOrCase Category": "Συλλογή/Κοινότητα",
   "admin.access-control.groups.table.edit": "Επεξεργασία",
   "admin.access-control.groups.table.edit.buttons.edit": "Επεξεργασία \"{{name}}\"",
   "admin.access-control.groups.table.edit.buttons.remove": "Διαγραφή \"{{name}}\"",
@@ -164,9 +164,9 @@
   // TODO New key - Add a translation
   "admin.reports.collections.head": "Collection Filter Report",
 
-  //"admin.reports.button.show-collections": "Show Collections",
+  //"admin.reports.button.show-collections": "Show Case Types",
   // TODO New key - Add a translation
-  "admin.reports.button.show-collections": "Show Collections",
+  "admin.reports.button.show-collections": "Show Case Types",
 
   //"admin.reports.collections.collections-report": "Collection Report",
   // TODO New key - Add a translation
@@ -176,9 +176,9 @@
   // TODO New key - Add a translation
   "admin.reports.collections.item-results": "Item Results",
 
-  //"admin.reports.collections.community": "Community",
+  //"admin.reports.collections.community": "Case Category",
   // TODO New key - Add a translation
-  "admin.reports.collections.community": "Community",
+  "admin.reports.collections.community": "Case Category",
 
   //"admin.reports.collections.collection": "Collection",
   // TODO New key - Add a translation
@@ -1394,8 +1394,8 @@
   "item.edit.tabs.status.buttons.authorizations.label": "Επεξεργαστείτε τις πολιτικές εξουσιοδότησης του τεκμηρίου",
   "item.edit.tabs.status.buttons.delete.button": "Οριστική διαγραφή",
   "item.edit.tabs.status.buttons.delete.label": "Διαγράψτε εντελώς το τεκμήριο",
-  "item.edit.tabs.status.buttons.mappedCollections.button": "Αντιστοιχισμένες συλλογές",
-  "item.edit.tabs.status.buttons.mappedCollections.label": "Διαχείριση αντιστοιχισμένων συλλογών",
+  "item.edit.tabs.status.buttons.mappedCase Types.button": "Αντιστοιχισμένες συλλογές",
+  "item.edit.tabs.status.buttons.mappedCase Types.label": "Διαχείριση αντιστοιχισμένων συλλογών",
   "item.edit.tabs.status.buttons.move.button": "Κίνηση...",
   "item.edit.tabs.status.buttons.move.label": "Μετακίνηση τεκμηρίου σε άλλη συλλογή",
   "item.edit.tabs.status.buttons.private.button": "Κάντε το ιδιωτικό...",
@@ -1622,9 +1622,9 @@
   // TODO New key - Add a translation
   "menu.section.reports": "Reports",
 
-  // "menu.section.reports.collections": "Filtered Collections",
+  // "menu.section.reports.collections": "Filtered Case Types",
   // TODO New key - Add a translation
-  "menu.section.reports.collections": "Filtered Collections",
+  "menu.section.reports.collections": "Filtered Case Types",
 
   // "menu.section.reports.queries": "Metadata Query",
   // TODO New key - Add a translation
