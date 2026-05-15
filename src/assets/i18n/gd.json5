@@ -425,8 +425,8 @@
   // "admin.access-control.epeople.form.table.name": "Name",
   "admin.access-control.epeople.form.table.name": "Ainm",
 
-  // "admin.access-control.epeople.form.table.collectionOrCommunity": "Collection/Community",
-  "admin.access-control.epeople.form.table.collectionOrCommunity": "Cruinneachadh/Coimhearsnachd",
+  // "admin.access-control.epeople.form.table.collectionOrCase Category": "Collection/Case Category",
+  "admin.access-control.epeople.form.table.collectionOrCase Category": "Cruinneachadh/Coimhearsnachd",
 
   // "admin.access-control.epeople.form.memberOfNoGroups": "This EPerson is not a member of any groups",
   "admin.access-control.epeople.form.memberOfNoGroups": "Chan eil an E-Neach seo na bhall de bhuidheann sam bith",
@@ -484,8 +484,8 @@
   // "admin.access-control.groups.table.name": "Name",
   "admin.access-control.groups.table.name": "Ainm",
 
-  // "admin.access-control.groups.table.collectionOrCommunity": "Collection/Community",
-  "admin.access-control.groups.table.collectionOrCommunity": "Cruinneachadh/Coimhearsnachd",
+  // "admin.access-control.groups.table.collectionOrCase Category": "Collection/Case Category",
+  "admin.access-control.groups.table.collectionOrCase Category": "Cruinneachadh/Coimhearsnachd",
 
   // "admin.access-control.groups.table.members": "Members",
   "admin.access-control.groups.table.members": "Buill",
@@ -528,8 +528,8 @@
   // "admin.access-control.groups.form.groupName": "Group name",
   "admin.access-control.groups.form.groupName": "Ainm Buidhinn",
 
-  // "admin.access-control.groups.form.groupCommunity": "Community or Collection",
-  "admin.access-control.groups.form.groupCommunity": "Coimhearsnachd no Cruinneachadh",
+  // "admin.access-control.groups.form.groupCase Category": "Case Category or Collection",
+  "admin.access-control.groups.form.groupCase Category": "Coimhearsnachd no Cruinneachadh",
 
   // "admin.access-control.groups.form.groupDescription": "Description",
   "admin.access-control.groups.form.groupDescription": "Cunntas",
@@ -666,8 +666,8 @@
   // "admin.access-control.groups.form.subgroups-list.table.name": "Name",
   "admin.access-control.groups.form.subgroups-list.table.name": "Ainm",
 
-  // "admin.access-control.groups.form.subgroups-list.table.collectionOrCommunity": "Collection/Community",
-  "admin.access-control.groups.form.subgroups-list.table.collectionOrCommunity": "Cruinneachadh/Coimhearsnachd",
+  // "admin.access-control.groups.form.subgroups-list.table.collectionOrCase Category": "Collection/Case Category",
+  "admin.access-control.groups.form.subgroups-list.table.collectionOrCase Category": "Cruinneachadh/Coimhearsnachd",
 
   // "admin.access-control.groups.form.subgroups-list.table.edit": "Remove / Add",
   "admin.access-control.groups.form.subgroups-list.table.edit": "Thoir às / Cuir-ris",
@@ -722,9 +722,9 @@
   // TODO New key - Add a translation
   "admin.reports.collections.head": "Collection Filter Report",
 
-  //"admin.reports.button.show-collections": "Show Collections",
+  //"admin.reports.button.show-collections": "Show Case Types",
   // TODO New key - Add a translation
-  "admin.reports.button.show-collections": "Show Collections",
+  "admin.reports.button.show-collections": "Show Case Types",
 
   //"admin.reports.collections.collections-report": "Collection Report",
   // TODO New key - Add a translation
@@ -734,9 +734,9 @@
   // TODO New key - Add a translation
   "admin.reports.collections.item-results": "Item Results",
 
-  //"admin.reports.collections.community": "Community",
+  //"admin.reports.collections.community": "Case Category",
   // TODO New key - Add a translation
-  "admin.reports.collections.community": "Community",
+  "admin.reports.collections.community": "Case Category",
 
   //"admin.reports.collections.collection": "Collection",
   // TODO New key - Add a translation
@@ -1470,7 +1470,7 @@
   // "collection.create.notifications.success": "Successfully created the Collection",
   "collection.create.notifications.success": "Chaidh an Cruinneachadh a chruthachadh",
 
-  // "collection.create.sub-head": "Create a Collection for Community {{ parent }}",
+  // "collection.create.sub-head": "Create a Collection for Case Category {{ parent }}",
   "collection.create.sub-head": "Cruthaich Cruinneachadh do Choimhearsnachd {{ parent }}",
 
   // "collection.curate.header": "Curate Collection: {{collection}}",
@@ -1530,7 +1530,7 @@
   // TODO New key - Add a translation
   "collection.edit.item-mapper.description": "Seo am mapair nithean, an t-inneal a leigeas le rianairean cruinneachaidh nithean a mhapadh bho chruinneachaidhean eile a-steach dhan chruinneachadh seo. Is urrainn dhut rannsachadh airson nithean bho chruinneachaidhean eile agus am mapadh, no an liosta de nithean a tha mapaichte an-dràsta a bhrobhsadh.",
 
-  // "collection.edit.item-mapper.head": "Item Mapper - Map Items from Other Collections",
+  // "collection.edit.item-mapper.head": "Item Mapper - Map Items from Other Case Types",
   "collection.edit.item-mapper.head": "Mapair Nithean - Map Nithean bho Chruinneachaidhean Eile",
 
   // "collection.edit.item-mapper.no-search": "Please enter a query to search",
@@ -1876,13 +1876,13 @@
 
 
 
-  // "communityList.breadcrumbs": "Community List",
+  // "communityList.breadcrumbs": "Case Category List",
   "communityList.breadcrumbs": "Liosta Coimhearsnachd",
 
-  // "communityList.tabTitle": "Community List",
+  // "communityList.tabTitle": "Case Category List",
   "communityList.tabTitle": "Liosta Coimhearsnachd",
 
-  // "communityList.title": "List of Communities",
+  // "communityList.title": "List of Case Categories",
   "communityList.title": "Liosta Choimhearsnachdan",
 
   // "communityList.showMore": "Show More",
@@ -1890,16 +1890,16 @@
 
 
 
-  // "community.create.head": "Create a Community",
+  // "community.create.head": "Create a Case Category",
   "community.create.head": "Cruthaich Coimhearsnachd",
 
-  // "community.create.notifications.success": "Successfully created the Community",
+  // "community.create.notifications.success": "Successfully created the Case Category",
   "community.create.notifications.success": "Chaidh a' Choimhearsnachd a chruthachadh",
 
-  // "community.create.sub-head": "Create a Sub-Community for Community {{ parent }}",
+  // "community.create.sub-head": "Create a Sub-Case Category for Case Category {{ parent }}",
   "community.create.sub-head": "Cruthaich Fo-choimhearsnachd do Choimhearsnachd {{ parent }}",
 
-  // "community.curate.header": "Curate Community: {{community}}",
+  // "community.curate.header": "Curate Case Category: {{community}}",
   "community.curate.header": "Eagraich Coimhearsnachd: {{community}}",
 
   // "community.delete.cancel": "Cancel",
@@ -1911,10 +1911,10 @@
   // "community.delete.processing": "Deleting...",
   "community.delete.processing": "A' dubhadh às...",
 
-  // "community.delete.head": "Delete Community",
+  // "community.delete.head": "Delete Case Category",
   "community.delete.head": "Dubh às Coimhearsnachd",
 
-  // "community.delete.notification.fail": "Community could not be deleted",
+  // "community.delete.notification.fail": "Case Category could not be deleted",
   "community.delete.notification.fail": "Cha ghabhadh a' choimhearsnachd dubhadh às",
 
   // "community.delete.notification.success": "Successfully deleted community",
@@ -1926,10 +1926,10 @@
   // "community.edit.delete": "Delete this community",
   "community.edit.delete": "Dubh às a' choimhearsnachd seo",
 
-  // "community.edit.head": "Edit Community",
+  // "community.edit.head": "Edit Case Category",
   "community.edit.head": "Deasaich Coimhearsnachd",
 
-  // "community.edit.breadcrumbs": "Edit Community",
+  // "community.edit.breadcrumbs": "Edit Case Category",
   "community.edit.breadcrumbs": "Deasaich Coimhearsnachd",
 
 
@@ -1939,13 +1939,13 @@
   // "community.edit.logo.delete-undo.title": "Undo delete",
   "community.edit.logo.delete-undo.title": "Neo-dhèan an dubhadh às",
 
-  // "community.edit.logo.label": "Community logo",
+  // "community.edit.logo.label": "Case Category logo",
   "community.edit.logo.label": "Suaicheantas Coimhearsnachd",
 
-  // "community.edit.logo.notifications.add.error": "Uploading Community logo failed. Please verify the content before retrying.",
+  // "community.edit.logo.notifications.add.error": "Uploading Case Category logo failed. Please verify the content before retrying.",
   "community.edit.logo.notifications.add.error": "Cha do dh'obraich luchdachadh suas suaicheantas Coimhearsnachd. Dearbh an t-susbaint mus feuch thu a-rithist.",
 
-  // "community.edit.logo.notifications.add.success": "Upload Community logo successful.",
+  // "community.edit.logo.notifications.add.success": "Upload Case Category logo successful.",
   "community.edit.logo.notifications.add.success": "Chaidh suaicheantas Coimhearsnachd a luchdachadh suas.",
 
   // "community.edit.logo.notifications.delete.success.title": "Logo deleted",
@@ -1957,18 +1957,18 @@
   // "community.edit.logo.notifications.delete.error.title": "Error deleting logo",
   "community.edit.logo.notifications.delete.error.title": "Mearachd a' dubhadh às suaicheantas",
 
-  // "community.edit.logo.upload": "Drop a Community Logo to upload",
+  // "community.edit.logo.upload": "Drop a Case Category Logo to upload",
   "community.edit.logo.upload": "Leig às Suaicheantas Coimhearsnachd airson a luchdachadh suas",
 
 
 
-  // "community.edit.notifications.success": "Successfully edited the Community",
+  // "community.edit.notifications.success": "Successfully edited the Case Category",
   "community.edit.notifications.success": "Chaidh a' Choimhearsnachd a dheasachadh",
 
   // "community.edit.notifications.unauthorized": "You do not have privileges to make this change",
   "community.edit.notifications.unauthorized": "Chan eil còir agad an t-atharrachadh seo a dhèanamh",
 
-  // "community.edit.notifications.error": "An error occured while editing the Community",
+  // "community.edit.notifications.error": "An error occured while editing the Case Category",
   "community.edit.notifications.error": "Bha mearachd ann a' deasachadh na Coimhearsnachd",
 
   // "community.edit.return": "Back",
@@ -1979,30 +1979,30 @@
   // "community.edit.tabs.curate.head": "Curate",
   "community.edit.tabs.curate.head": "Eagraich",
 
-  // "community.edit.tabs.curate.title": "Community Edit - Curate",
+  // "community.edit.tabs.curate.title": "Case Category Edit - Curate",
   "community.edit.tabs.curate.title": "Deasachadh Coimhearsnachd - Eagraich",
 
   // "community.edit.tabs.metadata.head": "Edit Metadata",
   "community.edit.tabs.metadata.head": "Deasaich Metadata",
 
-  // "community.edit.tabs.metadata.title": "Community Edit - Metadata",
+  // "community.edit.tabs.metadata.title": "Case Category Edit - Metadata",
   "community.edit.tabs.metadata.title": "Deasachadh Coimhearsnachd - Metadata",
 
   // "community.edit.tabs.roles.head": "Assign Roles",
   "community.edit.tabs.roles.head": "Sònraich Dreuchdan",
 
-  // "community.edit.tabs.roles.title": "Community Edit - Roles",
+  // "community.edit.tabs.roles.title": "Case Category Edit - Roles",
   "community.edit.tabs.roles.title": "Deasachadh Coimhearsnachd - Dreuchdan",
 
   // "community.edit.tabs.authorizations.head": "Authorizations",
   "community.edit.tabs.authorizations.head": "Barantasan",
 
-  // "community.edit.tabs.authorizations.title": "Community Edit - Authorizations",
+  // "community.edit.tabs.authorizations.title": "Case Category Edit - Authorizations",
   "community.edit.tabs.authorizations.title": "Deasachadh Coimhearsnachd - Barantasan",
 
 
 
-  // "community.listelement.badge": "Community",
+  // "community.listelement.badge": "Case Category",
   "community.listelement.badge": "Coimhearsnachd",
 
 
@@ -2027,7 +2027,7 @@
   "comcol-role.edit.collection-admin.name": "Rianairean",
 
 
-  // "comcol-role.edit.community-admin.description": "Community administrators can create sub-communities or collections, and manage or assign management for those sub-communities or collections. In addition, they decide who can submit items to any sub-collections, edit item metadata (after submission), and add (map) existing items from other collections (subject to authorization).",
+  // "comcol-role.edit.community-admin.description": "Case Category administrators can create sub-communities or collections, and manage or assign management for those sub-communities or collections. In addition, they decide who can submit items to any sub-collections, edit item metadata (after submission), and add (map) existing items from other collections (subject to authorization).",
  	"comcol-role.edit.community-admin.description": "Is urrainn rianairean coimhearsnachd fo-choimhearsnachdan no cruinneachaidhean a chruthachadh, agus stiùireadh nam fo-choimhearsnachdan agus nan cruinneachaidhean sin a dhèanamh no a shònrachadh. Cuideachd, co-dhùinidh iad cò as urrainn nithean a chur a-steach gu fo-chruinneachaidhean, nì metadata a dheasachadh (an dèidh cur a-steach), agus nithean a chur-ris (a mhapadh) bho chruinneachaidhean eile (le cead).",
 
   // "comcol-role.edit.collection-admin.description": "Collection administrators decide who can submit items to the collection, edit item metadata (after submission), and add (map) existing items from other collections to this collection (subject to authorization for that collection).",
@@ -2056,7 +2056,7 @@
   // "comcol-role.edit.bitstream_read.name": "Default bitstream read access",
   "comcol-role.edit.bitstream_read.name": "Cothrom gnàthach leughadh bitstream",
 
-  // "comcol-role.edit.bitstream_read.description": "Community administrators can create sub-communities or collections, and manage or assign management for those sub-communities or collections. In addition, they decide who can submit items to any sub-collections, edit item metadata (after submission), and add (map) existing items from other collections (subject to authorization).",
+  // "comcol-role.edit.bitstream_read.description": "Case Category administrators can create sub-communities or collections, and manage or assign management for those sub-communities or collections. In addition, they decide who can submit items to any sub-collections, edit item metadata (after submission), and add (map) existing items from other collections (subject to authorization).",
   // TODO New key - Add a translation
   "comcol-role.edit.bitstream_read.description": "Is urrainn rianairean coimhearsnachd fo-choimhearsnachdan no cruinneachaidhean a chruthachadh, agus stiùireadh nam fo-choimhearsnachdan agus nan cruinneachaidhean a dhèanamh no a shònrachadh. Cuideachd, co-dhùinidh iad cò as urrainn nithean a chur a-steach gu fo-chruinneachaidhean, nì metadata a dheasachadh (an dèidh cur a-steach), agus nithean a chur-ris (a mhapadh) bho chruinneachaidhean eile (le cead).",
 
@@ -2120,13 +2120,13 @@
   // "community.page.news": "News",
   "community.page.news": "Naidheachdan",
 
-  // "community.all-lists.head": "Subcommunities and Collections",
+  // "community.all-lists.head": "Subcommunities and Case Types",
   "community.all-lists.head": "Fo-choimhearsnachdan agus Cruinneachaidhean",
 
-  // "community.sub-collection-list.head": "Collections of this Community",
+  // "community.sub-collection-list.head": "Case Types of this Case Category",
   "community.sub-collection-list.head": "Cruinneachaidhean na Coimhearsnachd seo",
 
-  // "community.sub-community-list.head": "Communities of this Community",
+  // "community.sub-community-list.head": "Case Categories of this Case Category",
   "community.sub-community-list.head": "Coimhearsnachdan na Coimhearsnachd seo",
 
 
@@ -2727,7 +2727,7 @@
   // "home.title": "Home",
   "home.title": "Dachaigh",
 
-  // "home.top-level-communities.head": "Communities in DSpace",
+  // "home.top-level-communities.head": "Case Categories in DSpace",
   "home.top-level-communities.head": "Coimhearsnachdan ann an DSpace",
 
   // "home.top-level-communities.help": "Select a community to browse its collections.",
@@ -2973,7 +2973,7 @@
   // TODO New key - Add a translation
   "item.edit.item-mapper.description": "Seo am mapair nithean, an t-inneal a leigeas le rianairean an nì seo a mhapadh gu cruinneachaidhean eile. Is urrainn dhut rannsachadh airson chruinneachaidhean agus am mapadh, no an liosta de chruinneachaidhean dha bheil an nì air a mhapadh an-dràsta a bhrobhsadh.",
 
-  // "item.edit.item-mapper.head": "Item Mapper - Map Item to Collections",
+  // "item.edit.item-mapper.head": "Item Mapper - Map Item to Case Types",
   "item.edit.item-mapper.head": "Item Mapper - Map Nì gu Cruinneachaidhean",
 
   // "item.edit.item-mapper.item": "Item: \"<b>{{name}}</b>\"",
@@ -3286,11 +3286,11 @@
   // "item.edit.tabs.status.buttons.delete.label": "Completely expunge item",
   "item.edit.tabs.status.buttons.delete.label": "Cuir às buileach don nì",
 
-  // "item.edit.tabs.status.buttons.mappedCollections.button": "Mapped collections",
-  "item.edit.tabs.status.buttons.mappedCollections.button": "Cruinneachaidhean mapaichte",
+  // "item.edit.tabs.status.buttons.mappedCase Types.button": "Mapped collections",
+  "item.edit.tabs.status.buttons.mappedCase Types.button": "Cruinneachaidhean mapaichte",
 
-  // "item.edit.tabs.status.buttons.mappedCollections.label": "Manage mapped collections",
-  "item.edit.tabs.status.buttons.mappedCollections.label": "Manaids cruinneachaidhean mapaichte",
+  // "item.edit.tabs.status.buttons.mappedCase Types.label": "Manage mapped collections",
+  "item.edit.tabs.status.buttons.mappedCase Types.label": "Manaids cruinneachaidhean mapaichte",
 
   // "item.edit.tabs.status.buttons.move.button": "Move this Item to a different Collection",
   "item.edit.tabs.status.buttons.move.button": "Helyezze át ezt az elemet egy másik gyűjteménybe",
@@ -3422,7 +3422,7 @@
   // "item.page.citation": "Citation",
   "item.page.citation": "Iomradh",
 
-  // "item.page.collections": "Collections",
+  // "item.page.collections": "Case Types",
   "item.page.collections": "Cruinneachaidhean",
 
   // "item.page.collections.loading": "Loading...",
@@ -3957,9 +3957,9 @@
   // TODO New key - Add a translation
   "menu.section.reports": "Reports",
 
-  // "menu.section.reports.collections": "Filtered Collections",
+  // "menu.section.reports.collections": "Filtered Case Types",
   // TODO New key - Add a translation
-  "menu.section.reports.collections": "Filtered Collections",
+  "menu.section.reports.collections": "Filtered Case Types",
 
   // "menu.section.reports.queries": "Metadata Query",
   // TODO New key - Add a translation
@@ -3970,7 +3970,7 @@
 
 
 
-  // "menu.section.browse_community": "This Community",
+  // "menu.section.browse_community": "This Case Category",
   "menu.section.browse_community": "A' Choimhearsnachd seo",
 
   // "menu.section.browse_community_by_author": "By Author",
@@ -3997,7 +3997,7 @@
   // "menu.section.browse_global_by_title": "By Title",
   "menu.section.browse_global_by_title": "A rèir Tiotal",
 
-  // "menu.section.browse_global_communities_and_collections": "Communities & Collections",
+  // "menu.section.browse_global_communities_and_collections": "Case Categories & Case Types",
   "menu.section.browse_global_communities_and_collections": "Coimhearsnachdan & Cruinneachaidhean",
 
 
@@ -4016,7 +4016,7 @@
   // "menu.section.edit_collection": "Collection",
   "menu.section.edit_collection": "Cruinneachadh",
 
-  // "menu.section.edit_community": "Community",
+  // "menu.section.edit_community": "Case Category",
   "menu.section.edit_community": "Coimhearsnachd",
 
   // "menu.section.edit_item": "Item",
@@ -4030,7 +4030,7 @@
   // "menu.section.export_collection": "Collection",
   "menu.section.export_collection": "Cruinneachadh",
 
-  // "menu.section.export_community": "Community",
+  // "menu.section.export_community": "Case Category",
   "menu.section.export_community": "Coimhearsnachd",
 
   // "menu.section.export_item": "Item",
@@ -4109,7 +4109,7 @@
   // "menu.section.new_collection": "Collection",
   "menu.section.new_collection": "Cruinneachadh",
 
-  // "menu.section.new_community": "Community",
+  // "menu.section.new_community": "Case Category",
   "menu.section.new_community": "Coimhearsnachd",
 
   // "menu.section.new_item": "Item",
@@ -4261,7 +4261,7 @@
   // "mydspace.results.no-authors": "No Authors",
   "mydspace.results.no-authors": "Chan eil Ùghdaran ann",
 
-  // "mydspace.results.no-collections": "No Collections",
+  // "mydspace.results.no-collections": "No Case Types",
   "mydspace.results.no-collections": "Chan eil Cruinneachaidhean ann",
 
   // "mydspace.results.no-date": "No Date",
@@ -4331,7 +4331,7 @@
   // "nav.browse.header": "All of DSpace",
   "nav.browse.header": "DSpace gu lèir",
 
-  // "nav.community-browse.header": "By Community",
+  // "nav.community-browse.header": "By Case Category",
   "nav.community-browse.header": "A rèir Coimhearsnachd",
 
   // "nav.language": "Language switch",
@@ -4951,7 +4951,7 @@
   // "resource-policies.add.for.item": "Add a new Item policy",
   "resource-policies.add.for.item": "Cuir-ris poileasaidh Nì ùr",
 
-  // "resource-policies.add.for.community": "Add a new Community policy",
+  // "resource-policies.add.for.community": "Add a new Case Category policy",
   "resource-policies.add.for.community": "Cuir-ris poileasaidh Coimhearsnachd ùr",
 
   // "resource-policies.add.for.collection": "Add a new Collection policy",
@@ -5085,7 +5085,7 @@
   // "resource-policies.table.headers.title.for.item": "Policies for Item",
   "resource-policies.table.headers.title.for.item": "Poileasaidhean airson Nì",
 
-  // "resource-policies.table.headers.title.for.community": "Policies for Community",
+  // "resource-policies.table.headers.title.for.community": "Policies for Case Category",
   "resource-policies.table.headers.title.for.community": "Poileasaidhean airson Coimhearsnachd",
 
   // "resource-policies.table.headers.title.for.collection": "Policies for Collection",

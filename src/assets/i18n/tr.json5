@@ -675,9 +675,9 @@
   // TODO New key - Add a translation
   "admin.reports.collections.head": "Collection Filter Report",
 
-  //"admin.reports.button.show-collections": "Show Collections",
+  //"admin.reports.button.show-collections": "Show Case Types",
   // TODO New key - Add a translation
-  "admin.reports.button.show-collections": "Show Collections",
+  "admin.reports.button.show-collections": "Show Case Types",
 
   //"admin.reports.collections.collections-report": "Collection Report",
   // TODO New key - Add a translation
@@ -687,9 +687,9 @@
   // TODO New key - Add a translation
   "admin.reports.collections.item-results": "Item Results",
 
-  //"admin.reports.collections.community": "Community",
+  //"admin.reports.collections.community": "Case Category",
   // TODO New key - Add a translation
-  "admin.reports.collections.community": "Community",
+  "admin.reports.collections.community": "Case Category",
 
   //"admin.reports.collections.collection": "Collection",
   // TODO New key - Add a translation
@@ -1327,7 +1327,7 @@
   // "collection.create.notifications.success": "Successfully created the Collection",
   "collection.create.notifications.success": "Koleksiyon başarıyla oluşturuldu",
 
-  // "collection.create.sub-head": "Create a Collection for Community {{ parent }}",
+  // "collection.create.sub-head": "Create a Collection for Case Category {{ parent }}",
   "collection.create.sub-head": "Komünite için Koleksiyon Oluşturun {{ parent }}",
 
   // "collection.curate.header": "Curate Collection: {{collection}}",
@@ -1382,7 +1382,7 @@
   // "collection.edit.item-mapper.description": "This is the item mapper tool that allows collection administrators to map items from other collections into this collection. You can search for items from other collections and map them, or browse the list of currently mapped items.",
   "collection.edit.item-mapper.description": "Bu, koleksiyon yöneticilerinin diğer koleksiyonlardaki öğeleri bu koleksiyona eşlemelerine olanak tanıyan öğe eşleyici aracıdır. Diğer koleksiyonlardaki öğeleri arayabilir ve bunları eşleyebilir veya şu anda eşlenmiş öğelerin listesine göz atabilirsiniz.",
 
-  // "collection.edit.item-mapper.head": "Item Mapper - Map Items from Other Collections",
+  // "collection.edit.item-mapper.head": "Item Mapper - Map Items from Other Case Types",
   "collection.edit.item-mapper.head": "Öğe Eşleştirici - Diğer Koleksiyonlardaki Öğeleri Eşle",
 
   // "collection.edit.item-mapper.no-search": "Please enter a query to search",
@@ -1636,10 +1636,10 @@
 
 
 
-  // "communityList.tabTitle": "DSpace - Community List",
+  // "communityList.tabTitle": "DSpace - Case Category List",
   "communityList.tabTitle": "DSpace - Komünite Listesi",
 
-  // "communityList.title": "List of Communities",
+  // "communityList.title": "List of Case Categories",
   "communityList.title": "Komünitelerin Listesi",
 
   // "communityList.showMore": "Show More",
@@ -1647,16 +1647,16 @@
 
 
 
-  // "community.create.head": "Create a Community",
+  // "community.create.head": "Create a Case Category",
   "community.create.head": "Bir komünite oluştur",
 
-  // "community.create.notifications.success": "Successfully created the Community",
+  // "community.create.notifications.success": "Successfully created the Case Category",
   "community.create.notifications.success": "Komünite başarıyla yaratıldı",
 
-  // "community.create.sub-head": "Create a Sub-Community for Community {{ parent }}",
+  // "community.create.sub-head": "Create a Sub-Case Category for Case Category {{ parent }}",
   "community.create.sub-head": "Komünite için bir alt komünite oluşturun {{ parent }}",
 
-  // "community.curate.header": "Curate Community: {{community}}",
+  // "community.curate.header": "Curate Case Category: {{community}}",
   "community.curate.header": "Kuratör komünitesi: {{community}}",
 
   // "community.delete.cancel": "Cancel",
@@ -1665,10 +1665,10 @@
   // "community.delete.confirm": "Confirm",
   "community.delete.confirm": "Onayla",
 
-  // "community.delete.head": "Delete Community",
+  // "community.delete.head": "Delete Case Category",
   "community.delete.head": "Komüniteyi sil",
 
-  // "community.delete.notification.fail": "Community could not be deleted",
+  // "community.delete.notification.fail": "Case Category could not be deleted",
   "community.delete.notification.fail": "Komünite silinemedi",
 
   // "community.delete.notification.success": "Successfully deleted community",
@@ -1680,20 +1680,20 @@
   // "community.edit.delete": "Delete this community",
   "community.edit.delete": "Bu komüniteyi sil",
 
-  // "community.edit.head": "Edit Community",
+  // "community.edit.head": "Edit Case Category",
   "community.edit.head": "Komüniteyi düzenle",
 
-  // "community.edit.breadcrumbs": "Edit Community",
+  // "community.edit.breadcrumbs": "Edit Case Category",
   "community.edit.breadcrumbs": "Komüniteyi düzenle",
 
 
-  // "community.edit.logo.label": "Community logo",
+  // "community.edit.logo.label": "Case Category logo",
   "community.edit.logo.label": "Komünite logosu",
 
-  // "community.edit.logo.notifications.add.error": "Uploading Community logo failed. Please verify the content before retrying.",
+  // "community.edit.logo.notifications.add.error": "Uploading Case Category logo failed. Please verify the content before retrying.",
   "community.edit.logo.notifications.add.error": "Komünite logosu yüklemesi başarısız. Lütfen yeniden denemeden önce içeriği doğrulayın.",
 
-  // "community.edit.logo.notifications.add.success": "Upload Community logo successful.",
+  // "community.edit.logo.notifications.add.success": "Upload Case Category logo successful.",
   "community.edit.logo.notifications.add.success": "Komünite logosunu başarılı yükle.",
 
   // "community.edit.logo.notifications.delete.success.title": "Logo deleted",
@@ -1705,18 +1705,18 @@
   // "community.edit.logo.notifications.delete.error.title": "Error deleting logo",
   "community.edit.logo.notifications.delete.error.title": "Logo silme hatası",
 
-  // "community.edit.logo.upload": "Drop a Community Logo to upload",
+  // "community.edit.logo.upload": "Drop a Case Category Logo to upload",
   "community.edit.logo.upload": "Yüklenecek bir komünite logosu bırak",
 
 
 
-  // "community.edit.notifications.success": "Successfully edited the Community",
+  // "community.edit.notifications.success": "Successfully edited the Case Category",
   "community.edit.notifications.success": "Komünite başarıyla düzenlendi",
 
   // "community.edit.notifications.unauthorized": "You do not have privileges to make this change",
   "community.edit.notifications.unauthorized": "Bu değişikliği yapmak için ayrıcalıklarınız yok",
 
-  // "community.edit.notifications.error": "An error occured while editing the Community",
+  // "community.edit.notifications.error": "An error occured while editing the Case Category",
   "community.edit.notifications.error": "Komüniteyi düzenlerken bir hata oluştu",
 
   // "community.edit.return": "Return",
@@ -1727,30 +1727,30 @@
   // "community.edit.tabs.curate.head": "Curate",
   "community.edit.tabs.curate.head": "Kuratör",
 
-  // "community.edit.tabs.curate.title": "Community Edit - Curate",
+  // "community.edit.tabs.curate.title": "Case Category Edit - Curate",
   "community.edit.tabs.curate.title": "Komünite Düzenle - Küratör",
 
   // "community.edit.tabs.metadata.head": "Edit Metadata",
   "community.edit.tabs.metadata.head": "Metadataları Düzenle",
 
-  // "community.edit.tabs.metadata.title": "Community Edit - Metadata",
+  // "community.edit.tabs.metadata.title": "Case Category Edit - Metadata",
   "community.edit.tabs.metadata.title": "Komünite Düzenle - Metadatalar",
 
   // "community.edit.tabs.roles.head": "Assign Roles",
   "community.edit.tabs.roles.head": "Rol atamak",
 
-  // "community.edit.tabs.roles.title": "Community Edit - Roles",
+  // "community.edit.tabs.roles.title": "Case Category Edit - Roles",
   "community.edit.tabs.roles.title": "Komünite Düzenle - Roller",
 
   // "community.edit.tabs.authorizations.head": "Authorizations",
   "community.edit.tabs.authorizations.head": "Yetkilendirmeler",
 
-  // "community.edit.tabs.authorizations.title": "Community Edit - Authorizations",
+  // "community.edit.tabs.authorizations.title": "Case Category Edit - Authorizations",
   "community.edit.tabs.authorizations.title": "Komünite Düzenle - Yetkilendirmeler",
 
 
 
-  // "community.listelement.badge": "Community",
+  // "community.listelement.badge": "Case Category",
   "community.listelement.badge": "Komünite",
 
 
@@ -1775,7 +1775,7 @@
   "comcol-role.edit.collection-admin.name": "Yöneticiler",
 
 
-  // "comcol-role.edit.community-admin.description": "Community administrators can create sub-communities or collections, and manage or assign management for those sub-communities or collections. In addition, they decide who can submit items to any sub-collections, edit item metadata (after submission), and add (map) existing items from other collections (subject to authorization).",
+  // "comcol-role.edit.community-admin.description": "Case Category administrators can create sub-communities or collections, and manage or assign management for those sub-communities or collections. In addition, they decide who can submit items to any sub-collections, edit item metadata (after submission), and add (map) existing items from other collections (subject to authorization).",
   "comcol-role.edit.community-admin.description": "Komünite yöneticileri alt komüniteler veya koleksiyonlar oluşturabilir ve bu alt komüniteler veya koleksiyonlar için yönetimi yönetebilir veya atayabilir. Ek olarak, kimsenin herhangi bir alt koleksiyona kimin gönderebileceğine, madde metadatalarını (sunulduktan sonra) düzenleyebileceğine karar verirler ve mevcut eşyaları diğer koleksiyonlardan (yetkilendirmeye tabi) ekleyin.",
 
   // "comcol-role.edit.collection-admin.description": "Collection administrators decide who can submit items to the collection, edit item metadata (after submission), and add (map) existing items from other collections to this collection (subject to authorization for that collection).",
@@ -1802,7 +1802,7 @@
   // "comcol-role.edit.bitstream_read.name": "Default bitstream read access",
   "comcol-role.edit.bitstream_read.name": "Varsayılan bitstream okuma erişimi",
 
-  // "comcol-role.edit.bitstream_read.description": "Community administrators can create sub-communities or collections, and manage or assign management for those sub-communities or collections. In addition, they decide who can submit items to any sub-collections, edit item metadata (after submission), and add (map) existing items from other collections (subject to authorization).",
+  // "comcol-role.edit.bitstream_read.description": "Case Category administrators can create sub-communities or collections, and manage or assign management for those sub-communities or collections. In addition, they decide who can submit items to any sub-collections, edit item metadata (after submission), and add (map) existing items from other collections (subject to authorization).",
   "comcol-role.edit.bitstream_read.description": "Komünite yöneticileri alt komüniteler veya koleksiyonlar oluşturabilir ve bu alt komüniteler veya koleksiyonlar için yönetimi yönetebilir veya atayabilirler. Ek olarak, eşyaları herhangi bir alt koleksiyona kimin gönderebileceğine, öğe metadatalarını (sunulduktan sonra) düzenleyebilir ve harita) Diğer koleksiyonlardan gelen mevcut eşyalar (yetkilendirmeye tabi).",
 
   // "comcol-role.edit.bitstream_read.anonymous-group": "Default read for incoming bitstreams is currently set to Anonymous.",
@@ -1861,13 +1861,13 @@
   // "community.page.news": "News",
   "community.page.news": "Haberler",
 
-  // "community.all-lists.head": "Subcommunities and Collections",
+  // "community.all-lists.head": "Subcommunities and Case Types",
   "community.all-lists.head": "Alt komüniteler ve koleksiyonlar",
 
-  // "community.sub-collection-list.head": "Collections of this Community",
+  // "community.sub-collection-list.head": "Case Types of this Case Category",
   "community.sub-collection-list.head": "Bu komünitenin koleksiyonları",
 
-  // "community.sub-community-list.head": "Communities of this Community",
+  // "community.sub-community-list.head": "Case Categories of this Case Category",
   "community.sub-community-list.head": "Bu komünitenin koleksiyonları",
 
 
@@ -2324,7 +2324,7 @@
   // "home.title": "DSpace Angular :: Home",
   "home.title": "DSpace Açısal :: Anasayfa",
 
-  // "home.top-level-communities.head": "Communities in DSpace",
+  // "home.top-level-communities.head": "Case Categories in DSpace",
   "home.top-level-communities.head": "Dspace'deki Komüniteler",
 
   // "home.top-level-communities.help": "Select a community to browse its collections.",
@@ -2563,7 +2563,7 @@
   // "item.edit.item-mapper.description": "This is the item mapper tool that allows administrators to map this item to other collections. You can search for collections and map them, or browse the list of collections the item is currently mapped to.",
   "item.edit.item-mapper.description": "Öge eşleme aracı, yöneticilerin bu öğeyi diğer koleksiyonlarla eşleştirmesini ögeleri eşleştirmesini sağlar. Koleksiyonları arayabilir ve bunları eşleyebilir veya öğenin şu anda eşlendiği koleksiyonların listesine göz atabilirsiniz.",
 
-  // "item.edit.item-mapper.head": "Item Mapper - Map Item to Collections",
+  // "item.edit.item-mapper.head": "Item Mapper - Map Item to Case Types",
   "item.edit.item-mapper.head": "Öge eşleştirici - Ögeleri koleksiyonlarla eşleştirir",
 
   // "item.edit.item-mapper.item": "Item: \"<b>{{name}}</b>\"",
@@ -2864,11 +2864,11 @@
   // "item.edit.tabs.status.buttons.delete.label": "Completely expunge item",
   "item.edit.tabs.status.buttons.delete.label": "Ögeyi kalıcı olarak sil",
 
-  // "item.edit.tabs.status.buttons.mappedCollections.button": "Mapped collections",
-  "item.edit.tabs.status.buttons.mappedCollections.button": "Eşleştirilmiş koleksiyonlar",
+  // "item.edit.tabs.status.buttons.mappedCase Types.button": "Mapped collections",
+  "item.edit.tabs.status.buttons.mappedCase Types.button": "Eşleştirilmiş koleksiyonlar",
 
-  // "item.edit.tabs.status.buttons.mappedCollections.label": "Manage mapped collections",
-  "item.edit.tabs.status.buttons.mappedCollections.label": "Eşlenen koleksiyonları yönetin",
+  // "item.edit.tabs.status.buttons.mappedCase Types.label": "Manage mapped collections",
+  "item.edit.tabs.status.buttons.mappedCase Types.label": "Eşlenen koleksiyonları yönetin",
 
   // "item.edit.tabs.status.buttons.move.button": "Move this Item to a different Collection",
   "item.edit.tabs.status.buttons.move.button": "Taşınıyor...",
@@ -2995,7 +2995,7 @@
   // "item.page.citation": "Citation",
   "item.page.citation": "Alıntı",
 
-  // "item.page.collections": "Collections",
+  // "item.page.collections": "Case Types",
   "item.page.collections": "Koleksiyonlar",
 
   // "item.page.date": "Date",
@@ -3355,9 +3355,9 @@
   // TODO New key - Add a translation
   "menu.section.reports": "Reports",
 
-  // "menu.section.reports.collections": "Filtered Collections",
+  // "menu.section.reports.collections": "Filtered Case Types",
   // TODO New key - Add a translation
-  "menu.section.reports.collections": "Filtered Collections",
+  "menu.section.reports.collections": "Filtered Case Types",
 
   // "menu.section.reports.queries": "Metadata Query",
   // TODO New key - Add a translation
@@ -3368,7 +3368,7 @@
 
 
 
-  // "menu.section.browse_community": "This Community",
+  // "menu.section.browse_community": "This Case Category",
   "menu.section.browse_community": "Bu Komünite",
 
   // "menu.section.browse_community_by_author": "By Author",
@@ -3395,7 +3395,7 @@
   // "menu.section.browse_global_by_title": "By Title",
   "menu.section.browse_global_by_title": "Başlığa göre",
 
-  // "menu.section.browse_global_communities_and_collections": "Communities & Collections",
+  // "menu.section.browse_global_communities_and_collections": "Case Categories & Case Types",
   "menu.section.browse_global_communities_and_collections": "Komüniteler ve Koleksiyonlar",
 
 
@@ -3414,7 +3414,7 @@
   // "menu.section.edit_collection": "Collection",
   "menu.section.edit_collection": "Koleksiyon",
 
-  // "menu.section.edit_community": "Community",
+  // "menu.section.edit_community": "Case Category",
   "menu.section.edit_community": "Komünite",
 
   // "menu.section.edit_item": "Item",
@@ -3428,7 +3428,7 @@
   // "menu.section.export_collection": "Collection",
   "menu.section.export_collection": "Koleksiyon",
 
-  // "menu.section.export_community": "Community",
+  // "menu.section.export_community": "Case Category",
   "menu.section.export_community": "Komünite",
 
   // "menu.section.export_item": "Item",
@@ -3504,7 +3504,7 @@
   // "menu.section.new_collection": "Collection",
   "menu.section.new_collection": "Koleksiyon",
 
-  // "menu.section.new_community": "Community",
+  // "menu.section.new_community": "Case Category",
   "menu.section.new_community": "Komünite",
 
   // "menu.section.new_item": "Item",
@@ -3651,7 +3651,7 @@
   // "mydspace.results.no-authors": "No Authors",
   "mydspace.results.no-authors": "Yazar yok.",
 
-  // "mydspace.results.no-collections": "No Collections",
+  // "mydspace.results.no-collections": "No Case Types",
   "mydspace.results.no-collections": "Koleksiyon yok",
 
   // "mydspace.results.no-date": "No Date",
@@ -3716,7 +3716,7 @@
   // "nav.browse.header": "All of DSpace",
   "nav.browse.header": "DSpace'in tümü",
 
-  // "nav.community-browse.header": "By Community",
+  // "nav.community-browse.header": "By Case Category",
   "nav.community-browse.header": "Komünite tarafından",
 
   // "nav.language": "Language switch",
@@ -4288,7 +4288,7 @@
   // "resource-policies.add.for.item": "Add a new Item policy",
   "resource-policies.add.for.item": "Yeni bir öğe ilkesi ekleyin",
 
-  // "resource-policies.add.for.community": "Add a new Community policy",
+  // "resource-policies.add.for.community": "Add a new Case Category policy",
   "resource-policies.add.for.community": "Yeni bir Komünite politikası ekle",
 
   // "resource-policies.add.for.collection": "Add a new Collection policy",
@@ -4421,7 +4421,7 @@
   // "resource-policies.table.headers.title.for.item": "Policies for Item",
   "resource-policies.table.headers.title.for.item": "Öğe Politikaları",
 
-  // "resource-policies.table.headers.title.for.community": "Policies for Community",
+  // "resource-policies.table.headers.title.for.community": "Policies for Case Category",
   "resource-policies.table.headers.title.for.community": "Komünite Politikaları",
 
   // "resource-policies.table.headers.title.for.collection": "Policies for Collection",

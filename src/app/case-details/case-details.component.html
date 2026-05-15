@@ -1,171 +1,239 @@
-<!-- Loader
-<div *ngIf="loading" class="text-center my-5">
-  <p class="h5">Longer loading... please click reload below.</p>
-  <button class="btn btn-outline-secondary mt-3" disabled>
+<!-- =========================================
+     LOADER
+========================================= -->
+
+<div *ngIf="loading" class="loading-state">
+
+  <div class="spinner-border text-info"></div>
+
+  <p>Loading judicial records...</p>
+
+</div>
+
+<!-- =========================================
+     ERROR
+========================================= -->
+
+<div *ngIf="loadError" class="error-state">
+
+  <h4>Failed to load case details</h4>
+
+  <button class="btn reload-btn" (click)="reloadData()">
     Reload
   </button>
+
 </div>
 
+<!-- =========================================
+     MAIN PAGE
+========================================= -->
 
-<div *ngIf="!loading" class="case-details container">
-  <h3 class="text-center">{{ getMetadataValue('dc.casetype') }}</h3>
+<div *ngIf="!loading && !loadError" class="judicial-case-page">
 
-  <div class="col" *ngFor="let key of visibleKeys">
-    <strong>{{ customMetadataLabels[key] || key }}:</strong> {{ getMetadataValue(key) }}
-  </div>
+  <!-- =====================================
+       HERO SECTION
+  ===================================== -->
 
-  <button class="btn btn-sm btn-outline-primary my-3" (click)="showMore = !showMore">
-    {{ showMore ? 'Collapse' : 'Expand' }}
-  </button>
+  <div class="case-hero">
 
-  <div *ngIf="showMore">
-    <div class="row mb-2" *ngFor="let meta of extraMetadata">
-      <div class="col"><strong>{{ meta.label }}:</strong> {{ meta.value }}</div>
+    <div class="hero-label">
+      ORISSA HIGH COURT DIGITAL ARCHIVE
     </div>
-  </div>
 
-  <hr />
-  <h4>Files</h4>
-  <div *ngFor="let file of paginatedAttachments()" class="file-row row mb-2">
-    <div class="col-md-4"><strong>{{ file.name }}</strong></div>
-    <div class="col-md-2">{{ (file.size / 1024 / 1024).toFixed(2) }} MB</div>
-    <div class="col-md-2">{{ file.format }}</div>
-    <div class="col-md-4">
-      <a (click)="viewFile(file)" style="cursor:pointer;">View</a>
+    <div class="hero-top">
+
+      <div>
+
+        <h1 class="case-title">
+          {{ getMetadataValue('dc.casetype') || 'Judicial Record' }}
+        </h1>
+
+        <div class="case-subtitle">
+          Judicial Records & Archived Proceedings
+        </div>
+
+      </div>
+
+      <button class="edit-btn" (click)="navigateToEdit()">
+        <i class="fas fa-edit"></i>
+        Edit Metadata
+      </button>
+
     </div>
-  </div>
 
-  <div class="d-flex justify-content-between mt-3">
-    <button class="btn btn-sm btn-secondary" [disabled]="currentPage === 1" (click)="prevPage()">Previous</button>
-    <span>Page {{ currentPage }} of {{ totalPages }}</span>
-    <button class="btn btn-sm btn-secondary" [disabled]="currentPage === totalPages" (click)="nextPage()">Next</button>
-  </div>
-</div> -->
+    <!-- SUMMARY GRID -->
 
-<!-- Loader -->
-<!-- <div *ngIf="loading" class="text-center my-5">
-  <p class="h5">Loading case details...</p>
-  <div class="spinner-border text-primary my-3" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div>
-</div>
- 
-<div *ngIf="loadError" class="text-center my-5">
-  <p class="h5">Failed to load case details. Please try again.</p>
-  <button class="btn btn-outline-secondary mt-3" (click)="reloadData()">
-    Reload
-  </button>
-</div> 
-<div *ngIf="!loading && !loadError" class="case-details container">
-  <h3 class="text-center">{{ getMetadataValue('dc.casetype') }}</h3>
+    <div class="summary-grid">
 
-  <div class="col" *ngFor="let key of visibleKeys">
-    <strong>{{ customMetadataLabels[key] || key }}:</strong> {{ getMetadataValue(key) }}
-  </div>
+      <div class="summary-card" *ngFor="let key of visibleKeys | slice:0:4">
 
-  <button class="btn btn-sm btn-outline-primary my-3" (click)="showMore = !showMore">
-    {{ showMore ? 'Collapse' : 'Expand' }}
-  </button>
+        <div class="summary-label">
+          {{ customMetadataLabels[key] || key }}
+        </div>
 
-  <div *ngIf="showMore">
-    <div class="row mb-2" *ngFor="let meta of extraMetadata">
-      <div class="col"><strong>{{ meta.label }}:</strong> {{ meta.value }}</div>
+        <div class="summary-value">
+          {{ getMetadataValue(key) || '-' }}
+        </div>
+
+      </div>
+
     </div>
+
   </div>
 
-  <hr />
-  <h4>Files</h4>
-  <div *ngFor="let file of paginatedAttachments()" class="file-row row mb-2">
-    <div class="col-md-4"><strong>{{ file.name }}</strong></div>
-    <div class="col-md-2">{{ file.sizeBytes ? (file.sizeBytes / 1024 | number:'1.0-2') + ' KB' : 'Size Unknown' }}</div>
-    <div class="col-md-2">{{ file.format }}</div>
-    <div class="col-md-4">
-      <a (click)="viewFile(file)" style="cursor:pointer;">View</a>
+  <!-- =====================================
+       CONTENT GRID
+  ===================================== -->
+
+  <div class="content-grid">
+
+    <!-- =====================================
+         LEFT : METADATA
+    ===================================== -->
+
+    <div class="metadata-panel">
+
+      <div class="panel-card">
+
+        <div class="panel-title">
+          Case Metadata
+        </div>
+
+        <!-- MAIN METADATA -->
+
+        <div class="metadata-grid">
+
+          <div class="metadata-card" *ngFor="let key of visibleKeys">
+
+            <div class="metadata-label">
+              {{ customMetadataLabels[key] || key }}
+            </div>
+
+            <div class="metadata-value">
+              {{ getMetadataValue(key) || '-' }}
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- EXPAND BUTTON -->
+
+        <div class="expand-wrapper">
+
+          <button class="expand-btn" (click)="showMore = !showMore">
+
+            {{ showMore ? 'Collapse Metadata' : 'Expand Metadata' }}
+
+          </button>
+
+        </div>
+
+        <!-- EXTRA METADATA -->
+
+        <div *ngIf="showMore" class="metadata-grid extra-grid">
+
+          <div class="metadata-card" *ngFor="let meta of extraMetadata">
+
+            <div class="metadata-label">
+              {{ meta.label }}
+            </div>
+
+            <div class="metadata-value">
+              {{ meta.value || '-' }}
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
-  </div>
 
-  <div class="d-flex justify-content-between mt-3" *ngIf="attachments.length > 0">
-    <button class="btn btn-sm btn-secondary" [disabled]="currentPage === 1" (click)="prevPage()">Previous</button>
-    <span>Page {{ currentPage }} of {{ totalPages }}</span>
-    <button class="btn btn-sm btn-secondary" [disabled]="currentPage === totalPages" (click)="nextPage()">Next</button>
-  </div>
-  
-  <div *ngIf="attachments.length === 0" class="alert alert-info mt-3">
-    No files available for this case.
-  </div>
-</div> -->
+    <!-- =====================================
+         RIGHT : DOCUMENTS
+    ===================================== -->
 
+    <div class="document-panel">
 
+      <div class="panel-card sticky-panel">
 
+        <div class="panel-title">
+          Judicial Documents
+        </div>
 
+        <!-- CHECKING -->
 
+        <div *ngIf="checkingPermissions" class="permissions-loading">
 
-<!-- new code  -->
+          <div class="spinner-border spinner-border-sm text-info"></div>
 
-<!-- Loader -->
-<div *ngIf="loading" class="text-center my-5">
-  <p class="h5">Loading case details...</p>
-  <div class="spinner-border text-primary my-3" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div>
-</div>
+          <span>Checking permissions...</span>
 
-<!-- Error state with reload button -->
-<div *ngIf="loadError" class="text-center my-5">
-  <p class="h5">Failed to load case details. Please try again.</p>
-  <button class="btn btn-outline-secondary mt-3" (click)="reloadData()">
-    Reload
-  </button>
-</div>
+        </div>
 
-<!-- Actual case details -->
-<div *ngIf="!loading && !loadError" class="case-details container">
-  <h3 class="text-center">{{ getMetadataValue('dc.casetype') }}</h3>
+        <!-- FILES -->
 
-  <button class="btn btn-primary" (click)="navigateToEdit()">
-    <i class="fas fa-edit"></i> Edit Metadata
-  </button>
-  <div class="col" *ngFor="let key of visibleKeys">
-    <strong>{{ customMetadataLabels[key] || key }}:</strong> {{ getMetadataValue(key) }}
-  </div>
+        <div *ngFor="let file of paginatedAttachments()" class="file-card">
 
-  <button class="btn btn-sm btn-outline-primary my-3" (click)="showMore = !showMore">
-    {{ showMore ? 'Collapse' : 'Expand' }}
-  </button>
+          <div class="file-info">
 
-  <div *ngIf="showMore">
-    <div class="row mb-2" *ngFor="let meta of extraMetadata">
-      <div class="col"><strong>{{ meta.label }}:</strong> {{ meta.value }}</div>
+            <div class="file-name">
+              {{ file.name }}
+            </div>
+
+            <div class="file-meta">
+
+              {{ file.sizeBytes
+              ? (file.sizeBytes / 1024 | number:'1.0-2') + ' KB'
+              : 'Unknown Size'
+              }}
+
+              • {{ file.format }}
+
+            </div>
+
+          </div>
+
+          <button class="view-btn" (click)="viewFile(file)">
+
+            View File
+
+          </button>
+
+        </div>
+
+        <!-- PAGINATION -->
+
+        <div class="pagination-bar" *ngIf="filteredAttachments.length > 0">
+
+          <button class="pagination-btn" [disabled]="currentPage === 1" (click)="prevPage()">
+
+            Previous
+
+          </button>
+
+          <span>
+            Page {{ currentPage }} of {{ totalPages }}
+          </span>
+
+          <button class="pagination-btn" [disabled]="currentPage === totalPages" (click)="nextPage()">
+
+            Next
+
+          </button>
+
+        </div>
+
+        <!-- NO FILES MESSAGE -->
+        <div *ngIf="filteredAttachments.length === 0 && !checkingPermissions" class="no-files-message"> No accessible
+          files available for this case. </div>
+
+      </div>
+
     </div>
+
   </div>
 
-  <hr />
-  <h4>Files</h4>
-  
-  <!-- Loading indicator for permissions check -->
-  <div *ngIf="checkingPermissions" class="text-center my-3">
-    <p>Checking file permissions...</p>
-    <div class="spinner-border spinner-border-sm text-secondary" role="status">
-      <span class="visually-hidden">Loading...</span>
-    </div>
-  </div>
-
-  <div *ngFor="let file of paginatedAttachments()" class="file-row row mb-2">
-    <div class="col-md-4"><strong>{{ file.name }}</strong></div>
-    <div class="col-md-2">{{ file.sizeBytes ? (file.sizeBytes / 1024 | number:'1.0-2') + ' KB' : 'Size Unknown' }}</div>
-    <div class="col-md-2">{{ file.format }}</div>
-    <div class="col-md-4">
-      <a (click)="viewFile(file)" style="cursor:pointer;">View</a>
-    </div>
-  </div>
-
-  <div class="d-flex justify-content-between mt-3" *ngIf="filteredAttachments.length > 0">
-    <button class="btn btn-sm btn-secondary" [disabled]="currentPage === 1" (click)="prevPage()">Previous</button>
-    <span>Page {{ currentPage }} of {{ totalPages }}</span>
-    <button class="btn btn-sm btn-secondary" [disabled]="currentPage === totalPages" (click)="nextPage()">Next</button>
-  </div>
-  
-  <div *ngIf="filteredAttachments.length === 0 && !checkingPermissions" class="alert alert-info mt-3">
-    No accessible files available for this case.
-  </div>
 </div>

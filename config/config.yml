@@ -3,3 +3,7 @@ rest:
   host: sandbox.dspace.org
   port: 443
   nameSpace: /server
+  
+  themes:
+  - name: custom
+  - name: dspace

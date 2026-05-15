@@ -452,7 +452,7 @@
 
   "admin.access-control.epeople.form.table.name": "Name",
 
-  "admin.access-control.epeople.form.table.collectionOrCommunity": "Collection/Community",
+  "admin.access-control.epeople.form.table.collectionOrCase Category": "Collection/Case Category",
 
   "admin.access-control.epeople.form.memberOfNoGroups": "This EPerson is not a member of any groups",
 
@@ -490,7 +490,7 @@
 
   "admin.access-control.groups.table.name": "Name",
 
-  "admin.access-control.groups.table.collectionOrCommunity": "Collection/Community",
+  "admin.access-control.groups.table.collectionOrCase Category": "Collection/Case Category",
 
   "admin.access-control.groups.table.members": "Members",
 
@@ -518,7 +518,7 @@
 
   "admin.access-control.groups.form.groupName": "Group name",
 
-  "admin.access-control.groups.form.groupCommunity": "Community or Collection",
+  "admin.access-control.groups.form.groupCase Category": "Case Category or Collection",
 
   "admin.access-control.groups.form.groupDescription": "Description",
 
@@ -606,7 +606,7 @@
 
   "admin.access-control.groups.form.subgroups-list.table.name": "Name",
 
-  "admin.access-control.groups.form.subgroups-list.table.collectionOrCommunity": "Collection/Community",
+  "admin.access-control.groups.form.subgroups-list.table.collectionOrCase Category": "Collection/Case Category",
 
   "admin.access-control.groups.form.subgroups-list.table.edit": "Remove / Add",
 
@@ -654,13 +654,13 @@
 
   "admin.reports.collections.head": "Collection Filter Report",
 
-  "admin.reports.button.show-collections": "Show Collections",
+  "admin.reports.button.show-collections": "Show Case Types",
 
   "admin.reports.collections.collections-report": "Collection Report",
 
   "admin.reports.collections.item-results": "Item Results",
 
-  "admin.reports.collections.community": "Community",
+  "admin.reports.collections.community": "Case Category",
 
   "admin.reports.collections.collection": "Collection",
 
@@ -1228,7 +1228,7 @@
 
   "collection.create.notifications.success": "Successfully created the Collection",
 
-  "collection.create.sub-head": "Create a Collection for Community {{ parent }}",
+  "collection.create.sub-head": "Create a Collection for Case Category {{ parent }}",
 
   "collection.curate.header": "Curate Collection: {{collection}}",
 
@@ -1264,7 +1264,7 @@
 
   "collection.edit.item-mapper.description": "This is the item mapper tool that allows collection administrators to map items from other collections into this collection. You can search for items from other collections and map them, or browse the list of currently mapped items.",
 
-  "collection.edit.item-mapper.head": "Item Mapper - Map Items from Other Collections",
+  "collection.edit.item-mapper.head": "Item Mapper - Map Items from Other Case Types",
 
   "collection.edit.item-mapper.no-search": "Please enter a query to search",
 
@@ -1496,11 +1496,11 @@
 
   "collection.source.update.notifications.error.title": "Server Error",
 
-  "communityList.breadcrumbs": "Community List",
+  "communityList.breadcrumbs": "Case Category List",
 
-  "communityList.tabTitle": "Community List",
+  "communityList.tabTitle": "Case Category List",
 
-  "communityList.title": "List of Communities",
+  "communityList.title": "List of Case Categories",
 
   "communityList.showMore": "Show More",
 
@@ -1510,17 +1510,17 @@
 
   "community.browse.logo": "Browse for a community logo",
 
-  "community.subcoms-cols.breadcrumbs": "Subcommunities and Collections",
+  "community.subcoms-cols.breadcrumbs": "Subcommunities and Case Types",
 
-  "community.create.breadcrumbs": "Create Community",
+  "community.create.breadcrumbs": "Create Case Category",
 
-  "community.create.head": "Create a Community",
+  "community.create.head": "Create a Case Category",
 
-  "community.create.notifications.success": "Successfully created the Community",
+  "community.create.notifications.success": "Successfully created the Case Category",
 
-  "community.create.sub-head": "Create a Sub-Community for Community {{ parent }}",
+  "community.create.sub-head": "Create a Sub-Case Category for Case Category {{ parent }}",
 
-  "community.curate.header": "Curate Community: {{community}}",
+  "community.curate.header": "Curate Case Category: {{community}}",
 
   "community.delete.cancel": "Cancel",
 
@@ -1528,9 +1528,9 @@
 
   "community.delete.processing": "Deleting...",
 
-  "community.delete.head": "Delete Community",
+  "community.delete.head": "Delete Case Category",
 
-  "community.delete.notification.fail": "Community could not be deleted",
+  "community.delete.notification.fail": "Case Category could not be deleted",
 
   "community.delete.notification.success": "Successfully deleted community",
 
@@ -1538,9 +1538,9 @@
 
   "community.edit.delete": "Delete this community",
 
-  "community.edit.head": "Edit Community",
+  "community.edit.head": "Edit Case Category",
 
-  "community.edit.breadcrumbs": "Edit Community",
+  "community.edit.breadcrumbs": "Edit Case Category",
 
   "community.edit.logo.delete.title": "Delete logo",
 
@@ -1550,7 +1550,7 @@
 
   "community-collection.edit.logo.delete-undo.title": "Undo delete",
 
-  "community.edit.logo.label": "Community logo",
+  "community.edit.logo.label": "Case Category logo",
 
   "community.edit.logo.notifications.add.error": "Uploading community logo failed. Please verify the content before retrying.",
 
@@ -1564,7 +1564,7 @@
 
   "community.edit.logo.upload": "Drop a community logo to upload",
 
-  "community.edit.notifications.success": "Successfully edited the Community",
+  "community.edit.notifications.success": "Successfully edited the Case Category",
 
   "community.edit.notifications.unauthorized": "You do not have privileges to make this change",
 
@@ -1574,27 +1574,27 @@
 
   "community.edit.tabs.curate.head": "Curate",
 
-  "community.edit.tabs.curate.title": "Community Edit - Curate",
+  "community.edit.tabs.curate.title": "Case Category Edit - Curate",
 
   "community.edit.tabs.access-control.head": "Access Control",
 
-  "community.edit.tabs.access-control.title": "Community Edit - Access Control",
+  "community.edit.tabs.access-control.title": "Case Category Edit - Access Control",
 
   "community.edit.tabs.metadata.head": "Edit Metadata",
 
-  "community.edit.tabs.metadata.title": "Community Edit - Metadata",
+  "community.edit.tabs.metadata.title": "Case Category Edit - Metadata",
 
   "community.edit.tabs.roles.head": "Assign Roles",
 
-  "community.edit.tabs.roles.title": "Community Edit - Roles",
+  "community.edit.tabs.roles.title": "Case Category Edit - Roles",
 
   "community.edit.tabs.authorizations.head": "Authorizations",
 
-  "community.edit.tabs.authorizations.title": "Community Edit - Authorizations",
+  "community.edit.tabs.authorizations.title": "Case Category Edit - Authorizations",
 
-  "community.listelement.badge": "Community",
+  "community.listelement.badge": "Case Category",
 
-  "community.logo": "Community logo",
+  "community.logo": "Case Category logo",
 
   "comcol-role.edit.no-group": "None",
 
@@ -1612,7 +1612,7 @@
 
   "comcol-role.edit.collection-admin.name": "Administrators",
 
-  "comcol-role.edit.community-admin.description": "Community administrators can create sub-communities or collections, and manage or assign management for those sub-communities or collections. In addition, they decide who can submit items to any sub-collections, edit item metadata (after submission), and add (map) existing items from other collections (subject to authorization).",
+  "comcol-role.edit.community-admin.description": "Case Category administrators can create sub-communities or collections, and manage or assign management for those sub-communities or collections. In addition, they decide who can submit items to any sub-collections, edit item metadata (after submission), and add (map) existing items from other collections (subject to authorization).",
 
   "comcol-role.edit.collection-admin.description": "Collection administrators decide who can submit items to the collection, edit item metadata (after submission), and add (map) existing items from other collections to this collection (subject to authorization for that collection).",
 
@@ -1668,13 +1668,13 @@
 
   "community.page.news": "News",
 
-  "community.all-lists.head": "Subcommunities and Collections",
+  "community.all-lists.head": "Subcommunities and Case Types",
 
   "community.search.results.head": "Search Results",
 
-  "community.sub-collection-list.head": "Collections in this Community",
+  "community.sub-collection-list.head": "Case Types in this Case Category",
 
-  "community.sub-community-list.head": "Communities in this Community",
+  "community.sub-community-list.head": "Case Categories in this Case Category",
 
   "cookies.consent.accept-all": "Accept all",
 
@@ -2234,7 +2234,7 @@
 
   "home.title": "Home",
 
-  "home.top-level-communities.head": "Communities in DSpace",
+  "home.top-level-communities.head": "Case Categories",
 
   "home.top-level-communities.help": "Select a community to browse its collections.",
 
@@ -2480,7 +2480,7 @@
 
   "item.edit.item-mapper.description": "This is the item mapper tool that allows administrators to map this item to other collections. You can search for collections and map them, or browse the list of collections the item is currently mapped to.",
 
-  "item.edit.item-mapper.head": "Item Mapper - Map Item to Collections",
+  "item.edit.item-mapper.head": "Item Mapper - Map Item to Case Types",
 
   "item.edit.item-mapper.item": "Item: \"<b>{{name}}</b>\"",
 
@@ -2714,9 +2714,9 @@
 
   "item.edit.tabs.status.buttons.delete.label": "Completely expunge item",
 
-  "item.edit.tabs.status.buttons.mappedCollections.button": "Mapped collections",
+  "item.edit.tabs.status.buttons.mappedCase Types.button": "Mapped collections",
 
-  "item.edit.tabs.status.buttons.mappedCollections.label": "Manage mapped collections",
+  "item.edit.tabs.status.buttons.mappedCase Types.label": "Manage mapped collections",
 
   "item.edit.tabs.status.buttons.move.button": "Move this Item to a different Collection",
 
@@ -2848,7 +2848,7 @@
 
   "item.page.citation": "Citation",
 
-  "item.page.collections": "Collections",
+  "item.page.collections": "Case Types",
 
   "item.page.collections.loading": "Loading...",
 
@@ -3360,13 +3360,13 @@
 
   "menu.section.reports": "Reports",
 
-  "menu.section.reports.collections": "Filtered Collections",
+  "menu.section.reports.collections": "Filtered Case Types",
 
   "menu.section.reports.queries": "Metadata Query",
 
   "menu.section.admin_search": "Admin Search",
 
-  "menu.section.browse_community": "This Community",
+  "menu.section.browse_community": "This Case Category",
 
   "menu.section.browse_community_by_author": "By Author ",
   
@@ -3375,7 +3375,7 @@
 
   "menu.section.browse_community_by_title": "By Title",
 
-  "menu.section.browse_global": "Case Files",
+  "menu.section.browse_global": "Search",
 
   "menu.section.browse_global_by_author": "By Free Text",
 
@@ -3389,7 +3389,7 @@
 
   "menu.section.browse_global_by_title": "By Case Type / Number / Year",
 
-  "menu.section.browse_global_communities_and_collections": "Communities & Collections",
+  "menu.section.browse_global_communities_and_collections": "Case Categories and Types",
 
   "menu.section.control_panel": "Control Panel",
 
@@ -3399,7 +3399,7 @@
 
   "menu.section.edit_collection": "Collection",
 
-  "menu.section.edit_community": "Community",
+  "menu.section.edit_community": "Case Category",
 
   "menu.section.edit_item": "Item",
 
@@ -3407,7 +3407,7 @@
 
   "menu.section.export_collection": "Collection",
 
-  "menu.section.export_community": "Community",
+  "menu.section.export_community": "Case Category",
 
   "menu.section.export_item": "Item",
 
@@ -3461,7 +3461,7 @@
 
   "menu.section.new_collection": "Collection",
 
-  "menu.section.new_community": "Community",
+  "menu.section.new_community": "Case Category",
 
   "menu.section.new_item": "Item",
 
@@ -3565,7 +3565,7 @@
 
   "mydspace.results.no-authors": "No Authors",
 
-  "mydspace.results.no-collections": "No Collections",
+  "mydspace.results.no-collections": "No Case Types",
 
   "mydspace.results.no-date": "No Date",
 
@@ -3617,7 +3617,7 @@
 
   "nav.browse.header": "All of DSpace",
 
-  "nav.community-browse.header": "By Community",
+  "nav.community-browse.header": "By Case Category",
 
   "nav.context-help-toggle": "Toggle context help",
 
@@ -4333,7 +4333,7 @@
 
   "resource-policies.add.for.item": "Add a new Item policy",
 
-  "resource-policies.add.for.community": "Add a new Community policy",
+  "resource-policies.add.for.community": "Add a new Case Category policy",
 
   "resource-policies.add.for.collection": "Add a new Collection policy",
 
@@ -4443,7 +4443,7 @@
 
   "resource-policies.table.headers.title.for.item": "Policies for Item",
 
-  "resource-policies.table.headers.title.for.community": "Policies for Community",
+  "resource-policies.table.headers.title.for.community": "Policies for Case Category",
 
   "resource-policies.table.headers.title.for.collection": "Policies for Collection",
 
@@ -5713,7 +5713,7 @@
 
   "subscriptions.table.not-available-message": "The subscribed item has been deleted, or you don't currently have the permission to view it",
 
-  "subscriptions.table.empty.message": "You do not have any subscriptions at this time. To subscribe to email updates for a Community or Collection, use the subscription button on the object's page.",
+  "subscriptions.table.empty.message": "You do not have any subscriptions at this time. To subscribe to email updates for a Case Category or Collection, use the subscription button on the object's page.",
 
   "thumbnail.default.alt": "Thumbnail Image",
 

@@ -136,7 +136,7 @@
   "admin.access-control.epeople.form.groupsEPersonIsMemberOf": "Członek grup:",
   "admin.access-control.epeople.form.table.id": "ID",
   "admin.access-control.epeople.form.table.name": "Nazwa",
-  "admin.access-control.epeople.form.table.collectionOrCommunity": "Zbiór/kolekcja",
+  "admin.access-control.epeople.form.table.collectionOrCase Category": "Zbiór/kolekcja",
   "admin.access-control.epeople.form.memberOfNoGroups": "Ten użytkownik nie jest członkiem żadnej grupy",
   "admin.access-control.epeople.form.goToGroups": "Dodaj do grup",
   "admin.access-control.epeople.notification.deleted.failure": "Nie udało się usunąć użytkownika: \"{{name}}\"",
@@ -155,7 +155,7 @@
   "admin.access-control.groups.search.placeholder": "Wyszukaj grupy...",
   "admin.access-control.groups.table.id": "ID",
   "admin.access-control.groups.table.name": "Nazwa",
-  "admin.access-control.groups.table.collectionOrCommunity": "Zbiór/kolekcja",
+  "admin.access-control.groups.table.collectionOrCase Category": "Zbiór/kolekcja",
   "admin.access-control.groups.table.members": "Członkowie",
   "admin.access-control.groups.table.edit": "Edytuj",
   "admin.access-control.groups.table.edit.buttons.edit": "Edytuj \"{{name}}\"",
@@ -168,7 +168,7 @@
   "admin.access-control.groups.form.head.create": "Utwórz grupę",
   "admin.access-control.groups.form.head.edit": "Edytuj grupę",
   "admin.access-control.groups.form.groupName": "Nazwa grupy",
-  "admin.access-control.groups.form.groupCommunity": "Zbiór lub kolekcja",
+  "admin.access-control.groups.form.groupCase Category": "Zbiór lub kolekcja",
   "admin.access-control.groups.form.groupDescription": "Opis",
   "admin.access-control.groups.form.notification.created.success": "Udało się utworzyć grupę \"{{name}}\"",
   "admin.access-control.groups.form.notification.created.failure": "Nie udało się utworzyć grupy \"{{name}}\"",
@@ -214,7 +214,7 @@
   "admin.access-control.groups.form.subgroups-list.search.button": "Wyszukaj",
   "admin.access-control.groups.form.subgroups-list.table.id": "ID",
   "admin.access-control.groups.form.subgroups-list.table.name": "Nazwa",
-  "admin.access-control.groups.form.subgroups-list.table.collectionOrCommunity": "Zbiór/kolekcja",
+  "admin.access-control.groups.form.subgroups-list.table.collectionOrCase Category": "Zbiór/kolekcja",
   "admin.access-control.groups.form.subgroups-list.table.edit": "Usuń / Dodaj",
   "admin.access-control.groups.form.subgroups-list.table.edit.buttons.remove": "Usuń podgrupę o nazwie \"{{name}}\"",
   "admin.access-control.groups.form.subgroups-list.table.edit.buttons.add": "Dodaj podgrupę o nazwie \"{{name}}\"",
@@ -241,9 +241,9 @@
   // TODO New key - Add a translation
   "admin.reports.collections.head": "Collection Filter Report",
 
-  //"admin.reports.button.show-collections": "Show Collections",
+  //"admin.reports.button.show-collections": "Show Case Types",
   // TODO New key - Add a translation
-  "admin.reports.button.show-collections": "Show Collections",
+  "admin.reports.button.show-collections": "Show Case Types",
 
   //"admin.reports.collections.collections-report": "Collection Report",
   // TODO New key - Add a translation
@@ -253,9 +253,9 @@
   // TODO New key - Add a translation
   "admin.reports.collections.item-results": "Item Results",
 
-  //"admin.reports.collections.community": "Community",
+  //"admin.reports.collections.community": "Case Category",
   // TODO New key - Add a translation
-  "admin.reports.collections.community": "Community",
+  "admin.reports.collections.community": "Case Category",
 
   //"admin.reports.collections.collection": "Collection",
   // TODO New key - Add a translation
@@ -1296,8 +1296,8 @@
   "item.edit.tabs.status.buttons.authorizations.label": "Określu dostęp do pozycji",
   "item.edit.tabs.status.buttons.delete.button": "Usuń permanentnie",
   "item.edit.tabs.status.buttons.delete.label": "Usuń pozycję permanentnie",
-  "item.edit.tabs.status.buttons.mappedCollections.button": "Zmapowane kolekcje",
-  "item.edit.tabs.status.buttons.mappedCollections.label": "Zarządzaj mapowanymi kolekcjami",
+  "item.edit.tabs.status.buttons.mappedCase Types.button": "Zmapowane kolekcje",
+  "item.edit.tabs.status.buttons.mappedCase Types.label": "Zarządzaj mapowanymi kolekcjami",
   "item.edit.tabs.status.buttons.move.button": "Przenieś...",
   "item.edit.tabs.status.buttons.move.label": "Przenieś pozycję do innej kolekcji",
   "item.edit.tabs.status.buttons.private.button": "Ukryj...",
@@ -1521,9 +1521,9 @@
   // TODO New key - Add a translation
   "menu.section.reports": "Reports",
 
-  // "menu.section.reports.collections": "Filtered Collections",
+  // "menu.section.reports.collections": "Filtered Case Types",
   // TODO New key - Add a translation
-  "menu.section.reports.collections": "Filtered Collections",
+  "menu.section.reports.collections": "Filtered Case Types",
 
   // "menu.section.reports.queries": "Metadata Query",
   // TODO New key - Add a translation

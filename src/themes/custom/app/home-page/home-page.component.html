@@ -1,0 +1,98 @@
+<div class="hc-homepage">
+
+    <!-- HERO -->
+    <section class="hero-section">
+
+        <div class="hero-left">
+
+            <span class="hero-top">
+                ORISSA HIGH COURT — EST. 1948
+            </span>
+
+            <h1>
+                Judicial Digital Archive
+            </h1>
+
+            <p>
+                Search archived legal case files,
+                judgements and judicial proceedings.
+            </p>
+
+            <div class="hero-search">
+
+                <ds-search-form [inPlaceSearch]="false"> </ds-search-form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <section class="content-layout">
+
+        <!-- LEFT PANEL -->
+        <aside class="left-panel">
+
+            <div class="category-card">
+
+                <div class="section-label">
+                    CASE CATEGORIES
+                </div>
+
+                <div class="category-title">
+                    Browse Categories
+                </div>
+
+                <p class="category-description">
+                    Explore judicial collections and archived legal repositories.
+                </p>
+
+                <div class="community-wrapper">
+
+                    <ds-top-level-community-list>
+                    </ds-top-level-community-list>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+        <!-- RIGHT PANEL -->
+        <main class="recent-panel">
+
+            <div class="recent-header">
+
+                <div>
+
+                    <div class="section-label">
+                        RECENT SUBMISSIONS
+                    </div>
+
+                    <h2 class="recent-title">
+                        Latest Judicial Records
+                    </h2>
+
+                </div>
+
+                <!-- <a routerLink="/search" class="view-all-btn">
+
+                    View all →
+
+                </a> -->
+
+            </div>
+
+            <div class="recent-list-wrapper">
+
+                <ds-recent-item-list>
+                </ds-recent-item-list>
+
+            </div>
+
+        </main>
+
+    </section>
+
+</div>

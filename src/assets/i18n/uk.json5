@@ -711,9 +711,9 @@
   // TODO New key - Add a translation
   "admin.reports.collections.head": "Collection Filter Report",
 
-  // "admin.reports.button.show-collections": "Show Collections",
+  // "admin.reports.button.show-collections": "Show Case Types",
   // TODO New key - Add a translation
-  "admin.reports.button.show-collections": "Show Collections",
+  "admin.reports.button.show-collections": "Show Case Types",
 
   // "admin.reports.collections.collections-report": "Collection Report",
   // TODO New key - Add a translation
@@ -723,9 +723,9 @@
   // TODO New key - Add a translation
   "admin.reports.collections.item-results": "Item Results",
 
-  // "admin.reports.collections.community": "Community",
+  // "admin.reports.collections.community": "Case Category",
   // TODO New key - Add a translation
-  "admin.reports.collections.community": "Community",
+  "admin.reports.collections.community": "Case Category",
 
   // "admin.reports.collections.collection": "Collection",
   // TODO New key - Add a translation
@@ -1371,7 +1371,7 @@
   // "collection.create.notifications.success": "Successfully created the Collection",
   "collection.create.notifications.success": "Зібрання успішно створено",
 
-  // "collection.create.sub-head": "Create a Collection for Community {{ parent }}",
+  // "collection.create.sub-head": "Create a Collection for Case Category {{ parent }}",
   "collection.create.sub-head": "Створити зібрання у колекції {{ parent }}",
 
   // "collection.curate.header": "Curate Collection: {{collection}}",
@@ -1429,7 +1429,7 @@
   // "collection.edit.item-mapper.description": "This is the item mapper tool that allows collection administrators to map items from other collections into this collection. You can search for items from other collections and map them, or browse the list of currently mapped items.",
   "collection.edit.item-mapper.description": "Це інструмент відображення елементів документа, який дозволяє адміністраторам колекції відображати елементи з інших колекцій у цю колекцію. Ви можете шукати елементи з інших колекцій і відображати їх, або переглядати список відображених елементів.",
 
-  // "collection.edit.item-mapper.head": " - Map Items from Other Collections",
+  // "collection.edit.item-mapper.head": " - Map Items from Other Case Types",
   "collection.edit.item-mapper.head": "Карта документа - карта документів з іншого зібрання",
 
   // "collection.edit.item-mapper.no-search": "Please enter a query to search",
@@ -1730,10 +1730,10 @@
 
 
 
-  // "communityList.tabTitle": "DSpace - Community List",
+  // "communityList.tabTitle": "DSpace - Case Category List",
   "communityList.tabTitle": "Репозитарій - Фонди",
 
-  // "communityList.title": "List of Communities",
+  // "communityList.title": "List of Case Categories",
   "communityList.title": "Перелік фондів",
 
   // "communityList.showMore": "Show More",
@@ -1741,16 +1741,16 @@
 
 
 
-  // "community.create.head": "Create a Community",
+  // "community.create.head": "Create a Case Category",
   "community.create.head": "Створити фонд",
 
-  // "community.create.notifications.success": "Successfully created the Community",
+  // "community.create.notifications.success": "Successfully created the Case Category",
   "community.create.notifications.success": "Фонд успішно створено",
 
-  // "community.create.sub-head": "Create a Sub-Community for Community {{ parent }}",
+  // "community.create.sub-head": "Create a Sub-Case Category for Case Category {{ parent }}",
   "community.create.sub-head": "Створити підфонд фонду {{ parent }}",
 
-  // "community.curate.header": "Curate Community: {{community}}",
+  // "community.curate.header": "Curate Case Category: {{community}}",
 
   "community.curate.header": "Основний фонд: {{community}}",
 
@@ -1760,10 +1760,10 @@
   // "community.delete.confirm": "Confirm",
   "community.delete.confirm": "Підтвердити",
 
-  // "community.delete.head": "Delete Community",
+  // "community.delete.head": "Delete Case Category",
   "community.delete.head": "Видалити фонд",
 
-  // "community.delete.notification.fail": "Community could not be deleted",
+  // "community.delete.notification.fail": "Case Category could not be deleted",
   "community.delete.notification.fail": "Фонд не може бути видалено",
 
   // "community.delete.notification.success": "Successfully deleted community",
@@ -1775,20 +1775,20 @@
   // "community.edit.delete": "Delete this community",
   "community.edit.delete": "Видалити цей фонд",
 
-  // "community.edit.head": "Edit Community",
+  // "community.edit.head": "Edit Case Category",
   "community.edit.head": "Редагувати фонд",
 
-  // "community.edit.breadcrumbs": "Edit Community",
+  // "community.edit.breadcrumbs": "Edit Case Category",
   "community.edit.breadcrumbs": "Редагувати фонд",
 
 
-  // "community.edit.logo.label": "Community logo",
+  // "community.edit.logo.label": "Case Category logo",
   "community.edit.logo.label": "Логотип фонду",
 
-  // "community.edit.logo.notifications.add.error": "Uploading Community logo failed. Please verify the content before retrying.",
+  // "community.edit.logo.notifications.add.error": "Uploading Case Category logo failed. Please verify the content before retrying.",
   "community.edit.logo.notifications.add.error": "Помилка завантаження логотипу фонду. Перевірте все ще раз.",
 
-  // "community.edit.logo.notifications.add.success": "Upload Community logo successful.",
+  // "community.edit.logo.notifications.add.success": "Upload Case Category logo successful.",
   "community.edit.logo.notifications.add.success": "Успішне завантаження логотипу фонду",
 
   // "community.edit.logo.notifications.delete.success.title": "Logo deleted",
@@ -1800,19 +1800,19 @@
   // "community.edit.logo.notifications.delete.error.title": "Error deleting logo",
   "community.edit.logo.notifications.delete.error.title": "Помилка видалення логотипу",
 
-  // "community.edit.logo.upload": "Drop a Community Logo to upload",
+  // "community.edit.logo.upload": "Drop a Case Category Logo to upload",
   "community.edit.logo.upload": "Виберіть логотип фонду для завантаження",
 
 
 
-  // "community.edit.notifications.success": "Successfully edited the Community",
+  // "community.edit.notifications.success": "Successfully edited the Case Category",
   "community.edit.notifications.success": "Фонд успішно відредаговано",
 
   // "community.edit.notifications.unauthorized": "You do not have privileges to make this change",
 
   "community.edit.notifications.unauthorized": "У Вас немає повноважень для змін",
 
-  // "community.edit.notifications.error": "An error occured while editing the Community",
+  // "community.edit.notifications.error": "An error occured while editing the Case Category",
 
   "community.edit.notifications.error": "Виникла помилка при редагуванні фонду",
 
@@ -1824,32 +1824,32 @@
   // "community.edit.tabs.curate.head": "Curate",
   "community.edit.tabs.curate.head": "Основне/Curate",
 
-  // "community.edit.tabs.curate.title": "Community Edit - Curate",
+  // "community.edit.tabs.curate.title": "Case Category Edit - Curate",
   "community.edit.tabs.curate.title": "Редагування фонду  - основне",
 
   // "community.edit.tabs.metadata.head": "Edit Metadata",
   "community.edit.tabs.metadata.head": "Реадгувати метадані",
 
-  // "community.edit.tabs.metadata.title": "Community Edit - Metadata",
+  // "community.edit.tabs.metadata.title": "Case Category Edit - Metadata",
   "community.edit.tabs.metadata.title": "Редагування фонду - метадані",
 
   // "community.edit.tabs.roles.head": "Assign Roles",
   "community.edit.tabs.roles.head": "Призначити ролі",
 
-  // "community.edit.tabs.roles.title": "Community Edit - Roles",
+  // "community.edit.tabs.roles.title": "Case Category Edit - Roles",
   "community.edit.tabs.roles.title": "Редаувати фонд - ролі",
 
   // "community.edit.tabs.authorizations.head": "Authorizations",
 
   "community.edit.tabs.authorizations.head": "Авторизація",
 
-  // "community.edit.tabs.authorizations.title": "Community Edit - Authorizations",
+  // "community.edit.tabs.authorizations.title": "Case Category Edit - Authorizations",
 
   "community.edit.tabs.authorizations.title": "Редагування фонду - авторизація",
 
 
 
-  // "community.listelement.badge": "Community",
+  // "community.listelement.badge": "Case Category",
 
   "community.listelement.badge": "Фонд",
 
@@ -1881,7 +1881,7 @@
   "comcol-role.edit.collection-admin.name": "Адміністратори",
 
 
-  // "comcol-role.edit.community-admin.description": "Community administrators can create sub-communities or collections, and manage or assign management for those sub-communities or collections. In addition, they decide who can submit items to any sub-collections, edit item metadata (after submission), and add (map) existing items from other collections (subject to authorization).",
+  // "comcol-role.edit.community-admin.description": "Case Category administrators can create sub-communities or collections, and manage or assign management for those sub-communities or collections. In addition, they decide who can submit items to any sub-collections, edit item metadata (after submission), and add (map) existing items from other collections (subject to authorization).",
   // TODO New key - Add a translation
   "comcol-role.edit.community-admin.description": "Адміністратори фонду можуть створювати підфонди або зібрання, а також керувати цими. Крім того, вони вирішують, хто може надсилати документи до будь-якого зібрання, редагувати метадані документа (після надсилання) і додавати (відображати) існуючі елементи з інших зібрань(за умови наданих повноважень).",
 
@@ -1916,7 +1916,7 @@
 
   "comcol-role.edit.bitstream_read.name": "Доступ на читання для файла",
 
-  // "comcol-role.edit.bitstream_read.description": "Community administrators can create sub-communities or collections, and manage or assign management for those sub-communities or collections. In addition, they decide who can submit items to any sub-collections, edit item metadata (after submission), and add (map) existing items from other collections (subject to authorization).",
+  // "comcol-role.edit.bitstream_read.description": "Case Category administrators can create sub-communities or collections, and manage or assign management for those sub-communities or collections. In addition, they decide who can submit items to any sub-collections, edit item metadata (after submission), and add (map) existing items from other collections (subject to authorization).",
 
   "comcol-role.edit.bitstream_read.description": "Адміністратори фонду можуть створювати підфонди або зібрання, а також керувати ними. Крім того, вони вирішують, хто може надсилати документи до будь-якого зібрання, редагувати метадані документа (після надсилання) і додавати документи з інших колекцій (за умови наявності прав доступу)..",
 
@@ -1984,13 +1984,13 @@
   // "community.page.news": "News",
   "community.page.news": "Новини",
 
-  // "community.all-lists.head": "Subcommunities and Collections",
+  // "community.all-lists.head": "Subcommunities and Case Types",
   "community.all-lists.head": "Підфонди та зібрання",
 
-  // "community.sub-collection-list.head": "Collections of this Community",
+  // "community.sub-collection-list.head": "Case Types of this Case Category",
   "community.sub-collection-list.head": "Зібрання у цьому фонді",
 
-  // "community.sub-community-list.head": "Communities of this Community",
+  // "community.sub-community-list.head": "Case Categories of this Case Category",
   "community.sub-community-list.head": "Фонди, що знаходяться у цьому фонді",
 
 
@@ -2442,7 +2442,7 @@
   // TODO Change univer name
   "home.title": "Репозитарій Львівської політехніки :: Головна",
 
-  // "home.top-level-communities.head": "Communities in DSpace",
+  // "home.top-level-communities.head": "Case Categories in DSpace",
   "home.top-level-communities.head": "Фонди",
 
   // "home.top-level-communities.help": "Select a community to browse its collections.",
@@ -2679,7 +2679,7 @@
   // "item.edit.item-mapper.description": "This is the item mapper tool that allows administrators to map this item to other collections. You can search for collections and map them, or browse the list of collections the item is currently mapped to.",
   "item.edit.item-mapper.description": "Це інструмент карти документа, який дозволяє адміністраторам прив'язувати цей документ до інших зібрань. Ви можете шукати зібрання та прив'язувати їх, або переглядати список зібрань на які посилається документ.",
 
-  // "item.edit.item-mapper.head": "Item Mapper - Map Item to Collections",
+  // "item.edit.item-mapper.head": "Item Mapper - Map Item to Case Types",
   "item.edit.item-mapper.head": "Карта документа - прив'язка документа до зібрання",
 
   // "item.edit.item-mapper.item": "Item: \"<b>{{name}}</b>\"",
@@ -2982,11 +2982,11 @@
   // "item.edit.tabs.status.buttons.delete.label": "Completely expunge item",
   "item.edit.tabs.status.buttons.delete.label": "Повністю видалити документ",
 
-  // "item.edit.tabs.status.buttons.mappedCollections.button": "Mapped collections",
-  "item.edit.tabs.status.buttons.mappedCollections.button": "Прив'язані зібрання",
+  // "item.edit.tabs.status.buttons.mappedCase Types.button": "Mapped collections",
+  "item.edit.tabs.status.buttons.mappedCase Types.button": "Прив'язані зібрання",
 
-  // "item.edit.tabs.status.buttons.mappedCollections.label": "Manage mapped collections",
-  "item.edit.tabs.status.buttons.mappedCollections.label": "Керувати прив'язаними зібраннями",
+  // "item.edit.tabs.status.buttons.mappedCase Types.label": "Manage mapped collections",
+  "item.edit.tabs.status.buttons.mappedCase Types.label": "Керувати прив'язаними зібраннями",
 
   // "item.edit.tabs.status.buttons.move.button": "Move this Item to a different Collection",
   "item.edit.tabs.status.buttons.move.button": "Перемістити цей елемент до іншої колекції",
@@ -3114,7 +3114,7 @@
   // "item.page.citation": "Citation",
   "item.page.citation": "Бібліографічний опис",
 
-  // "item.page.collections": "Collections",
+  // "item.page.collections": "Case Types",
   "item.page.collections": "Зібрання",
 
   // "item.page.date": "Date",
@@ -3477,9 +3477,9 @@
   // TODO New key - Add a translation
   "menu.section.reports": "Reports",
 
-  // "menu.section.reports.collections": "Filtered Collections",
+  // "menu.section.reports.collections": "Filtered Case Types",
   // TODO New key - Add a translation
-  "menu.section.reports.collections": "Filtered Collections",
+  "menu.section.reports.collections": "Filtered Case Types",
 
   // "menu.section.reports.queries": "Metadata Query",
   // TODO New key - Add a translation
@@ -3490,7 +3490,7 @@
 
 
 
-  // "menu.section.browse_community": "This Community",
+  // "menu.section.browse_community": "This Case Category",
   "menu.section.browse_community": "Цей фонд",
 
   // "menu.section.browse_community_by_author": "By Author",
@@ -3517,7 +3517,7 @@
   // "menu.section.browse_global_by_title": "By Title",
   "menu.section.browse_global_by_title": "За назвою",
 
-  // "menu.section.browse_global_communities_and_collections": "Communities & Collections",
+  // "menu.section.browse_global_communities_and_collections": "Case Categories & Case Types",
   "menu.section.browse_global_communities_and_collections": "Фонди та зібрання",
 
 
@@ -3536,7 +3536,7 @@
   // "menu.section.edit_collection": "Collection",
   "menu.section.edit_collection": "Зібрання",
 
-  // "menu.section.edit_community": "Community",
+  // "menu.section.edit_community": "Case Category",
   "menu.section.edit_community": "Фонд",
 
   // "menu.section.edit_item": "Item",
@@ -3550,7 +3550,7 @@
   // "menu.section.export_collection": "Collection",
   "menu.section.export_collection": "Зібрання",
 
-  // "menu.section.export_community": "Community",
+  // "menu.section.export_community": "Case Category",
   "menu.section.export_community": "Фонд",
 
   // "menu.section.export_item": "Item",
@@ -3627,7 +3627,7 @@
   // "menu.section.new_collection": "Collection",
   "menu.section.new_collection": "Зібрання",
 
-  // "menu.section.new_community": "Community",
+  // "menu.section.new_community": "Case Category",
   "menu.section.new_community": "Фонд",
 
   // "menu.section.new_item": "Item",
@@ -3780,7 +3780,7 @@
   // "mydspace.results.no-authors": "No Authors",
   "mydspace.results.no-authors": "Автори відсутні",
 
-  // "mydspace.results.no-collections": "No Collections",
+  // "mydspace.results.no-collections": "No Case Types",
   "mydspace.results.no-collections": "Відсутні зібрання",
 
   // "mydspace.results.no-date": "No Date",
@@ -3847,7 +3847,7 @@
   // "nav.browse.header": "All of DSpace",
   "nav.browse.header": "Пошук за критеріями",
 
-  // "nav.community-browse.header": "By Community",
+  // "nav.community-browse.header": "By Case Category",
   "nav.community-browse.header": "У фонді",
 
   // "nav.language": "Language switch",
@@ -4461,7 +4461,7 @@
 
   "resource-policies.add.for.item": "Додати нову політику для документа",
 
-  // "resource-policies.add.for.community": "Add a new Community policy",
+  // "resource-policies.add.for.community": "Add a new Case Category policy",
 
   "resource-policies.add.for.community": "Додати нову політику для фонду",
 
@@ -4637,7 +4637,7 @@
 
   "resource-policies.table.headers.title.for.item": "Політики для документа",
 
-  // "resource-policies.table.headers.title.for.community": "Policies for Community",
+  // "resource-policies.table.headers.title.for.community": "Policies for Case Category",
 
   "resource-policies.table.headers.title.for.community": "Політики для фонду",
 

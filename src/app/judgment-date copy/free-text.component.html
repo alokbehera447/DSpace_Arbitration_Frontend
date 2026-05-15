@@ -1,127 +1,184 @@
-<div class="container">
-  <h2 class="heading">By free Text</h2>
-  <hr class="divider" />
+<div class="free-text-page">
 
-  <div class="search-bar mb-4">
-    <div class="row align-items-center">
-      <div class="col-md-10">
-        <label for="description" class="form-label">Description</label>
-        <input
-          type="text"
-          class="form-control"
-          id="description"
-          name="description"
-          [(ngModel)]="freeTextQuery"
-        />
-      </div>
-      <div class="col-md-2">
-        <button class="btn btn-secondary float-end" type="button" (click)="onSearchClick()">
-          <i class="fas fa-search"></i> Search
-        </button>
-      </div>
-    </div>
-  </div>
+  <!-- HERO -->
+  <section class="page-hero">
 
-  <div class="row mb-3">
-    <div class="col-md-3">
-      <label for="sortBy">Sort By:</label>
-      <select class="form-select" id="sortBy" (change)="onSortChange($event.target.value)">
-        <option value="dc.title">Case Number</option>
-        <option value="dc.casetype">Case Type</option>
-        <option value="dc.caseyear">Case Year</option> 
-        <option value="dc.pname">First Petitioner</option>
-        <option value="dc.rname">First Respondent</option>
-        <option value="dc.paname">Petitioner's Advocate Name</option>
-        <option value="dc.raname">Respondent's Advocate Name</option>
-      </select>
+    <p class="hero-subtitle">
+      ORISSA HIGH COURT DIGITAL ARCHIVE
+    </p>
+
+    <h1>By Free Text</h1>
+
+    <p>
+      Search archived legal case files,
+      judicial proceedings, judgments,
+      petitions and court records.
+    </p>
+
+  </section>
+
+  <!-- SEARCH CARD -->
+  <section class="search-card">
+
+    <h2>Search Parameters</h2>
+
+    <div class="search-grid">
+
+      <div class="form-group">
+        <label>Description</label>
+
+        <input type="text" [(ngModel)]="freeTextQuery" placeholder="Enter free text" />
+      </div>
+
     </div>
 
-  <div class="search-container">
-    <div class="search-controls">
-      <div class="sort-container">
-        <label for="sortOrder">Sort Order</label>
-        <select id="sortOrder" class="sort-select" [(ngModel)]="sortOrder" (change)="onSearchClick()">
+    <div class="button-group">
+
+      <button class="search-btn" (click)="onSearchClick()">
+        Search
+      </button>
+
+      <button class="reset-btn" (click)="freeTextQuery=''; onSearchClick()">
+        Reset
+      </button>
+
+    </div>
+
+  </section>
+
+  <!-- FILTER CARD -->
+  <section class="filter-card">
+
+    <div class="filter-grid">
+
+      <!-- SORT BY -->
+      <div class="form-group">
+
+        <label>Sort By</label>
+
+        <select [(ngModel)]="sortBy" (change)="onSortChange(sortBy)">
+          <option value="dc.title">Case Number</option>
+          <option value="dc.casetype">Case Type</option>
+          <option value="dc.caseyear">Case Year</option>
+          <option value="dc.pname">First Petitioner</option>
+          <option value="dc.rname">First Respondent</option>
+          <option value="dc.paname">Petitioner's Advocate</option>
+          <option value="dc.raname">Respondent's Advocate</option>
+        </select>
+
+      </div>
+
+      <!-- SORT ORDER -->
+      <div class="form-group">
+
+        <label>Sort Order</label>
+
+        <select [(ngModel)]="sortOrder" (change)="onSortOrderChange(sortOrder)">
           <option value="ASC">Ascending</option>
           <option value="DESC">Descending</option>
         </select>
-      </div>
-      <div class="results-container">
-        <label for="resultsPerPage">Results per page</label>
-        <select id="resultsPerPage" class="results-select" [(ngModel)]="resultsPerPage" (change)="onSearchClick()">
-          <option value="5">5</option>
-          
-          <option value="10">10</option>
-          <option value="20">20</option>
-          <option value="50">50</option>
-          <option value="100">100</option>
-        </select>
-      </div>
-    </div>
-  </div>
 
-  <div class="search-results mt-4">
-    <div class="showing-results">
-      <span>Showing results:</span>
+      </div>
+
+      <!-- RESULTS -->
+      <div class="form-group">
+
+        <label>Results Per Page</label>
+
+        <select [(ngModel)]="resultsPerPage" (change)="onResultsPerPageChange(resultsPerPage)">
+          <option [value]="5">5</option>
+          <option [value]="10">10</option>
+          <option [value]="20">20</option>
+          <option [value]="50">50</option>
+          <option [value]="100">100</option>
+        </select>
+
+      </div>
+
     </div>
-    <table class="table ">
-      <thead>
-        <tr>
-          <th>CASE TYPE</th>
-          <th>CASE NUMBER</th>
-          <th>CASE YEAR</th>
-          <th>DISTRICT</th>
-          <th>JUDGE NAME</th>
-          <th>FIRST PETITIONER</th>
-          <th>FIRST RESPONDENT</th>
-          <th>Disposal Date</th>
-        </tr>
-      </thead>
-      <tbody>
-        <ng-container *ngIf="(caseList$ | async) as caseList">
-          <tr *ngFor="let caseItem of caseList">
-            <td class="case-result-text">
-              <a [routerLink]="['/items', caseItem.uuid]" class="case-link">
+
+  </section>
+
+  <!-- RESULTS -->
+  <section class="records-card">
+
+    <div class="records-header">
+
+      <h2>Judicial Records</h2>
+
+      <div class="results-count">
+        Displaying {{ (caseList$ | async)?.length || 0 }} Results
+      </div>
+
+    </div>
+
+    <div class="table-wrapper">
+
+      <table class="results-table">
+
+        <thead>
+          <tr>
+            <th>CASE TYPE</th>
+            <th>CASE NUMBER</th>
+            <th>CASE YEAR</th>
+            <th>DISTRICT</th>
+            <th>JUDGE NAME</th>
+            <th>FIRST PETITIONER</th>
+            <th>FIRST RESPONDENT</th>
+            <th>DISPOSAL DATE</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <ng-container *ngIf="(caseList$ | async) as caseList">
+
+            <tr *ngFor="let caseItem of caseList">
+
+              <td>
                 {{ caseItem.metadata?.['dc.casetype']?.[0]?.value || 'N/A' }}
-              </a>
-            </td>
-            <td class="case-result-text">
-              <a [routerLink]="['/items', caseItem.uuid]" class="case-link">
-                {{ caseItem.metadata?.['dc.title']?.[0]?.value || 'N/A' }}
-              </a>
-            </td>
-            <td class="case-result-text">
-              <a [routerLink]="['/items', caseItem.uuid]" class="case-link">
+              </td>
+
+              <td>
+                <a [routerLink]="['/items', caseItem.uuid]" class="case-link">
+                  {{ caseItem.metadata?.['dc.title']?.[0]?.value || 'N/A' }}
+                </a>
+              </td>
+
+              <td>
                 {{ caseItem.metadata?.['dc.caseyear']?.[0]?.value || 'N/A' }}
-              </a>
-            </td>
-            <td class="case-result-text">
-              <a [routerLink]="['/items', caseItem.uuid]" class="case-link">
+              </td>
+
+              <td>
                 {{ caseItem.metadata?.['dc.district']?.[0]?.value || 'N/A' }}
-              </a>
-            </td>
-            <td class="case-result-text">
-              <a [routerLink]="['/items', caseItem.uuid]" class="case-link">
+              </td>
+
+              <td>
                 {{ caseItem.metadata?.['dc.contributor.author']?.[0]?.value || 'N/A' }}
-              </a>
-            </td>
-            <td class="case-result-text">
-              <a [routerLink]="['/items', caseItem.uuid]" class="case-link">
+              </td>
+
+              <td>
                 {{ caseItem.metadata?.['dc.pname']?.[0]?.value || 'N/A' }}
-              </a>
-            </td>
-            <td class="case-result-text">
-              <a [routerLink]="['/items', caseItem.uuid]" class="case-link">
+              </td>
+
+              <td>
                 {{ caseItem.metadata?.['dc.rname']?.[0]?.value || 'N/A' }}
-              </a>
-            </td>
-            <td class="case-result-text">
-              <a [routerLink]="['/items', caseItem.uuid]" class="case-link">
+              </td>
+
+              <td>
                 {{ caseItem.metadata?.['dc.date.disposal']?.[0]?.value || 'N/A' }}
-              </a>
-            </td>
-          </tr>   
-        </ng-container>
-      </tbody>
-    </table>
-  </div>
+              </td>
+
+            </tr>
+
+          </ng-container>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </section>
+
 </div>

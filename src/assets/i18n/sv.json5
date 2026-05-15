@@ -437,8 +437,8 @@
   // "admin.access-control.epeople.form.table.name": "Name",
   "admin.access-control.epeople.form.table.name": "Namn",
 
-  // "admin.access-control.epeople.form.table.collectionOrCommunity": "Collection/Community",
-  "admin.access-control.epeople.form.table.collectionOrCommunity": "Samling/Enhet",
+  // "admin.access-control.epeople.form.table.collectionOrCase Category": "Collection/Case Category",
+  "admin.access-control.epeople.form.table.collectionOrCase Category": "Samling/Enhet",
 
   // "admin.access-control.epeople.form.memberOfNoGroups": "This EPerson is not a member of any groups",
   "admin.access-control.epeople.form.memberOfNoGroups": "Denna EPerson är inte medlem i någon grupp",
@@ -496,8 +496,8 @@
   // "admin.access-control.groups.table.name": "Name",
   "admin.access-control.groups.table.name": "Namn",
 
-  // "admin.access-control.groups.table.collectionOrCommunity": "Collection/Community",
-  "admin.access-control.groups.table.collectionOrCommunity": "Samling/Enhet",
+  // "admin.access-control.groups.table.collectionOrCase Category": "Collection/Case Category",
+  "admin.access-control.groups.table.collectionOrCase Category": "Samling/Enhet",
 
   // "admin.access-control.groups.table.members": "Members",
   "admin.access-control.groups.table.members": "Medlemmar",
@@ -540,8 +540,8 @@
   // "admin.access-control.groups.form.groupName": "Group name",
   "admin.access-control.groups.form.groupName": "Gruppens namn",
 
-  // "admin.access-control.groups.form.groupCommunity": "Community or Collection",
-  "admin.access-control.groups.form.groupCommunity": "Enhet eller samling",
+  // "admin.access-control.groups.form.groupCase Category": "Case Category or Collection",
+  "admin.access-control.groups.form.groupCase Category": "Enhet eller samling",
 
   // "admin.access-control.groups.form.groupDescription": "Beskrivning",
   "admin.access-control.groups.form.groupDescription": "Beskrivning",
@@ -678,8 +678,8 @@
   // "admin.access-control.groups.form.subgroups-list.table.name": "Name",
   "admin.access-control.groups.form.subgroups-list.table.name": "Namn",
 
-  // "admin.access-control.groups.form.subgroups-list.table.collectionOrCommunity": "Collection/Community",
-  "admin.access-control.groups.form.subgroups-list.table.collectionOrCommunity": "Samling/Enhet",
+  // "admin.access-control.groups.form.subgroups-list.table.collectionOrCase Category": "Collection/Case Category",
+  "admin.access-control.groups.form.subgroups-list.table.collectionOrCase Category": "Samling/Enhet",
 
   // "admin.access-control.groups.form.subgroups-list.table.edit": "Remove / Add",
   "admin.access-control.groups.form.subgroups-list.table.edit": "Ta bort / Lägg till",
@@ -733,9 +733,9 @@
   // TODO New key - Add a translation
   "admin.reports.collections.head": "Collection Filter Report",
 
-  //"admin.reports.button.show-collections": "Show Collections",
+  //"admin.reports.button.show-collections": "Show Case Types",
   // TODO New key - Add a translation
-  "admin.reports.button.show-collections": "Show Collections",
+  "admin.reports.button.show-collections": "Show Case Types",
 
   //"admin.reports.collections.collections-report": "Collection Report",
   // TODO New key - Add a translation
@@ -745,9 +745,9 @@
   // TODO New key - Add a translation
   "admin.reports.collections.item-results": "Item Results",
 
-  //"admin.reports.collections.community": "Community",
+  //"admin.reports.collections.community": "Case Category",
   // TODO New key - Add a translation
-  "admin.reports.collections.community": "Community",
+  "admin.reports.collections.community": "Case Category",
 
   //"admin.reports.collections.collection": "Collection",
   // TODO New key - Add a translation
@@ -1502,7 +1502,7 @@
   // "collection.create.notifications.success": "Successfully created the Collection",
   "collection.create.notifications.success": "Samlingen har skapats",
 
-  // "collection.create.sub-head": "Create a Collection for Community {{ parent }}",
+  // "collection.create.sub-head": "Create a Collection for Case Category {{ parent }}",
   "collection.create.sub-head": "Skapa en samling i enhet {{ parent }}",
 
   // "collection.curate.header": "Curate Collection: {{collection}}",
@@ -1560,7 +1560,7 @@
   // "collection.edit.item-mapper.description": "This is the item mapper tool that allows collection administrators to map items from other collections into this collection. You can search for items from other collections and map them, or browse the list of currently mapped items.",
   "collection.edit.item-mapper.description": "Detta är ett verktyg som möjliggör för administratörer att mappa poster från andra samlingar till denna. Sök efter poster för att mappa, eller lista redan mappade poster.",
 
-  // "collection.edit.item-mapper.head": "Item Mapper - Map Items from Other Collections",
+  // "collection.edit.item-mapper.head": "Item Mapper - Map Items from Other Case Types",
   "collection.edit.item-mapper.head": "Mappa poster - Mappa poster från andra samlingar",
 
   // "collection.edit.item-mapper.no-search": "Please enter a query to search",
@@ -1900,13 +1900,13 @@
 
 
 
-  // "communityList.breadcrumbs": "Community List",
+  // "communityList.breadcrumbs": "Case Category List",
   "communityList.breadcrumbs": "Enheter",
 
-  // "communityList.tabTitle": "Community List",
+  // "communityList.tabTitle": "Case Category List",
   "communityList.tabTitle": "Enheter",
 
-  // "communityList.title": "List of Communities",
+  // "communityList.title": "List of Case Categories",
   "communityList.title": "Lista med enheter",
 
   // "communityList.showMore": "Show More",
@@ -1914,16 +1914,16 @@
 
 
 
-  // "community.create.head": "Create a Community",
+  // "community.create.head": "Create a Case Category",
   "community.create.head": "Skapa en ny enhet",
 
-  // "community.create.notifications.success": "Successfully created the Community",
+  // "community.create.notifications.success": "Successfully created the Case Category",
   "community.create.notifications.success": "Enheten har skapats",
 
-  // "community.create.sub-head": "Create a Sub-Community for Community {{ parent }}",
+  // "community.create.sub-head": "Create a Sub-Case Category for Case Category {{ parent }}",
   "community.create.sub-head": "Skapa en underenhet till enheten {{ parent }}",
 
-  // "community.curate.header": "Curate Community: {{community}}",
+  // "community.curate.header": "Curate Case Category: {{community}}",
   "community.curate.header": "Kurera enhet: {{community}}",
 
   // "community.delete.cancel": "Cancel",
@@ -1935,10 +1935,10 @@
   // "community.delete.processing": "Deleting...",
   "community.delete.processing": "Raderar...",
 
-  // "community.delete.head": "Delete Community",
+  // "community.delete.head": "Delete Case Category",
   "community.delete.head": "Radera enhet",
 
-  // "community.delete.notification.fail": "Community could not be deleted",
+  // "community.delete.notification.fail": "Case Category could not be deleted",
   "community.delete.notification.fail": "Enheten kunde inte raderas",
 
   // "community.delete.notification.success": "Successfully deleted community",
@@ -1950,10 +1950,10 @@
   // "community.edit.delete": "Delete this community",
   "community.edit.delete": "Radera denna enhet",
 
-  // "community.edit.head": "Edit Community",
+  // "community.edit.head": "Edit Case Category",
   "community.edit.head": "Redigera enhet",
 
-  // "community.edit.breadcrumbs": "Edit Community",
+  // "community.edit.breadcrumbs": "Edit Case Category",
   "community.edit.breadcrumbs": "Redigera enhet",
 
 
@@ -1963,13 +1963,13 @@
   // "community.edit.logo.delete-undo.title": "Undo delete",
   "community.edit.logo.delete-undo.title": "Ångra radering",
 
-  // "community.edit.logo.label": "Community logo",
+  // "community.edit.logo.label": "Case Category logo",
   "community.edit.logo.label": "Enhetens logga",
 
-  // "community.edit.logo.notifications.add.error": "Uploading Community logo failed. Please verify the content before retrying.",
+  // "community.edit.logo.notifications.add.error": "Uploading Case Category logo failed. Please verify the content before retrying.",
   "community.edit.logo.notifications.add.error": "Uppladdningen misslyckades. Kontrollera filen och försök igen.",
 
-  // "community.edit.logo.notifications.add.success": "Upload Community logo successful.",
+  // "community.edit.logo.notifications.add.success": "Upload Case Category logo successful.",
   "community.edit.logo.notifications.add.success": "Uppladdningen lyckades.",
 
   // "community.edit.logo.notifications.delete.success.title": "Logo deleted",
@@ -1981,18 +1981,18 @@
   // "community.edit.logo.notifications.delete.error.title": "Error deleting logo",
   "community.edit.logo.notifications.delete.error.title": "Logga kunde inte raderas",
 
-  // "community.edit.logo.upload": "Drop a Community Logo to upload",
+  // "community.edit.logo.upload": "Drop a Case Category Logo to upload",
   "community.edit.logo.upload": "Släpp en logga här för att ladda upp",
 
 
 
-  // "community.edit.notifications.success": "Successfully edited the Community",
+  // "community.edit.notifications.success": "Successfully edited the Case Category",
   "community.edit.notifications.success": "Enheten har redigerats",
 
   // "community.edit.notifications.unauthorized": "You do not have privileges to make this change",
   "community.edit.notifications.unauthorized": "Du har inte behörighet att göra denna ändring",
 
-  // "community.edit.notifications.error": "An error occured while editing the Community",
+  // "community.edit.notifications.error": "An error occured while editing the Case Category",
   "community.edit.notifications.error": "Ett fel uppstod när enheten redigerades",
 
   // "community.edit.return": "Back",
@@ -2003,30 +2003,30 @@
   // "community.edit.tabs.curate.head": "Curate",
   "community.edit.tabs.curate.head": "Kurera",
 
-  // "community.edit.tabs.curate.title": "Community Edit - Curate",
+  // "community.edit.tabs.curate.title": "Case Category Edit - Curate",
   "community.edit.tabs.curate.title": "Redigera enhet - Kurera",
 
   // "community.edit.tabs.metadata.head": "Edit Metadata",
   "community.edit.tabs.metadata.head": "Redigera metadata",
 
-  // "community.edit.tabs.metadata.title": "Community Edit - Metadata",
+  // "community.edit.tabs.metadata.title": "Case Category Edit - Metadata",
   "community.edit.tabs.metadata.title": "Redigera enhet - Metadata",
 
   // "community.edit.tabs.roles.head": "Assign Roles",
   "community.edit.tabs.roles.head": "Tilldela roller",
 
-  // "community.edit.tabs.roles.title": "Community Edit - Roles",
+  // "community.edit.tabs.roles.title": "Case Category Edit - Roles",
   "community.edit.tabs.roles.title": "Redigera enhet - Roller",
 
   // "community.edit.tabs.authorizations.head": "Authorizations",
   "community.edit.tabs.authorizations.head": "Behörigheter",
 
-  // "community.edit.tabs.authorizations.title": "Community Edit - Authorizations",
+  // "community.edit.tabs.authorizations.title": "Case Category Edit - Authorizations",
   "community.edit.tabs.authorizations.title": "Redigera enhet - Behörigheter",
 
 
 
-  // "community.listelement.badge": "Community",
+  // "community.listelement.badge": "Case Category",
   "community.listelement.badge": "Enhet",
 
 
@@ -2051,7 +2051,7 @@
   "comcol-role.edit.collection-admin.name": "Administratörer",
 
 
-  // "comcol-role.edit.community-admin.description": "Community administrators can create sub-communities or collections, and manage or assign management for those sub-communities or collections. In addition, they decide who can submit items to any sub-collections, edit item metadata (after submission), and add (map) existing items from other collections (subject to authorization).",
+  // "comcol-role.edit.community-admin.description": "Case Category administrators can create sub-communities or collections, and manage or assign management for those sub-communities or collections. In addition, they decide who can submit items to any sub-collections, edit item metadata (after submission), and add (map) existing items from other collections (subject to authorization).",
   "comcol-role.edit.community-admin.description": "Administratörer för enheter kan skapa underenheter eller samlingar och administrera dessa. De kan också avgöra vem skall ha behörighet till dessa, redigera metadata (på befintliga poster), och mappa existerande poster från andra samlingar (beroende på behörighet till dessa).",
 
   // "comcol-role.edit.collection-admin.description": "Collection administrators decide who can submit items to the collection, edit item metadata (after submission), and add (map) existing items from other collections to this collection (subject to authorization for that collection).",
@@ -2078,7 +2078,7 @@
   // "comcol-role.edit.bitstream_read.name": "Default bitstream read access",
   "comcol-role.edit.bitstream_read.name": "Default läsåtkomst till filer",
 
-  // "comcol-role.edit.bitstream_read.description": "Community administrators can create sub-communities or collections, and manage or assign management for those sub-communities or collections. In addition, they decide who can submit items to any sub-collections, edit item metadata (after submission), and add (map) existing items from other collections (subject to authorization).",
+  // "comcol-role.edit.bitstream_read.description": "Case Category administrators can create sub-communities or collections, and manage or assign management for those sub-communities or collections. In addition, they decide who can submit items to any sub-collections, edit item metadata (after submission), and add (map) existing items from other collections (subject to authorization).",
   "comcol-role.edit.bitstream_read.description": "Administratörer för enheter kan skapa underenheter eller samlingar och administrera dessa. De kan också avgöra vem skall ha behörighet till dessa, redigera metadata (på befintliga poster), och mappa existerande poster från andra samlingar (beroende på behörighet till dessa).",
 
   // "comcol-role.edit.bitstream_read.anonymous-group": "Default read for incoming bitstreams is currently set to Anonymous.",
@@ -2137,13 +2137,13 @@
   // "community.page.news": "News",
   "community.page.news": "News",
 
-  // "community.all-lists.head": "Subcommunities and Collections",
+  // "community.all-lists.head": "Subcommunities and Case Types",
   "community.all-lists.head": "Samling",
 
-  // "community.sub-collection-list.head": "Samlingar Community",
+  // "community.sub-collection-list.head": "Samlingar Case Category",
   "community.sub-collection-list.head": "Samlingar",
 
-  // "community.sub-community-list.head": "Communities of this Community",
+  // "community.sub-community-list.head": "Case Categories of this Case Category",
   "community.sub-community-list.head": "Enheter under denna enhet",
 
 
@@ -3018,7 +3018,7 @@
   // "item.edit.item-mapper.description": "This is the item mapper tool that allows administrators to map this item to other collections. You can search for collections and map them, or browse the list of collections the item is currently mapped to.",
   "item.edit.item-mapper.description": "Detta är ett verktyg för att mappa poster till samlingar. Du kan söka efter samlingar eller bläddra i listan över samlingar som posten är mappad till nu.",
 
-  // "item.edit.item-mapper.head": "Item Mapper - Map Item to Collections",
+  // "item.edit.item-mapper.head": "Item Mapper - Map Item to Case Types",
   "item.edit.item-mapper.head": "Mappa post till samling(ar)",
 
   // "item.edit.item-mapper.item": "Item: \"<b>{{name}}</b>\"",
@@ -3331,11 +3331,11 @@
   // "item.edit.tabs.status.buttons.delete.label": "Completely expunge item",
   "item.edit.tabs.status.buttons.delete.label": "Radera fullständigt",
 
-  // "item.edit.tabs.status.buttons.mappedCollections.button": "Mapped collections",
-  "item.edit.tabs.status.buttons.mappedCollections.button": "Mappade samlingar",
+  // "item.edit.tabs.status.buttons.mappedCase Types.button": "Mapped collections",
+  "item.edit.tabs.status.buttons.mappedCase Types.button": "Mappade samlingar",
 
-  // "item.edit.tabs.status.buttons.mappedCollections.label": "Manage mapped collections",
-  "item.edit.tabs.status.buttons.mappedCollections.label": "Hantera mappade samlingar",
+  // "item.edit.tabs.status.buttons.mappedCase Types.label": "Manage mapped collections",
+  "item.edit.tabs.status.buttons.mappedCase Types.label": "Hantera mappade samlingar",
 
   // "item.edit.tabs.status.buttons.move.button": "Move this Item to a different Collection",
   "item.edit.tabs.status.buttons.move.button": "Flytta detta föremål till en annan samling",
@@ -3466,7 +3466,7 @@
   // "item.page.citation": "Citation",
   "item.page.citation": "Citation",
 
-  // "item.page.collections": "Collections",
+  // "item.page.collections": "Case Types",
   "item.page.collections": "Samling",
 
   // "item.page.collections.loading": "Loading...",
@@ -4026,9 +4026,9 @@
   // TODO New key - Add a translation
   "menu.section.reports": "Reports",
 
-  // "menu.section.reports.collections": "Filtered Collections",
+  // "menu.section.reports.collections": "Filtered Case Types",
   // TODO New key - Add a translation
-  "menu.section.reports.collections": "Filtered Collections",
+  "menu.section.reports.collections": "Filtered Case Types",
 
   // "menu.section.reports.queries": "Metadata Query",
   // TODO New key - Add a translation
@@ -4041,7 +4041,7 @@
 
 
 
-  // "menu.section.browse_community": "This Community",
+  // "menu.section.browse_community": "This Case Category",
   "menu.section.browse_community": "Denna samling",
 
   // "menu.section.browse_community_by_author": "By Author",
@@ -4068,7 +4068,7 @@
   // "menu.section.browse_global_by_title": "By Title",
   "menu.section.browse_global_by_title": "Titel",
 
-  // "menu.section.browse_global_communities_and_collections": "Communities & Collections",
+  // "menu.section.browse_global_communities_and_collections": "Case Categories & Case Types",
   "menu.section.browse_global_communities_and_collections": "Enheter och samlingar",
 
 
@@ -4087,7 +4087,7 @@
   // "menu.section.edit_collection": "Collection",
   "menu.section.edit_collection": "Samling",
 
-  // "menu.section.edit_community": "Community",
+  // "menu.section.edit_community": "Case Category",
   "menu.section.edit_community": "Enhet",
 
   // "menu.section.edit_item": "Item",
@@ -4101,7 +4101,7 @@
   // "menu.section.export_collection": "Collection",
   "menu.section.export_collection": "Samling",
 
-  // "menu.section.export_community": "Community",
+  // "menu.section.export_community": "Case Category",
   "menu.section.export_community": "Enhet",
 
   // "menu.section.export_item": "Item",
@@ -4180,7 +4180,7 @@
   // "menu.section.new_collection": "Collection",
   "menu.section.new_collection": "Samling",
 
-  // "menu.section.new_community": "Community",
+  // "menu.section.new_community": "Case Category",
   "menu.section.new_community": "Enhet",
 
   // "menu.section.new_item": "Item",
@@ -4330,7 +4330,7 @@
   // "mydspace.results.no-Författare": "No Författare",
   "mydspace.results.no-Författare": "Inga författare",
 
-  // "mydspace.results.no-collections": "No Collections",
+  // "mydspace.results.no-collections": "No Case Types",
   "mydspace.results.no-collections": "Inga samlingar",
 
   // "mydspace.results.no-date": "No Date",
@@ -4398,7 +4398,7 @@
   // "nav.browse.header": "All of DSpace",
   "nav.browse.header": "Hela DSpace",
 
-  // "nav.community-browse.header": "By Community",
+  // "nav.community-browse.header": "By Case Category",
   "nav.community-browse.header": "Efter enhet",
 
   // "nav.language": "Språk switch",
@@ -5079,7 +5079,7 @@
   // "resource-policies.add.for.item": "Add a new Item policy",
   "resource-policies.add.for.item": "Lägg till ny policy för post",
 
-  // "resource-policies.add.for.community": "Add a new Community policy",
+  // "resource-policies.add.for.community": "Add a new Case Category policy",
   "resource-policies.add.for.community": "Lägg till ny policy för enhet",
 
   // "resource-policies.add.for.collection": "Add a new Collection policy",
@@ -5212,7 +5212,7 @@
   // "resource-policies.table.headers.title.for.item": "Policies for Item",
   "resource-policies.table.headers.title.for.item": "Policies för post",
 
-  // "resource-policies.table.headers.title.for.community": "Policies for Community",
+  // "resource-policies.table.headers.title.for.community": "Policies for Case Category",
   "resource-policies.table.headers.title.for.community": "Policies för enhet",
 
   // "resource-policies.table.headers.title.for.collection": "Policies for Collection",

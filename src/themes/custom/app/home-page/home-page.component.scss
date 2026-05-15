@@ -1,0 +1,982 @@
+// @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+// .hc-homepage {
+
+//     min-height: 100vh;
+
+//     padding: 28px;
+
+//     font-family: 'Inter', sans-serif;
+
+//     color: #ffffff;
+
+//     background:
+//         radial-gradient(circle at top left,
+//             rgba(13, 148, 136, 0.08),
+//             transparent 28%),
+
+//         radial-gradient(circle at bottom right,
+//             rgba(8, 145, 178, 0.06),
+//             transparent 24%),
+
+//         linear-gradient(180deg,
+//             #041017 0%,
+//             #061820 45%,
+//             #07161d 100%);
+// }
+
+// /* =========================================
+//    HERO SECTION
+// ========================================= */
+
+// .hero-section {
+
+//     position: relative;
+
+//     overflow: hidden;
+
+//     border-radius: 30px;
+
+//     min-height: 500px;
+
+//     display: flex;
+
+//     align-items: center;
+
+//     padding: 64px;
+
+//     margin-bottom: 28px;
+
+//     background:
+//         linear-gradient(90deg,
+//             rgba(2, 16, 22, 0.94) 0%,
+//             rgba(3, 28, 36, 0.82) 42%,
+//             rgba(3, 28, 36, 0.28) 100%),
+//         url('/assets/custom/images/Homepage.jpeg');
+
+//     background-size: cover;
+
+//     background-position: center;
+
+//     border:
+//         1px solid rgba(255, 255, 255, 0.05);
+
+//     box-shadow:
+//         0 24px 60px rgba(0, 0, 0, 0.40);
+// }
+
+// .hero-section::before {
+
+//     content: '';
+
+//     position: absolute;
+
+//     inset: 0;
+
+//     background:
+//         radial-gradient(circle at top right,
+//             rgba(255, 255, 255, 0.08),
+//             transparent 38%);
+
+//     pointer-events: none;
+// }
+
+// .hero-left {
+
+//     position: relative;
+
+//     z-index: 2;
+
+//     max-width: 720px;
+// }
+
+// .hero-top {
+
+//     display: inline-flex;
+
+//     align-items: center;
+
+//     justify-content: center;
+
+//     padding: 11px 22px;
+
+//     border-radius: 999px;
+
+//     background:
+//         rgba(255, 255, 255, 0.05);
+
+//     border:
+//         1px solid rgba(255, 255, 255, 0.10);
+
+//     color: #f6c768;
+
+//     font-size: 11px;
+
+//     font-weight: 700;
+
+//     letter-spacing: 4px;
+
+//     text-transform: uppercase;
+
+//     margin-bottom: 26px;
+
+//     backdrop-filter: blur(10px);
+// }
+
+// .hero-left h1 {
+
+//     font-size: 3.8rem;
+
+//     line-height: 1.08;
+
+//     font-weight: 700;
+
+//     letter-spacing: -2px;
+
+//     color: #ffffff;
+
+//     margin-bottom: 20px;
+
+//     text-shadow:
+//         0 8px 20px rgba(0, 0, 0, 0.45);
+// }
+
+// .hero-left p {
+
+//     font-size: 1rem;
+
+//     line-height: 1.9;
+
+//     color: rgba(255, 255, 255, 0.80);
+
+//     max-width: 620px;
+
+//     margin-bottom: 36px;
+// }
+
+// /* =========================================
+//    SEARCH
+// ========================================= */
+
+// .hero-search {
+
+//     max-width: 680px;
+// }
+
+// /* =========================================
+//    MAIN GRID
+// ========================================= */
+
+// .content-layout {
+
+//     display: grid;
+
+//     grid-template-columns: 300px 1fr;
+
+//     gap: 24px;
+
+//     align-items: start;
+// }
+
+// /* =========================================
+//    SIDEBAR
+// ========================================= */
+
+// .category-card {
+
+//     background:
+//         linear-gradient(180deg,
+//             rgba(5, 24, 31, 0.96),
+//             rgba(4, 20, 27, 0.96));
+
+//     border-radius: 26px;
+
+//     padding: 30px;
+
+//     border:
+//         1px solid rgba(255, 255, 255, 0.05);
+
+//     box-shadow:
+//         0 16px 38px rgba(0, 0, 0, 0.26);
+
+//     backdrop-filter: blur(16px);
+
+//     position: sticky;
+
+//     top: 24px;
+// }
+
+// .section-label {
+
+//     font-size: 10px;
+
+//     font-weight: 800;
+
+//     letter-spacing: 4px;
+
+//     text-transform: uppercase;
+
+//     color: #22c7cf;
+
+//     margin-bottom: 16px;
+// }
+
+// .category-title {
+
+//     font-size: 2rem;
+
+//     font-weight: 700;
+
+//     line-height: 1.2;
+
+//     color: #ffffff;
+
+//     margin-bottom: 16px;
+// }
+
+// .category-description {
+
+//     color: rgba(255, 255, 255, 0.66);
+
+//     line-height: 1.8;
+
+//     margin-bottom: 28px;
+
+//     font-size: 0.96rem;
+// }
+
+// /* =========================================
+//    COMMUNITY LINKS
+// ========================================= */
+
+// .community-wrapper ::ng-deep a {
+
+//     color: #7ee7e7 !important;
+
+//     font-weight: 500;
+
+//     text-decoration: none !important;
+
+//     transition: all 0.25s ease;
+// }
+
+// .community-wrapper ::ng-deep a:hover {
+
+//     color: #ffffff !important;
+// }
+
+// .community-wrapper ::ng-deep a:focus,
+// .community-wrapper ::ng-deep a:active,
+// .community-wrapper ::ng-deep a:visited {
+
+//     color: #7ee7e7 !important;
+
+//     background: transparent !important;
+
+//     box-shadow: none !important;
+
+//     outline: none !important;
+// }
+
+// /* =========================================
+//    RIGHT PANEL
+// ========================================= */
+
+// .recent-panel {
+
+//     background:
+//         linear-gradient(180deg,
+//             rgba(5, 24, 31, 0.96),
+//             rgba(4, 20, 27, 0.96));
+
+//     border-radius: 26px;
+
+//     padding: 32px;
+
+//     border:
+//         1px solid rgba(255, 255, 255, 0.05);
+
+//     box-shadow:
+//         0 16px 38px rgba(0, 0, 0, 0.26);
+
+//     backdrop-filter: blur(16px);
+// }
+
+// .recent-header {
+
+//     margin-bottom: 26px;
+// }
+
+// .recent-title {
+
+//     font-size: 2.8rem;
+
+//     font-weight: 700;
+
+//     line-height: 1.08;
+
+//     letter-spacing: -1.5px;
+
+//     color: #ffffff;
+
+//     margin: 0;
+// }
+
+// /* =========================================
+//    RECENT SUBMISSION TITLE
+// ========================================= */
+
+// .recent-list-wrapper h2,
+// .recent-submission-title {
+
+//     font-size: 1.8rem;
+
+//     font-weight: 600;
+
+//     color: rgba(255, 255, 255, 0.92);
+
+//     margin-bottom: 1.5rem;
+// }
+
+// /* =========================================
+//    RECENT SUBMISSIONS
+// ========================================= */
+
+// .recent-list-wrapper {
+
+//     margin-top: 12px;
+// }
+
+// /* =========================================
+//    CARD OVERRIDE
+// ========================================= */
+
+// .recent-list-wrapper ::ng-deep .case-info-link,
+// .recent-list-wrapper ::ng-deep .case-info-text {
+
+//     background:
+//         linear-gradient(180deg,
+//             rgba(7, 28, 36, 0.98),
+//             rgba(4, 22, 30, 0.98)) !important;
+
+//     border:
+//         1px solid rgba(255, 255, 255, 0.06) !important;
+
+//     border-radius: 22px;
+
+//     box-shadow:
+//         0 10px 26px rgba(0, 0, 0, 0.22);
+
+//     transition: all 0.28s ease;
+// }
+
+// .recent-list-wrapper ::ng-deep .case-info-link:hover {
+
+//     transform: translateY(-3px);
+
+//     border-color:
+//         rgba(45, 212, 191, 0.20) !important;
+
+//     box-shadow:
+//         0 18px 38px rgba(0, 0, 0, 0.34);
+// }
+
+// /* =========================================
+//    MOBILE
+// ========================================= */
+
+// @media (max-width: 992px) {
+
+//     .content-layout {
+
+//         grid-template-columns: 1fr;
+//     }
+
+//     .hero-section {
+
+//         padding: 46px;
+//     }
+
+//     .hero-left h1 {
+
+//         font-size: 3rem;
+//     }
+// }
+
+// @media (max-width: 768px) {
+
+//     .hc-homepage {
+
+//         padding: 18px;
+//     }
+
+//     .hero-section {
+
+//         padding: 34px 24px;
+
+//         min-height: auto;
+
+//         border-radius: 24px;
+//     }
+
+//     .hero-left h1 {
+
+//         font-size: 2.4rem;
+//     }
+
+//     .hero-left p {
+
+//         font-size: 0.96rem;
+//     }
+
+//     .recent-title {
+
+//         font-size: 2rem;
+//     }
+
+//     .category-title {
+
+//         font-size: 1.8rem;
+//     }
+
+
+
+//     /* =========================================
+//    HOMEPAGE LAYER FIX
+// ========================================= */
+
+//     .hc-homepage {
+
+//         position: relative;
+
+//         z-index: 1;
+//     }
+
+//     /* HERO */
+
+//     .hero-section {
+
+//         position: relative;
+
+//         z-index: 1;
+//     }
+
+//     /* CONTENT */
+
+//     .content-layout {
+
+//         position: relative;
+
+//         z-index: 1;
+//     }
+// }
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+.hc-homepage {
+
+    min-height: 100vh;
+
+    padding: 28px;
+
+    font-family: 'Inter', sans-serif;
+
+    color: #ffffff;
+
+    background:
+        radial-gradient(circle at top left,
+            rgba(13, 148, 136, 0.08),
+            transparent 28%),
+
+        radial-gradient(circle at bottom right,
+            rgba(8, 145, 178, 0.06),
+            transparent 24%),
+
+        linear-gradient(180deg,
+            #041017 0%,
+            #061820 45%,
+            #07161d 100%);
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.hero-section {
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 28px;
+
+    min-height: 460px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 56px;
+
+    margin-bottom: 28px;
+
+    background:
+        linear-gradient(90deg,
+            rgba(2, 16, 22, 0.94) 0%,
+            rgba(3, 28, 36, 0.82) 42%,
+            rgba(3, 28, 36, 0.28) 100%),
+        url('/assets/custom/images/Homepage.jpeg');
+
+    background-size: cover;
+
+    background-position: center;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.05);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.34);
+}
+
+.hero-section::before {
+
+    content: '';
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(circle at top right,
+            rgba(255, 255, 255, 0.08),
+            transparent 38%);
+
+    pointer-events: none;
+}
+
+.hero-left {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 700px;
+}
+
+/* =========================================
+   HERO LABEL
+========================================= */
+
+.hero-top {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 10px 20px;
+
+    border-radius: 999px;
+
+    background:
+        rgba(255, 255, 255, 0.05);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.10);
+
+    color: #f6c768;
+
+    font-size: 0.72rem;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 22px;
+
+    backdrop-filter: blur(10px);
+}
+
+/* =========================================
+   HERO TITLE
+========================================= */
+
+.hero-left h1 {
+
+    font-size: 2.7rem;
+
+    line-height: 1.15;
+
+    font-weight: 650;
+
+    letter-spacing: -0.8px;
+
+    color: #ffffff;
+
+    margin-bottom: 18px;
+
+    text-shadow:
+        0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+/* =========================================
+   HERO DESCRIPTION
+========================================= */
+
+.hero-left p {
+
+    font-size: 0.95rem;
+
+    line-height: 1.8;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    max-width: 620px;
+
+    margin-bottom: 32px;
+
+    font-weight: 400;
+}
+
+/* =========================================
+   SEARCH
+========================================= */
+
+.hero-search {
+
+    max-width: 680px;
+}
+
+/* =========================================
+   MAIN GRID
+========================================= */
+
+.content-layout {
+
+    display: grid;
+
+    grid-template-columns: 300px 1fr;
+
+    gap: 24px;
+
+    align-items: start;
+}
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.category-card {
+
+    background:
+        linear-gradient(180deg,
+            rgba(5, 24, 31, 0.96),
+            rgba(4, 20, 27, 0.96));
+
+    border-radius: 24px;
+
+    padding: 28px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.05);
+
+    box-shadow:
+        0 14px 34px rgba(0, 0, 0, 0.24);
+
+    backdrop-filter: blur(16px);
+
+    position: sticky;
+
+    top: 24px;
+}
+
+/* =========================================
+   SIDEBAR LABEL
+========================================= */
+
+.section-label {
+
+    font-size: 0.70rem;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    color: #22c7cf;
+
+    margin-bottom: 14px;
+}
+
+/* =========================================
+   SIDEBAR TITLE
+========================================= */
+
+.category-title {
+
+    font-size: 1.9rem;
+
+    font-weight: 650;
+
+    line-height: 1.25;
+
+    color: #ffffff;
+
+    margin-bottom: 16px;
+}
+
+/* =========================================
+   SIDEBAR DESCRIPTION
+========================================= */
+
+.category-description {
+
+    color: rgba(255, 255, 255, 0.70);
+
+    line-height: 1.8;
+
+    margin-bottom: 24px;
+
+    font-size: 0.88rem;
+
+    font-weight: 400;
+}
+
+/* =========================================
+   COMMUNITY LINKS
+========================================= */
+
+.community-wrapper ::ng-deep a {
+
+    color: #7ee7e7 !important;
+
+    font-size: 0.92rem !important;
+
+    font-weight: 500;
+
+    text-decoration: none !important;
+
+    transition: all 0.25s ease;
+}
+
+.community-wrapper ::ng-deep a:hover {
+
+    color: #ffffff !important;
+}
+
+.community-wrapper ::ng-deep a:focus,
+.community-wrapper ::ng-deep a:active,
+.community-wrapper ::ng-deep a:visited {
+
+    color: #7ee7e7 !important;
+
+    background: transparent !important;
+
+    box-shadow: none !important;
+
+    outline: none !important;
+}
+
+/* =========================================
+   RIGHT PANEL
+========================================= */
+
+.recent-panel {
+
+    background:
+        linear-gradient(180deg,
+            rgba(5, 24, 31, 0.96),
+            rgba(4, 20, 27, 0.96));
+
+    border-radius: 24px;
+
+    padding: 30px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.05);
+
+    box-shadow:
+        0 14px 34px rgba(0, 0, 0, 0.24);
+
+    backdrop-filter: blur(16px);
+}
+
+.recent-header {
+
+    margin-bottom: 24px;
+}
+
+/* =========================================
+   MAIN TITLE
+========================================= */
+
+.recent-title {
+
+    font-size: 2.2rem;
+
+    font-weight: 650;
+
+    line-height: 1.15;
+
+    letter-spacing: -0.5px;
+
+    color: #ffffff;
+
+    margin: 0;
+}
+
+/* =========================================
+   RECENT SUBMISSION TITLE
+========================================= */
+
+.recent-list-wrapper h2,
+.recent-submission-title {
+
+    font-size: 1.5rem;
+
+    font-weight: 600;
+
+    color: rgba(255, 255, 255, 0.94);
+
+    margin-bottom: 1.2rem;
+}
+
+/* =========================================
+   RECENT SUBMISSIONS
+========================================= */
+
+.recent-list-wrapper {
+
+    margin-top: 10px;
+}
+
+/* =========================================
+   CARD OVERRIDE
+========================================= */
+
+.recent-list-wrapper ::ng-deep .case-info-link,
+.recent-list-wrapper ::ng-deep .case-info-text {
+
+    background:
+        linear-gradient(180deg,
+            rgba(7, 28, 36, 0.98),
+            rgba(4, 22, 30, 0.98)) !important;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.06) !important;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 10px 24px rgba(0, 0, 0, 0.22);
+
+    transition: all 0.28s ease;
+}
+
+.recent-list-wrapper ::ng-deep .case-info-link:hover {
+
+    transform: translateY(-3px);
+
+    border-color:
+        rgba(45, 212, 191, 0.20) !important;
+
+    box-shadow:
+        0 18px 34px rgba(0, 0, 0, 0.30);
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 992px) {
+
+    .content-layout {
+
+        grid-template-columns: 1fr;
+    }
+
+    .hero-section {
+
+        padding: 44px;
+    }
+
+    .hero-left h1 {
+
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .hc-homepage {
+
+        padding: 18px;
+    }
+
+    .hero-section {
+
+        padding: 32px 24px;
+
+        min-height: auto;
+
+        border-radius: 24px;
+    }
+
+    .hero-left h1 {
+
+        font-size: 1.9rem;
+
+        line-height: 1.2;
+    }
+
+    .hero-left p {
+
+        font-size: 0.88rem;
+    }
+
+    .recent-title {
+
+        font-size: 1.8rem;
+    }
+
+    .category-title {
+
+        font-size: 1.55rem;
+    }
+
+    .recent-submission-title {
+
+        font-size: 1.2rem;
+    }
+
+    /* =========================================
+       HOMEPAGE LAYER FIX
+    ========================================= */
+
+    .hc-homepage {
+
+        position: relative;
+
+        z-index: 1;
+    }
+
+    .hero-section {
+
+        position: relative;
+
+        z-index: 1;
+    }
+
+    .content-layout {
+
+        position: relative;
+
+        z-index: 1;
+    }
+}

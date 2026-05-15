@@ -1,71 +1,556 @@
-.video-search-container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 20px;
+/* =========================================
+   PAGE BACKGROUND
+========================================= */
+
+body {
+  background: #061313 !important;
 }
 
-.search-header {
-  text-align: center;
-  margin-bottom: 25px;
+/* =========================================
+   PAGE LAYOUT
+========================================= */
+
+.video-search-page {
+
+  max-width: 1380px;
+
+  margin: 32px auto;
+
+  padding: 24px;
+
+  font-family: "Inter", sans-serif;
+
+  color: #ffffff;
 }
 
-.video-card {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  background: #fff;
-  overflow: hidden;
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.hero-banner {
+
+  background:
+    linear-gradient(135deg,
+      #032626,
+      #0a3b3b,
+      #114848);
+
+  border-radius: 22px;
+
+  padding: 46px 48px;
+
+  margin-bottom: 26px;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.28);
 }
 
-.video-card-header {
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  color: white;
-  padding: 12px 16px;
+/* HERO SUBTITLE */
+
+.hero-subtitle {
+
+  color: #d4af37;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+
+  font-size: 0.74rem;
+
+  font-weight: 700;
+
+  margin-bottom: 12px;
+}
+
+/* HERO TITLE */
+
+.hero-title {
+
+  font-size: 2rem;
+
+  font-weight: 650;
+
+  margin-bottom: 14px;
+
+  color: #ffffff;
+
+  line-height: 1.2;
+
+  letter-spacing: -0.4px;
+}
+
+/* HERO DESCRIPTION */
+
+.hero-description {
+
+  color: #c7d2d2;
+
+  font-size: 0.92rem;
+
+  line-height: 1.7;
+
+  max-width: 760px;
+}
+
+/* =========================================
+   PANELS
+========================================= */
+
+.search-panel,
+.results-panel {
+
+  background:
+    rgba(8, 28, 28, 0.96);
+
+  border:
+    1px solid rgba(0, 255, 255, 0.05);
+
+  border-radius: 20px;
+
+  padding: 26px;
+
+  margin-bottom: 22px;
+
+  box-shadow:
+    0 8px 22px rgba(0, 0, 0, 0.24);
+}
+
+/* =========================================
+   PANEL TITLES
+========================================= */
+
+.panel-title {
+
+  font-size: 1.45rem;
+
+  font-weight: 650;
+
+  margin-bottom: 22px;
+
+  color: #ffffff;
+
+  letter-spacing: -0.3px;
+}
+
+/* =========================================
+   SEARCH BOX
+========================================= */
+
+.search-box {
+
   display: flex;
-  gap: 10px;
+
+  gap: 14px;
+
   align-items: center;
 }
 
-.video-number {
-  background: rgba(255, 255, 255, 0.2);
-  padding: 4px 10px;
-  border-radius: 20px;
-  font-size: 12px;
+/* SEARCH INPUT */
+
+.search-input {
+
+  flex: 1;
+
+  height: 46px;
+
+  border-radius: 14px;
+
+  border:
+    1px solid rgba(0, 255, 255, 0.08);
+
+  background: #0b2121;
+
+  color: #ffffff;
+
+  padding: 0 16px;
+
+  font-size: 0.88rem;
+
+  font-weight: 500;
+
+  transition: all 0.25s ease;
 }
 
-.video-card-body {
-  padding: 16px;
+/* PLACEHOLDER */
+
+.search-input::placeholder {
+
+  color: #91a8a8;
+
+  font-size: 0.84rem;
 }
 
-.metadata-section {
-  background: #f8f9fa;
-  padding: 10px;
-  border-radius: 6px;
-  margin-bottom: 15px;
+/* FOCUS */
+
+.search-input:focus {
+
+  outline: none;
+
+  border-color: #18c5c5;
+
+  box-shadow:
+    0 0 0 3px rgba(24, 197, 197, 0.14);
 }
 
-.transcript-text {
-  border: 1px solid #ddd;
-  padding: 10px;
-  border-radius: 6px;
+/* =========================================
+   BUTTONS
+========================================= */
+
+.search-btn,
+.view-btn,
+.video-btn {
+
+  border: none;
+
+  border-radius: 14px;
+
+  height: 46px;
+
+  padding: 0 22px;
+
+  font-size: 0.84rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.3px;
+
+  text-decoration: none;
+
+  transition: all 0.25s ease;
+
+  cursor: pointer;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+/* SEARCH BUTTON */
+
+.search-btn {
+
+  background:
+    linear-gradient(135deg,
+      #00a8a8,
+      #007272);
+
+  color: #ffffff;
+}
+
+/* VIEW BUTTON */
+
+.view-btn {
+
+  background:
+    linear-gradient(135deg,
+      #00a8a8,
+      #007272);
+
+  color: #ffffff;
+}
+
+/* VIDEO BUTTON */
+
+.video-btn {
+
+  background:
+    linear-gradient(135deg,
+      #caa52e,
+      #9f7b10);
+
+  color: #081818;
+}
+
+/* HOVER */
+
+.search-btn:hover,
+.view-btn:hover,
+.video-btn:hover {
+
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   RESULTS HEADER
+========================================= */
+
+.results-header {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 22px;
+}
+
+/* RESULTS HEADING */
+
+.results-header h2 {
+
+  font-size: 1.45rem;
+
+  font-weight: 650;
+
+  color: #ffffff;
+
+  letter-spacing: -0.3px;
+}
+
+/* RESULTS BADGE */
+
+.results-badge {
+
+  background:
+    linear-gradient(135deg,
+      #00a8a8,
+      #007272);
+
+  padding: 8px 14px;
+
+  border-radius: 999px;
+
+  font-size: 0.72rem;
+
+  font-weight: 700;
+
+  color: #ffffff;
+
+  letter-spacing: 0.4px;
+}
+
+/* =========================================
+   RESULTS GRID
+========================================= */
+
+.results-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(320px, 1fr));
+
+  gap: 18px;
+}
+
+/* =========================================
+   CASE CARD
+========================================= */
+
+.case-card {
+
+  background: #081818;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.04);
+
+  border-radius: 18px;
+
+  padding: 22px;
+
+  transition: all 0.25s ease;
+}
+
+/* HOVER */
+
+.case-card:hover {
+
+  transform: translateY(-3px);
+
+  background: #102d2d;
+}
+
+/* =========================================
+   CARD HEADER
+========================================= */
+
+.card-header {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 20px;
+}
+
+/* CARD TITLE */
+
+.card-header h3 {
+
+  font-size: 1rem;
+
+  font-weight: 650;
+
+  margin: 0;
+
+  color: #ffffff;
+
+  line-height: 1.4;
+}
+
+/* CASE YEAR */
+
+.case-year {
+
+  background:
+    rgba(0, 255, 255, 0.08);
+
+  color: #7efefe;
+
+  padding: 6px 12px;
+
+  border-radius: 999px;
+
+  font-size: 0.72rem;
+
+  font-weight: 700;
+}
+
+/* =========================================
+   CASE DETAILS
+========================================= */
+
+.case-details {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+
+  margin-bottom: 22px;
+}
+
+/* DETAIL ITEM */
+
+.detail-item {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+/* LABEL */
+
+.label {
+
+  font-size: 0.68rem;
+
+  color: #9bc2c2;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+
+  font-weight: 700;
+}
+
+/* VALUE */
+
+.value {
+
+  font-size: 0.86rem;
+
+  font-weight: 500;
+
+  color: #e1efef;
+
   line-height: 1.6;
 }
 
-.transcript-collapsed {
-  max-height: 200px;
-  overflow: hidden;
+/* =========================================
+   ACTION BUTTONS
+========================================= */
+
+.card-actions {
+
+  display: flex;
+
+  gap: 10px;
 }
 
-mark {
-  background-color: #fff59d;
-  padding: 2px 4px;
-  border-radius: 4px;
+/* =========================================
+   LOADING / EMPTY
+========================================= */
+
+.loading-box,
+.empty-box {
+
+  background:
+    rgba(8, 28, 28, 0.96);
+
+  border:
+    1px solid rgba(0, 255, 255, 0.05);
+
+  border-radius: 18px;
+
+  padding: 26px;
+
+  text-align: center;
+
+  font-size: 0.92rem;
+
+  margin-bottom: 22px;
+
+  color: #dce8e8;
 }
 
-.case-card {
-  border: 1px solid #ddd;
-  padding: 15px;
-  margin-bottom: 15px;
-  border-radius: 8px;
-  background: #fff;
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .video-search-page {
+
+    padding: 16px;
+  }
+
+  .hero-banner {
+
+    padding: 34px 24px;
+  }
+
+  .hero-title {
+
+    font-size: 1.7rem;
+  }
+
+  .hero-description {
+
+    font-size: 0.88rem;
+  }
+
+  .search-box {
+
+    flex-direction: column;
+  }
+
+  .search-btn {
+
+    width: 100%;
+  }
+
+  .card-actions {
+
+    flex-direction: column;
+  }
+
+  .view-btn,
+  .video-btn {
+
+    width: 100%;
+  }
+
+  .results-grid {
+
+    grid-template-columns: 1fr;
+  }
 }

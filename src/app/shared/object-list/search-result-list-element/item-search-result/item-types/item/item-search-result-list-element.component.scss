@@ -1,159 +1,385 @@
 @import '../../../../../../../styles/variables';
 
-.item-list-supervision {
-    a {
-        cursor: pointer;
-    }
-}
+/* =========================================
+   DARK JUDICIAL CARD
+========================================= */
 
 .case-info-container {
-    margin-bottom: 0.5rem;
-    
-    .case-info-link, .case-info-text {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      text-decoration: none;
-      
-      &:hover {
-        .case-type, .case-number, .case-year {
-          color: var(--ds-theme-primary);
-        }
-      }
-    }
-    
-    // First row: Badges
-    .badges-row {
-      display: flex;
-      gap: 0.5rem;
-      align-items: center;
-      
-      .badge {
-        padding: 0.25rem 0.5rem;
-        border-radius: 0.25rem;
-        font-size: 0.75rem;
-        font-weight: 500;
-        text-transform: uppercase;
-        letter-spacing: 0.025em;
-      }
-      
-      .case-file-badge {
-        background-color: #14b8a6; // Teal color
-        color: white;
-      }
-      
-      .pending-badge {
-        background-color: #22c55e; // Green color
-        color: white;
-      }
-    }
-    
-    // Second row: Case details
-    .case-details-row {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 0.25rem;
-      font-size: 1.1rem;
-      
-      .case-type {
-        font-weight: 600;
-        color: var(--bs-primary);
-      }
-      
-      .case-number {
-        font-weight: 700;
-        font-size: 1.2rem;
-        color: #1f2937; // Dark gray
-      }
-      
-      .case-year {
-        color: var(--bs-secondary);
-        font-weight: 500;
-      }
-      
-      .separator {
-        color: var(--bs-secondary);
-        font-weight: 300;
-        margin: 0 0.1rem;
-      }
-    }
-    
-    // Third row: Parties
-    .parties-row {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      font-size: 1rem;
-      color: #374151; // Gray-700
-      
-      .petitioner-name {
-        font-weight: 500;
-      }
-      
-      .vs-separator {
-        font-weight: 600;
-        color: #dc2626; // Red color for "Vs"
-        text-transform: uppercase;
-        font-size: 0.9rem;
-      }
-      
-      .respondent-name {
-        font-weight: 500;
-      }
-    }
-  }
-  
-  /* Animation classes */
-  .animate-fade-in {
-    animation: fadeIn 0.5s ease-in-out;
-  }
-  
-  .animate-slide-in {
-    animation: slideIn 0.5s ease-out;
-  }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-  
-  @keyframes slideIn {
-    from { 
-      opacity: 0;
-      transform: translateX(-10px);
-    }
-    to { 
-      opacity: 1;
-      transform: translateX(0);
-    }
+
+  margin-bottom: 1.5rem;
+}
+
+/* =========================================
+   CARD
+========================================= */
+
+.case-info-link,
+.case-info-text {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 1rem;
+
+  padding: 1.5rem 1.6rem;
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(180deg,
+      rgba(4, 24, 34, 0.98) 0%,
+      rgba(2, 18, 28, 0.98) 100%);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.06);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.28);
+
+  text-decoration: none;
+
+  transition:
+    transform 0.28s ease,
+    border-color 0.28s ease,
+    box-shadow 0.28s ease;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+/* =========================================
+   SOFT TOP GLOW
+========================================= */
+
+.case-info-link::before,
+.case-info-text::before {
+
+  content: '';
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    radial-gradient(circle at top right,
+      rgba(45, 212, 191, 0.08),
+      transparent 45%);
+
+  pointer-events: none;
+}
+
+/* =========================================
+   HOVER
+========================================= */
+
+.case-info-link:hover {
+
+  transform: translateY(-3px);
+
+  border-color:
+    rgba(45, 212, 191, 0.20);
+
+  box-shadow:
+    0 22px 42px rgba(0, 0, 0, 0.34);
+}
+
+/* =========================================
+   BADGES
+========================================= */
+
+.badges-row {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.65rem;
+}
+
+.badge {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  height: 30px;
+
+  padding: 0 1rem;
+
+  border-radius: 999px;
+
+  font-size: 0.66rem;
+
+  font-weight: 700;
+
+  letter-spacing: 1.2px;
+
+  text-transform: uppercase;
+
+  font-family: 'Inter', sans-serif;
+}
+
+/* CASE FILE */
+
+.case-file-badge {
+
+  background:
+    linear-gradient(135deg,
+      #14b8a6,
+      #0f766e);
+
+  color: #ffffff;
+}
+
+/* DISPOSED */
+
+.pending-badge {
+
+  background:
+    linear-gradient(135deg,
+      #dc2626,
+      #991b1b);
+
+  color: #ffffff;
+}
+
+/* =========================================
+   CASE DETAILS
+========================================= */
+
+.case-details-row {
+
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 0.45rem;
+
+  line-height: 1.5;
+}
+
+/* =========================================
+   CASE TYPE / NUMBER / YEAR
+   GOLD JUDICIAL STYLE
+========================================= */
+
+.case-type {
+
+  font-size: 0.96rem;
+
+  font-weight: 700;
+
+  color: #d4af37;
+
+  letter-spacing: 0.5px;
+
+  text-transform: uppercase;
+
+  font-family: 'Inter', sans-serif;
+}
+
+.case-number {
+
+  font-size: 0.96rem;
+
+  font-weight: 700;
+
+  color: #f0c75e;
+
+  letter-spacing: 0.4px;
+
+  font-family: 'Inter', sans-serif;
+}
+
+.case-year {
+
+  font-size: 0.96rem;
+
+  font-weight: 700;
+
+  color: #e8c14f;
+
+  letter-spacing: 0.4px;
+
+  font-family: 'Inter', sans-serif;
+}
+
+/* SLASH */
+
+.separator {
+
+  color: rgba(255, 255, 255, 0.34);
+
+  font-size: 0.90rem;
+
+  font-weight: 400;
+}
+
+/* =========================================
+   SLASH
+========================================= */
+
+.separator {
+
+  color: rgba(255, 255, 255, 0.32);
+
+  font-size: 0.9rem;
+
+  font-weight: 400;
+}
+
+/* =========================================
+   PARTIES
+========================================= */
+
+.parties-row {
+
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 0.65rem;
+
+  margin-top: 2px;
+
+  line-height: 1.8;
+
+  font-size: 0.90rem;
+
+  font-family: 'Inter', sans-serif;
+}
+
+/* PETITIONER */
+
+.petitioner-name {
+
+  color: rgba(255, 255, 255, 0.80);
+
+  font-size: 0.90rem;
+
+  font-weight: 500;
+
+  letter-spacing: 0.1px;
+
+  font-family: 'Inter', sans-serif;
+}
+
+/* RESPONDENT */
+
+.respondent-name {
+
+  color: rgba(255, 255, 255, 0.80);
+
+  font-size: 0.90rem;
+
+  font-weight: 500;
+
+  letter-spacing: 0.1px;
+
+  font-family: 'Inter', sans-serif;
+}
+
+/* =========================================
+   VS BADGE
+========================================= */
+
+.vs-separator {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  height: 24px;
+
+  padding: 0 0.8rem;
+
+  border-radius: 999px;
+
+  background:
+    rgba(239, 68, 68, 0.14);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.05);
+
+  color: #ff7b7b;
+
+  font-size: 0.64rem;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+
+  font-family: 'Inter', sans-serif;
+}
+
+/* =========================================
+   HOVER TEXT CONSISTENCY
+========================================= */
+
+.case-info-link:hover {
+
+  .case-type,
+  .case-number,
+  .case-year {
+
+    color: #ffd76a;
   }
 
-  // Responsive design
-  @media (max-width: 768px) {
-    .case-info-container {
-      .badges-row {
-        flex-wrap: wrap;
-      }
-      
-      .case-details-row {
-        font-size: 1rem;
-        
-        .case-number {
-          font-size: 1.1rem;
-        }
-      }
-      
-      .parties-row {
-        font-size: 0.9rem;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.25rem;
-        
-        .vs-separator {
-          align-self: center;
-        }
-      }
-    }
+  .petitioner-name,
+  .respondent-name {
+
+    color: rgba(255, 255, 255, 0.96);
   }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .case-info-link,
+  .case-info-text {
+
+    padding: 1.2rem;
+  }
+
+  .case-details-row {
+
+    gap: 0.35rem;
+  }
+
+  .case-type,
+  .case-number,
+  .case-year {
+
+    font-size: 0.84rem;
+  }
+
+  .petitioner-name,
+  .respondent-name {
+
+    font-size: 0.84rem;
+  }
+
+  .parties-row {
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 0.45rem;
+  }
+}

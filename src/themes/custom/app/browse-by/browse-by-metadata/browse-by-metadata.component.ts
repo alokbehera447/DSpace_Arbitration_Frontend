@@ -26,3 +26,5 @@ import { ThemedLoadingComponent } from '../../../../../app/shared/loading/themed
 })
 export class BrowseByMetadataComponent extends BaseComponent {
 }
+
+
