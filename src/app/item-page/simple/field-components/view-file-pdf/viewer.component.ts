@@ -255,10 +255,17 @@ export class ViewerComponent implements OnInit, OnDestroy {
         this.loadComments(this.currentBitstreamId);
 
         // Permission check
-        this.checkFilePermissions(this.currentBitstreamId);
+        // this.checkFilePermissions(this.currentBitstreamId);
 
-        // Load PDF with signer logic
+        // // Load PDF with signer logic
+        // this.loadWithSignerCheck(this.currentBitstreamId);
+
         this.loadWithSignerCheck(this.currentBitstreamId);
+
+        // Run permission check in background
+        setTimeout(() => {
+          this.checkFilePermissions(this.currentBitstreamId);
+        }, 0);
       }
 
       if (params["itemUuid"]) {
@@ -277,7 +284,8 @@ export class ViewerComponent implements OnInit, OnDestroy {
     this.isLoading = true;
 
     this.pdfService.checkSignerStatus().pipe(
-      timeout(10000),
+      // timeout(10000),
+      timeout(200),
       catchError(error => {
         if (error.name === 'TimeoutError') {
           console.warn('⏱️ Signer service timeout - proceeding without signature');
@@ -290,17 +298,17 @@ export class ViewerComponent implements OnInit, OnDestroy {
         if (status.timeout) {
           this.isDscAvailable = false;
           // this.loadComments(bitstreamId);
-          const proceed = confirm(
-            "⚠️ DSC service is taking too long to respond.\n\n" +
-            "Click 'OK' to proceed without digital signature.\n" +
-            "Click 'Cancel' to wait longer."
-          );
+          // const proceed = confirm(
+          //   "⚠️ DSC service is taking too long to respond.\n\n" +
+          //   "Click 'OK' to proceed without digital signature.\n" +
+          //   "Click 'Cancel' to wait longer."
+          // );
 
-          if (!proceed) {
-            this.isLoading = false;
-            this.goBack();
-            return;
-          }
+          // if (!proceed) {
+          //   this.isLoading = false;
+          //   this.goBack();
+          //   return;
+          // }
 
           this.loadPdfNormally();
           return;
@@ -308,7 +316,7 @@ export class ViewerComponent implements OnInit, OnDestroy {
 
         if (!status.tokenPresent) {
           this.isDscAvailable = false;
-          alert("⚠️ No DSC key found. Showing PDF without digital signature.");
+          // alert("⚠️ No DSC key found. Showing PDF without digital signature.");
           this.loadPdfNormally();
           return;
         }
@@ -319,18 +327,21 @@ export class ViewerComponent implements OnInit, OnDestroy {
       },
       error: () => {
         this.isDscAvailable = false;
-        const proceed = confirm(
-          "⚠️ DSC service not reachable.\n\n" +
-          "Click 'OK' to proceed without digital signature.\n" +
-          "Click 'Cancel' to go back."
-        );
 
-        if (proceed) {
-          this.loadPdfNormally();
-        } else {
-          this.isLoading = false;
-          this.goBack();
-        }
+        this.loadPdfNormally();
+
+        // const proceed = confirm(
+        //   "⚠️ DSC service not reachable.\n\n" +
+        //   "Click 'OK' to proceed without digital signature.\n" +
+        //   "Click 'Cancel' to go back."
+        // );
+
+        // if (proceed) {
+        //   this.loadPdfNormally();
+        // } else {
+        //   this.isLoading = false;
+        //   this.goBack();
+        // }
       }
     });
   }
@@ -450,32 +461,93 @@ export class ViewerComponent implements OnInit, OnDestroy {
     const container = this.pdfContainer.nativeElement;
     container.innerHTML = '';
 
-    for (let pageNum = 1; pageNum <= this.totalPages; pageNum++) {
+    // for (let pageNum = 1; pageNum <= this.totalPages; pageNum++) {
+    //   const pageContainer = document.createElement('div');
+    //   pageContainer.className = 'pdf-page-container';
+    //   pageContainer.id = `page-${pageNum}`;
+    //   pageContainer.style.marginBottom = '20px';
+    //   pageContainer.style.position = 'relative';
+
+    //   const pageLabel = document.createElement('div');
+    //   pageLabel.className = 'page-label';
+    //   pageLabel.textContent = `Page ${pageNum}`;
+    //   pageLabel.style.textAlign = 'center';
+    //   pageLabel.style.padding = '10px';
+    //   pageLabel.style.color = '#666';
+    //   pageLabel.style.fontSize = '14px';
+    //   pageContainer.appendChild(pageLabel);
+
+    //   const canvasWrapper = document.createElement('div');
+    //   canvasWrapper.className = 'canvas-wrapper';
+    //   canvasWrapper.style.display = 'flex';
+    //   canvasWrapper.style.justifyContent = 'center';
+    //   pageContainer.appendChild(canvasWrapper);
+
+    //   container.appendChild(pageContainer);
+
+    //   this.renderPage(pageNum, canvasWrapper);
+    // }
+
+
+    const renderSinglePage = (pageNum: number) => {
+      // const renderSinglePage = async (pageNum: number) => {
+
       const pageContainer = document.createElement('div');
+
       pageContainer.className = 'pdf-page-container';
+
       pageContainer.id = `page-${pageNum}`;
+
       pageContainer.style.marginBottom = '20px';
+
       pageContainer.style.position = 'relative';
 
       const pageLabel = document.createElement('div');
+
       pageLabel.className = 'page-label';
+
       pageLabel.textContent = `Page ${pageNum}`;
+
       pageLabel.style.textAlign = 'center';
+
       pageLabel.style.padding = '10px';
+
       pageLabel.style.color = '#666';
+
       pageLabel.style.fontSize = '14px';
+
       pageContainer.appendChild(pageLabel);
 
       const canvasWrapper = document.createElement('div');
+
       canvasWrapper.className = 'canvas-wrapper';
+
       canvasWrapper.style.display = 'flex';
+
       canvasWrapper.style.justifyContent = 'center';
+
       pageContainer.appendChild(canvasWrapper);
 
       container.appendChild(pageContainer);
 
       this.renderPage(pageNum, canvasWrapper);
-    }
+      // await this.renderPage(pageNum, canvasWrapper);
+
+    };
+
+    // Render first page immediately
+    renderSinglePage(1);
+
+    // Render remaining pages in background
+    setTimeout(() => {
+
+      for (let pageNum = 2; pageNum <= this.totalPages; pageNum++) {
+
+        renderSinglePage(pageNum);
+
+      }
+
+    }, 0);
 
     this.setupScrollObserver();
   }
@@ -583,25 +655,26 @@ export class ViewerComponent implements OnInit, OnDestroy {
     const filename = this.generateCustomFilename() || "document.pdf";
 
     // Show download instructions
-    const downloadConfirmed = confirm(
-      "📥 DOWNLOAD ENCRYPTED PDF\n\n" +
-      "The PDF will be downloaded as a password-protected file.\n\n" +
-      "To print the document:\n" +
-      "1. Open the downloaded PDF in Adobe Acrobat or similar PDF reader\n" +
-      "2. Enter the password when prompted\n" +
-      "3. Print using your PDF reader's print function\n\n" +
-      "Note: Printing is disabled in the web viewer for security.\n\n" +
-      "Click OK to download the encrypted PDF."
-    );
+    // const downloadConfirmed = confirm(
+    //   "📥 DOWNLOAD ENCRYPTED PDF\n\n" +
+    //   "The PDF will be downloaded as a password-protected file.\n\n" +
+    //   "To print the document:\n" +
+    //   "1. Open the downloaded PDF in Adobe Acrobat or similar PDF reader\n" +
+    //   "2. Enter the password when prompted\n" +
+    //   "3. Print using your PDF reader's print function\n\n" +
+    //   "Note: Printing is disabled in the web viewer for security.\n\n" +
+    //   "Click OK to download the encrypted PDF."
+    // );
 
-    if (!downloadConfirmed) {
-      return;
-    }
+    // if (!downloadConfirmed) {
+    //   return;
+    // }
 
     // Check if DSC was available during view
     if (!this.isDscAvailable) {
       // DSC not available - download without signing
       this.isLoading = true;
+      this.loadPdfNormally();
 
       this.pdfService.encryptBitstream(this.currentBitstreamId, 'download')
         .subscribe({
@@ -988,7 +1061,7 @@ export class ViewerComponent implements OnInit, OnDestroy {
   }
 
   checkFilePermissions(bitstreamId: string): void {
-    this.checkingPermissions = true;
+    // this.checkingPermissions = true;
 
     this.bitstreamPermissionsService.getBitstreamPermissions(bitstreamId).subscribe({
       next: (permData) => {

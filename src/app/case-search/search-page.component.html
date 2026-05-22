@@ -1,352 +1,204 @@
-<div class="case-search-container">
+<div class="judicial-page">
 
-  <!-- HERO SECTION -->
-
-  <section class="hero-banner">
-
-    <div class="hero-subtitle">
-      ORISSA HIGH COURT DIGITAL ARCHIVE
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="header-left">
+      <div class="header-icon">
+        <i class="fas fa-balance-scale"></i>
+      </div>
+      <div class="header-text">
+        <h1>By Case Type / Number / Year</h1>
+        <p>Search and explore archived legal case files, judgments and court proceedings.</p>
+      </div>
     </div>
-
-    <div class="hero-title">
-      By Case Type / Number / Year
+    <div class="records-badge" *ngIf="totalElements > 0">
+      <span class="records-count">{{ totalElements | number }} records found</span>
     </div>
+  </div>
 
-    <div class="hero-description">
-      Search archived legal case files,
-      judicial proceedings, judgments,
-      petitions and court records.
-    </div>
+  <!-- FILTER PANEL -->
+  <section class="filter-panel">
+    <div class="filters-row">
 
-  </section>
-
-  <!-- SEARCH PANEL -->
-
-  <section class="search-panel">
-
-    <div class="panel-title">
-
-      <h2>
-        Search Parameters
-      </h2>
-
-    </div>
-
-    <form>
-
-      <div class="search-fields">
-
-        <!-- CASE TYPE -->
-
-        <div class="field-group">
-
-          <label>
-            Case Type
-          </label>
-
+      <div class="filter-group">
+        <label>Case Type</label>
+        <div class="select-wrapper">
           <select [(ngModel)]="caseType" name="caseType">
-
-            <option value="">
-              Select Case Type
-            </option>
-
-            <option *ngFor="let option of caseTypeOptions" [value]="option">
-
-              {{ option }}
-
-            </option>
-
+            <option value="">All Case Types</option>
+            <option *ngFor="let option of caseTypeOptions" [value]="option">{{ option }}</option>
           </select>
-
+          <i class="fas fa-chevron-down select-arrow"></i>
         </div>
-
-        <!-- CASE NUMBER -->
-
-        <div class="field-group">
-
-          <label>
-            Case Number
-          </label>
-
-          <input type="text" [(ngModel)]="caseNumber" name="caseNumber" placeholder="Enter case number">
-
-        </div>
-
-        <!-- CASE YEAR -->
-
-        <div class="field-group">
-
-          <label>
-            Case Year
-          </label>
-
-          <input type="text" [(ngModel)]="caseYear" name="caseYear" placeholder="Enter year">
-
-        </div>
-
-        <!-- BUTTONS -->
-
-        <div class="button-group">
-
-          <button type="button" class="search-btn" (click)="searchCases()">
-
-            Search
-
-          </button>
-
-          <button type="button" class="reset-btn" (click)="resetForm()">
-
-            Reset
-
-          </button>
-
-        </div>
-
       </div>
 
-    </form>
-
-  </section>
-
-  <!-- SETTINGS -->
-
-  <section class="settings-panel">
-
-    <div class="settings-controls">
-
-      <!-- SORT BY -->
-
-      <div class="setting-group">
-
-        <label>
-          Sort By
-        </label>
-
-        <select [(ngModel)]="sortBy" name="sortBy">
-
-          <option value="dc.title">
-            Case Number
-          </option>
-
-          <option value="dc.casetype">
-            Case Type
-          </option>
-
-          <option value="dc.caseyear">
-            Case Year
-          </option>
-
-          <option value="dc.pname">
-            Petitioner
-          </option>
-
-          <option value="dc.rname">
-            Respondent
-          </option>
-
-        </select>
-
+      <div class="filter-group">
+        <label>Case Number</label>
+        <input type="text" [(ngModel)]="caseNumber" name="caseNumber" placeholder="Enter case number" />
       </div>
 
-      <!-- SORT ORDER -->
-
-      <div class="setting-group">
-
-        <label>
-          Sort Order
-        </label>
-
-        <select [(ngModel)]="sortOrder" name="sortOrder">
-
-          <option value="ASC">
-            Ascending
-          </option>
-
-          <option value="DESC">
-            Descending
-          </option>
-
-        </select>
-
+      <div class="filter-group">
+        <label>Case Year</label>
+        <input type="text" [(ngModel)]="caseYear" name="caseYear" placeholder="Enter year" />
       </div>
 
-      <!-- RESULTS -->
+      <div class="filter-group">
+        <label>Sort By</label>
+        <div class="select-wrapper">
+          <select [(ngModel)]="sortBy" name="sortBy" (change)="searchCases()">
+            <option value="dc.title">Case Number</option>
+            <option value="dc.casetype">Case Type</option>
+            <option value="dc.caseyear">Case Year</option>
+            <option value="dc.pname">Petitioner</option>
+            <option value="dc.rname">Respondent</option>
+            <option value="dc.paname">Petitioner's Advocate Name</option>
 
-      <div class="setting-group">
+            <option value="dc.raname">Respondent's Advocate Name</option>
+          </select>
+          <i class="fas fa-chevron-down select-arrow"></i>
+        </div>
+      </div>
 
-        <label>
-          Results Per Page
-        </label>
+      <div class="filter-group">
+        <label>Order</label>
+        <div class="select-wrapper">
+          <select [(ngModel)]="sortOrder" name="sortOrder" (change)="searchCases()">
+            <option value="ASC">Ascending</option>
+            <option value="DESC">Descending</option>
+          </select>
+          <i class="fas fa-chevron-down select-arrow"></i>
+        </div>
+      </div>
 
-        <select [(ngModel)]="resultsPerPage" name="resultsPerPage" (change)="searchCases()">
-
-          <option [value]="5">5</option>
-          <option [value]="10">10</option>
-          <option [value]="25">25</option>
-          <option [value]="50">50</option>
-          <option [value]="100">100</option>
-
-        </select>
-
+      <div class="filter-actions">
+        <button class="search-btn" (click)="searchCases()">
+          <i class="fas fa-search"></i> Search
+        </button>
+        <button class="clear-btn" (click)="resetForm()">
+          <i class="fas fa-redo-alt"></i> Clear All
+        </button>
       </div>
 
     </div>
-
   </section>
 
   <!-- RESULTS PANEL -->
+  <section class="results-wrapper">
 
-  <section class="results-panel">
-
+    <!-- RESULTS HEADER -->
     <div class="results-header">
-
-      <h2>
-        Judicial Records
-      </h2>
-
-      <div class="results-badge">
-
-        <ng-container *ngIf="(caseList$ | async) as caseList">
-
-          Displaying {{ caseList.length }} Results
-        </ng-container>
-
-      </div>
-
+      <h2>Search Results</h2>
+      <span class="results-count">
+        Showing {{ currentPage * resultsPerPage + 1 }}
+        to {{ min(currentPage * resultsPerPage + resultsPerPage, totalElements) }}
+        of {{ totalElements | number }}
+      </span>
     </div>
 
-    <!-- NO RESULTS -->
-
-    <div class="no-results" *ngIf="(caseList$ | async)?.length === 0">
-
-      No judicial records found.
-
+    <!-- EMPTY STATE -->
+    <div class="empty-state" *ngIf="(caseList$ | async)?.length === 0">
+      <i class="fas fa-folder-open"></i>
+      <p>No judicial records found.</p>
     </div>
 
     <!-- TABLE -->
-
-    <div class="table-wrapper" *ngIf="(caseList$ | async)?.length > 0">
-
+    <div class="table-container" *ngIf="(caseList$ | async)?.length > 0">
       <table class="results-table">
-
         <thead>
-
           <tr>
-
             <th>Case Type</th>
-            <th>Case No</th>
-            <th>Year</th>
+            <th>Case Number</th>
+            <th>Case Year</th>
             <th>District</th>
-            <th>Judge</th>
+            <th>Judge Name</th>
             <th>Petitioner</th>
             <th>Respondent</th>
             <th>Disposal Date</th>
-
+            <th>Action</th>
           </tr>
-
         </thead>
-
         <tbody>
-
           <tr *ngFor="let caseItem of (caseList$ | async)">
 
-            <!-- CASE TYPE -->
-
             <td>
-
-              {{
-              caseItem.metadata?.['dc.casetype']?.[0]?.value
-              || 'N/A'
-              }}
-
+              <span class="case-type-badge">
+                {{ caseItem.metadata?.['dc.casetype']?.[0]?.value || 'N/A' }}
+              </span>
             </td>
 
-            <!-- CASE NUMBER -->
-
             <td>
-
               <a [routerLink]="['/items', caseItem.uuid]" class="case-link">
-
-                {{
-                caseItem.metadata?.['dc.title']?.[0]?.value
-                || 'N/A'
-                }}
-
+                {{ caseItem.metadata?.['dc.title']?.[0]?.value || 'N/A' }}
               </a>
-
             </td>
 
-            <!-- YEAR -->
+            <td>{{ caseItem.metadata?.['dc.caseyear']?.[0]?.value || 'N/A' }}</td>
+
+            <td>{{ caseItem.metadata?.['dc.district']?.[0]?.value || 'N/A' }}</td>
 
             <td>
-
-              {{
-              caseItem.metadata?.['dc.caseyear']?.[0]?.value
-              || 'N/A'
-              }}
-
+              <a class="judge-link">
+                {{ caseItem.metadata?.['dc.contributor.author']?.[0]?.value || 'N/A' }}
+              </a>
             </td>
 
-            <!-- DISTRICT -->
+            <td>{{ caseItem.metadata?.['dc.pname']?.[0]?.value || 'N/A' }}</td>
+
+            <td>{{ caseItem.metadata?.['dc.rname']?.[0]?.value || 'N/A' }}</td>
+
+            <td>{{ caseItem.metadata?.['dc.date.disposal']?.[0]?.value || 'N/A' }}</td>
 
             <td>
-
-              {{
-              caseItem.metadata?.['dc.district']?.[0]?.value
-              || 'N/A'
-              }}
-
-            </td>
-
-            <!-- JUDGE -->
-
-            <td>
-
-              {{
-              caseItem.metadata?.['dc.contributor.author']?.[0]?.value
-              || 'N/A'
-              }}
-
-            </td>
-
-            <!-- PETITIONER -->
-
-            <td>
-
-              {{
-              caseItem.metadata?.['dc.pname']?.[0]?.value
-              || 'N/A'
-              }}
-
-            </td>
-
-            <!-- RESPONDENT -->
-
-            <td>
-
-              {{
-              caseItem.metadata?.['dc.rname']?.[0]?.value
-              || 'N/A'
-              }}
-
-            </td>
-
-            <!-- DISPOSAL -->
-
-            <td>
-
-              {{
-              caseItem.metadata?.['dc.date.disposal']?.[0]?.value
-              || 'N/A'
-              }}
-
+              <a [routerLink]="['/items', caseItem.uuid]" class="view-btn">
+                <i class="fas fa-eye"></i> View Case
+              </a>
             </td>
 
           </tr>
-
         </tbody>
-
       </table>
+    </div>
+
+    <!-- PAGINATION -->
+    <div class="pagination-bar" *ngIf="totalPages > 1">
+
+      <span class="pagination-info">
+        Showing {{ currentPage * resultsPerPage + 1 }}
+        to {{ min(currentPage * resultsPerPage + resultsPerPage, totalElements) }}
+        of {{ totalElements | number }}
+      </span>
+
+      <div class="pagination-controls">
+
+        <button class="page-btn" [disabled]="currentPage === 0" (click)="goToPage(currentPage - 1)">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <ng-container *ngFor="let page of visiblePages">
+          <span *ngIf="page === '...'" class="page-ellipsis">...</span>
+          <button *ngIf="page !== '...'" class="page-btn" [class.active]="page === currentPage + 1"
+            (click)="goToPage(+page - 1)">
+            {{ page }}
+          </button>
+        </ng-container>
+
+        <button class="page-btn" [disabled]="currentPage === totalPages - 1" (click)="goToPage(currentPage + 1)">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+
+      </div>
+
+      <div class="rows-per-page">
+        <span>Rows per page:</span>
+        <div class="select-wrapper select-wrapper--light">
+          <select [(ngModel)]="resultsPerPage" (change)="onResultsPerPageChange()">
+            <option [value]="10">10</option>
+            <option [value]="25">25</option>
+            <option [value]="50">50</option>
+            <option [value]="100">100</option>
+          </select>
+          <i class="fas fa-chevron-down select-arrow"></i>
+        </div>
+      </div>
 
     </div>
 

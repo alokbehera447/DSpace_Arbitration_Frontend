@@ -1,545 +1,620 @@
+// ─── Variables ───────────────────────────────────────────────────────────────
+$navy: #0e2a3b;
+$navy-mid: #163446;
+$navy-light: #1c4158;
+$teal: #0ea5a0;
+$teal-dark: #0c8a85;
+$teal-light: #e6f7f7;
+$text-dark: #0f172a;
+$text-mid: #334155;
+$text-soft: #64748b;
+$border: #e2e8f0;
+$bg-page: #f4f7fb;
+$white: #ffffff;
+
+// ─── Base ────────────────────────────────────────────────────────────────────
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  background: #061313 !important;
-}
-
-/* =========================================
-   MAIN CONTAINER
-========================================= */
-
-.case-search-container {
-
-  max-width: 1380px;
-
-  margin: 32px auto;
-
-  padding: 24px;
-
+  background: $bg-page;
   font-family: "Inter", sans-serif;
-
-  color: #ffffff;
+  color: $text-dark;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* =========================================
-   HERO SECTION
-========================================= */
-
-.hero-banner {
-
-  background:
-    linear-gradient(135deg,
-      #032626,
-      #0a3b3b,
-      #114848);
-
-  border-radius: 22px;
-
-  padding: 46px 48px;
-
-  margin-bottom: 26px;
-
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.28);
+// ─── Page Wrapper ─────────────────────────────────────────────────────────────
+.judicial-page {
+  padding: 28px 32px;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
-/* SMALL GOLD LABEL */
-
-.hero-subtitle {
-
-  color: #d4af37;
-
-  letter-spacing: 3px;
-
-  text-transform: uppercase;
-
-  font-size: 0.74rem;
-
-  margin-bottom: 12px;
-
-  font-weight: 700;
-}
-
-/* HERO TITLE */
-
-.hero-title {
-
-  font-size: 2rem;
-
-  font-weight: 650;
-
-  color: #ffffff;
-
-  line-height: 1.2;
-
-  margin-bottom: 14px;
-
-  letter-spacing: -0.4px;
-}
-
-/* HERO DESCRIPTION */
-
-.hero-description {
-
-  color: #c7d2d2;
-
-  font-size: 0.92rem;
-
-  line-height: 1.7;
-
-  max-width: 760px;
-}
-
-/* =========================================
-   PANELS
-========================================= */
-
-.search-panel,
-.settings-panel,
-.results-panel {
-
-  background:
-    rgba(8, 28, 28, 0.96);
-
-  border:
-    1px solid rgba(0, 255, 255, 0.05);
-
-  border-radius: 20px;
-
-  padding: 26px;
-
-  margin-bottom: 22px;
-
-  box-shadow:
-    0 8px 22px rgba(0, 0, 0, 0.24);
-}
-
-/* =========================================
-   TITLES
-========================================= */
-
-.panel-title,
-.results-header {
-
+// ─── Page Header ─────────────────────────────────────────────────────────────
+.page-header {
   display: flex;
-
-  justify-content: space-between;
-
   align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
 
-  margin-bottom: 22px;
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .header-icon {
+    width: 68px;
+    height: 68px;
+    border-radius: 16px;
+    background: linear-gradient(145deg, $navy, $navy-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 8px 24px rgba(14, 42, 59, 0.18);
+
+    i {
+      color: $white;
+      font-size: 26px;
+    }
+  }
+
+  .header-text {
+    h1 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: $text-dark;
+      line-height: 1.25;
+    }
+
+    p {
+      margin-top: 5px;
+      font-size: 0.9rem;
+      color: $text-soft;
+    }
+  }
+
+  .records-badge {
+    background: $teal-light;
+    border: 1px solid darken($teal-light, 8%);
+    border-radius: 10px;
+    padding: 10px 20px;
+
+    .records-count {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: $teal-dark;
+    }
+  }
 }
 
-/* SEARCH PARAMETERS */
-
-.panel-title h2 {
-
-  color: #ffffff;
-
-  font-size: 1.45rem;
-
-  font-weight: 650;
-
-  letter-spacing: -0.3px;
-
-  margin: 0;
-}
-
-/* RESULTS TITLE */
-
-.results-header h2 {
-
-  color: #ffffff;
-
-  font-size: 1.55rem;
-
-  font-weight: 650;
-
-  margin: 0;
-
-  letter-spacing: -0.3px;
-}
-
-/* =========================================
-   GRID
-========================================= */
-
-.search-fields,
-.settings-controls {
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(auto-fit, minmax(220px, 1fr));
-
-  gap: 18px;
-
-  align-items: end;
-}
-
-.field-group,
-.setting-group {
-
-  display: flex;
-
-  flex-direction: column;
-}
-
-/* LABELS */
-
-.field-group label,
-.setting-group label {
-
-  margin-bottom: 8px;
-
-  color: #d7e5e5;
-
-  font-size: 0.76rem;
-
-  font-weight: 600;
-
-  letter-spacing: 0.4px;
-
-  text-transform: uppercase;
-}
-
-/* =========================================
-   INPUTS
-========================================= */
-
-.field-group input,
-.field-group select,
-.setting-group select {
-
-  height: 46px;
-
-  border-radius: 14px;
-
-  border:
-    1px solid rgba(0, 255, 255, 0.08);
-
-  background: #0b2121;
-
-  color: #ffffff;
-
-  padding: 0 16px;
-
-  font-size: 0.88rem;
-
-  font-weight: 500;
-
-  transition: all 0.25s ease;
-}
-
-/* FOCUS */
-
-.field-group input:focus,
-.field-group select:focus,
-.setting-group select:focus {
-
-  outline: none;
-
-  border-color: #18c5c5;
-
-  box-shadow:
-    0 0 0 3px rgba(24, 197, 197, 0.14);
-}
-
-/* PLACEHOLDER */
-
-.field-group input::placeholder {
-
-  color: #91a8a8;
-
-  font-size: 0.84rem;
-}
-
-/* =========================================
-   BUTTONS
-========================================= */
-
-.button-group {
-
-  display: flex;
-
-  gap: 10px;
-}
-
-.search-btn,
-.reset-btn {
-
-  height: 46px;
-
-  border: none;
-
-  border-radius: 14px;
-
-  padding: 0 22px;
-
-  font-size: 0.84rem;
-
-  font-weight: 700;
-
-  letter-spacing: 0.3px;
-
-  cursor: pointer;
-
-  transition: all 0.25s ease;
-}
-
-/* SEARCH */
-
-.search-btn {
-
-  background:
-    linear-gradient(135deg,
-      #00a8a8,
-      #007272);
-
-  color: #ffffff;
-}
-
-.search-btn:hover {
-
-  transform: translateY(-2px);
-
-  box-shadow:
-    0 8px 18px rgba(0, 180, 180, 0.22);
-}
-
-/* RESET */
-
-.reset-btn {
-
-  background:
-    linear-gradient(135deg,
-      #caa52e,
-      #9f7b10);
-
-  color: #081818;
-}
-
-.reset-btn:hover {
-
-  transform: translateY(-2px);
-}
-
-/* =========================================
-   RESULTS BADGE
-========================================= */
-
-.results-badge {
-
-  background:
-    linear-gradient(135deg,
-      #00a8a8,
-      #007272);
-
-  color: white;
-
-  padding: 9px 14px;
-
-  border-radius: 999px;
-
-  font-size: 0.72rem;
-
-  font-weight: 700;
-
-  letter-spacing: 0.5px;
-}
-
-/* =========================================
-   TABLE WRAPPER
-========================================= */
-
-.table-wrapper {
-
-  overflow-x: auto;
-
+// ─── Filter Panel ─────────────────────────────────────────────────────────────
+.filter-panel {
+  background: linear-gradient(135deg, $navy 0%, $navy-mid 50%, $navy-light 100%);
   border-radius: 16px;
-
-  border:
-    1px solid rgba(255, 255, 255, 0.04);
+  padding: 20px 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 32px rgba(14, 42, 59, 0.16);
 }
 
-/* =========================================
-   TABLE
-========================================= */
+.filters-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 140px;
+
+  label {
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.82);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+
+  input,
+  .select-wrapper select {
+    height: 46px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.09);
+    color: $white;
+    padding: 0 14px;
+    font-size: 0.88rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    width: 100%;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    &:focus {
+      border-color: $teal;
+      box-shadow: 0 0 0 3px rgba(14, 165, 160, 0.2);
+    }
+  }
+}
+
+// Select wrapper (arrow overlay)
+.select-wrapper {
+  position: relative;
+
+  select {
+    appearance: none;
+    -webkit-appearance: none;
+    padding-right: 36px;
+    cursor: pointer;
+
+    option {
+      background: $navy-mid;
+      color: $white;
+    }
+  }
+
+  .select-arrow {
+    position: absolute;
+    right: 13px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 11px;
+    pointer-events: none;
+  }
+}
+
+// Light select variant (pagination)
+.select-wrapper--light {
+  select {
+    background: $white;
+    border: 1px solid $border;
+    color: $text-dark;
+    border-radius: 8px;
+    height: 36px;
+    font-size: 0.85rem;
+
+    option {
+      background: $white;
+      color: $text-dark;
+    }
+
+    &:focus {
+      border-color: $teal;
+      box-shadow: 0 0 0 3px rgba(14, 165, 160, 0.15);
+    }
+  }
+
+  .select-arrow {
+    color: $text-soft;
+  }
+}
+
+// Filter actions (buttons)
+.filter-actions {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+  padding-bottom: 0;
+  flex-shrink: 0;
+
+  .search-btn,
+  .clear-btn {
+    height: 46px;
+    min-width: 118px;
+    border-radius: 10px;
+    border: none;
+    font-size: 0.88rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    transition: transform 0.18s, box-shadow 0.18s, background 0.18s;
+
+    i {
+      font-size: 13px;
+    }
+  }
+
+  .search-btn {
+    background: linear-gradient(135deg, $teal, $teal-dark);
+    color: $white;
+    box-shadow: 0 4px 14px rgba(14, 165, 160, 0.3);
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(14, 165, 160, 0.38);
+    }
+  }
+
+  .clear-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: $white;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.18);
+    }
+  }
+}
+
+// ─── Results Wrapper ──────────────────────────────────────────────────────────
+.results-wrapper {
+  background: $white;
+  border-radius: 18px;
+  padding: 24px 24px 0 24px;
+  box-shadow: 0 4px 24px rgba(15, 23, 42, 0.07);
+  overflow: hidden;
+}
+
+.results-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+
+  h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: $text-dark;
+  }
+
+  .results-count {
+    font-size: 0.88rem;
+    color: $text-soft;
+    font-weight: 500;
+  }
+}
+
+// ─── Empty State ─────────────────────────────────────────────────────────────
+.empty-state {
+  text-align: center;
+  padding: 60px 24px;
+  color: $text-soft;
+
+  i {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+    display: block;
+    opacity: 0.4;
+  }
+
+  p {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+}
+
+// ─── Table ────────────────────────────────────────────────────────────────────
+.table-container {
+  overflow-x: auto;
+}
 
 .results-table {
-
   width: 100%;
-
   border-collapse: collapse;
-
   min-width: 1200px;
 
-  background: #071919;
+  // Header
+  thead tr {
+    background: linear-gradient(90deg, $navy 0%, $navy-light 100%);
+  }
+
+  th {
+    padding: 15px 16px;
+    color: $white;
+    font-size: 0.73rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    text-align: left;
+    white-space: nowrap;
+
+    &:first-child {
+      border-radius: 0;
+    }
+  }
+
+  // Body
+  td {
+    padding: 16px 16px;
+    border-bottom: 1px solid $border;
+    // color: $text-mid;
+    color: #000;
+    font-size: 0.88rem;
+    font-weight: 500;
+    // vertical-align: middle;
+    vertical-align: top;
+    line-height: 1.6;
+    background: $white;
+  }
+
+  tbody tr {
+    &:hover td {
+      background: #f8fafa;
+    }
+
+    &:last-child td {
+      border-bottom: none;
+    }
+  }
 }
 
-/* =========================================
-   TABLE HEADER
-========================================= */
-
-.results-table thead {
-
-  background:
-    linear-gradient(90deg,
-      #003535,
-      #004646);
+// Case type badge
+.case-type-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 12px;
+  border-radius: 8px;
+  background: $teal-light;
+  color: $teal-dark;
+  font-size: 0.78rem;
+  font-weight: 800;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
 }
 
-.results-table th {
+// Case number link
+// .case-link {
+//   color: $teal-dark;
+//   text-decoration: none;
+//   font-weight: 700;
 
-  padding: 16px 14px;
+//   &:hover {
+//     text-decoration: underline;
+//   }
+// }
 
-  color: #ffffff;
+// Judge name link
+// .judge-link {
+//   color: $teal;
+//   font-weight: 600;
+//   text-decoration: none;
+//   cursor: pointer;
+//   line-height: 1.5;
 
-  font-size: 0.70rem;
+//   &:hover {
+//     text-decoration: underline;
+//   }
+// }
 
-  text-transform: uppercase;
+// // Judge name link
+// .judge-link {
+//   color: $teal;
+//   font-weight: 600;
+//   text-decoration: none;
+//   cursor: pointer;
+//   line-height: 1.5;
 
-  letter-spacing: 1.2px;
+//   &:hover {
+//     text-decoration: underline;
+//   }
+// }
 
-  font-weight: 700;
 
-  border: none;
 
-  text-align: left;
-}
 
-/* =========================================
-   TABLE BODY
-========================================= */
-
-.results-table tbody tr {
-
-  border-bottom:
-    1px solid rgba(255, 255, 255, 0.04);
-
-  transition: background 0.25s ease;
-}
-
-.results-table tbody tr:nth-child(odd) {
-
-  background: #081818;
-}
-
-.results-table tbody tr:nth-child(even) {
-
-  background: #0c2323;
-}
-
-.results-table tbody tr:hover {
-
-  background: #103232 !important;
-}
-
-/* TABLE DATA */
-
-.results-table td {
-
-  padding: 16px 14px;
-
-  color: #d8ebeb;
-
-  font-size: 0.84rem;
-
-  vertical-align: top;
-
-  line-height: 1.65;
-
-  font-weight: 500;
-}
-
-/* =========================================
-   LINKS
-========================================= */
-
-.results-table a {
-
-  color: #53dede;
-
+// Case number link
+.case-link {
+  color: #000; // black
   text-decoration: none;
-
   font-weight: 600;
 
-  transition: color 0.2s ease;
+  &:hover {
+    color: #000;
+    text-decoration: underline;
+  }
 }
 
-.results-table a:hover {
+// Judge name link
+.judge-link {
+  color: #000; // black
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  line-height: 1.5;
 
-  color: #8dfdfd;
+  &:hover {
+    color: #000;
+    text-decoration: underline;
+  }
 }
 
-/* =========================================
-   EMPTY STATE
-========================================= */
+// View button
+.view-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 38px;
+  padding: 0 16px;
+  border-radius: 8px;
+  border: 1.5px solid darken($teal-light, 6%);
+  background: $teal-light;
+  color: $teal-dark;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: background 0.18s, color 0.18s, border-color 0.18s;
 
-.no-results {
+  i {
+    font-size: 13px;
+  }
 
-  padding: 46px;
-
-  text-align: center;
-
-  color: #9cb3b3;
-
-  font-size: 0.95rem;
+  &:hover {
+    background: $teal;
+    color: $white;
+    border-color: $teal;
+  }
 }
 
-/* =========================================
-   REMOVE PAGINATION
-========================================= */
+// ─── Pagination Bar ───────────────────────────────────────────────────────────
+.pagination-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+  border-top: 1px solid $border;
+  margin-top: 4px;
 
-.pagination-container {
+  .pagination-info {
+    font-size: 0.83rem;
+    color: $text-soft;
+    font-weight: 500;
+    white-space: nowrap;
+  }
 
-  display: none !important;
+  .pagination-controls {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .page-btn {
+    min-width: 36px;
+    height: 36px;
+    padding: 0 6px;
+    border-radius: 8px;
+    border: 1px solid $border;
+    background: $white;
+    color: $text-mid;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+
+    &:hover:not(:disabled) {
+      border-color: $teal;
+      color: $teal-dark;
+    }
+
+    &.active {
+      background: $teal;
+      color: $white;
+      border-color: $teal;
+    }
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: default;
+    }
+  }
+
+  .page-ellipsis {
+    padding: 0 4px;
+    color: $text-soft;
+    font-size: 0.85rem;
+  }
+
+  // .rows-per-page {
+  //   display: flex;
+  //   align-items: center;
+  //   gap: 10px;
+  //   white-space: nowrap;
+
+  //   span {
+  //     font-size: 0.83rem;
+  //     color: $text-soft;
+  //     font-weight: 500;
+  //   }
+
+  //   .select-wrapper {
+  //     width: 80px;
+  //   }
+  // }
+
+  .rows-per-page {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+
+    span {
+      font-size: 0.83rem;
+      color: $text-soft;
+      font-weight: 500;
+    }
+
+    .select-wrapper {
+      width: 80px;
+
+      select {
+        height: 38px;
+        line-height: 38px;
+        padding: 0 12px;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
 }
 
-/* =========================================
-   MOBILE
-========================================= */
+// ─── Responsive ──────────────────────────────────────────────────────────────
+@media (max-width: 1100px) {
+  .filters-row {
+    flex-wrap: wrap;
+
+    .filter-group {
+      min-width: calc(50% - 14px);
+    }
+
+    .filter-actions {
+      width: 100%;
+      justify-content: flex-end;
+    }
+  }
+}
 
 @media (max-width: 768px) {
-
-  .case-search-container {
-
+  .judicial-page {
     padding: 16px;
   }
 
-  .hero-banner {
-
-    padding: 34px 24px;
-  }
-
-  .hero-title {
-
-    font-size: 1.7rem;
-  }
-
-  .hero-description {
-
-    font-size: 0.88rem;
-  }
-
-  .search-fields,
-  .settings-controls {
-
-    grid-template-columns: 1fr;
-  }
-
-  .button-group {
-
+  .page-header {
     flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
   }
 
-  .search-btn,
-  .reset-btn {
+  .filters-row {
+    flex-direction: column;
 
-    width: 100%;
+    .filter-group,
+    .filter-actions {
+      width: 100%;
+    }
+
+    .filter-actions {
+      flex-direction: column;
+
+      .search-btn,
+      .clear-btn {
+        width: 100%;
+      }
+    }
   }
 
-  .panel-title h2,
-  .results-header h2 {
-
-    font-size: 1.35rem;
+  .pagination-bar {
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+    padding: 16px;
   }
 }

@@ -65,7 +65,7 @@
         align-items: stretch;
 
         // These elements have fixed width and determine the width of the collapsed sidebar
-        & > .sidebar-fixed-element-wrapper {
+        &>.sidebar-fixed-element-wrapper {
           min-width: var(--ds-admin-sidebar-fixed-element-width);
           flex: 1 1 auto; // Fill available space
 
@@ -76,7 +76,7 @@
           align-items: center;
         }
 
-        & > .sidebar-collapsible-element-outer-wrapper {
+        &>.sidebar-collapsible-element-outer-wrapper {
           display: flex;
           flex-wrap: wrap;
           justify-content: flex-end; // make inner wrapper slide on the left when collapsing
@@ -86,7 +86,7 @@
 
           // These elements have fixed width and slide on the left when the sidebar is collapsed
           // Their content should fill all available space
-          & > .sidebar-collapsible-element-inner-wrapper {
+          &>.sidebar-collapsible-element-inner-wrapper {
             min-width: calc(var(--ds-admin-sidebar-collapsible-element-width) - var(--ds-dark-scrollbar-width));
             height: 100%;
             padding-right: var(--ds-admin-sidebar-item-padding);
@@ -97,7 +97,9 @@
     }
 
     // Set here any style that depends on the sidebar status
-    &.collapsed, &.transitioning, &.expanded { }
+    &.collapsed,
+    &.transitioning,
+    &.expanded {}
 
   }
 
@@ -112,14 +114,14 @@
       color: white;
 
       // Set here the style of the *-menu-item nested components
-      .ds-menu-item {
-      }
+      .ds-menu-item {}
 
       a {
         color: var(--ds-admin-sidebar-link-color);
         text-decoration: none;
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
           color: var(--ds-admin-sidebar-link-hover-color);
         }
       }
@@ -127,14 +129,14 @@
 
     div#sidebar-header-container {
       background-color: var(--ds-admin-sidebar-header-bg);
+
       .sidebar-fixed-element-wrapper {
         background-color: var(--ds-admin-sidebar-header-bg);
       }
     }
 
     div#sidebar-collapse-toggle-container {
-      .sidebar-collapsible-element-inner-wrapper {
-      }
+      .sidebar-collapsible-element-inner-wrapper {}
     }
   }
 }
@@ -144,472 +146,3 @@
     --ds-dark-scrollbar-width: 20px;
   }
 }
-
-
-
-// :host {
-
-//   /* =====================================================
-//      SIDEBAR POSITION
-//   ===================================================== */
-
-//   position: fixed;
-//   left: 0;
-//   top: 0;
-//   // z-index: 999;
-//   z-index: 1200 !important;
-
-//   /* =====================================================
-//      PROFESSIONAL JUDICIAL SIDEBAR THEME
-//   ===================================================== */
-
-//   --ds-admin-sidebar-bg:
-//     linear-gradient(180deg,
-//       #0B1F33 0%,
-//       #102B45 100%);
-
-//   --ds-admin-sidebar-header-bg:
-//     #081726;
-
-//   --ds-admin-sidebar-link-color:
-//     #E7EDF5;
-
-//   --ds-admin-sidebar-link-hover-color:
-//     #FFFFFF;
-
-//   --ds-admin-sidebar-hover-bg:
-//     rgba(255, 255, 255, 0.05);
-
-//   --ds-admin-sidebar-active-bg:
-//     rgba(255, 255, 255, 0.06);
-
-//   --ds-admin-sidebar-active-border:
-//     #D4AF37;
-
-//   --ds-admin-sidebar-icon-color:
-//     rgba(255, 255, 255, 0.75);
-
-//   --ds-admin-sidebar-border:
-//     rgba(255, 255, 255, 0.05);
-
-//   /* =====================================================
-//      SIDEBAR LAYOUT
-//   ===================================================== */
-
-//   nav#admin-sidebar {
-
-//     position: fixed;
-
-//     top: 0;
-//     left: 0;
-
-
-//     width: 300px;
-//     min-width: 300px;
-
-//     height: 100vh;
-
-//     max-width:
-//       var(--ds-admin-sidebar-fixed-element-width);
-
-//     display: flex;
-//     flex-direction: column;
-//     flex-wrap: nowrap;
-
-//     background:
-//       var(--ds-admin-sidebar-bg);
-
-//     border-right:
-//       1px solid var(--ds-admin-sidebar-border);
-
-//     box-shadow:
-//       4px 0 12px rgba(0, 0, 0, 0.22);
-
-//     overflow: hidden;
-
-//     /* ===================================================
-//        SCROLLABLE MENU AREA
-//     ==================================================== */
-
-//     div#sidebar-top-level-items-container {
-
-//       flex: 1 1 auto;
-
-//       overflow-x: hidden;
-//       overflow-y: auto;
-
-//       @include dark-scrollbar;
-//     }
-
-//     /* ===================================================
-//        LOGO
-//     ==================================================== */
-
-//     img#admin-sidebar-logo {
-
-//       height:
-//         var(--ds-admin-sidebar-logo-height);
-//     }
-
-//     /* ===================================================
-//        INTERNAL STRUCTURE
-//     ==================================================== */
-
-//     ::ng-deep {
-
-//       /* ================================================
-//          FULL WIDTH CONTAINER
-//       ================================================= */
-
-//       .sidebar-full-width-container {
-
-//         width: 100%;
-
-//         padding-left: 0;
-//         padding-right: 0;
-
-//         margin-left: 0;
-//         margin-right: 0;
-//       }
-
-//       /* ================================================
-//          SIDEBAR ITEM
-//       ================================================= */
-
-//       .sidebar-item {
-
-//         padding-top:
-//           var(--ds-admin-sidebar-item-padding);
-
-//         padding-bottom:
-//           var(--ds-admin-sidebar-item-padding);
-//       }
-
-//       /* ================================================
-//          SECTION WRAPPER
-//       ================================================= */
-
-//       .sidebar-section-wrapper {
-
-//         display: flex;
-
-//         flex-direction: row;
-
-//         flex-wrap: nowrap;
-
-//         align-items: stretch;
-
-//         transition:
-//           background 0.2s ease;
-
-//         &:hover {
-
-//           background:
-//             var(--ds-admin-sidebar-hover-bg);
-//         }
-
-//         /* ACTIVE MENU */
-
-//         &.active,
-//         &.router-link-active {
-
-//           background:
-//             var(--ds-admin-sidebar-active-bg);
-
-//           border-left:
-//             3px solid var(--ds-admin-sidebar-active-border);
-//         }
-
-//         /* ============================================
-//            FIXED ICON AREA
-//         ============================================= */
-
-//         &>.sidebar-fixed-element-wrapper {
-
-//           min-width:
-//             var(--ds-admin-sidebar-fixed-element-width);
-
-//           flex: 1 1 auto;
-
-//           display: flex;
-
-//           flex-direction: row;
-
-//           justify-content: center;
-
-//           align-items: center;
-//         }
-
-//         /* ============================================
-//            COLLAPSIBLE CONTENT AREA
-//         ============================================= */
-
-//         &>.sidebar-collapsible-element-outer-wrapper {
-
-//           display: flex;
-
-//           flex-wrap: wrap;
-
-//           justify-content: flex-end;
-
-//           max-width:
-//             calc(100% - var(--ds-admin-sidebar-fixed-element-width));
-
-//           padding-left:
-//             var(--ds-dark-scrollbar-width);
-
-//           overflow-x: hidden;
-
-//           &>.sidebar-collapsible-element-inner-wrapper {
-
-//             min-width:
-//               calc(var(--ds-admin-sidebar-collapsible-element-width) - var(--ds-dark-scrollbar-width));
-
-//             height: 100%;
-
-//             padding-right:
-//               var(--ds-admin-sidebar-item-padding);
-//           }
-//         }
-//       }
-
-//       /* ================================================
-//          TEXT STYLING
-//       ================================================= */
-
-//       color: white;
-
-//       a {
-
-//         color:
-//           var(--ds-admin-sidebar-link-color);
-
-//         text-decoration: none;
-
-//         font-size: 14px;
-
-//         font-weight: 500;
-
-//         font-family:
-//           Inter,
-//           "Segoe UI",
-//           Roboto,
-//           sans-serif;
-
-//         transition:
-//           all 0.2s ease;
-
-//         &:hover,
-//         &:focus {
-
-//           color:
-//             var(--ds-admin-sidebar-link-hover-color);
-
-//           text-decoration: none;
-//         }
-//       }
-
-//       /* ================================================
-//          ICONS
-//       ================================================= */
-
-//       i,
-//       svg {
-
-//         color:
-//           var(--ds-admin-sidebar-icon-color);
-
-//         font-size: 14px;
-
-//         transition:
-//           all 0.2s ease;
-//       }
-
-//       /* ACTIVE ICONS */
-
-//       .active i,
-//       .active svg,
-//       .router-link-active i,
-//       .router-link-active svg {
-
-//         color:
-//           #F5D97A !important;
-//       }
-
-//       /* ================================================
-//          SUBMENUS
-//       ================================================= */
-
-//       .submenu,
-//       .dropdown-menu {
-
-//         background:
-//           rgba(0, 0, 0, 0.08);
-
-//         border: none;
-
-//         border-radius: 0;
-//       }
-
-//       .submenu a,
-//       .dropdown-menu a {
-
-//         font-size: 13px;
-
-//         font-weight: 400;
-
-//         opacity: 0.95;
-//       }
-
-//       /* ================================================
-//          MENU ITEM
-//       ================================================= */
-
-//       .ds-menu-item {}
-//     }
-
-//     /* ===================================================
-//        SIDEBAR HEADER
-//     ==================================================== */
-
-//     // div#sidebar-header-container {
-
-//     //   position: sticky;
-
-//     //   top: 0;
-
-//     //   z-index: 5;
-
-//     //   background:
-//     //     var(--ds-admin-sidebar-header-bg);
-
-//     //   border-bottom:
-//     //     1px solid var(--ds-admin-sidebar-border);
-
-//     //   .sidebar-fixed-element-wrapper {
-
-//     //     background:
-//     //       var(--ds-admin-sidebar-header-bg);
-//     //   }
-
-//     //   .sidebar-collapsible-element-inner-wrapper {
-
-//     //     display: flex !important;
-
-//     //     align-items: center;
-
-//     //     opacity: 1 !important;
-
-//     //     visibility: visible !important;
-//     //   }
-
-//     //   a {
-
-//     //     color: #FFFFFF !important;
-
-//     //     font-weight: 600;
-
-//     //     font-size: 15px;
-
-//     //     font-family:
-//     //       Inter,
-//     //       "Segoe UI",
-//     //       sans-serif;
-
-//     //     white-space: nowrap;
-//     //   }
-//     // }
-
-//     div#sidebar-header-container {
-
-//       position: sticky;
-
-//       top: 0;
-
-//       z-index: 100;
-
-//       min-height: 72px;
-
-//       display: flex;
-//       align-items: center;
-
-//       padding-top: 10px;
-//       padding-bottom: 10px;
-
-//       background:
-//         var(--ds-admin-sidebar-header-bg);
-
-//       border-bottom:
-//         1px solid var(--ds-admin-sidebar-border);
-
-//       .sidebar-fixed-element-wrapper {
-
-//         background:
-//           var(--ds-admin-sidebar-header-bg);
-//       }
-
-//       .sidebar-collapsible-element-inner-wrapper {
-
-//         display: flex !important;
-
-//         align-items: center;
-
-//         opacity: 1 !important;
-
-//         visibility: visible !important;
-
-//         overflow: visible !important;
-//       }
-
-//       a {
-
-//         color: #FFFFFF !important;
-
-//         font-weight: 700;
-
-//         font-size: 24px;
-
-//         line-height: 1.2;
-
-//         font-family:
-//           Inter,
-//           "Segoe UI",
-//           sans-serif;
-
-//         white-space: nowrap;
-//       }
-//     }
-
-//     /* ===================================================
-//        COLLAPSE TOGGLE
-//     ==================================================== */
-
-//     div#sidebar-collapse-toggle-container {
-
-//       border-top:
-//         1px solid var(--ds-admin-sidebar-border);
-
-//       .sidebar-collapsible-element-inner-wrapper {}
-//     }
-
-//     /* ===================================================
-//        SIDEBAR STATES
-//     ==================================================== */
-
-//     &.collapsed,
-//     &.transitioning,
-//     &.expanded {}
-//   }
-// }
-
-// /* =======================================================
-//    FIREFOX SCROLLBAR FIX
-// ======================================================= */
-
-// ::ng-deep {
-
-//   .browser-firefox-windows {
-
-//     --ds-dark-scrollbar-width: 20px;
-//   }
-// }
