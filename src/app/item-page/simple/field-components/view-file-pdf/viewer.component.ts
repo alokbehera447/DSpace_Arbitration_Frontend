@@ -489,8 +489,7 @@ export class ViewerComponent implements OnInit, OnDestroy {
     // }
 
 
-    const renderSinglePage = (pageNum: number) => {
-      // const renderSinglePage = async (pageNum: number) => {
+    const renderSinglePage = async (pageNum: number) => {      // const renderSinglePage = async (pageNum: number) => {
 
       const pageContainer = document.createElement('div');
 
@@ -530,24 +529,29 @@ export class ViewerComponent implements OnInit, OnDestroy {
 
       container.appendChild(pageContainer);
 
-      this.renderPage(pageNum, canvasWrapper);
+      // this.renderPage(pageNum, canvasWrapper);
+      await this.renderPage(pageNum, canvasWrapper);
       // await this.renderPage(pageNum, canvasWrapper);
 
     };
 
     // Render first page immediately
-    renderSinglePage(1);
+    // renderSinglePage(1);
 
-    // Render remaining pages in background
-    setTimeout(() => {
+    // // Render remaining pages in background
+    // setTimeout(() => {
 
-      for (let pageNum = 2; pageNum <= this.totalPages; pageNum++) {
+    //   for (let pageNum = 2; pageNum <= this.totalPages; pageNum++) {
 
-        renderSinglePage(pageNum);
+    //     renderSinglePage(pageNum);
 
-      }
+    //   }
 
-    }, 0);
+    // }, 0);
+
+    for (let pageNum = 1; pageNum <= this.totalPages; pageNum++) {
+      await renderSinglePage(pageNum);
+    }
 
     this.setupScrollObserver();
   }
