@@ -165,6 +165,19 @@ export class ExpandableNavbarSectionComponent extends NavbarSectionComponent imp
    * When the mouse enters the section toggler activate the menu section
    * @param $event
    */
+  // onMouseEnter($event: Event): void {
+  //   this.isMobile$.pipe(
+  //     first(),
+  //   ).subscribe((isMobile) => {
+  //     if (!isMobile && !this.active$.value && !this.mouseEntered) {
+  //       this.activateSection($event);
+  //     }
+  //     this.mouseEntered = true;
+  //   });
+  // }
+
+
+
   onMouseEnter($event: Event): void {
     this.isMobile$.pipe(
       first(),
@@ -172,7 +185,7 @@ export class ExpandableNavbarSectionComponent extends NavbarSectionComponent imp
       if (!isMobile && !this.active$.value && !this.mouseEntered) {
         this.activateSection($event);
       }
-      this.mouseEntered = true;
+      this.mouseEntered = true;  // ← this cancels any pending close timeout
     });
   }
 
@@ -180,12 +193,28 @@ export class ExpandableNavbarSectionComponent extends NavbarSectionComponent imp
    * When the mouse leaves the section toggler deactivate the menu section
    * @param $event
    */
+  // onMouseLeave($event: Event): void {
+  //   this.isMobile$.pipe(
+  //     first(),
+  //   ).subscribe((isMobile) => {
+  //     if (!isMobile && this.active$.value && this.mouseEntered) {
+  //       this.deactivateSection($event);
+  //     }
+  //     this.mouseEntered = false;
+  //   });
+  // }
+
+
   onMouseLeave($event: Event): void {
     this.isMobile$.pipe(
       first(),
     ).subscribe((isMobile) => {
       if (!isMobile && this.active$.value && this.mouseEntered) {
-        this.deactivateSection($event);
+        setTimeout(() => {
+          if (!this.mouseEntered) {
+            this.deactivateSection($event);
+          }
+        }, 200);
       }
       this.mouseEntered = false;
     });

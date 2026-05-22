@@ -1,503 +1,548 @@
-body {
-  background: #061313 !important;
-}
+// ─────────────────────────────────────────
+// VARIABLES
+// ─────────────────────────────────────────
 
-/* =========================================
-   MAIN CONTAINER
-========================================= */
+$navy: #0e2a3b;
+$navy-light: #1c4158;
+$teal: #0ea5a0;
+$teal-dark: #0c8a85;
+$teal-light: #e6f7f7;
+$text-dark: #0f172a;
+$text-mid: #334155;
+$text-soft: #64748b;
+$border: #e2e8f0;
+$bg-page: #f4f7fb;
+$white: #ffffff;
 
-.case-search-container {
+// ─────────────────────────────────────────
+// BASE
+// ─────────────────────────────────────────
 
-  max-width: 1380px;
-
-  margin: 32px auto;
-
-  padding: 24px;
-
-  font-family: "Inter", sans-serif;
-
-  color: #ffffff;
-}
-
-/* =========================================
-   HERO SECTION
-========================================= */
-
-.hero-banner {
-
-  background:
-    linear-gradient(135deg,
-      #032626,
-      #0a3b3b,
-      #114848);
-
-  border-radius: 22px;
-
-  padding: 46px 48px;
-
-  margin-bottom: 26px;
-
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.28);
-}
-
-/* HERO SUBTITLE */
-
-.hero-subtitle {
-
-  color: #d4af37;
-
-  letter-spacing: 3px;
-
-  text-transform: uppercase;
-
-  font-size: 0.74rem;
-
-  margin-bottom: 12px;
-
-  font-weight: 700;
-}
-
-/* HERO TITLE */
-
-.hero-title {
-
-  font-size: 2rem;
-
-  font-weight: 650;
-
-  color: #ffffff;
-
-  line-height: 1.2;
-
-  margin-bottom: 14px;
-
-  letter-spacing: -0.4px;
-}
-
-/* HERO DESCRIPTION */
-
-.hero-description {
-
-  color: #c7d2d2;
-
-  font-size: 0.92rem;
-
-  line-height: 1.7;
-
-  max-width: 760px;
-}
-
-/* =========================================
-   PANELS
-========================================= */
-
-.search-panel,
-.settings-panel,
-.results-panel {
-
-  background:
-    rgba(8, 28, 28, 0.96);
-
-  border:
-    1px solid rgba(0, 255, 255, 0.05);
-
-  border-radius: 20px;
-
-  padding: 26px;
-
-  margin-bottom: 22px;
-
-  box-shadow:
-    0 8px 22px rgba(0, 0, 0, 0.24);
-}
-
-/* =========================================
-   PANEL HEADINGS
-========================================= */
-
-.panel-title {
-
-  margin-bottom: 22px;
-}
-
-.panel-title h2,
-.results-header h2 {
-
-  color: #ffffff;
-
-  font-size: 1.45rem;
-
-  font-weight: 650;
-
-  letter-spacing: -0.3px;
-
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
 }
 
-/* =========================================
-   RESULTS HEADER
-========================================= */
+body {
+  background: $bg-page;
+  font-family: "Inter", sans-serif;
+  color: $text-dark;
+  -webkit-font-smoothing: antialiased;
+}
 
-.results-header {
+// ─────────────────────────────────────────
+// PAGE
+// ─────────────────────────────────────────
 
+.judicial-page {
+  padding: 28px 26px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+// ─────────────────────────────────────────
+// HEADER
+// ─────────────────────────────────────────
+
+.page-header {
   display: flex;
-
-  justify-content: space-between;
-
   align-items: center;
-
+  justify-content: space-between;
   margin-bottom: 22px;
 }
 
-/* RESULTS BADGE */
-
-.results-badge {
-
-  background:
-    linear-gradient(135deg,
-      #00a8a8,
-      #007272);
-
-  color: #ffffff;
-
-  padding: 8px 14px;
-
-  border-radius: 999px;
-
-  font-size: 0.72rem;
-
-  font-weight: 700;
-
-  letter-spacing: 0.4px;
-}
-
-/* =========================================
-   FORM GRID
-========================================= */
-
-.search-fields,
-.settings-controls {
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(auto-fit, minmax(220px, 1fr));
-
-  gap: 18px;
-
-  align-items: end;
-}
-
-/* FIELD GROUP */
-
-.field-group,
-.setting-group {
-
+.header-left {
   display: flex;
-
-  flex-direction: column;
+  align-items: center;
+  gap: 16px;
 }
 
-/* LABELS */
-
-.field-group label,
-.setting-group label {
-
-  margin-bottom: 8px;
-
-  color: #d7e5e5;
-
-  font-size: 0.76rem;
-
-  font-weight: 600;
-
-  letter-spacing: 0.5px;
-
-  text-transform: uppercase;
-}
-
-/* =========================================
-   INPUTS
-========================================= */
-
-.field-group input,
-.setting-group select {
-
-  height: 46px;
-
+.header-icon {
+  width: 58px;
+  height: 58px;
   border-radius: 14px;
 
-  border:
-    1px solid rgba(0, 255, 255, 0.08);
+  background: linear-gradient(145deg,
+      $navy,
+      $navy-light );
 
-  background: #0b2121;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  color: #ffffff;
+  flex-shrink: 0;
 
-  padding: 0 16px;
+  i {
+    color: $white;
+    font-size: 22px;
+  }
+}
+
+.header-text {
+
+  h1 {
+    font-size: 1.45rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: $text-dark;
+  }
+
+  p {
+    margin-top: 4px;
+    font-size: 0.88rem;
+    color: $text-soft;
+  }
+}
+
+.records-badge {
+  background: $teal-light;
+  border-radius: 10px;
+
+  padding: 10px 18px;
+
+  color: $teal-dark;
+
+  font-size: 0.92rem;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+// ─────────────────────────────────────────
+// FILTER PANEL
+// ─────────────────────────────────────────
+
+.filter-panel {
+  background: linear-gradient(135deg,
+      $navy 0%,
+      $navy-light 100%);
+
+  border-radius: 16px;
+
+  padding: 18px 18px;
+
+  margin-bottom: 20px;
+}
+
+.filters-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  min-width: 160px;
+}
+
+.filter-group-lg {
+  min-width: 265px;
+}
+
+.filter-group label {
+  color: rgba(255, 255, 255, 0.82);
+
+  font-size: 0.70rem;
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.04em;
+}
+
+.filter-group input,
+.filter-group select {
+
+  width: 100%;
+  height: 42px;
+
+  border-radius: 10px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  background: rgba(255, 255, 255, 0.08);
+
+  color: $white;
+
+  padding: 0 14px;
 
   font-size: 0.88rem;
 
-  font-weight: 500;
-
-  transition: all 0.25s ease;
-}
-
-/* PLACEHOLDER */
-
-.field-group input::placeholder {
-
-  color: #91a8a8;
-
-  font-size: 0.84rem;
-}
-
-/* FOCUS */
-
-.field-group input:focus,
-.setting-group select:focus {
-
   outline: none;
 
-  border-color: #18c5c5;
-
-  box-shadow:
-    0 0 0 3px rgba(24, 197, 197, 0.14);
+  transition: 0.2s ease;
 }
 
-/* =========================================
-   BUTTONS
-========================================= */
+.filter-group input::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
 
-.button-group {
+// dropdown visible
+.filter-group select option {
+  background: $navy-light;
+  color: $white;
+}
 
+// focus
+.filter-group input:focus,
+.filter-group select:focus {
+  border-color: $teal;
+  box-shadow: 0 0 0 3px rgba(14, 165, 160, 0.15);
+}
+
+// ─────────────────────────────────────────
+// BUTTONS
+// ─────────────────────────────────────────
+
+.filter-actions {
   display: flex;
-
+  align-items: flex-end;
   gap: 10px;
 }
 
 .search-btn,
-.reset-btn {
+.clear-btn {
 
-  height: 46px;
+  height: 42px;
+
+  padding: 0 18px;
 
   border: none;
-
-  border-radius: 14px;
-
-  padding: 0 22px;
+  border-radius: 10px;
 
   font-size: 0.84rem;
-
   font-weight: 700;
 
-  letter-spacing: 0.3px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
 
   cursor: pointer;
 
-  transition: all 0.25s ease;
+  white-space: nowrap;
 }
-
-/* SEARCH BUTTON */
 
 .search-btn {
 
-  background:
-    linear-gradient(135deg,
-      #00a8a8,
-      #007272);
+  background: linear-gradient(135deg,
+      $teal,
+      $teal-dark );
 
-  color: #ffffff;
+  color: $white;
 }
 
-.search-btn:hover {
+.clear-btn {
 
-  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.14);
 
-  box-shadow:
-    0 8px 18px rgba(0, 180, 180, 0.22);
+  color: $white;
 }
 
-/* RESET BUTTON */
+// ─────────────────────────────────────────
+// RESULTS WRAPPER
+// ─────────────────────────────────────────
 
-.reset-btn {
+.results-wrapper {
+  background: $white;
 
-  background:
-    linear-gradient(135deg,
-      #caa52e,
-      #9f7b10);
+  border-radius: 18px;
 
-  color: #081818;
+  padding: 22px;
+
+  box-shadow: 0 4px 24px rgba(15, 23, 42, 0.06);
 }
 
-.reset-btn:hover {
+.results-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-  transform: translateY(-2px);
+  margin-bottom: 18px;
 }
 
-/* =========================================
-   TABLE WRAPPER
-========================================= */
+.results-header h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: $text-dark;
+}
 
-.table-wrapper {
+.results-count {
+  font-size: 0.84rem;
+  color: $text-soft;
+}
 
+// ─────────────────────────────────────────
+// TABLE
+// ─────────────────────────────────────────
+
+.table-container {
   overflow-x: auto;
-
-  border-radius: 16px;
-
-  border:
-    1px solid rgba(255, 255, 255, 0.04);
 }
-
-/* =========================================
-   TABLE
-========================================= */
 
 .results-table {
-
   width: 100%;
-
   border-collapse: collapse;
-
   min-width: 1200px;
-
-  background: #071919;
 }
 
-/* TABLE HEADER */
+// header
+.results-table thead tr {
 
-.results-table thead {
-
-  background:
-    linear-gradient(90deg,
-      #003535,
-      #004646);
+  background: linear-gradient(90deg,
+      $navy 0%,
+      $navy-light 100%);
 }
 
 .results-table th {
 
-  padding: 16px 14px;
+  padding: 14px 16px;
 
-  color: #ffffff;
+  color: $white;
 
   font-size: 0.70rem;
+  font-weight: 700;
 
   text-transform: uppercase;
 
-  letter-spacing: 1.2px;
-
-  font-weight: 700;
+  letter-spacing: 0.05em;
 
   text-align: left;
+
+  white-space: nowrap;
 }
 
-/* TABLE ROWS */
-
-.results-table tbody tr {
-
-  border-bottom:
-    1px solid rgba(255, 255, 255, 0.04);
-
-  transition: background 0.25s ease;
-}
-
-.results-table tbody tr:nth-child(odd) {
-
-  background: #081818;
-}
-
-.results-table tbody tr:nth-child(even) {
-
-  background: #0c2323;
-}
-
-.results-table tbody tr:hover {
-
-  background: #103232 !important;
-}
-
-/* TABLE DATA */
-
+// body
 .results-table td {
 
-  padding: 16px 14px;
+  padding: 16px;
 
-  color: #d8ebeb;
+  border-bottom: 1px solid $border;
 
-  font-size: 0.84rem;
+  background: $white;
+
+  color: #000;
+
+  font-size: 0.86rem;
+  font-weight: 500;
 
   vertical-align: top;
 
-  line-height: 1.65;
-
-  font-weight: 500;
+  line-height: 1.55;
 }
 
-/* LINKS */
+.results-table tbody tr:hover td {
+  background: #f8fafa;
+}
 
-.results-table a {
+// ─────────────────────────────────────────
+// BADGES
+// ─────────────────────────────────────────
 
-  color: #53dede;
+.case-type-badge {
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 5px 12px;
+
+  border-radius: 8px;
+
+  background: $teal-light;
+
+  color: $teal-dark;
+
+  font-size: 0.76rem;
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+// ─────────────────────────────────────────
+// LINKS
+// ─────────────────────────────────────────
+
+.case-link,
+.judge-link {
+
+  color: #000;
 
   text-decoration: none;
 
   font-weight: 600;
 
-  transition: color 0.2s ease;
+  line-height: 1.5;
 }
 
-.results-table a:hover {
+// ─────────────────────────────────────────
+// VIEW BUTTON
+// ─────────────────────────────────────────
 
-  color: #8dfdfd;
+.view-btn {
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  height: 36px;
+
+  padding: 0 14px;
+
+  border-radius: 8px;
+
+  background: $teal-light;
+
+  border: 1px solid darken($teal-light, 4%);
+
+  color: $teal-dark;
+
+  text-decoration: none;
+
+  font-size: 0.80rem;
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  transition: 0.18s ease;
+
+  i {
+    font-size: 12px;
+  }
 }
 
-/* =========================================
-   MOBILE
-========================================= */
+.view-btn:hover {
+  background: $teal;
+  color: $white;
+}
+
+// ─────────────────────────────────────────
+// PAGINATION
+// ─────────────────────────────────────────
+
+.pagination-bar {
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-top: 18px;
+
+  border-top: 1px solid $border;
+
+  margin-top: 4px;
+}
+
+.pagination-info {
+
+  font-size: 0.82rem;
+  color: $text-soft;
+}
+
+.pagination-controls {
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.page-btn {
+
+  width: 36px;
+  height: 36px;
+
+  border-radius: 8px;
+
+  border: 1px solid $border;
+
+  background: $white;
+
+  font-size: 0.84rem;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.page-btn.active {
+
+  background: $teal;
+
+  border-color: $teal;
+
+  color: $white;
+}
+
+.page-ellipsis {
+  color: $text-soft;
+}
+
+// rows
+.rows-per-page {
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rows-per-page span {
+
+  color: $text-soft;
+
+  font-size: 0.83rem;
+}
+
+.rows-per-page select {
+
+  height: 36px;
+
+  padding: 0 12px;
+
+  border-radius: 8px;
+
+  border: 1px solid $border;
+
+  background: $white;
+
+  font-size: 0.84rem;
+
+  outline: none;
+}
+
+// ─────────────────────────────────────────
+// RESPONSIVE
+// ─────────────────────────────────────────
+
+@media (max-width: 992px) {
+
+  .filters-row {
+    flex-wrap: wrap;
+  }
+
+  .filter-group-lg {
+    min-width: 100%;
+  }
+}
 
 @media (max-width: 768px) {
 
-  .case-search-container {
-
+  .judicial-page {
     padding: 16px;
   }
 
-  .hero-banner {
-
-    padding: 34px 24px;
-  }
-
-  .hero-title {
-
-    font-size: 1.7rem;
-  }
-
-  .hero-description {
-
-    font-size: 0.88rem;
-  }
-
-  .search-fields,
-  .settings-controls {
-
-    grid-template-columns: 1fr;
-  }
-
-  .button-group {
-
+  .page-header {
     flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
   }
 
-  .search-btn,
-  .reset-btn {
-
-    width: 100%;
-  }
-
-  .panel-title h2,
-  .results-header h2 {
-
-    font-size: 1.3rem;
+  .pagination-bar {
+    flex-direction: column;
+    gap: 14px;
   }
 }

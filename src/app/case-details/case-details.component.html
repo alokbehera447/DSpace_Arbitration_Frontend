@@ -1,14 +1,14 @@
 <!-- =========================================
-     LOADER
+     LOADING
 ========================================= -->
 
-<div *ngIf="loading" class="loading-state">
+<!-- <div *ngIf="loading" class="loading-state">
 
-  <div class="spinner-border text-info"></div>
+  <div class="spinner-border text-primary"></div>
 
   <p>Loading judicial records...</p>
 
-</div>
+</div> -->
 
 <!-- =========================================
      ERROR
@@ -18,7 +18,7 @@
 
   <h4>Failed to load case details</h4>
 
-  <button class="btn reload-btn" (click)="reloadData()">
+  <button class="reload-btn" (click)="reloadData()">
     Reload
   </button>
 
@@ -28,120 +28,187 @@
      MAIN PAGE
 ========================================= -->
 
-<div *ngIf="!loading && !loadError" class="judicial-case-page">
+<!-- <div *ngIf="!loading && !loadError" class="case-details-page"> -->
+<div *ngIf="loading" class="loading-state">
 
-  <!-- =====================================
+  <div class="spinner-border text-primary"></div>
+
+  <p>Loading case details...</p>
+
+</div>
+
+<div *ngIf="!loading && !loadError" class="case-details-page"> <!-- =====================================
        HERO SECTION
   ===================================== -->
 
-  <div class="case-hero">
+  <!-- =====================================
+     HERO SECTION
+===================================== -->
 
-    <div class="hero-label">
-      ORISSA HIGH COURT DIGITAL ARCHIVE
-    </div>
+  <section class="case-banner">
 
-    <div class="hero-top">
+    <!-- CASE TYPE -->
 
-      <div>
+    <div class="banner-left">
 
-        <h1 class="case-title">
-          {{ getMetadataValue('dc.casetype') || 'Judicial Record' }}
-        </h1>
+      <div class="case-icon">
 
-        <div class="case-subtitle">
-          Judicial Records & Archived Proceedings
-        </div>
+        <i class="fas fa-balance-scale"></i>
 
       </div>
 
-      <button class="edit-btn" (click)="navigateToEdit()">
-        <i class="fas fa-edit"></i>
-        Edit Metadata
-      </button>
+      <div class="stat-box">
 
-    </div>
+        <span>CASE TYPE</span>
 
-    <!-- SUMMARY GRID -->
+        <h3>
 
-    <div class="summary-grid">
+          {{ getMetadataValue('dc.casetype') || '-' }}
 
-      <div class="summary-card" *ngFor="let key of visibleKeys | slice:0:4">
-
-        <div class="summary-label">
-          {{ customMetadataLabels[key] || key }}
-        </div>
-
-        <div class="summary-value">
-          {{ getMetadataValue(key) || '-' }}
-        </div>
+        </h3>
 
       </div>
 
     </div>
 
-  </div>
+    <!-- CASE NUMBER -->
+
+    <div class="stat-box">
+
+      <span>CASE NUMBER</span>
+
+      <h3>
+
+        {{ getMetadataValue('dc.title') || '-' }}
+
+      </h3>
+
+    </div>
+
+    <!-- CASE YEAR -->
+
+    <div class="stat-box">
+
+      <span>CASE YEAR</span>
+
+      <h3>
+
+        {{ getMetadataValue('dc.caseyear') || '-' }}
+
+      </h3>
+
+    </div>
+
+    <!-- CINO NUMBER -->
+
+    <div class="stat-box">
+
+      <span>CINO NUMBER</span>
+
+      <h3>
+
+        {{ getMetadataValue('dc.cino') || '-' }}
+
+      </h3>
+
+    </div>
+
+    <!-- EDIT BUTTON -->
+
+    <button class="edit-btn" (click)="navigateToEdit()">
+
+      <i class="fas fa-edit"></i>
+
+      Edit Metadata
+
+    </button>
+
+  </section>
 
   <!-- =====================================
-       CONTENT GRID
+       MAIN CONTENT
   ===================================== -->
 
-  <div class="content-grid">
+  <div class="details-layout">
 
     <!-- =====================================
-         LEFT : METADATA
+         LEFT PANEL
     ===================================== -->
 
-    <div class="metadata-panel">
+    <div class="metadata-section">
 
-      <div class="panel-card">
+      <!-- TITLE -->
 
-        <div class="panel-title">
-          Case Metadata
-        </div>
+      <div class="section-title">
 
-        <!-- MAIN METADATA -->
+        <i class="fas fa-file-alt"></i>
 
-        <div class="metadata-grid">
+        <span>Case Metadata</span>
 
-          <div class="metadata-card" *ngFor="let key of visibleKeys">
+      </div>
 
-            <div class="metadata-label">
-              {{ customMetadataLabels[key] || key }}
-            </div>
+      <!-- METADATA LIST -->
 
-            <div class="metadata-value">
-              {{ getMetadataValue(key) || '-' }}
-            </div>
+      <div class="meta-list">
+
+        <div class="meta-row" *ngFor="let key of visibleKeys">
+
+          <div class="meta-label">
+
+            {{ customMetadataLabels[key] || key }}
+
+          </div>
+
+          <div class="meta-separator">:</div>
+
+          <div class="meta-value">
+
+            {{ getMetadataValue(key) || '-' }}
 
           </div>
 
         </div>
 
-        <!-- EXPAND BUTTON -->
+      </div>
 
-        <div class="expand-wrapper">
+      <!-- EXPAND -->
 
-          <button class="expand-btn" (click)="showMore = !showMore">
+      <div class="expand-wrapper">
 
-            {{ showMore ? 'Collapse Metadata' : 'Expand Metadata' }}
+        <button class="expand-btn" (click)="showMore = !showMore">
 
-          </button>
+          {{ showMore
+          ? 'Collapse Metadata'
+          : 'Expand Metadata'
+          }}
 
-        </div>
+          <i class="fas" [ngClass]="showMore
+            ? 'fa-chevron-up'
+            : 'fa-chevron-down'">
 
-        <!-- EXTRA METADATA -->
+          </i>
 
-        <div *ngIf="showMore" class="metadata-grid extra-grid">
+        </button>
 
-          <div class="metadata-card" *ngFor="let meta of extraMetadata">
+      </div>
 
-            <div class="metadata-label">
-              {{ meta.label }}
-            </div>
+      <!-- EXTRA METADATA -->
 
-            <div class="metadata-value">
-              {{ meta.value || '-' }}
-            </div>
+      <div *ngIf="showMore" class="extra-metadata">
+
+        <div class="meta-row" *ngFor="let meta of extraMetadata">
+
+          <div class="meta-label">
+
+            {{ meta.label }}
+
+          </div>
+
+          <div class="meta-separator">:</div>
+
+          <div class="meta-value">
+
+            {{ meta.value || '-' }}
 
           </div>
 
@@ -152,61 +219,126 @@
     </div>
 
     <!-- =====================================
-         RIGHT : DOCUMENTS
+         RIGHT PANEL
     ===================================== -->
 
-    <div class="document-panel">
+    <div class="documents-section">
 
-      <div class="panel-card sticky-panel">
+      <div class="sticky-panel">
 
-        <div class="panel-title">
-          Judicial Documents
+        <!-- TITLE -->
+
+        <div class="section-title">
+
+          <i class="fas fa-folder-open"></i>
+
+          <span>Judicial Documents</span>
+
         </div>
 
-        <!-- CHECKING -->
+        <!-- PERMISSION CHECK -->
 
         <div *ngIf="checkingPermissions" class="permissions-loading">
 
-          <div class="spinner-border spinner-border-sm text-info"></div>
+          <div class="spinner-border spinner-border-sm text-primary"></div>
 
           <span>Checking permissions...</span>
 
         </div>
 
-        <!-- FILES -->
+        <!-- DOCUMENT TABLE -->
 
-        <div *ngFor="let file of paginatedAttachments()" class="file-card">
+        <div class="table-wrapper" *ngIf="filteredAttachments.length > 0">
 
-          <div class="file-info">
+          <table class="documents-table">
 
-            <div class="file-name">
-              {{ file.name }}
-            </div>
+            <thead>
 
-            <div class="file-meta">
+              <tr>
 
-              {{ file.sizeBytes
-              ? (file.sizeBytes / 1024 | number:'1.0-2') + ' KB'
-              : 'Unknown Size'
-              }}
+                <th>S.NO</th>
 
-              • {{ file.format }}
+                <th>FILE NAME</th>
 
-            </div>
+                <th>FILE SIZE</th>
 
-          </div>
+                <th>ACTION</th>
 
-          <button class="view-btn" (click)="viewFile(file)">
+              </tr>
 
-            View File
+            </thead>
 
-          </button>
+            <tbody>
+
+              <tr *ngFor="let file of paginatedAttachments(); let i=index">
+
+                <!-- SERIAL -->
+
+                <td>
+
+                  {{ i + 1 }}
+
+                </td>
+
+                <!-- FILE -->
+
+                <td>
+
+                  <div class="file-cell">
+
+                    <div class="pdf-icon">
+
+                      PDF
+
+                    </div>
+
+                    <span class="file-name">
+
+                      {{ file.name }}
+
+                    </span>
+
+                  </div>
+
+                </td>
+
+                <!-- SIZE -->
+
+                <td>
+
+                  {{ file.sizeBytes
+                  ? (file.sizeBytes / 1024
+                  | number:'1.0-2') + ' KB'
+                  : 'Unknown'
+                  }}
+
+                </td>
+
+                <!-- ACTION -->
+
+                <td>
+
+                  <button class="view-btn" (click)="viewFile(file)">
+
+                    <i class="fas fa-eye"></i>
+
+                    View File
+
+                  </button>
+
+                </td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
 
         </div>
 
         <!-- PAGINATION -->
 
-        <div class="pagination-bar" *ngIf="filteredAttachments.length > 0">
+        <div class="pagination-bar" *ngIf="filteredAttachments.length > 7">
 
           <button class="pagination-btn" [disabled]="currentPage === 1" (click)="prevPage()">
 
@@ -215,7 +347,11 @@
           </button>
 
           <span>
-            Page {{ currentPage }} of {{ totalPages }}
+
+            Page {{ currentPage }}
+            of
+            {{ totalPages }}
+
           </span>
 
           <button class="pagination-btn" [disabled]="currentPage === totalPages" (click)="nextPage()">
@@ -226,9 +362,16 @@
 
         </div>
 
-        <!-- NO FILES MESSAGE -->
-        <div *ngIf="filteredAttachments.length === 0 && !checkingPermissions" class="no-files-message"> No accessible
-          files available for this case. </div>
+        <!-- EMPTY -->
+
+        <!-- <div *ngIf="filteredAttachments.length === 0 && !checkingPermissions" class="no-files-message"> -->
+        <div *ngIf="!loading &&
+            filteredAttachments.length === 0 &&
+            !checkingPermissions" class="no-files-message">
+
+          No accessible files available for this case.
+
+        </div>
 
       </div>
 

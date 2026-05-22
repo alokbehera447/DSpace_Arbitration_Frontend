@@ -1,3 +1,7 @@
+
+
+
+
 import { Component, OnInit } from '@angular/core';
 
 import { BehaviorSubject } from 'rxjs';
@@ -16,11 +20,19 @@ import { FacetsService } from '../core/serachpage/casetype.service';
 
 export class SearchPageComponent implements OnInit {
 
+  // =========================================
+  // OBSERVABLE DATA
+  // =========================================
+
   private caseListSubject =
     new BehaviorSubject<any[]>([]);
 
   caseList$ =
     this.caseListSubject.asObservable();
+
+  // =========================================
+  // SEARCH FILTERS
+  // =========================================
 
   caseNumber: string = '';
 
@@ -28,15 +40,25 @@ export class SearchPageComponent implements OnInit {
 
   caseYear: string = '';
 
+  // =========================================
+  // SORTING
+  // =========================================
+
   sortBy: string = 'dc.title';
 
   sortOrder: string = 'ASC';
 
-  resultsPerPage: number = 5;
+  // =========================================
+  // RESULTS
+  // =========================================
+
+  resultsPerPage: number = 10;
 
   caseTypeOptions: string[] = [];
 
+  // =========================================
   // PAGINATION
+  // =========================================
 
   currentPage: number = 0;
 
@@ -44,7 +66,15 @@ export class SearchPageComponent implements OnInit {
 
   totalElements: number = 0;
 
+  // =========================================
+  // LOADING
+  // =========================================
+
   loading: boolean = false;
+
+  // =========================================
+  // CONSTRUCTOR
+  // =========================================
 
   constructor(
 
@@ -56,7 +86,11 @@ export class SearchPageComponent implements OnInit {
 
   ) { }
 
-  ngOnInit() {
+  // =========================================
+  // INIT
+  // =========================================
+
+  ngOnInit(): void {
 
     this.fetchCases();
 
@@ -68,9 +102,22 @@ export class SearchPageComponent implements OnInit {
   // FETCH CASES
   // =========================================
 
-  fetchCases() {
+  fetchCases(): void {
 
     this.loading = true;
+
+    console.log(
+      '🔍 Fetching Cases With Params:',
+      {
+        caseNumber: this.caseNumber,
+        caseType: this.caseType,
+        caseYear: this.caseYear,
+        sortBy: this.sortBy,
+        sortOrder: this.sortOrder,
+        resultsPerPage: this.resultsPerPage,
+        currentPage: this.currentPage
+      }
+    );
 
     this.searchPageService.getSearchResults(
 
@@ -93,17 +140,40 @@ export class SearchPageComponent implements OnInit {
       (response) => {
 
         console.log(
-          '🔹 API Response:',
+          '✅ API Response:',
           response
         );
 
+        // =====================================
         // PAGINATION DATA
+        // =====================================
+
+        // this.totalPages =
+        //   response?.page?.totalPages || 0;
+
+        // this.totalElements =
+        //   response?.page?.totalElements || 0;
+
 
         this.totalPages =
-          response?.page?.totalPages || 0;
+          response?._embedded?.searchResult?.page?.totalPages || 0;
 
         this.totalElements =
-          response?.page?.totalElements || 0;
+          response?._embedded?.searchResult?.page?.totalElements || 0;
+
+        console.log(
+          '📄 Total Pages:',
+          this.totalPages
+        );
+
+        console.log(
+          '📊 Total Elements:',
+          this.totalElements
+        );
+
+        // =====================================
+        // LOAD TABLE DATA
+        // =====================================
 
         this.loadCases(response);
 
@@ -114,9 +184,15 @@ export class SearchPageComponent implements OnInit {
       (error) => {
 
         console.error(
-          '❌ Error fetching cases:',
+          '❌ Error Fetching Cases:',
           error
         );
+
+        this.caseListSubject.next([]);
+
+        this.totalPages = 0;
+
+        this.totalElements = 0;
 
         this.loading = false;
 
@@ -130,17 +206,23 @@ export class SearchPageComponent implements OnInit {
   // LOAD CASES
   // =========================================
 
-  loadCases(response: any) {
+  loadCases(response: any): void {
 
     const objects =
-      response?._embedded?.searchResult?._embedded?.objects || [];
+
+      response?._embedded
+        ?.searchResult
+        ?._embedded
+        ?.objects || [];
 
     const caseList = objects
 
-      .map(obj => {
+      .map((obj: any) => {
 
         const indexableObject =
-          obj?._embedded?.indexableObject;
+
+          obj?._embedded
+            ?.indexableObject;
 
         return {
 
@@ -154,11 +236,12 @@ export class SearchPageComponent implements OnInit {
 
       })
 
-      .filter(item =>
+      .filter((item: any) =>
 
         item.uuid &&
 
-        item.metadata?.['dc.casetype']?.[0]?.value
+        item.metadata?.['dc.casetype']
+          ?.[0]?.value
 
       );
 
@@ -172,10 +255,10 @@ export class SearchPageComponent implements OnInit {
   }
 
   // =========================================
-  // LOAD CASE TYPES
+  // LOAD CASE TYPE OPTIONS
   // =========================================
 
-  loadCaseTypeOptions() {
+  loadCaseTypeOptions(): void {
 
     this.facetsService.getCaseTypeFacets()
 
@@ -187,16 +270,13 @@ export class SearchPageComponent implements OnInit {
 
             response?._embedded?.values?.map(
 
-              val => val.label
+              (val: any) => val.label
 
             ) || [];
 
           console.log(
-
-            '📌 Loaded Case Type Options:',
-
+            '📌 Loaded Case Types:',
             this.caseTypeOptions
-
           );
 
         },
@@ -204,11 +284,8 @@ export class SearchPageComponent implements OnInit {
         (error) => {
 
           console.error(
-
-            '❌ Failed to load case type facets:',
-
+            '❌ Failed Loading Case Types:',
             error
-
           );
 
         }
@@ -221,7 +298,19 @@ export class SearchPageComponent implements OnInit {
   // SEARCH
   // =========================================
 
-  searchCases() {
+  searchCases(): void {
+
+    this.currentPage = 0;
+
+    this.fetchCases();
+
+  }
+
+  // =========================================
+  // SORT CHANGE
+  // =========================================
+
+  onSortChange(): void {
 
     this.currentPage = 0;
 
@@ -233,7 +322,7 @@ export class SearchPageComponent implements OnInit {
   // RESET
   // =========================================
 
-  resetForm() {
+  resetForm(): void {
 
     this.caseNumber = '';
 
@@ -245,7 +334,7 @@ export class SearchPageComponent implements OnInit {
 
     this.sortOrder = 'ASC';
 
-    this.resultsPerPage = 5;
+    this.resultsPerPage = 10;
 
     this.currentPage = 0;
 
@@ -253,15 +342,85 @@ export class SearchPageComponent implements OnInit {
 
   }
 
+
+  // =========================================  ← ADD FROM HERE
+  // MIN HELPER
+  // =========================================
+
+  min(a: number, b: number): number {
+    return Math.min(a, b);
+  }
+
+  // =========================================
+  // GO TO PAGE  ← NEW
+  // =========================================
+
+  goToPage(page: number): void {
+
+    if (page < 0 || page >= this.totalPages) {
+      return;
+    }
+
+    this.currentPage = page;
+
+    this.fetchCases();
+
+  }
+
+  // =========================================
+  // VISIBLE PAGES GETTER  ← NEW
+  // Returns an array like [1, 2, 3, '...', 125]
+  // =========================================
+
+  get visiblePages(): (number | string)[] {
+
+    const total = this.totalPages;
+    const current = this.currentPage + 1; // 1-based for display
+    const pages: (number | string)[] = [];
+
+    if (total <= 7) {
+      // Show all pages if total is small
+      for (let i = 1; i <= total; i++) {
+        pages.push(i);
+      }
+      return pages;
+    }
+
+    // Always show first page
+    pages.push(1);
+
+    if (current > 4) {
+      pages.push('...');
+    }
+
+    // Pages around current
+    const rangeStart = Math.max(2, current - 1);
+    const rangeEnd = Math.min(total - 1, current + 1);
+
+    for (let i = rangeStart; i <= rangeEnd; i++) {
+      pages.push(i);
+    }
+
+    if (current < total - 3) {
+      pages.push('...');
+    }
+
+    // Always show last page
+    pages.push(total);
+
+    return pages;
+
+  }
+
   // =========================================
   // NEXT PAGE
   // =========================================
 
-  nextPage() {
+  nextPage(): void {
 
     if (
-      this.currentPage + 1
-      < this.totalPages
+      this.currentPage
+      < this.totalPages - 1
     ) {
 
       this.currentPage++;
@@ -276,7 +435,7 @@ export class SearchPageComponent implements OnInit {
   // PREVIOUS PAGE
   // =========================================
 
-  previousPage() {
+  previousPage(): void {
 
     if (this.currentPage > 0) {
 
@@ -292,7 +451,7 @@ export class SearchPageComponent implements OnInit {
   // RESULTS PER PAGE
   // =========================================
 
-  onResultsPerPageChange() {
+  onResultsPerPageChange(): void {
 
     this.currentPage = 0;
 
