@@ -33,11 +33,12 @@
 
   .ds-menu-item-wrapper {
     position: relative;
+    padding-bottom: 8px;
   }
 
-  .ds-menu-item-wrapper:hover .custom-dropdown-menu {
-    display: block !important;
-  }
+  // .ds-menu-item-wrapper:hover .custom-dropdown-menu {
+  //   display: block !important;
+  // }
 
   a.custom-menu-toggler {
     padding: 6px 12px;
@@ -78,7 +79,10 @@
   // DROPDOWN PANEL
   .custom-dropdown-menu {
     position: absolute !important;
-    top: calc(100% + 6px) !important;
+
+    display: block !important;
+
+    top: 100% !important;
     left: 50% !important;
     transform: translateX(-40%) !important;
     min-width: 272px !important;
