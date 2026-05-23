@@ -25,6 +25,17 @@ import { MenuSection } from '../../shared/menu/menu-section.model';
 import { HoverOutsideDirective } from '../../shared/utils/hover-outside.directive';
 import { NavbarSectionComponent } from '../navbar-section/navbar-section.component';
 
+import { Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
+
+
+
+
+
+
+
+
+
 /**
  * Represents an expandable section in the navbar
  */
@@ -96,14 +107,34 @@ export class ExpandableNavbarSectionComponent extends NavbarSectionComponent imp
     });
   }
 
+  // constructor(
+  //   @Inject('sectionDataProvider') public section: MenuSection,
+  //   protected menuService: MenuService,
+  //   protected injector: Injector,
+  //   protected windowService: HostWindowService,
+  // ) {
+  //   super(section, menuService, injector);
+  //   this.isMobile$ = this.windowService.isMobile();
+  // }
+
+
+
   constructor(
     @Inject('sectionDataProvider') public section: MenuSection,
     protected menuService: MenuService,
     protected injector: Injector,
     protected windowService: HostWindowService,
+    protected router: Router,
   ) {
     super(section, menuService, injector);
+
     this.isMobile$ = this.windowService.isMobile();
+
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        this.deactivateSection(null, false);
+      });
   }
 
   ngOnInit() {
