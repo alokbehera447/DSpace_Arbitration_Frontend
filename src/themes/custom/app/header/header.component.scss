@@ -7,12 +7,17 @@
    HOST
 ========================================================= */
 
+// :host {
+//     display: block;
+//     position: sticky;
+//     top: 0;
+//     z-index: 1000;
+//     // z-index: 100;
+//     width: 100%;
+// }
+
 :host {
     display: block;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    // z-index: 100;
     width: 100%;
 }
 
@@ -20,13 +25,19 @@
    MAIN HEADER
 ========================================================= */
 
+// .custom-header {
+//     width: 100%;
+//     position: sticky;
+//     top: 0;
+//     z-index: 1000;
+//     // z-index: 100;
+
+// }
+
+
 .custom-header {
     width: 100%;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    // z-index: 100;
-
+    position: relative;
 }
 
 // .custom-header {
