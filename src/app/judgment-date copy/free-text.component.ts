@@ -26,7 +26,7 @@ export class FreeTextComponent implements OnInit {
 
   constructor(
     private searchPageService: FreeTextService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.freeTextQuery = '';
