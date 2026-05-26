@@ -55,6 +55,9 @@ import { AdminPannelComponent } from "./admin-pannel/admin-pannel.component"
 // import { SearchByCaseComponent } from './searchN/search-by-case.component';
 import { VideoSearchComponent } from "./video-search/video-search.component";
 
+
+// import { AuditTrailReportComponent } from "./mis-reports/audit-trail-report/audit-trail-report.component";
+
 export const APP_ROUTES: Route[] = [
   { path: INTERNAL_SERVER_ERROR, component: ThemedPageInternalServerErrorComponent },
   { path: ERROR_PAGE, component: ThemedPageErrorComponent },
@@ -391,6 +394,22 @@ export const APP_ROUTES: Route[] = [
           import("./real-time-monitoring/real-time-monitoring.module")
             .then((m) => m.RealTimeMonitoringModule),
         canActivate: [authenticatedGuard, endUserAgreementCurrentUserGuard],
+      },
+
+
+      // {
+      //   path: 'audit-trail-report',
+      //   component: AuditTrailReportComponent,
+      //   canActivate: [authenticatedGuard, endUserAgreementCurrentUserGuard]
+      // },
+
+
+      {
+        path: 'batch-import-report',
+        loadChildren: () =>
+          import('./mis-reports/batch-import-report/batch-import-report.module')
+            .then((m) => m.BatchImportReportModule),
+        canActivate: [authenticatedGuard, endUserAgreementCurrentUserGuard]
       },
 
 

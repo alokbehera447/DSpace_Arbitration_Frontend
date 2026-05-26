@@ -57,7 +57,7 @@ import { MenuState } from './shared/menu/menu-state.model';
 @Injectable({
   providedIn: 'root',
 })
-export class MenuResolverService  {
+export class MenuResolverService {
   private userRole$ = this.authService.getAuthenticatedUserFromStore().pipe(
     map((user) => user?.role),
   );
@@ -433,6 +433,47 @@ export class MenuResolverService  {
           } as LinkMenuItemModel,
           icon: 'heartbeat',
           index: 11,
+        },
+
+
+
+
+        {
+          id: 'mis_reports',
+          active: false,
+          visible: isSiteAdmin,
+          model: {
+            type: MenuItemType.TEXT,
+            text: 'MIS Reports',
+          } as TextMenuItemModel,
+          icon: 'chart-bar',
+          index: 13,
+        },
+
+        // {
+        //   id: 'audit_trail_report',
+        //   parentID: 'mis_reports',
+        //   active: false,
+        //   visible: isSiteAdmin,
+        //   model: {
+        //     type: MenuItemType.LINK,
+        //     text: 'AuditTrail Report',
+        //     link: '/audit-trail-report',
+        //   } as LinkMenuItemModel,
+        // },
+
+
+
+        {
+          id: 'batch_import_report',
+          parentID: 'mis_reports',
+          active: false,
+          visible: isSiteAdmin,
+          model: {
+            type: MenuItemType.LINK,
+            text: 'Batch Import Report',
+            link: '/batch-import-report',
+          } as LinkMenuItemModel,
         },
         /* Notifications */
         {

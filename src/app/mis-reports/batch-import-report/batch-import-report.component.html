@@ -1,0 +1,133 @@
+<div class="batch-import-page">
+
+    <!-- ===================================================== -->
+    <!-- HEADER -->
+    <!-- ===================================================== -->
+
+    <div class="report-header">
+
+        <div class="header-left">
+
+            <div class="header-icon">
+                📄
+            </div>
+
+            <div class="header-content">
+
+                <h2>Batch Import Report</h2>
+
+                <p>
+                    Generate and export batch import reports for collections within a selected date range.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ===================================================== -->
+    <!-- FILTER PANEL -->
+    <!-- ===================================================== -->
+
+    <div class="filter-panel">
+
+        <div class="filters-row">
+
+            <!-- COLLECTION -->
+
+            <div class="filter-group collection-group">
+
+                <label for="collectionId">
+                    Collection
+                </label>
+
+                <select id="collectionId" name="collectionId" [(ngModel)]="selectedCollectionId">
+
+                    <!-- DEFAULT -->
+
+                    <option value="ALL">
+                        Select All
+                    </option>
+
+                    <!-- COLLECTIONS -->
+
+                    <option *ngFor="let collection of collections" [value]="collection.id">
+                        {{ collection.name }}
+                    </option>
+
+                </select>
+
+            </div>
+
+            <!-- START DATE -->
+
+            <div class="filter-group date-group">
+
+                <label for="startDate">
+                    Start Date
+                </label>
+
+                <input type="text" id="startDate" name="startDate" placeholder="dd/mm/yyyy" onfocus="(this.type='date')"
+                    onblur="if(!this.value)this.type='text'" [(ngModel)]="startDate">
+
+            </div>
+
+            <!-- END DATE -->
+
+            <div class="filter-group date-group">
+
+                <label for="endDate">
+                    End Date
+                </label>
+
+                <input type="text" id="endDate" name="endDate" placeholder="dd/mm/yyyy" onfocus="(this.type='date')"
+                    onblur="if(!this.value)this.type='text'" [(ngModel)]="endDate">
+
+            </div>
+
+            <!-- BUTTONS -->
+
+            <div class="filter-actions">
+
+                <button type="button" class="search-btn" (click)="exportCSV()" [disabled]="loading">
+                    Export As CSV
+                </button>
+
+                <button type="button" class="clear-btn" (click)="exportPDF()" [disabled]="loading">
+                    Export As PDF
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ===================================================== -->
+    <!-- INFO MESSAGE -->
+    <!-- ===================================================== -->
+
+    <div class="info-message">
+
+        Please select collection and date range to generate report.
+
+    </div>
+
+    <!-- ===================================================== -->
+    <!-- SUCCESS -->
+    <!-- ===================================================== -->
+
+    <div class="message success-message" *ngIf="successMessage">
+        {{ successMessage }}
+    </div>
+
+    <!-- ===================================================== -->
+    <!-- ERROR -->
+    <!-- ===================================================== -->
+
+    <div class="message error-message" *ngIf="errorMessage">
+        {{ errorMessage }}
+    </div>
+
+</div>
