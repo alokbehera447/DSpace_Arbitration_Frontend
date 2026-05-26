@@ -1,12 +1,12 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
-import { BatchImportReportService } from './batch-import-report.service';
+import { ClaimBatchReportService } from './claim-batch-report.service';
 
 @Component({
-    selector: 'app-batch-import-report',
-    templateUrl: './batch-import-report.component.html',
-    styleUrls: ['./batch-import-report.component.scss']
+    selector: 'app-claim-batch-report',
+    templateUrl: './claim-batch-report.component.html',
+    styleUrls: ['./claim-batch-report.component.scss']
 })
-export class BatchImportReportComponent implements OnInit {
+export class ClaimBatchReportComponent implements OnInit {
 
     collections: any[] = [
         { id: 'ALL', name: 'All Case Files' }
@@ -21,7 +21,7 @@ export class BatchImportReportComponent implements OnInit {
     successMessage = '';
 
     constructor(
-        private batchImportReportService: BatchImportReportService,
+        private claimBatchReportService: ClaimBatchReportService,
         private cdr: ChangeDetectorRef
     ) { }
 
@@ -39,11 +39,11 @@ export class BatchImportReportComponent implements OnInit {
         this.errorMessage = '';
         this.successMessage = '';
 
-        this.batchImportReportService
+        this.claimBatchReportService
             .exportCSV(this.selectedCollectionId, this.startDate, this.endDate)
             .subscribe({
                 next: (response: Blob) => {
-                    this.downloadFile(response, 'batch_import_report.csv');
+                    this.downloadFile(response, 'claim_batch_report.csv');
                     this.loading = false;
                     this.successMessage = 'CSV exported successfully.';
                     this.cdr.detectChanges();
@@ -74,11 +74,11 @@ export class BatchImportReportComponent implements OnInit {
         this.errorMessage = '';
         this.successMessage = '';
 
-        this.batchImportReportService
+        this.claimBatchReportService
             .exportPDF(this.selectedCollectionId, this.startDate, this.endDate)
             .subscribe({
                 next: (response: Blob) => {
-                    this.downloadFile(response, 'batch_import_report.pdf');
+                    this.downloadFile(response, 'claim_batch_report.pdf');
                     this.loading = false;
                     this.successMessage = 'PDF exported successfully.';
                     this.cdr.detectChanges();

@@ -413,6 +413,15 @@ export const APP_ROUTES: Route[] = [
       },
 
 
+      {
+        path: 'claim-batch-report',
+        loadChildren: () =>
+          import('./mis-reports/claim-batch-report/claim-batch-report.module')
+            .then((m) => m.ClaimBatchReportModule),
+        canActivate: [authenticatedGuard, endUserAgreementCurrentUserGuard]
+      },
+
+
 
 
       // {

@@ -475,6 +475,21 @@ export class MenuResolverService {
             link: '/batch-import-report',
           } as LinkMenuItemModel,
         },
+
+
+
+
+        {
+          id: 'claim_batch_report',
+          parentID: 'mis_reports',
+          active: false,
+          visible: isSiteAdmin,
+          model: {
+            type: MenuItemType.LINK,
+            text: 'Claim Batch Report',
+            link: '/claim-batch-report',
+          } as LinkMenuItemModel,
+        },
         /* Notifications */
         {
           id: 'notifications',
