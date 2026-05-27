@@ -490,6 +490,21 @@ export class MenuResolverService {
             link: '/claim-batch-report',
           } as LinkMenuItemModel,
         },
+
+
+        {
+          id: 'batch_reject_report',
+          parentID: 'mis_reports',
+          active: false,
+          visible: isSiteAdmin,
+          model: {
+            type: MenuItemType.LINK,
+            text: 'Batch Reject Report',
+            link: '/batch-reject-report',
+          } as LinkMenuItemModel,
+        },
+
+        
         /* Notifications */
         {
           id: 'notifications',

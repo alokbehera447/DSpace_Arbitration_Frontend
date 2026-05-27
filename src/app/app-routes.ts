@@ -422,6 +422,15 @@ export const APP_ROUTES: Route[] = [
       },
 
 
+      {
+        path: 'batch-reject-report',
+        loadChildren: () =>
+          import('./mis-reports/batch-reject-report/batch-reject-report.module')
+            .then((m) => m.BatchRejectReportModule),
+        canActivate: [authenticatedGuard, endUserAgreementCurrentUserGuard]
+      },
+
+
 
 
       // {
