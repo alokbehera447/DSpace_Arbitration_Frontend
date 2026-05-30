@@ -432,6 +432,15 @@ export const APP_ROUTES: Route[] = [
 
 
 
+      {
+        path: 'judge-name-report',
+        loadChildren: () =>
+          import('./mis-reports/judge-name-report/judge-name-report.module')
+            .then(m => m.JudgeNameReportModule)
+      },
+
+
+
 
       // {
       //   path: "jtdr",

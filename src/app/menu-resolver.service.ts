@@ -504,7 +504,21 @@ export class MenuResolverService {
           } as LinkMenuItemModel,
         },
 
-        
+
+
+        {
+          id: 'judge_name_report',
+          parentID: 'mis_reports',
+          active: false,
+          visible: isSiteAdmin,
+          model: {
+            type: MenuItemType.LINK,
+            text: 'Judge Name Report',
+            link: '/judge-name-report',
+          } as LinkMenuItemModel,
+        },
+
+
         /* Notifications */
         {
           id: 'notifications',
