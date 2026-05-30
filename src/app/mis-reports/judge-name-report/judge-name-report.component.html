@@ -1,0 +1,67 @@
+<div class="batch-import-page">
+
+    <!-- HEADER -->
+    <div class="report-header">
+        <div class="header-left">
+            <div class="header-icon">⚖️</div>
+            <div class="header-content">
+                <h2>Judge Name Report</h2>
+                <p>Generate and export judge name reports within a selected date range.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FILTER PANEL -->
+    <div class="filter-panel">
+        <div class="filters-row">
+
+            <!-- JUDGE NAME -->
+            <div class="filter-group collection-group">
+                <label for="judgeName">Judge Name</label>
+                <select id="judgeName" name="judgeName" [(ngModel)]="judgeName">
+                    <option value="">Select All</option>
+                    <option *ngFor="let judge of judgeNames" [value]="judge">{{ judge }}</option>
+                </select>
+            </div>
+
+            <!-- START DATE -->
+            <div class="filter-group date-group">
+                <label for="startDate">Start Date</label>
+                <input type="date" id="startDate" name="startDate" [(ngModel)]="startDate">
+            </div>
+
+            <!-- END DATE -->
+            <div class="filter-group date-group">
+                <label for="endDate">End Date</label>
+                <input type="date" id="endDate" name="endDate" [(ngModel)]="endDate">
+            </div>
+
+            <!-- BUTTONS -->
+            <div class="filter-actions">
+                <button type="button" class="search-btn" (click)="exportCSV()" [disabled]="loading">
+                    Export As CSV
+                </button>
+                <button type="button" class="clear-btn" (click)="exportPDF()" [disabled]="loading">
+                    Export As PDF
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- INFO -->
+    <div class="info-message">
+        Please select judge name and date range to generate report.
+    </div>
+
+    <!-- SUCCESS -->
+    <div class="message success-message" *ngIf="successMessage">
+        {{ successMessage }}
+    </div>
+
+    <!-- ERROR -->
+    <div class="message error-message" *ngIf="errorMessage">
+        {{ errorMessage }}
+    </div>
+
+</div>
