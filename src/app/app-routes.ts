@@ -440,6 +440,14 @@ export const APP_ROUTES: Route[] = [
       },
 
 
+      {
+        path: 'advocate-name-report',
+        loadChildren: () =>
+          import('./mis-reports/advocate-name-report/advocate-name-report.module')
+            .then(m => m.AdvocateNameReportModule)
+      },
+
+
 
 
       // {

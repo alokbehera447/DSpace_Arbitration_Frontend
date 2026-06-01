@@ -519,6 +519,20 @@ export class MenuResolverService {
         },
 
 
+
+        {
+          id: 'advocate_name_report',
+          parentID: 'mis_reports',
+          active: false,
+          visible: isSiteAdmin,
+          model: {
+            type: MenuItemType.LINK,
+            text: 'Advocate Name Report',
+            link: '/advocate-name-report',
+          } as LinkMenuItemModel,
+        },
+
+
         /* Notifications */
         {
           id: 'notifications',
