@@ -1,94 +1,33 @@
-// .custom-header {
-//     position: relative;
-//     z-index: 900 !important;
-// }
-
-/* =========================================================
-   HOST
-========================================================= */
-
 // :host {
 //     display: block;
-//     position: sticky;
-//     top: 0;
-//     z-index: 1000;
-//     // z-index: 100;
 //     width: 100%;
 // }
 
-:host {
-    display: block;
-    width: 100%;
-}
 
-/* =========================================================
-   MAIN HEADER
-========================================================= */
 
 // .custom-header {
 //     width: 100%;
-//     position: sticky;
-//     top: 0;
-//     z-index: 1000;
-//     // z-index: 100;
-
+//     position: relative;
 // }
 
+// /* =========================================================
+//    TOP BAR
+// ========================================================= */
 
-.custom-header {
-    width: 100%;
-    position: relative;
-}
+// .header-top-bar {
+//     background: linear-gradient(135deg,
+//             #0a2020 0%,
+//             #0d2b2b 50%,
+//             #0a2420 100%);
 
-// .custom-header {
+//     padding: 12px 0;
 
-//     width: calc(100% - 80px);
-
-//     margin-left: 80px;
-
-//     position: sticky;
-
-//     top: 0;
-
-//     z-index: 1000;
-
+//     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
 // }
 
-/* =========================================================
-   TOP BAR
-========================================================= */
-
-.header-top-bar {
-    background: linear-gradient(135deg,
-            #0a2020 0%,
-            #0d2b2b 50%,
-            #0a2420 100%);
-
-    padding: 12px 0;
-
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
-}
-
-/* =========================================================
-   MAIN FLEX ROW
-========================================================= */
-
-.header-main-row {
-
-    position: relative;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 20px;
-
-    width: 100%;
-}
-
-
+// /* =========================================================
+//    MAIN FLEX ROW
+// ========================================================= */
 
 // .header-main-row {
 
@@ -103,10 +42,360 @@
 //     gap: 20px;
 
 //     width: 100%;
-
-//     padding-left: 80px;
-
 // }
+
+
+// /* =========================================================
+//    GOLD DIVIDER
+// ========================================================= */
+
+// .header-gold-line {
+//     height: 3px;
+
+//     background: linear-gradient(90deg,
+//             transparent 0%,
+//             #c9a96e 20%,
+//             #e8c97a 50%,
+//             #c9a96e 80%,
+//             transparent 100%);
+// }
+
+// /* =========================================================
+//    BRAND / LOGO
+// ========================================================= */
+
+// .header-brand {
+//     display: flex;
+//     align-items: center;
+//     gap: 16px;
+
+//     text-decoration: none !important;
+
+//     flex-shrink: 0;
+// }
+
+// .header-logo-wrapper {
+//     width: 64px;
+//     height: 64px;
+
+//     border-radius: 50%;
+
+//     border: 2px solid rgba(201, 169, 110, 0.5);
+
+//     padding: 4px;
+
+//     background: rgba(255, 255, 255, 0.08);
+
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+
+//     box-shadow: 0 0 14px rgba(201, 169, 110, 0.25);
+
+//     overflow: hidden;
+// }
+
+// .header-logo {
+//     width: 54px;
+//     height: 54px;
+
+//     border-radius: 50%;
+
+//     object-fit: contain;
+
+//     background: #ffffff;
+// }
+
+// /* =========================================================
+//    BRAND TEXT
+// ========================================================= */
+
+// .header-brand-text {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 3px;
+// }
+
+// .header-title {
+//     color: #ffffff !important;
+
+//     font-size: 22px !important;
+
+//     font-weight: 700 !important;
+
+//     line-height: 1.2;
+
+//     letter-spacing: 0.3px;
+
+//     font-family: Georgia, serif;
+// }
+
+// .header-subtitle {
+//     color: #c9a96e !important;
+
+//     font-size: 9px !important;
+
+//     font-weight: 700 !important;
+
+//     letter-spacing: 4px;
+
+//     text-transform: uppercase;
+// }
+
+// /* =========================================================
+//    CENTER TAGLINE
+// ========================================================= */
+
+// .header-center {
+
+//     position: absolute;
+
+//     left: 50%;
+
+//     transform: translateX(-50%);
+
+//     display: flex;
+
+//     justify-content: center;
+
+//     align-items: center;
+
+//     pointer-events: none;
+// }
+
+// .header-tagline {
+//     min-width: 260px;
+
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+
+//     gap: 4px;
+
+//     padding: 8px 26px;
+
+//     border-left: 1px solid rgba(201, 169, 110, 0.2);
+
+//     border-right: 1px solid rgba(201, 169, 110, 0.2);
+// }
+
+// .tagline-top {
+//     color: rgba(255, 255, 255, 0.92) !important;
+
+//     font-size: 13px !important;
+
+//     font-weight: 500 !important;
+
+//     font-style: italic;
+
+//     letter-spacing: 0.5px;
+// }
+
+// .tagline-bottom {
+//     color: #c9a96e !important;
+
+//     font-size: 9px !important;
+
+//     font-weight: 700 !important;
+
+//     letter-spacing: 3px;
+
+//     text-transform: uppercase;
+// }
+
+// /* =========================================================
+//    RIGHT SECTION
+// ========================================================= */
+
+// .header-right {
+//     display: flex;
+//     align-items: center;
+
+//     flex-shrink: 0;
+// }
+
+// /* =========================================================
+//    NAV ICONS
+// ========================================================= */
+
+// .header-nav-icons {
+//     display: flex !important;
+
+//     align-items: center;
+
+//     gap: 8px;
+
+//     background: transparent !important;
+
+//     border: none !important;
+
+//     box-shadow: none !important;
+// }
+
+// .header-nav-icons a,
+// .header-nav-icons button,
+// .header-nav-icons .nav-link {
+//     color: #ffffff !important;
+
+//     font-weight: 500;
+
+//     transition:
+//         color 0.2s ease,
+//         transform 0.2s ease;
+// }
+
+// .header-nav-icons a:hover,
+// .header-nav-icons button:hover,
+// .header-nav-icons .nav-link:hover {
+//     color: #c9a96e !important;
+
+//     transform: translateY(-1px);
+// }
+
+// .header-nav-icons svg {
+//     fill: #ffffff !important;
+
+//     transition:
+//         fill 0.2s ease,
+//         transform 0.2s ease;
+// }
+
+// .header-nav-icons svg:hover {
+//     fill: #c9a96e !important;
+
+//     transform: scale(1.05);
+// }
+
+// .navbar-toggler {
+//     border: none !important;
+
+//     color: #ffffff !important;
+
+//     padding: 6px !important;
+
+//     background: transparent !important;
+// }
+
+// .toggler-icon {
+//     color: #ffffff !important;
+
+//     font-size: 18px;
+// }
+
+// /* =========================================================
+//    TABLET RESPONSIVE
+// ========================================================= */
+
+// @media (max-width: 992px) {
+
+//     .header-main-row {
+//         gap: 12px;
+//     }
+
+//     .header-title {
+//         font-size: 18px !important;
+//     }
+
+//     .header-subtitle {
+//         letter-spacing: 2px;
+//     }
+
+//     .header-logo-wrapper {
+//         width: 54px;
+//         height: 54px;
+//     }
+
+//     .header-logo {
+//         width: 46px;
+//         height: 46px;
+//     }
+// }
+
+// /* =========================================================
+//    MOBILE RESPONSIVE
+// ========================================================= */
+
+// @media (max-width: 768px) {
+
+//     .header-top-bar {
+//         padding: 10px 0;
+//     }
+
+//     .header-main-row {
+//         gap: 10px;
+//     }
+
+//     .header-center {
+//         display: none !important;
+//     }
+
+//     .header-brand-text {
+//         max-width: 170px;
+//     }
+
+//     .header-title {
+//         font-size: 14px !important;
+//     }
+
+//     .header-subtitle {
+//         display: none;
+//     }
+
+//     .header-logo-wrapper {
+//         width: 44px;
+//         height: 44px;
+//     }
+
+//     .header-logo {
+//         width: 36px;
+//         height: 36px;
+//     }
+// }
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap');
+
+:host {
+    display: block;
+    width: 100%;
+}
+
+.custom-header {
+    width: 100%;
+    position: relative;
+}
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.header-top-bar {
+    background: linear-gradient(135deg,
+            #041a45 0%,
+            #082a67 50%,
+            #02153b 100%);
+
+    padding: 12px 0;
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* =========================================================
+   MAIN FLEX ROW
+========================================================= */
+
+.header-main-row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+}
 
 /* =========================================================
    GOLD DIVIDER
@@ -117,9 +406,9 @@
 
     background: linear-gradient(90deg,
             transparent 0%,
-            #c9a96e 20%,
-            #e8c97a 50%,
-            #c9a96e 80%,
+            #d4af37 20%,
+            #f3d77a 50%,
+            #d4af37 80%,
             transparent 100%);
 }
 
@@ -131,9 +420,7 @@
     display: flex;
     align-items: center;
     gap: 16px;
-
     text-decoration: none !important;
-
     flex-shrink: 0;
 }
 
@@ -143,7 +430,7 @@
 
     border-radius: 50%;
 
-    border: 2px solid rgba(201, 169, 110, 0.5);
+    border: 2px solid rgba(212, 175, 55, 0.45);
 
     padding: 4px;
 
@@ -153,7 +440,7 @@
     align-items: center;
     justify-content: center;
 
-    box-shadow: 0 0 14px rgba(201, 169, 110, 0.25);
+    box-shadow: 0 0 16px rgba(212, 175, 55, 0.25);
 
     overflow: hidden;
 }
@@ -190,17 +477,17 @@
 
     letter-spacing: 0.3px;
 
-    font-family: Georgia, serif;
+    font-family: 'Playfair Display', serif;
 }
 
 .header-subtitle {
-    color: #c9a96e !important;
+    color: #d4af37 !important;
 
-    font-size: 9px !important;
+    font-size: 10px !important;
 
     font-weight: 700 !important;
 
-    letter-spacing: 4px;
+    letter-spacing: 3px;
 
     text-transform: uppercase;
 }
@@ -210,7 +497,6 @@
 ========================================================= */
 
 .header-center {
-
     position: absolute;
 
     left: 50%;
@@ -237,27 +523,29 @@
 
     padding: 8px 26px;
 
-    border-left: 1px solid rgba(201, 169, 110, 0.2);
+    border-left: 1px solid rgba(212, 175, 55, 0.25);
 
-    border-right: 1px solid rgba(201, 169, 110, 0.2);
+    border-right: 1px solid rgba(212, 175, 55, 0.25);
 }
 
 .tagline-top {
-    color: rgba(255, 255, 255, 0.92) !important;
+    color: rgba(255, 255, 255, 0.95) !important;
 
-    font-size: 13px !important;
+    font-size: 14px !important;
 
     font-weight: 500 !important;
 
     font-style: italic;
 
+    font-family: 'Playfair Display', serif;
+
     letter-spacing: 0.5px;
 }
 
 .tagline-bottom {
-    color: #c9a96e !important;
+    color: #d4af37 !important;
 
-    font-size: 9px !important;
+    font-size: 10px !important;
 
     font-weight: 700 !important;
 
@@ -273,7 +561,6 @@
 .header-right {
     display: flex;
     align-items: center;
-
     flex-shrink: 0;
 }
 
@@ -310,7 +597,7 @@
 .header-nav-icons a:hover,
 .header-nav-icons button:hover,
 .header-nav-icons .nav-link:hover {
-    color: #c9a96e !important;
+    color: #d4af37 !important;
 
     transform: translateY(-1px);
 }
@@ -324,7 +611,7 @@
 }
 
 .header-nav-icons svg:hover {
-    fill: #c9a96e !important;
+    fill: #d4af37 !important;
 
     transform: scale(1.05);
 }
@@ -343,6 +630,73 @@
     color: #ffffff !important;
 
     font-size: 18px;
+}
+
+
+
+/* ===============================
+   FORCE HEADER ICON STYLE
+================================ */
+
+::ng-deep .loginLink,
+::ng-deep .dropdownLogin,
+::ng-deep .logoutLink,
+::ng-deep .dropdownLogout,
+::ng-deep .fas,
+::ng-deep .far,
+::ng-deep .fa,
+::ng-deep .fa-solid {
+    color: #ffffff !important;
+    font-size: 24px !important;
+}
+
+::ng-deep .fa-search,
+::ng-deep .fa-globe,
+::ng-deep .fa-user-circle,
+::ng-deep .fa-circle-user {
+    font-size: 24px !important;
+}
+
+::ng-deep .dropdown-toggle::after {
+    color: #ffffff !important;
+}
+
+/* Align all header components */
+::ng-deep .header-nav-icons {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px;
+}
+
+/* Make each DSpace component behave the same */
+::ng-deep ds-search-navbar,
+::ng-deep ds-lang-switch,
+::ng-deep ds-auth-nav-menu,
+::ng-deep ds-impersonate-navbar {
+    display: flex !important;
+    align-items: center !important;
+    height: 40px;
+}
+
+/* Remove default margins */
+::ng-deep ds-search-navbar *,
+::ng-deep ds-lang-switch *,
+::ng-deep ds-auth-nav-menu * {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* Normalize FontAwesome icons */
+::ng-deep .fa-lg {
+    vertical-align: middle !important;
+    line-height: 1 !important;
+}
+
+/* Icon size */
+::ng-deep .fas,
+::ng-deep .far,
+::ng-deep .fa-solid {
+    font-size: 22px !important;
 }
 
 /* =========================================================

@@ -14,25 +14,24 @@
             </h1>
 
             <p>
-                Search archived legal case files,
-                judgements and judicial proceedings.
+                Search archived legal case files, judgements and judicial proceedings.
             </p>
 
             <div class="hero-search">
-
-                <ds-search-form [inPlaceSearch]="false"> </ds-search-form>
-
+                <ds-search-form [inPlaceSearch]="false">
+                </ds-search-form>
             </div>
 
         </div>
 
     </section>
 
-    <!-- MAIN CONTENT -->
+
+    <!-- CONTENT -->
     <section class="content-layout">
 
         <!-- LEFT PANEL -->
-        <aside class="left-panel">
+        <aside>
 
             <div class="category-card">
 
@@ -40,55 +39,38 @@
                     CASE CATEGORIES
                 </div>
 
-                <div class="category-title">
+                <h2 class="category-title">
                     Browse Categories
-                </div>
+                </h2>
 
                 <p class="category-description">
                     Explore judicial collections and archived legal repositories.
                 </p>
 
                 <div class="community-wrapper">
-
                     <ds-top-level-community-list>
                     </ds-top-level-community-list>
-
                 </div>
 
             </div>
 
         </aside>
 
+
         <!-- RIGHT PANEL -->
         <main class="recent-panel">
 
-            <div class="recent-header">
-
-                <div>
-
-                    <div class="section-label">
-                        RECENT SUBMISSIONS
-                    </div>
-
-                    <h2 class="recent-title">
-                        Latest Judicial Records
-                    </h2>
-
-                </div>
-
-                <!-- <a routerLink="/search" class="view-all-btn">
-
-                    View all →
-
-                </a> -->
-
+            <div class="section-label">
+                RECENT SUBMISSIONS
             </div>
 
-            <div class="recent-list-wrapper">
+            <h2 class="recent-title">
+                Latest Judicial Records
+            </h2>
 
+            <div class="recent-list-wrapper">
                 <ds-recent-item-list>
                 </ds-recent-item-list>
-
             </div>
 
         </main>

@@ -1,1408 +1,59 @@
-// // /* =========================================================
-// //    MAIN LAYOUT
-// // ========================================================= */
-
-// // .judicial-login-page {
-// //     display: flex;
-// //     width: 100%;
-// //     min-height: 100vh;
-// //     background: #eef2f7;
-// //     overflow: hidden;
-// // }
-
-// // /* =========================================================
-// //    LEFT PANEL
-// // ========================================================= */
-
-// // .login-left-panel {
-// //     position: relative;
-
-// //     width: 54%;
-// //     min-height: 100vh;
-
-// //     background:
-// //         linear-gradient(rgba(6, 18, 36, 0.62),
-// //             rgba(6, 18, 36, 0.62)),
-// //         url('/assets/custom/images/orissa-highcourt-bg.jpeg');
-
-// //     background-size: cover;
-// //     background-position: center;
-// //     background-repeat: no-repeat;
-
-// //     display: flex;
-// //     align-items: center;
-// //     justify-content: center;
-
-// //     padding: 50px 70px;
-// // }
-
-// // .left-overlay {
-// //     position: absolute;
-// //     inset: 0;
-
-// //     background:
-// //         linear-gradient(to bottom,
-// //             rgba(0, 0, 0, 0.15),
-// //             rgba(0, 0, 0, 0.45));
-// // }
-
-// // .left-content {
-// //     position: relative;
-// //     z-index: 2;
-
-// //     width: 100%;
-// //     max-width: 620px;
-
-// //     display: flex;
-// //     flex-direction: column;
-
-// //     justify-content: space-between;
-
-// //     height: 100%;
-// // }
-
-// // /* =========================================================
-// //    BRAND
-// // ========================================================= */
-
-// // .left-top-brand {
-// //     display: flex;
-// //     align-items: center;
-// //     gap: 18px;
-
-// //     margin-bottom: 60px;
-// // }
-
-// // .logo-circle {
-// //     width: 84px;
-// //     height: 84px;
-
-// //     border-radius: 50%;
-
-// //     background: rgba(255, 255, 255, 0.12);
-
-// //     border: 1px solid rgba(255, 255, 255, 0.2);
-
-// //     display: flex;
-// //     align-items: center;
-// //     justify-content: center;
-
-// //     overflow: hidden;
-
-// //     backdrop-filter: blur(12px);
-// // }
-
-// // .court-logo {
-// //     width: 68px;
-// //     height: 68px;
-
-// //     object-fit: cover;
-// //     border-radius: 50%;
-// // }
-
-// // .brand-text h3 {
-// //     margin: 0;
-// //     color: #ffffff !important;
-// //     font-size: 28px;
-// //     font-weight: 700;
-// //     line-height: 1.2;
-// //     text-shadow: 0 3px 12px rgba(0, 0, 0, 0.35);
-// // }
-
-// // .brand-text span {
-// //     display: block;
-// //     margin-top: 8px;
-// //     color: #f4cf63 !important;
-// //     font-size: 11px;
-// //     letter-spacing: 4px;
-// //     font-weight: 700;
-// //     text-transform: uppercase;
-// // }
-
-// // /* =========================================================
-// //    HERO SECTION
-// // ========================================================= */
-
-// // .hero-content {
-// //     width: 100%;
-// // }
-
-// // .welcome-text {
-// //     color: rgba(255, 255, 255, 0.95) !important;
-// //     font-size: 20px;
-// //     font-weight: 500;
-// //     margin-bottom: 14px;
-// // }
-
-// // .hero-content h1 {
-// //     margin: 0 0 20px;
-// //     font-size: 34px;
-// //     line-height: 1.3;
-// //     font-weight: 700;
-// //     color: #ffffff !important;
-// //     max-width: 560px;
-// //     text-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
-// // }
-
-// // .gold-line {
-// //     width: 72px;
-// //     height: 4px;
-// //     background: #f4cf63;
-// //     border-radius: 20px;
-// //     margin-bottom: 28px;
-// // }
-
-// // .hero-content p {
-// //     max-width: 520px;
-// //     color: rgba(255, 255, 255, 0.94) !important;
-// //     font-size: 18px;
-// //     line-height: 1.9;
-// //     margin-bottom: 30px;
-// //     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
-// // }
-
-// // .paperless-text {
-// //     color: #f4cf63 !important;
-// //     font-size: 13px;
-// //     font-weight: 700;
-// //     letter-spacing: 4px;
-// //     margin-bottom: 40px;
-// //     text-transform: uppercase;
-// // }
-
-// // /* =========================================================
-// //    FEATURE CARDS
-// // ========================================================= */
-
-// // .feature-cards {
-// //     display: flex;
-// //     gap: 12px;
-// //     margin-top: 10px;
-// //     margin-bottom: 22px;
-// // }
-
-// // .feature-card {
-// //     flex: 1;
-// //     max-width: 155px;
-// //     min-height: 88px;
-// //     padding: 12px;
-// //     border-radius: 16px;
-// //     background: rgba(255, 255, 255, 0.10) !important;
-// //     border: 1px solid rgba(255, 255, 255, 0.12) !important;
-// //     backdrop-filter: blur(10px);
-// //     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16);
-// //     transition: 0.3s ease;
-// // }
-
-// // .feature-card:hover {
-// //     transform: translateY(-2px);
-// //     background: rgba(255, 255, 255, 0.16) !important;
-// // }
-
-// // .feature-icon {
-// //     width: 38px;
-// //     height: 38px;
-// //     border-radius: 12px;
-// //     font-size: 18px;
-// //     background: rgba(244, 207, 99, 0.12);
-// //     display: flex;
-// //     align-items: center;
-// //     justify-content: center;
-// //     margin-bottom: 8px;
-// // }
-
-// // .feature-card h4 {
-// //     margin: 0 0 4px;
-// //     color: #ffffff !important;
-// //     font-size: 14px;
-// //     font-weight: 700;
-// //     line-height: 1.3;
-// // }
-
-// // .feature-card span {
-// //     color: rgba(255, 255, 255, 0.85) !important;
-// //     font-size: 11px;
-// //     line-height: 1.4;
-// // }
-
-// // /* =========================================================
-// //    COPYRIGHT
-// // ========================================================= */
-
-// // .copyright-text {
-// //     color: rgba(255, 255, 255, 0.92) !important;
-// //     font-size: 15px;
-// //     margin-top: 8px;
-// // }
-
-// // /* =========================================================
-// //    RIGHT PANEL
-// // ========================================================= */
-
-// // .login-right-panel {
-// //     width: 46%;
-// //     min-height: 100vh;
-// //     background: linear-gradient(135deg, #f0f4f8 0%, #f8fafc 100%);
-// //     display: flex;
-// //     align-items: center;
-// //     justify-content: center;
-// //     padding: 40px;
-// // }
-
-// // .login-card-wrapper {
-// //     width: 100%;
-// //     max-width: 470px;
-// // }
-
-// // /* =========================================================
-// //    LOGIN CARD
-// // ========================================================= */
-
-// // .login-card {
-// //     position: relative;
-// //     background: #ffffff !important;
-// //     border-radius: 28px;
-// //     padding: 100px 52px 50px;
-// //     box-shadow:
-// //         0 8px 40px rgba(15, 23, 42, 0.10),
-// //         0 2px 8px rgba(15, 23, 42, 0.04);
-// //     border: 1px solid #f0f0f0 !important;
-// // }
-
-// // /* =========================================================
-// //    LOCK CIRCLE
-// // ========================================================= */
-
-// // .lock-circle {
-// //     position: absolute;
-// //     top: -42px;
-// //     left: 50%;
-// //     transform: translateX(-50%);
-// //     width: 84px;
-// //     height: 84px;
-// //     border-radius: 50%;
-// //     background: linear-gradient(135deg, #005f6f, #00798a);
-// //     display: flex;
-// //     align-items: center;
-// //     justify-content: center;
-// //     color: white;
-// //     font-size: 34px;
-// //     border: 6px solid #f0f4f8;
-// //     box-shadow: 0 14px 28px rgba(0, 95, 111, 0.22);
-// // }
-
-// // /* =========================================================
-// //    LOGIN CARD HEADING & SUBTITLE
-// // ========================================================= */
-
-// // .judicial-login-page .login-card h2 {
-// //     text-align: center !important;
-// //     margin: 0 0 8px !important;
-// //     font-size: 36px !important;
-// //     font-weight: 700 !important;
-// //     color: #0e2340 !important;
-// //     font-family: Georgia, 'Times New Roman', serif !important;
-// //     opacity: 1 !important;
-// // }
-
-// // .judicial-login-page .login-card .login-subtitle {
-// //     text-align: center !important;
-// //     color: #64748b !important;
-// //     font-size: 15px !important;
-// //     margin-bottom: 32px !important;
-// // }
-
-// // /* =========================================================
-// //    LOGIN FORM INPUTS
-// // ========================================================= */
-
-// // .judicial-login-page .login-card input,
-// // .judicial-login-page .login-card input.form-control,
-// // .judicial-login-page .login-card .form-control {
-
-// //     width: 100% !important;
-
-// //     height: 58px !important;
-
-// //     background: #ffffff !important;
-
-// //     background-color: #ffffff !important;
-
-// //     color: #0f172a !important;
-
-// //     border: 1.5px solid #e5e7eb !important;
-
-// //     border-radius: 16px !important;
-
-// //     padding: 0 18px !important;
-
-// //     font-size: 16px !important;
-
-// //     font-weight: 500 !important;
-
-// //     box-shadow: none !important;
-
-// //     -webkit-box-shadow: none !important;
-
-// //     outline: none !important;
-
-// //     appearance: none !important;
-
-// //     -webkit-appearance: none !important;
-
-// //     transition:
-// //         border-color 0.25s ease,
-// //         box-shadow 0.25s ease,
-// //         background-color 0.25s ease;
-// // }
-
-// // /* =========================================================
-// //    PLACEHOLDER
-// // ========================================================= */
-
-// // .judicial-login-page .login-card input::placeholder {
-
-// //     color: #9ca3af !important;
-
-// //     font-weight: 400 !important;
-// // }
-
-// // /* =========================================================
-// //    INPUT FOCUS
-// // ========================================================= */
-
-// // .judicial-login-page .login-card input:focus,
-// // .judicial-login-page .login-card input.form-control:focus,
-// // .judicial-login-page .login-card .form-control:focus {
-
-// //     background: #ffffff !important;
-
-// //     background-color: #ffffff !important;
-
-// //     color: #0f172a !important;
-
-// //     border: 1.5px solid #d4b06a !important;
-
-// //     outline: none !important;
-
-// //     box-shadow:
-// //         0 0 0 4px rgba(212, 176, 106, 0.12) !important;
-
-// //     -webkit-box-shadow:
-// //         0 0 0 4px rgba(212, 176, 106, 0.12) !important;
-// // }
-
-
-// // /* =========================================================
-// //    INPUT SEPARATION FIX  ← ADD THIS HERE
-// // ========================================================= */
-
-// // .judicial-login-page .login-card .custom-login-form ds-log-in .form-group,
-// // .judicial-login-page .login-card .custom-login-form .form-group {
-// //     margin-bottom: 14px !important;
-// // }
-
-// // .judicial-login-page .login-card input,
-// // .judicial-login-page .login-card input.form-control,
-// // .judicial-login-page .login-card .form-control {
-// //     display: block !important;
-// //     margin-bottom: 14px !important;
-// // }
-
-// // /* =========================================================
-// //    FIX BROWSER AUTOFILL
-// // ========================================================= */
-
-// // .judicial-login-page .login-card input:-webkit-autofill,
-// // .judicial-login-page .login-card input:-webkit-autofill:hover,
-// // .judicial-login-page .login-card input:-webkit-autofill:focus,
-// // .judicial-login-page .login-card input:-webkit-autofill:active {
-
-// //     -webkit-box-shadow:
-// //         0 0 0px 1000px #ffffff inset !important;
-
-// //     -webkit-text-fill-color:
-// //         #0f172a !important;
-
-// //     border-color:
-// //         #e5e7eb !important;
-
-// //     caret-color:
-// //         #0f172a !important;
-// // }
-
-
-// // /* =========================================================
-// //    LOGIN FORM LINKS — fix dark/blue link color
-// // ========================================================= */
-
-// // .judicial-login-page .login-card a,
-// // .judicial-login-page .login-card ds-log-in a,
-// // .judicial-login-page .login-card .login-form a,
-// // .judicial-login-page .login-card span a,
-// // .judicial-login-page .login-card p a {
-// //     color: #c9a96e !important;
-// //     background: transparent !important;
-// //     background-color: transparent !important;
-// //     border: none !important;
-// //     display: inline !important;
-// //     padding: 0 !important;
-// //     margin: 0 !important;
-// //     box-shadow: none !important;
-// //     font-weight: 500 !important;
-// //     font-size: 14px !important;
-// //     text-decoration: none !important;
-// // }
-
-// // .judicial-login-page .login-card a:hover,
-// // .judicial-login-page .login-card ds-log-in a:hover,
-// // .judicial-login-page .login-card .login-form a:hover,
-// // .judicial-login-page .login-card span a:hover,
-// // .judicial-login-page .login-card p a:hover {
-// //     color: #0e2340 !important;
-// //     background: transparent !important;
-// //     background-color: transparent !important;
-// //     text-decoration: underline !important;
-// // }
-
-// // /* =========================================================
-// //    LOGIN SUBMIT BUTTON
-// // ========================================================= */
-
-// // .judicial-login-page .login-card .btn-primary,
-// // .judicial-login-page .login-card button[type="submit"] {
-// //     background: #c9a96e !important;
-// //     background-color: #c9a96e !important;
-// //     color: #ffffff !important;
-// //     border: none !important;
-// //     border-radius: 12px !important;
-// //     font-weight: 700 !important;
-// //     padding: 14px !important;
-// //     width: 100% !important;
-// //     font-size: 15px !important;
-// //     box-shadow: none !important;
-// // }
-
-// // .judicial-login-page .login-card .btn-primary:hover,
-// // .judicial-login-page .login-card button[type="submit"]:hover {
-// //     background: #b8924f !important;
-// //     background-color: #b8924f !important;
-// //     color: #ffffff !important;
-// // }
-
-// // /* =========================================================
-// //    LOGIN FORM TEXT — fix global dark overrides
-// // ========================================================= */
-
-// // .judicial-login-page .login-card p,
-// // .judicial-login-page .login-card span,
-// // .judicial-login-page .login-card label,
-// // .judicial-login-page .login-card small {
-// //     color: #64748b !important;
-// // }
-
-// // /* =========================================================
-// //    TRUST BADGE
-// // ========================================================= */
-
-// // .trust-badge {
-// //     background: #f8f9fa !important;
-// //     border: 1px solid #e5e7eb !important;
-// //     border-radius: 14px;
-// //     padding: 14px 16px;
-// //     font-size: 12px;
-// //     color: #6b7280 !important;
-// //     text-align: center;
-// //     line-height: 1.6;
-// //     margin-top: 20px;
-// // }
-
-// // /* =========================================================
-// //    HIDE DIVIDER / SECURITY NOTE
-// // ========================================================= */
-
-// // .login-divider {
-// //     display: none;
-// // }
-
-// // .security-note {
-// //     text-align: center;
-// //     margin-top: 24px;
-// //     color: #7b8797 !important;
-// //     font-size: 13px;
-// // }
-
-// // /* =========================================================
-// //    RESPONSIVE
-// // ========================================================= */
-
-// // @media (max-width: 1100px) {
-
-// //     .hero-content h1 {
-// //         font-size: 30px;
-// //     }
-
-// //     .brand-text h3 {
-// //         font-size: 24px;
-// //     }
-// // }
-
-// // @media (max-width: 992px) {
-
-// //     .judicial-login-page {
-// //         flex-direction: column;
-// //     }
-
-// //     .login-left-panel,
-// //     .login-right-panel {
-// //         width: 100%;
-// //     }
-
-// //     .feature-cards {
-// //         flex-wrap: wrap;
-// //     }
-
-// //     .feature-card {
-// //         min-width: calc(50% - 10px);
-// //     }
-// // }
-
-// // @media (max-width: 768px) {
-
-// //     .login-left-panel {
-// //         padding: 40px 24px;
-// //     }
-
-// //     .left-top-brand {
-// //         flex-direction: column;
-// //         align-items: flex-start;
-// //     }
-
-// //     .brand-text h3 {
-// //         font-size: 22px;
-// //     }
-
-// //     .hero-content h1 {
-// //         font-size: 28px;
-// //     }
-
-// //     .feature-cards {
-// //         flex-direction: column;
-// //     }
-
-// //     .feature-card {
-// //         width: 100%;
-// //     }
-
-// //     .login-card {
-// //         padding: 70px 28px 40px;
-// //     }
-
-// //     .judicial-login-page .login-card h2 {
-// //         font-size: 30px !important;
-// //     }
-
-
-
-// // }
-
-
-// @import 'src/styles/variables';
-
-// /* =========================================================
-//    GLOBAL
-// ========================================================= */
-
-// body {
-
-//     background: #061313 !important;
-
-//     font-family: "Inter", sans-serif;
-// }
-
-// /* =========================================================
-//    MAIN LAYOUT
-// ========================================================= */
-
-// .judicial-login-page {
-
-//     display: flex;
-
-//     width: 100%;
-
-//     min-height: 100vh;
-
-//     background:
-//         linear-gradient(135deg,
-//             #061313 0%,
-//             #0a2222 100%);
-
-//     overflow: hidden;
-
-//     font-family: "Inter", sans-serif;
-// }
-
-// /* =========================================================
-//    LEFT PANEL
-// ========================================================= */
-
-// .login-left-panel {
-
-//     position: relative;
-
-//     width: 54%;
-
-//     min-height: 100vh;
-
-//     background:
-//         linear-gradient(rgba(4, 16, 32, 0.42),
-//             rgba(4, 16, 32, 0.42)),
-//         url('/assets/custom/images/orissa-highcourt-bg.jpeg');
-
-//     background-size: cover;
-
-//     background-position: center;
-
-//     background-repeat: no-repeat;
-
-//     display: flex;
-
-//     align-items: center;
-
-//     justify-content: center;
-
-//     padding: 50px 70px;
-// }
-
-// .left-overlay {
-
-//     position: absolute;
-
-//     inset: 0;
-
-//     background:
-//         linear-gradient(to bottom,
-//             rgba(0, 0, 0, 0.08),
-//             rgba(0, 0, 0, 0.22));
-// }
-
-// .left-content {
-
-//     position: relative;
-
-//     z-index: 2;
-
-//     width: 100%;
-
-//     max-width: 620px;
-
-//     display: flex;
-
-//     flex-direction: column;
-
-//     justify-content: space-between;
-
-//     height: 100%;
-// }
-
-// /* =========================================================
-//    BRAND
-// ========================================================= */
-
-// .left-top-brand {
-
-//     display: flex;
-
-//     align-items: center;
-
-//     gap: 18px;
-
-//     margin-bottom: 60px;
-// }
-
-// .logo-circle {
-
-//     width: 84px;
-
-//     height: 84px;
-
-//     border-radius: 50%;
-
-//     background:
-//         rgba(255, 255, 255, 0.10);
-
-//     border:
-//         1px solid rgba(255, 255, 255, 0.16);
-
-//     display: flex;
-
-//     align-items: center;
-
-//     justify-content: center;
-
-//     overflow: hidden;
-
-//     backdrop-filter: blur(10px);
-// }
-
-// .court-logo {
-
-//     width: 68px;
-
-//     height: 68px;
-
-//     object-fit: cover;
-
-//     border-radius: 50%;
-// }
-
-// .brand-text h3 {
-
-//     margin: 0;
-
-//     color: #ffffff !important;
-
-//     font-size: 30px;
-
-//     font-weight: 700;
-
-//     line-height: 1.2;
-
-//     letter-spacing: -0.4px;
-// }
-
-// .brand-text span {
-
-//     display: block;
-
-//     margin-top: 8px;
-
-//     color: #d4af37 !important;
-
-//     font-size: 11px;
-
-//     letter-spacing: 4px;
-
-//     font-weight: 700;
-
-//     text-transform: uppercase;
-// }
-
-// /* =========================================================
-//    HERO SECTION
-// ========================================================= */
-
-// .hero-content {
-
-//     width: 100%;
-// }
-
-// .welcome-text {
-
-//     color: rgba(255, 255, 255, 0.92) !important;
-
-//     font-size: 18px;
-
-//     font-weight: 500;
-
-//     margin-bottom: 14px;
-// }
-
-// .hero-content h1 {
-
-//     margin: 0 0 22px;
-
-//     font-size: 54px;
-
-//     line-height: 1.15;
-
-//     font-weight: 700;
-
-//     color: #ffffff !important;
-
-//     max-width: 560px;
-
-//     letter-spacing: -1px;
-// }
-
-// .gold-line {
-
-//     width: 76px;
-
-//     height: 4px;
-
-//     background: #d4af37;
-
-//     border-radius: 999px;
-
-//     margin-bottom: 28px;
-// }
-
-// .hero-content p {
-
-//     max-width: 560px;
-
-//     color: rgba(255, 255, 255, 0.88) !important;
-
-//     font-size: 17px;
-
-//     line-height: 1.9;
-
-//     margin-bottom: 34px;
-// }
-
-// .paperless-text {
-
-//     color: #d4af37 !important;
-
-//     font-size: 12px;
-
-//     font-weight: 700;
-
-//     letter-spacing: 4px;
-
-//     margin-bottom: 40px;
-
-//     text-transform: uppercase;
-// }
-
-// /* =========================================================
-//    FEATURE CARDS
-// ========================================================= */
-
-// .feature-cards {
-
-//     display: flex;
-
-//     gap: 14px;
-
-//     margin-top: 10px;
-
-//     margin-bottom: 22px;
-// }
-
-// .feature-card {
-
-//     flex: 1;
-
-//     max-width: 160px;
-
-//     min-height: 92px;
-
-//     padding: 14px;
-
-//     border-radius: 18px;
-
-//     background:
-//         rgba(255, 255, 255, 0.08);
-
-//     border:
-//         1px solid rgba(255, 255, 255, 0.10);
-
-//     backdrop-filter: blur(10px);
-
-//     transition: all 0.3s ease;
-// }
-
-// .feature-card:hover {
-
-//     transform: translateY(-3px);
-
-//     background:
-//         rgba(255, 255, 255, 0.14);
-// }
-
-// .feature-icon {
-
-//     width: 40px;
-
-//     height: 40px;
-
-//     border-radius: 12px;
-
-//     font-size: 18px;
-
-//     background:
-//         rgba(212, 175, 55, 0.16);
-
-//     display: flex;
-
-//     align-items: center;
-
-//     justify-content: center;
-
-//     margin-bottom: 10px;
-// }
-
-// .feature-card h4 {
-
-//     margin: 0 0 6px;
-
-//     color: #ffffff !important;
-
-//     font-size: 14px;
-
-//     font-weight: 700;
-
-//     line-height: 1.3;
-// }
-
-// .feature-card span {
-
-//     color: rgba(255, 255, 255, 0.78) !important;
-
-//     font-size: 11px;
-
-//     line-height: 1.5;
-// }
-
-// /* =========================================================
-//    COPYRIGHT
-// ========================================================= */
-
-// .copyright-text {
-
-//     color: rgba(255, 255, 255, 0.86) !important;
-
-//     font-size: 14px;
-
-//     margin-top: 12px;
-// }
-
-// /* =========================================================
-//    RIGHT PANEL
-// ========================================================= */
-
-// .login-right-panel {
-
-//     width: 46%;
-
-//     min-height: 100vh;
-
-//     background:
-//         linear-gradient(135deg,
-//             #f5f7fa 0%,
-//             #eef2f6 100%);
-
-//     display: flex;
-
-//     align-items: center;
-
-//     justify-content: center;
-
-//     padding: 40px;
-// }
-
-// .login-card-wrapper {
-
-//     width: 100%;
-
-//     max-width: 470px;
-// }
-
-// /* =========================================================
-//    LOGIN CARD
-// ========================================================= */
-
-// .login-card {
-
-//     position: relative;
-
-//     background: #ffffff !important;
-
-//     border-radius: 30px;
-
-//     padding: 100px 52px 50px;
-
-//     box-shadow:
-//         0 10px 40px rgba(15, 23, 42, 0.10);
-
-//     border:
-//         1px solid rgba(0, 0, 0, 0.04);
-// }
-
-// /* =========================================================
-//    LOCK ICON
-// ========================================================= */
-
-// .lock-circle {
-
-//     position: absolute;
-
-//     top: -42px;
-
-//     left: 50%;
-
-//     transform: translateX(-50%);
-
-//     width: 84px;
-
-//     height: 84px;
-
-//     border-radius: 50%;
-
-//     background:
-//         linear-gradient(135deg,
-//             #005f6f,
-//             #00798a);
-
-//     display: flex;
-
-//     align-items: center;
-
-//     justify-content: center;
-
-//     color: white;
-
-//     font-size: 34px;
-
-//     border: 6px solid #f0f4f8;
-
-//     box-shadow:
-//         0 14px 28px rgba(0, 95, 111, 0.20);
-// }
-
-// /* =========================================================
-//    LOGIN TITLE
-// ========================================================= */
-
-// .judicial-login-page .login-card h2 {
-
-//     text-align: center !important;
-
-//     margin: 0 0 10px !important;
-
-//     font-size: 48px !important;
-
-//     font-weight: 700 !important;
-
-//     color: #0f172a !important;
-
-//     font-family: "Inter", sans-serif !important;
-
-//     letter-spacing: -1px !important;
-// }
-
-// .judicial-login-page .login-card .login-subtitle {
-
-//     text-align: center !important;
-
-//     color: #64748b !important;
-
-//     font-size: 15px !important;
-
-//     margin-bottom: 34px !important;
-
-//     line-height: 1.7;
-// }
-
-// /* =========================================================
-//    INPUTS
-// ========================================================= */
-
-// .judicial-login-page .login-card input,
-// .judicial-login-page .login-card .form-control {
-
-//     width: 100% !important;
-
-//     height: 58px !important;
-
-//     background: #ffffff !important;
-
-//     color: #0f172a !important;
-
-//     border:
-//         1.5px solid #e2e8f0 !important;
-
-//     border-radius: 16px !important;
-
-//     padding: 0 18px !important;
-
-//     font-size: 15px !important;
-
-//     font-weight: 500 !important;
-
-//     font-family: "Inter", sans-serif !important;
-
-//     transition: all 0.25s ease;
-// }
-
-// /* FOCUS */
-
-// .judicial-login-page .login-card input:focus,
-// .judicial-login-page .login-card .form-control:focus {
-
-//     border:
-//         1.5px solid #d4af37 !important;
-
-//     box-shadow:
-//         0 0 0 4px rgba(212, 175, 55, 0.12) !important;
-// }
-
-// /* =========================================================
-//    BUTTON
-// ========================================================= */
-
-// .judicial-login-page .login-card .btn-primary,
-// .judicial-login-page .login-card button[type="submit"] {
-
-//     background:
-//         linear-gradient(135deg,
-//             #0ea5b7,
-//             #087b89) !important;
-
-//     color: #ffffff !important;
-
-//     border: none !important;
-
-//     border-radius: 14px !important;
-
-//     font-weight: 700 !important;
-
-//     height: 56px !important;
-
-//     width: 100% !important;
-
-//     font-size: 15px !important;
-
-//     transition: all 0.28s ease;
-// }
-
-// .judicial-login-page .login-card .btn-primary:hover,
-// .judicial-login-page .login-card button[type="submit"]:hover {
-
-//     transform: translateY(-2px);
-
-//     box-shadow:
-//         0 10px 24px rgba(14, 165, 183, 0.22);
-// }
-
-// /* =========================================================
-//    LINKS
-// ========================================================= */
-
-// .judicial-login-page .login-card a {
-
-//     color: #c9a96e !important;
-
-//     font-size: 14px !important;
-
-//     font-weight: 500 !important;
-
-//     text-decoration: none !important;
-// }
-
-// .judicial-login-page .login-card a:hover {
-
-//     color: #0f172a !important;
-
-//     text-decoration: underline !important;
-// }
-
-// /* =========================================================
-//    TRUST BADGE
-// ========================================================= */
-
-// .trust-badge {
-
-//     background: #f8fafc !important;
-
-//     border:
-//         1px solid #e2e8f0 !important;
-
-//     border-radius: 16px;
-
-//     padding: 16px;
-
-//     font-size: 12px;
-
-//     color: #64748b !important;
-
-//     text-align: center;
-
-//     line-height: 1.7;
-
-//     margin-top: 24px;
-// }
-
-// /* =========================================================
-//    SECURITY SECTION
-// ========================================================= */
-
-// .security-section {
-
-//     margin-top: 28px;
-
-//     display: flex;
-
-//     flex-direction: column;
-
-//     align-items: center;
-
-//     gap: 12px;
-// }
-
-// /* SECURITY LABEL */
-
-// .security-label {
-
-//     font-size: 12px;
-
-//     font-weight: 700;
-
-//     letter-spacing: 2px;
-
-//     text-transform: uppercase;
-
-//     color: #64748b;
-
-//     font-family: "Inter", sans-serif;
-// }
-
-// /* TRUST BADGE */
-
-// .trust-badge {
-
-//     width: 100%;
-
-//     background: #f8fafc !important;
-
-//     border:
-//         1px solid #e2e8f0 !important;
-
-//     border-radius: 18px;
-
-//     padding: 16px 18px;
-
-//     font-size: 13px;
-
-//     font-weight: 500;
-
-//     color: #64748b !important;
-
-//     text-align: center;
-
-//     line-height: 1.7;
-
-//     box-shadow:
-//         inset 0 1px 0 rgba(255, 255, 255, 0.7);
-// }
-
-// /* =========================================================
-//    RESPONSIVE
-// ========================================================= */
-
-// @media (max-width: 992px) {
-
-//     .judicial-login-page {
-
-//         flex-direction: column;
-//     }
-
-//     .login-left-panel,
-//     .login-right-panel {
-
-//         width: 100%;
-//     }
-
-//     .hero-content h1 {
-
-//         font-size: 42px;
-//     }
-// }
-
-// @media (max-width: 768px) {
-
-//     .login-left-panel {
-
-//         padding: 40px 24px;
-//     }
-
-//     .hero-content h1 {
-
-//         font-size: 36px;
-//     }
-
-//     .feature-cards {
-
-//         flex-direction: column;
-//     }
-
-//     .feature-card {
-
-//         max-width: 100%;
-//     }
-
-//     .login-card {
-
-//         padding: 80px 28px 40px;
-//     }
-
-//     .judicial-login-page .login-card h2 {
-
-//         font-size: 38px !important;
-//     }
-// }
-
 @import 'src/styles/variables';
 
-/* =========================================================
-   GLOBAL
-========================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
 
 html,
 body {
-
-    margin: 0;
-    padding: 0;
-
     width: 100%;
     height: 100%;
-
-    overflow: hidden !important;
-
-    font-family: "Inter", sans-serif;
-
-    background: #071414;
 }
 
 /* =========================================================
-   MAIN LAYOUT
+   MAIN PAGE
 ========================================================= */
 
 .judicial-login-page {
 
-    display: flex;
+    position: relative;
 
     width: 100%;
 
     height: calc(100vh - 115px);
 
-    overflow: hidden !important;
+    display: flex;
 
-    background: #071414;
+    align-items: center;
 
-    font-family: "Inter", sans-serif;
+    justify-content: center;
+
+    gap: 50px;
+
+    padding: 25px 60px;
+
+    overflow: hidden;
 }
 
 /* =========================================================
-   LEFT PANEL
+   BACKGROUND
 ========================================================= */
 
-.login-left-panel {
+.background-layer {
 
-    position: relative;
+    position: absolute;
 
-    width: 55%;
-
-    height: 100%;
-
-    overflow: hidden;
+    inset: 0;
 
     background:
-        linear-gradient(rgba(4, 16, 32, 0.52),
-            rgba(4, 16, 32, 0.52)),
-        url('/assets/custom/images/orissa-highcourt-bg.jpeg');
+        linear-gradient(90deg,
+            rgba(3, 15, 30, 0.92) 0%,
+            rgba(3, 15, 30, 0.82) 35%,
+            rgba(3, 15, 30, 0.45) 100%),
+        url('/assets/images/image.jpeg');
 
     background-size: cover;
 
@@ -1410,332 +61,257 @@ body {
 
     background-repeat: no-repeat;
 
-    display: flex;
+    filter: brightness(0.9);
 
-    align-items: center;
-
-    justify-content: center;
-
-    padding: 38px 54px;
+    z-index: 0;
 }
 
 /* =========================================================
-   OVERLAY
+   LEFT SECTION
 ========================================================= */
 
-.left-overlay {
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        linear-gradient(to bottom,
-            rgba(0, 0, 0, 0.08),
-            rgba(0, 0, 0, 0.32));
-}
-
-/* =========================================================
-   CONTENT
-========================================================= */
-
-.left-content {
+.left-section {
 
     position: relative;
 
     z-index: 2;
 
-    width: 100%;
+    width: 46%;
 
-    max-width: 600px;
+    max-width: 460px;
 
-    height: 100%;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: space-between;
+    color: #ffffff;
 }
 
-/* =========================================================
-   HERO SECTION
-========================================================= */
+.institution-name {
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.8px;
+}
+
+.institution-subtitle {
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #d4af37;
+}
+
+.header-line {
+    display: none;
+}
 
 .hero-content {
 
-    margin-top: 10px;
+    margin-top: 45px;
 }
 
 .welcome-text {
 
-    color: rgba(255, 255, 255, 0.90);
-
-    font-size: 15px;
+    font-size: 13px;
 
     font-weight: 500;
 
     margin-bottom: 8px;
+
+    color: rgba(255, 255, 255, .95);
 }
 
 .hero-content h1 {
+    font-size: 34px;
+    line-height: 1.2;
 
-    margin: 0 0 12px;
-
-    font-size: 44px;
-
-    line-height: 1.08;
 
     font-weight: 700;
 
+    margin-bottom: 12px;
+
     color: #ffffff;
 
-    letter-spacing: -1px;
+    letter-spacing: -0.5px;
 }
 
 .gold-line {
-
-    width: 70px;
-
-    height: 3px;
-
-    border-radius: 999px;
-
-    background: #d4af37;
-
-    margin-bottom: 18px;
+    display: none;
 }
 
 .hero-content p {
 
-    max-width: 500px;
+    max-width: 420px;
 
-    color: rgba(255, 255, 255, 0.84);
+    font-size: 13px;
 
-    font-size: 14px;
+    line-height: 1.8;
 
-    line-height: 1.7;
-
-    margin-bottom: 18px;
-}
-
-.paperless-text {
-
-    color: #d4af37;
-
-    font-size: 10px;
-
-    font-weight: 700;
-
-    letter-spacing: 3px;
-
-    text-transform: uppercase;
+    color: rgba(255, 255, 255, .90);
 }
 
 /* =========================================================
-   FEATURE CARDS
+   FEATURES
 ========================================================= */
 
-.feature-cards {
+.feature-row {
 
     display: flex;
 
     gap: 12px;
 
-    margin-top: auto;
-
-    margin-bottom: 12px;
+    margin-top: 28px;
 }
 
-.feature-card {
+.feature-item {
 
-    flex: 1;
+    width: 145px;
+
+    min-height: 85px;
 
     padding: 12px;
 
-    border-radius: 16px;
+    border-radius: 14px;
 
-    background:
-        rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(12px);
 
-    border:
-        1px solid rgba(255, 255, 255, 0.10);
+    background: rgba(255, 255, 255, .08);
 
-    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, .10);
 
-    transition: all 0.3s ease;
+    transition: all .3s ease;
 }
 
-.feature-card:hover {
+.feature-item:hover {
 
     transform: translateY(-2px);
 
-    background:
-        rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, .12);
 }
 
 .feature-icon {
 
-    width: 38px;
+    font-size: 18px;
 
-    height: 38px;
-
-    border-radius: 10px;
-
-    background:
-        rgba(212, 175, 55, 0.16);
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    margin-bottom: 8px;
-
-    font-size: 16px;
+    margin-bottom: 6px;
 }
 
-.feature-card h4 {
+.feature-item h4 {
 
-    margin: 0 0 4px;
+    font-size: 12px;
+
+    font-weight: 600;
+
+    margin-bottom: 4px;
 
     color: #ffffff;
 
-    font-size: 12px;
-
-    font-weight: 700;
+    line-height: 1.4;
 }
 
-.feature-card span {
+.feature-item span {
 
-    color: rgba(255, 255, 255, 0.78);
+    font-size: 10px;
 
-    font-size: 9px;
+    line-height: 1.4;
 
-    line-height: 1.5;
+    color: rgba(255, 255, 255, .80);
 }
 
-/* =========================================================
-   COPYRIGHT
-========================================================= */
+.footer-text {
 
-.copyright-text {
-
-    color: rgba(255, 255, 255, 0.82);
+    margin-top: 25px;
 
     font-size: 12px;
 
-    margin-top: 2px;
+    color: rgba(255, 255, 255, .8);
 }
 
 /* =========================================================
-   RIGHT PANEL
+   LOGIN SECTION
 ========================================================= */
 
-.login-right-panel {
-
-    width: 45%;
-
-    height: 100%;
-
-    overflow: hidden;
-
-    background:
-        linear-gradient(135deg,
-            #f4f7fb 0%,
-            #eef2f7 100%);
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    padding: 24px;
-}
-
-/* =========================================================
-   CARD WRAPPER
-========================================================= */
-
-.login-card-wrapper {
-
-    width: 100%;
-
-    max-width: 380px;
-
-    overflow: hidden;
-}
-
-/* =========================================================
-   LOGIN CARD
-========================================================= */
-
-.login-card {
+.login-section {
 
     position: relative;
 
-    background: #ffffff;
+    z-index: 2;
 
-    border-radius: 28px;
+    display: flex;
 
-    padding: 42px 34px 28px;
+    justify-content: center;
 
-    overflow: hidden;
+    align-items: center;
+
+    margin-left: 7dvh;
+}
+
+.login-card {
+
+    width: 400px;
+
+    background: rgba(255, 255, 255, .98);
+
+    backdrop-filter: blur(20px);
+
+    border-radius: 18px;
+
+    padding: 18px 22px;
+
+    border: 1px solid rgba(255, 255, 255, .4);
 
     box-shadow:
-        0 10px 30px rgba(15, 23, 42, 0.08);
-
-    border:
-        1px solid rgba(0, 0, 0, 0.04);
+        0 10px 30px rgba(0, 0, 0, .14);
 }
 
 /* =========================================================
-   REMOVE ICON COMPLETELY
+   CARD HEADER
 ========================================================= */
 
-.lock-circle {
+.card-logo {
 
-    display: none !important;
+    text-align: center;
+
+    margin-bottom: 6px;
 }
 
-/* =========================================================
-   LOGIN HEADER
-========================================================= */
+.card-logo img {
+
+    width: 36px;
+
+    height: 36px;
+
+    object-fit: contain;
+}
 
 .login-badge {
 
     text-align: center;
 
-    color: #0f9eb1;
+    color: #0b2d48;
 
-    font-size: 9px;
+    font-size: 8px;
 
     font-weight: 700;
 
     letter-spacing: 2px;
 
-    margin-bottom: 10px;
+    margin-bottom: 4px;
 }
 
-.judicial-login-page .login-card h2 {
+.login-card h2 {
 
-    margin: 0 0 8px !important;
+    text-align: center;
 
-    text-align: center !important;
+    color: #0b2d48;
 
-    font-size: 26px !important;
+    font-size: 15px;
 
-    line-height: 1.25;
+    font-weight: 700;
 
-    font-weight: 700 !important;
+    line-height: 1.4;
 
-    color: #0f172a !important;
-
-    font-family: "Inter", sans-serif !important;
-
-    letter-spacing: -0.4px;
+    margin-bottom: 8px;
 }
 
 .login-subtitle {
@@ -1744,224 +320,168 @@ body {
 
     color: #64748b;
 
-    font-size: 12px;
+    font-size: 11px;
 
-    line-height: 1.6;
+    line-height: 1.5;
 
-    margin-bottom: 22px;
+    margin-bottom: 12px;
 }
 
 /* =========================================================
-   FORM
+   FORM CONTROLS
 ========================================================= */
+.login-card input,
+.login-card .form-control {
 
-.custom-login-form,
-.custom-login-form form {
+    height: 38px !important;
 
-    overflow: hidden !important;
+    border-radius: 8px !important;
+
+    border: 1px solid #dbe3ea !important;
+
+    font-size: 12px !important;
+
+    padding: 0 12px !important;
 }
 
-.custom-login-form .form-group {
+.login-card input::placeholder {
 
-    margin-bottom: 12px !important;
+    font-size: 11px !important;
+
+    color: #7b8794 !important;
+
+    font-weight: 400;
 }
 
-.judicial-login-page .login-card input,
-.judicial-login-page .login-card .form-control {
+.login-card input:focus,
+.login-card .form-control:focus {
 
-    width: 100% !important;
-
-    height: 48px !important;
-
-    border-radius: 12px !important;
-
-    border:
-        1.5px solid #dbe3ea !important;
-
-    background: #ffffff !important;
-
-    padding: 0 14px !important;
-
-    font-size: 13px !important;
-
-    font-weight: 500 !important;
-
-    color: #0f172a !important;
-
-    transition: all 0.25s ease;
-}
-
-/* =========================================================
-   INPUT FOCUS
-========================================================= */
-
-.judicial-login-page .login-card input:focus,
-.judicial-login-page .login-card .form-control:focus {
-
-    border-color: #0f9eb1 !important;
+    border-color: #0b2d48 !important;
 
     box-shadow:
-        0 0 0 4px rgba(15, 158, 177, 0.08) !important;
+        0 0 0 3px rgba(11, 45, 72, .12) !important;
 }
 
 /* =========================================================
    BUTTON
 ========================================================= */
 
-.judicial-login-page .login-card .btn-primary,
-.judicial-login-page .login-card button[type="submit"] {
+.login-card .btn-primary,
+.login-card button[type="submit"] {
 
-    width: 100% !important;
+    height: 38px !important;
 
-    height: 48px !important;
+    font-size: 12px !important;
 
-    border-radius: 12px !important;
+    font-weight: 500 !important;
 
-    border: none !important;
+    border-radius: 8px !important;
 
-    background:
-        linear-gradient(135deg,
-            #0f9eb1,
-            #067180) !important;
+    background: #0d2c47 !important;
 
     color: #ffffff !important;
 
-    font-size: 14px !important;
-
-    font-weight: 700 !important;
-
-    transition: all 0.3s ease;
+    border: none !important;
 }
 
-.judicial-login-page .login-card .btn-primary:hover,
-.judicial-login-page .login-card button[type="submit"]:hover {
+.login-card .btn-primary:hover,
+.login-card button[type="submit"]:hover {
 
-    transform: translateY(-1px);
-
-    box-shadow:
-        0 8px 18px rgba(15, 158, 177, 0.18);
+    background: #123d62 !important;
 }
 
 /* =========================================================
    LINKS
 ========================================================= */
 
-.judicial-login-page .login-card a {
-
-    color: #0f9eb1 !important;
+.login-card a {
 
     font-size: 12px !important;
 
-    font-weight: 500 !important;
+    line-height: 1.4;
 
-    text-decoration: none !important;
-}
+    color: #0b2d48 !important;
 
-.judicial-login-page .login-card a:hover {
-
-    text-decoration: underline !important;
+    font-weight: 400 !important;
 }
 
 /* =========================================================
-   SECURITY SECTION
+   SECURITY
 ========================================================= */
 
 .security-section {
 
-    margin-top: 18px;
+    margin-top: 10px;
 
     text-align: center;
 }
 
 .security-label {
 
-    color: #64748b;
+    font-size: 8px;
 
-    font-size: 10px;
-
-    font-weight: 700;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-
-    margin-bottom: 10px;
+    letter-spacing: 1.5px;
 }
 
 .trust-badge {
 
-    background: #f8fafc;
-
-    border:
-        1px solid #e2e8f0;
-
-    border-radius: 14px;
-
-    padding: 12px 14px;
-
-    font-size: 11px;
-
-    line-height: 1.6;
-
-    color: #64748b;
+    font-size: 9px;
 }
 
 /* =========================================================
    RESPONSIVE
 ========================================================= */
 
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
 
-    html,
-    body {
-
-        overflow-x: hidden !important;
-        overflow-y: auto !important;
+    .hero-content h1 {
+        font-size: 34px;
     }
+
+    .left-section {
+        max-width: 420px;
+    }
+}
+
+@media (max-width: 992px) {
 
     .judicial-login-page {
 
         flex-direction: column;
 
+        gap: 30px;
+
+        padding: 25px;
+
         height: auto;
     }
 
-    .login-left-panel,
-    .login-right-panel {
+    .left-section {
 
         width: 100%;
+
+        max-width: 100%;
     }
 
-    .feature-cards {
+    .feature-row {
 
         flex-direction: column;
     }
 
-    .hero-content h1 {
+    .feature-item {
 
-        font-size: 36px;
-    }
-}
-
-@media (max-width: 768px) {
-
-    .login-left-panel {
-
-        padding: 30px 22px;
-    }
-
-    .hero-content h1 {
-
-        font-size: 30px;
+        width: 100%;
     }
 
     .login-card {
 
-        padding: 36px 24px 24px;
+        width: 100%;
+
+        max-width: 340px;
     }
 
-    .judicial-login-page .login-card h2 {
+    .hero-content h1 {
 
-        font-size: 22px !important;
+        font-size: 34px;
     }
 }

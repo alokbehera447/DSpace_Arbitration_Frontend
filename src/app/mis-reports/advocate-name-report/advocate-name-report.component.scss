@@ -1,0 +1,303 @@
+/* ===================================================== */
+/* PAGE */
+/* ===================================================== */
+
+.batch-import-page {
+    padding: 26px;
+    background: #f5f7fb;
+    min-height: 100vh;
+    font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+/* ===================================================== */
+/* HEADER */
+/* ===================================================== */
+
+.report-header {
+    margin-bottom: 18px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.header-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #14344d 0%, #1d4f6d 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 20px;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.10);
+}
+
+.header-content h2 {
+    margin: 0;
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: #1e293b;
+    line-height: 1.2;
+}
+
+.header-content p {
+    margin-top: 4px;
+    margin-bottom: 0;
+    font-size: 13px;
+    font-weight: 500;
+    color: #64748b;
+    line-height: 1.4;
+}
+
+/* ===================================================== */
+/* FILTER PANEL */
+/* ===================================================== */
+
+.filter-panel {
+    background: linear-gradient(135deg, #05223b 0%, #0f3d63 55%, #082742 100%);
+    border-radius: 18px;
+    padding: 20px 18px;
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.10);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.filter-panel::before {
+    content: "";
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle, rgba(29, 214, 206, 0.14) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.filter-panel:last-of-type {
+    margin-bottom: 0;
+}
+
+.filters-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 14px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.collection-group {
+    min-width: 230px;
+    max-width: 230px;
+}
+
+.date-group {
+    min-width: 160px;
+    max-width: 180px;
+}
+
+.filter-group label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+input,
+select {
+    width: 100%;
+    height: 42px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.08);
+    padding: 0 14px;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 500;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, background 0.2s ease,
+        box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+select option {
+    background: #ffffff;
+    color: #1e293b;
+}
+
+input:focus,
+select:focus {
+    border-color: #1dd6ce;
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 0 0 2px rgba(29, 214, 206, 0.15);
+    transform: translateY(-1px);
+}
+
+input[type="date"] {
+    color-scheme: light;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+input[type="date"]::-webkit-datetime-edit {
+    color: rgba(255, 255, 255, 0.82);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: brightness(0) invert(1);
+    opacity: 0.85;
+    cursor: pointer;
+}
+
+/* ===================================================== */
+/* SECTION LABEL (Petitioner / Respondent title) */
+/* ===================================================== */
+
+.section-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.10em;
+    color: rgba(255, 255, 255, 0.55);
+    margin-bottom: 10px;
+    padding-left: 2px;
+}
+
+/* ===================================================== */
+/* BUTTON AREA */
+/* ===================================================== */
+
+.filter-actions {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    padding-left: 8px;
+}
+
+.search-btn,
+.clear-btn {
+    height: 42px;
+    min-width: 140px;
+    padding: 0 18px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.search-btn {
+    background: linear-gradient(135deg, #1dd6ce 0%, #14b8b1 100%);
+    box-shadow: 0 4px 12px rgba(20, 184, 177, 0.25);
+}
+
+.search-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(20, 184, 177, 0.34);
+}
+
+.search-btn:disabled,
+.clear-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.clear-btn {
+    background: linear-gradient(135deg, #1dd6ce 0%, #14b8b1 100%);
+    box-shadow: 0 4px 12px rgba(20, 184, 177, 0.25);
+    border: none;
+    color: #ffffff;
+}
+
+.clear-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(20, 184, 177, 0.34);
+}
+
+/* ===================================================== */
+/* MESSAGES */
+/* ===================================================== */
+
+.info-message {
+    margin-top: 14px;
+    background: #ffffff;
+    border: 1px solid #dbe5ef;
+    border-radius: 10px;
+    padding: 14px 16px;
+    color: #64748b;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.success-message {
+    margin-top: 14px;
+    background: #ecfdf3;
+    border: 1px solid #bbf7d0;
+    color: #15803d;
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.error-message {
+    margin-top: 14px;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #b91c1c;
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* ===================================================== */
+/* RESPONSIVE */
+/* ===================================================== */
+
+@media (max-width: 992px) {
+    .filters-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .collection-group,
+    .date-group {
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    .filter-actions {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .search-btn,
+    .clear-btn {
+        flex: 1;
+        width: 100%;
+    }
+}

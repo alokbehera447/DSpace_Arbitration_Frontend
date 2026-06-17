@@ -1,0 +1,90 @@
+<div class="batch-import-page">
+
+    <!-- HEADER -->
+    <div class="report-header">
+        <div class="header-left">
+            <div class="header-icon">⚖️</div>
+            <div class="header-content">
+                <h2>Advocate Name Report</h2>
+                <p>Generate and export advocate name reports within a selected date range.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PETITIONER ADVOCATE -->
+    <div class="filter-panel">
+        <div class="section-label">Petitioner Advocate</div>
+        <div class="filters-row">
+
+            <div class="filter-group collection-group">
+                <label>Petitioner Advocate Name</label>
+                <select [(ngModel)]="petitionerAdvocateName">
+                    <option value="">Select All</option>
+                    <option *ngFor="let name of petitionerAdvocates" [value]="name">{{ name }}</option>
+                </select>
+            </div>
+
+            <div class="filter-group date-group">
+                <label>Start Date</label>
+                <input type="date" [(ngModel)]="petitionerStartDate">
+            </div>
+
+            <div class="filter-group date-group">
+                <label>End Date</label>
+                <input type="date" [(ngModel)]="petitionerEndDate">
+            </div>
+
+            <div class="filter-actions">
+                <button class="search-btn" (click)="exportPetitionerCSV()" [disabled]="loading">
+                    Export As CSV
+                </button>
+                <button class="clear-btn" (click)="exportPetitionerPDF()" [disabled]="loading">
+                    Export As PDF
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- RESPONDENT ADVOCATE -->
+    <div class="filter-panel">
+        <div class="section-label">Respondent Advocate</div>
+        <div class="filters-row">
+
+            <div class="filter-group collection-group">
+                <label>Respondent Advocate Name</label>
+                <select [(ngModel)]="respondentAdvocateName">
+                    <option value="">Select All</option>
+                    <option *ngFor="let name of respondentAdvocates" [value]="name">{{ name }}</option>
+                </select>
+            </div>
+
+            <div class="filter-group date-group">
+                <label>Start Date</label>
+                <input type="date" [(ngModel)]="respondentStartDate">
+            </div>
+
+            <div class="filter-group date-group">
+                <label>End Date</label>
+                <input type="date" [(ngModel)]="respondentEndDate">
+            </div>
+
+            <div class="filter-actions">
+                <button class="search-btn" (click)="exportRespondentCSV()" [disabled]="loading">
+                    Export As CSV
+                </button>
+                <button class="clear-btn" (click)="exportRespondentPDF()" [disabled]="loading">
+                    Export As PDF
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- SUCCESS -->
+    <div class="success-message" *ngIf="successMessage">{{ successMessage }}</div>
+
+    <!-- ERROR -->
+    <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+</div>

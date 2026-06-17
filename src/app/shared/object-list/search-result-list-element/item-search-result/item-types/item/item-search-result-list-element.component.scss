@@ -1,12 +1,304 @@
+// @import '../../../../../../../styles/variables';
+// @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+// /* =========================================
+//    CARD CONTAINER
+// ========================================= */
+
+// .case-info-container {
+//   margin-bottom: 1rem;
+// }
+
+// /* =========================================
+//    CARD
+// ========================================= */
+
+// .case-info-link,
+// .case-info-text {
+
+//   display: flex;
+//   flex-direction: column;
+
+//   gap: .85rem;
+
+//   padding: 1.2rem 1.25rem;
+
+//   background: #FFFFFF;
+
+//   border: 1px solid #E2E8F0;
+
+//   border-radius: 18px;
+
+//   text-decoration: none;
+
+//   box-shadow: 0 1px 3px rgba(15, 23, 42, .04);
+
+//   transition: all .25s ease;
+// }
+
+// .case-info-link:hover {
+
+//   border-color: #D7DEE8;
+
+//   box-shadow: 0 10px 25px rgba(15, 23, 42, .08);
+
+//   transform: translateY(-2px);
+// }
+
+
+
+// /* =========================================
+//    HEADER ROW
+// ========================================= */
+
+// .case-header-row {
+
+//   display: flex;
+
+//   justify-content: space-between;
+
+//   align-items: center;
+
+//   flex-wrap: wrap;
+
+//   gap: 1rem;
+
+//   margin-bottom: .15rem;
+// }
+
+// /* =========================================
+//    DATE
+// ========================================= */
+
+// .case-date {
+
+//   display: flex;
+
+//   align-items: center;
+
+//   gap: .4rem;
+
+//   color: #64748B;
+
+//   font-size: .8rem;
+
+//   font-weight: 500;
+// }
+
+// .case-date i {
+
+//   color: #2563EB;
+// }
+
+// /* =========================================
+//    BADGES
+// ========================================= */
+
+// .badges-row {
+
+//   display: flex;
+
+//   align-items: center;
+
+//   flex-wrap: wrap;
+
+//   gap: .6rem;
+// }
+
+// .badge {
+
+//   padding: .28rem .8rem;
+
+//   border-radius: 999px;
+
+//   font-size: .56rem;
+
+//   font-weight: 700;
+
+//   letter-spacing: .8px;
+
+//   text-transform: uppercase;
+
+//   font-family: 'Inter', sans-serif;
+// }
+
+// .case-file-badge {
+
+//   background: #EEF4FF;
+
+//   border: 1px solid #DCE7FF;
+
+//   color: #0047CC;
+// }
+
+// .pending-badge {
+
+//   background: #FFE9E9;
+
+//   border: 1px solid #FFD8D8;
+
+//   color: #E11D48;
+// }
+
+// /* =========================================
+//    CASE TITLE
+// ========================================= */
+
+// .case-details-row {
+
+//   display: flex;
+
+//   align-items: center;
+
+//   flex-wrap: wrap;
+
+//   gap: .18rem;
+// }
+
+// .case-type,
+// .case-number,
+// .case-year {
+
+//   font-family: 'Inter', sans-serif;
+
+//   font-size: 1.35rem;
+
+//   font-weight: 700;
+
+//   color: #0F2D52;
+
+//   line-height: 1.2;
+
+//   letter-spacing: -0.2px;
+// }
+
+// .separator {
+
+//   margin: 0 .15rem;
+
+//   color: #94A3B8;
+
+//   font-size: 1.2rem;
+
+//   font-weight: 600;
+
+//   font-family: 'Inter', sans-serif;
+// }
+
+// /* =========================================
+//    PARTY ROW
+// ========================================= */
+
+// .parties-row {
+
+//   display: flex;
+
+//   align-items: center;
+
+//   flex-wrap: wrap;
+
+//   gap: .85rem;
+// }
+
+// .petitioner-name,
+// .respondent-name {
+
+//   font-family: 'Inter', sans-serif;
+
+//   font-size: .78rem;
+
+//   font-weight: 500;
+
+//   color: #475569;
+
+//   line-height: 1.5;
+
+//   text-transform: uppercase;
+
+//   letter-spacing: .15px;
+// }
+
+// /* =========================================
+//    VS BADGE
+// ========================================= */
+
+// .vs-separator {
+
+//   display: inline-flex;
+
+//   align-items: center;
+
+//   justify-content: center;
+
+//   min-width: 26px;
+
+//   height: 18px;
+
+//   padding: 0 .55rem;
+
+//   border-radius: 999px;
+
+//   background: #F7E8B6;
+
+//   border: 1px solid #E9D48D;
+
+//   color: #8A6512;
+
+//   font-size: .55rem;
+
+//   font-weight: 600;
+
+//   font-family: 'Inter', sans-serif;
+
+//   letter-spacing: .2px;
+
+//   line-height: 1;
+// }
+
+// /* =========================================
+//    MOBILE
+// ========================================= */
+
+// @media (max-width: 768px) {
+
+//   .case-info-link,
+//   .case-info-text {
+
+//     padding: 1rem;
+//   }
+
+//   .case-type,
+//   .case-number,
+//   .case-year,
+//   .separator {
+
+//     font-size: 1.1rem;
+//   }
+
+//   .petitioner-name,
+//   .respondent-name {
+
+//     font-size: .78rem;
+//   }
+
+//   .parties-row {
+
+//     flex-direction: column;
+
+//     align-items: flex-start;
+
+//     gap: .45rem;
+//   }
+// }
 @import '../../../../../../../styles/variables';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* =========================================
-   DARK JUDICIAL CARD
+   CONTAINER
 ========================================= */
 
 .case-info-container {
-
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 /* =========================================
@@ -17,72 +309,51 @@
 .case-info-text {
 
   display: flex;
-
   flex-direction: column;
 
-  gap: 1rem;
+  gap: .9rem;
 
-  padding: 1.5rem 1.6rem;
+  padding: 1.15rem 1.2rem;
 
-  border-radius: 22px;
+  background: #FFFFFF;
 
-  background:
-    linear-gradient(180deg,
-      rgba(4, 24, 34, 0.98) 0%,
-      rgba(2, 18, 28, 0.98) 100%);
+  border: 1px solid #E2E8F0;
 
-  border:
-    1px solid rgba(255, 255, 255, 0.06);
-
-  box-shadow:
-    0 12px 30px rgba(0, 0, 0, 0.28);
+  border-radius: 16px;
 
   text-decoration: none;
 
-  transition:
-    transform 0.28s ease,
-    border-color 0.28s ease,
-    box-shadow 0.28s ease;
+  box-shadow:
+    0 2px 8px rgba(15, 23, 42, .04);
 
-  position: relative;
-
-  overflow: hidden;
+  transition: all .25s ease;
 }
-
-/* =========================================
-   SOFT TOP GLOW
-========================================= */
-
-.case-info-link::before,
-.case-info-text::before {
-
-  content: '';
-
-  position: absolute;
-
-  inset: 0;
-
-  background:
-    radial-gradient(circle at top right,
-      rgba(45, 212, 191, 0.08),
-      transparent 45%);
-
-  pointer-events: none;
-}
-
-/* =========================================
-   HOVER
-========================================= */
 
 .case-info-link:hover {
 
-  transform: translateY(-3px);
+  border-color: #D6DEE8;
 
-  border-color:
-    rgba(45, 212, 191, 0.20);
+  transform: translateY(-2px);
 
   box-shadow:
-    0 22px 42px rgba(0, 0, 0, 0.34);
+    0 8px 20px rgba(15, 23, 42, .06);
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.case-header-row {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 1rem;
 }
 
 /* =========================================
@@ -95,10 +366,16 @@
 
   align-items: center;
 
-  gap: 0.65rem;
+  gap: .65rem;
+
+  flex-wrap: wrap;
 }
 
 .badge {
+
+  height: 22px;
+
+  padding: 0 .8rem;
 
   display: inline-flex;
 
@@ -106,49 +383,73 @@
 
   justify-content: center;
 
-  height: 30px;
-
-  padding: 0 1rem;
-
   border-radius: 999px;
 
-  font-size: 0.66rem;
+  font-size: .58rem;
 
   font-weight: 700;
 
-  letter-spacing: 1.2px;
+  letter-spacing: .7px;
 
   text-transform: uppercase;
 
   font-family: 'Inter', sans-serif;
 }
 
-/* CASE FILE */
-
 .case-file-badge {
 
-  background:
-    linear-gradient(135deg,
-      #14b8a6,
-      #0f766e);
+  background: #EEF4FF;
 
-  color: #ffffff;
+  border: 1px solid #DCE7FF;
+
+  color: #1D4ED8;
 }
-
-/* DISPOSED */
 
 .pending-badge {
 
-  background:
-    linear-gradient(135deg,
-      #dc2626,
-      #991b1b);
+  background: #FFE9E9;
 
-  color: #ffffff;
+  border: 1px solid #FFD8D8;
+
+  color: #DC2626;
 }
 
 /* =========================================
-   CASE DETAILS
+   DATE
+========================================= */
+
+.case-date {
+
+  height: 30px;
+
+  padding: 0 .9rem;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: .45rem;
+
+  border-radius: 999px;
+
+  background: #F8FAFF;
+
+  border: 1px solid #E2E8F0;
+
+  color: #475569;
+
+  font-size: .82rem;
+
+  font-weight: 600;
+}
+
+.case-date i {
+
+  color: #2563EB;
+}
+
+/* =========================================
+   CASE TITLE
 ========================================= */
 
 .case-details-row {
@@ -159,79 +460,35 @@
 
   flex-wrap: wrap;
 
-  gap: 0.45rem;
-
-  line-height: 1.5;
+  gap: .15rem;
 }
 
-/* =========================================
-   CASE TYPE / NUMBER / YEAR
-   GOLD JUDICIAL STYLE
-========================================= */
-
-.case-type {
-
-  font-size: 0.96rem;
-
-  font-weight: 700;
-
-  color: #d4af37;
-
-  letter-spacing: 0.5px;
-
-  text-transform: uppercase;
-
-  font-family: 'Inter', sans-serif;
-}
-
-.case-number {
-
-  font-size: 0.96rem;
-
-  font-weight: 700;
-
-  color: #f0c75e;
-
-  letter-spacing: 0.4px;
-
-  font-family: 'Inter', sans-serif;
-}
-
+.case-type,
+.case-number,
 .case-year {
 
-  font-size: 0.96rem;
+  font-family: 'Inter', sans-serif;
+
+  font-size: 1.35rem;
 
   font-weight: 700;
 
-  color: #e8c14f;
+  color: #0F2D52;
 
-  letter-spacing: 0.4px;
+  line-height: 1.2;
 
-  font-family: 'Inter', sans-serif;
+  letter-spacing: -.2px;
 }
-
-/* SLASH */
 
 .separator {
 
-  color: rgba(255, 255, 255, 0.34);
+  margin: 0 .15rem;
 
-  font-size: 0.90rem;
+  color: #94A3B8;
 
-  font-weight: 400;
-}
+  font-size: 1.2rem;
 
-/* =========================================
-   SLASH
-========================================= */
-
-.separator {
-
-  color: rgba(255, 255, 255, 0.32);
-
-  font-size: 0.9rem;
-
-  font-weight: 400;
+  font-weight: 600;
 }
 
 /* =========================================
@@ -246,45 +503,25 @@
 
   flex-wrap: wrap;
 
-  gap: 0.65rem;
-
-  margin-top: 2px;
-
-  line-height: 1.8;
-
-  font-size: 0.90rem;
-
-  font-family: 'Inter', sans-serif;
+  gap: .9rem;
 }
 
-/* PETITIONER */
-
-.petitioner-name {
-
-  color: rgba(255, 255, 255, 0.80);
-
-  font-size: 0.90rem;
-
-  font-weight: 500;
-
-  letter-spacing: 0.1px;
-
-  font-family: 'Inter', sans-serif;
-}
-
-/* RESPONDENT */
-
+.petitioner-name,
 .respondent-name {
 
-  color: rgba(255, 255, 255, 0.80);
-
-  font-size: 0.90rem;
-
-  font-weight: 500;
-
-  letter-spacing: 0.1px;
-
   font-family: 'Inter', sans-serif;
+
+  font-size: .80rem;
+
+  font-weight: 600;
+
+  color: #475569;
+
+  text-transform: uppercase;
+
+  line-height: 1.5;
+
+  letter-spacing: .15px;
 }
 
 /* =========================================
@@ -293,85 +530,53 @@
 
 .vs-separator {
 
+  height: 22px;
+
+  min-width: 30px;
+
+  padding: 0 .75rem;
+
   display: inline-flex;
 
   align-items: center;
 
   justify-content: center;
 
-  height: 24px;
-
-  padding: 0 0.8rem;
-
   border-radius: 999px;
 
-  background:
-    rgba(239, 68, 68, 0.14);
+  background: #F7E8B6;
 
-  border:
-    1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid #E9D48D;
 
-  color: #ff7b7b;
+  color: #8A6512;
 
-  font-size: 0.64rem;
+  font-size: .58rem;
 
   font-weight: 700;
 
-  letter-spacing: 1px;
+  letter-spacing: .3px;
 
-  text-transform: uppercase;
-
-  font-family: 'Inter', sans-serif;
-}
-
-/* =========================================
-   HOVER TEXT CONSISTENCY
-========================================= */
-
-.case-info-link:hover {
-
-  .case-type,
-  .case-number,
-  .case-year {
-
-    color: #ffd76a;
-  }
-
-  .petitioner-name,
-  .respondent-name {
-
-    color: rgba(255, 255, 255, 0.96);
-  }
+  line-height: 1;
 }
 
 /* =========================================
    MOBILE
 ========================================= */
 
-@media (max-width: 768px) {
+@media (max-width:768px) {
 
   .case-info-link,
   .case-info-text {
 
-    padding: 1.2rem;
-  }
-
-  .case-details-row {
-
-    gap: 0.35rem;
+    padding: 1rem;
   }
 
   .case-type,
   .case-number,
-  .case-year {
+  .case-year,
+  .separator {
 
-    font-size: 0.84rem;
-  }
-
-  .petitioner-name,
-  .respondent-name {
-
-    font-size: 0.84rem;
+    font-size: 1.1rem;
   }
 
   .parties-row {
@@ -380,6 +585,12 @@
 
     align-items: flex-start;
 
-    gap: 0.45rem;
+    gap: .55rem;
+  }
+
+  .petitioner-name,
+  .respondent-name {
+
+    font-size: .78rem;
   }
 }
