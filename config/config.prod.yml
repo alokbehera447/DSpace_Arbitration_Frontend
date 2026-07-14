@@ -8,7 +8,7 @@ ui:
   ssl: false
   host: localhost
   # host: localhost
-  port: 4001
+  port: 4000
   # NOTE: Space is capitalized because 'namespace' is a reserved string in TypeScript
   nameSpace: /
   # The rateLimiter settings limit each IP to a 'max' of 500 requests per 'windowMs' (1 minute).
@@ -57,7 +57,7 @@ rest:
   ssl: false
   host: localhost
   # host : localhost
-  port: 9090
+  port: 8080
   # NOTE: Space is capitalized because 'namespace' is a reserved string in TypeScript
   nameSpace: /server
   # Provide a different REST url to be used during SSR execution. It must contain the whole url including protocol, server port and

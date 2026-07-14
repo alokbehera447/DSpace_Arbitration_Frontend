@@ -244,7 +244,7 @@
 
         <!-- Action Buttons -->
         <div class="actions" *ngIf="!reviewLoading">
-            <button class="btn-approve-all" (click)="approveAllItems()">
+            <button class="btn-approve-all" (click)="approveAllItems()" [disabled]="getApprovedCount() > 0">
                 ✓ Approve All Items ({{ dummyFiles.length }})
             </button>
             <button class="btn-reject-all" (click)="openRejectAllDialog()">

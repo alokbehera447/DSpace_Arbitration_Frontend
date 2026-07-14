@@ -154,6 +154,8 @@ export class CaseDetailsComponent implements OnInit {
 
 
       next: (res) => {
+        console.log("==> RAW CASE METADATA:", res.metadata);
+        console.log("==> RAW ATTACHMENTS:", res.attachments);
         this.metadata = res.metadata
         this.attachments = res.attachments
 
