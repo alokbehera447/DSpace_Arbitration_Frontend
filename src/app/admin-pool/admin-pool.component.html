@@ -247,7 +247,7 @@
             <button class="btn-approve-all" (click)="approveAllItems()" [disabled]="getApprovedCount() > 0">
                 ✓ Approve All Items ({{ dummyFiles.length }})
             </button>
-            <button class="btn-reject-all" (click)="openRejectAllDialog()">
+            <button class="btn-reject-all" (click)="openRejectAllDialog()" [disabled]="getRejectedCount() > 0">
                 ✗ Reject All Items ({{ dummyFiles.length }})
             </button>
             <button class="btn-submit-partial" (click)="openRejectRemainingDialog()"
