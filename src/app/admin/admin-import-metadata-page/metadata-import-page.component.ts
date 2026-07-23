@@ -1,4 +1,4 @@
-import { Location } from '@angular/common';
+import { Location, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -27,6 +27,7 @@ import { FileDropzoneNoUploaderComponent } from '../../shared/upload/file-dropzo
     FileDropzoneNoUploaderComponent,
     FormsModule,
     TranslateModule,
+    NgIf,
   ],
   standalone: true,
 })
@@ -45,6 +46,11 @@ export class MetadataImportPageComponent {
    * The validate only flag
    */
   validateOnly = true;
+
+  /**
+   * Flag indicating whether an import operation is processing
+   */
+  isProcessing = false;
 
   public constructor(private location: Location,
                      protected translate: TranslateService,
@@ -75,6 +81,7 @@ export class MetadataImportPageComponent {
     if (this.fileObject == null) {
       this.notificationsService.error(this.translate.get('admin.metadata-import.page.error.addFile'));
     } else {
+      this.isProcessing = true;
       const parameterValues: ProcessParameter[] = [
         Object.assign(new ProcessParameter(), { name: '-f', value: this.fileObject.name }),
       ];
@@ -85,6 +92,7 @@ export class MetadataImportPageComponent {
       this.scriptDataService.invoke(METADATA_IMPORT_SCRIPT_NAME, parameterValues, [this.fileObject]).pipe(
         getFirstCompletedRemoteData(),
       ).subscribe((rd: RemoteData<Process>) => {
+        this.isProcessing = false;
         if (rd.hasSucceeded) {
           const title = this.translate.get('process.new.notification.success.title');
           const content = this.translate.get('process.new.notification.success.content');

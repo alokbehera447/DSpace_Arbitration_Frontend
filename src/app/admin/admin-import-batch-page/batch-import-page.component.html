@@ -47,9 +47,11 @@
     <button class="btn btn-secondary" id="backButton"
             (click)="this.onReturn();">{{'admin.metadata-import.page.button.return' | translate}}</button>
     <button class="btn btn-primary" id="proceedButton"
-            [disabled]="!dso"
+            [disabled]="!dso || isProcessing"
             (click)="this.importMetadata();">
-      {{'admin.metadata-import.page.button.proceed' | translate}}
+      <span *ngIf="isProcessing" class="spinner-border spinner-border-sm me-1" role="status" aria-hidden="true"></span>
+      <span *ngIf="isProcessing">Proceeding...</span>
+      <span *ngIf="!isProcessing">{{'admin.metadata-import.page.button.proceed' | translate}}</span>
     </button>
     
   </div>

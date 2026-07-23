@@ -59,6 +59,7 @@ export class BatchImportPageComponent {
 
 
   fileURL: string;
+  isProcessing = false;
 
   public constructor(private location: Location,
     protected translate: TranslateService,
@@ -96,6 +97,7 @@ export class BatchImportPageComponent {
         this.notificationsService.error(this.translate.get('admin.metadata-import.page.error.addFileUrl'));
       }
     } else {
+      this.isProcessing = true;
       const parameterValues: ProcessParameter[] = [
         Object.assign(new ProcessParameter(), { name: '--add' }),
       ];
@@ -119,11 +121,13 @@ export class BatchImportPageComponent {
 
       this.http.post(url, formData).subscribe({
         next: (response) => {
+          this.isProcessing = false;
           this.notificationsService.success('Upload Success', 'Bulk file uploaded successfully.');
           this.resetForm(); 
 
         },
         error: (error) => {
+          this.isProcessing = false;
           console.error('Bulk upload error:', error);
           let errorMessage = 'Could not upload bulk file.';
           
@@ -164,6 +168,7 @@ export class BatchImportPageComponent {
     this.dso = null;
     this.validateOnly = true;
     this.isUpload = true;
+    this.isProcessing = false;
   }
   
 }
